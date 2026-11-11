@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="تواصل مع فريق مملكة الإيموش لإرسال اقتراحاتك وملاحظاتك أو الإبلاغ عن مشكلة.">
+  <meta name="theme-color" content="#7655c5">
+  <title>اتصل بنا | مملكة الإيموش</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ00TSPTWC');
+  </script>
+
+  <style>
+    .contact-header {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
+      padding:18px 5%;
+      background:#fff;
+      box-shadow:0 3px 15px rgba(0,0,0,.05);
+    }
+    .contact-brand {
+      color:#7655c5;
+      font-size:21px;
+      font-weight:bold;
+      text-decoration:none;
+    }
+    .contact-actions {
+      display:flex;
+      align-items:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .contact-actions a {
+      color:#7655c5;
+      text-decoration:none;
+    }
+    .contact-actions button {
+      border:1px solid #e5def5;
+      background:#fff;
+      padding:8px 13px;
+      border-radius:9px;
+      cursor:pointer;
+    }
+    .contact-actions button.active {
+      background:#7655c5;
+      color:#fff;
+    }
+    .contact-content {
+      width:min(760px,92%);
+      margin:45px auto;
+      padding:35px;
+      background:#fff;
+      border-radius:22px;
+      box-shadow:0 8px 35px rgba(30,25,60,.07);
+      line-height:1.8;
+    }
+    .contact-content h1 {
+      color:#7655c5;
+      font-size:clamp(26px,5vw,36px);
+      margin-top:0;
+    }
+    .contact-content p {
+      color:#626174;
+      font-size:16px;
+    }
+    .contact-form {
+      display:grid;
+      gap:16px;
+      margin-top:25px;
+    }
+    .contact-form label {
+      display:block;
+      color:#302747;
+      font-weight:bold;
+      margin-bottom:7px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width:100%;
+      box-sizing:border-box;
+      padding:13px;
+      border:1px solid #e3deed;
+      border-radius:11px;
+      font:inherit;
+      background:#fff;
+      color:#302747;
+    }
+    .contact-form textarea {
+      min-height:150px;
+      resize:vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline:2px solid #c9b8f1;
+      border-color:#7655c5;
+    }
+    .contact-submit {
+      border:0;
+      border-radius:11px;
+      background:#7655c5;
+      color:#fff;
+      padding:14px 20px;
+      font:inherit;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    .contact-submit:hover {
+      background:#6342b0;
+    }
+    .contact-note {
+      background:#f7f3ff;
+      border-radius:12px;
+      padding:14px;
+      margin-top:20px;
+      font-size:14px !important;
+    }
+    .contact-footer {
+      text-align:center;
+      padding:25px 15px;
+      color:#777;
+      font-size:14px;
+    }
+    .contact-footer a {
+      color:#7655c5;
+      text-decoration:none;
+      margin:0 7px;
+    }
+    @media(max-width:600px) {
+      .contact-content {
+        padding:23px 18px;
+        margin:25px auto;
+      }
+      .contact-content p {
+        font-size:15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="contact-header">
+    <a class="contact-brand" href="index.html">👑 مملكة الإيموش</a>
+
+    <div class="contact-actions">
+      <a href="index.html" data-i18n data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <button type="button" data-lang="ar">العربية</button>
+      <button type="button" data-lang="en">English</button>
+    </div>
+  </header>
+
+  <main class="contact-content">
+
+    <h1 data-i18n data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</h1>
+
+    <p
+      data-i18n
+      data-ar="يسعدنا أن نسمع منك! إذا كان لديك اقتراح لتطوير الموقع، أو واجهت مشكلة أثناء استخدام الإيموشات أو الملصقات، يمكنك كتابة رسالتك وتجهيزها للنسخ."
+      data-en="We would love to hear from you! If you have a suggestion or encounter a problem while using our emojis or stickers, you can write your message and copy it.">
+      يسعدنا أن نسمع منك! إذا كان لديك اقتراح لتطوير الموقع، أو واجهت مشكلة أثناء استخدام الإيموشات أو الملصقات، يمكنك كتابة رسالتك وتجهيزها للنسخ.
+    </p>
+
+    <form class="contact-form" id="contactForm">
+
+      <div>
+        <label for="contactName"
+          data-i18n data-ar="الاسم" data-en="Name">الاسم</label>
+        <input
+          type="text"
+          id="contactName"
+          name="name"
+          maxlength="80"
+          required
+          placeholder="اكتب اسمك"
+          data-placeholder-ar="اكتب اسمك"
+          data-placeholder-en="Enter your name">
+      </div>
+
+      <div>
+        <label for="contactEmail"
+          data-i18n data-ar="البريد الإلكتروني" data-en="Email Address">
+          البريد الإلكتروني
+        </label>
+        <input
+          type="email"
+          id="contactEmail"
+          name="email"
+          maxlength="150"
+          required
+          placeholder="example@email.com"
+          data-placeholder-ar="example@email.com"
+          data-placeholder-en="example@email.com">
+      </div>
+
+      <div>
+        <label for="contactSubject"
+          data-i18n data-ar="موضوع الرسالة" data-en="Subject">موضوع الرسالة</label>
+        <input
+          type="text"
+          id="contactSubject"
+          name="subject"
+          maxlength="120"
+          required
+          placeholder="اكتب موضوع الرسالة"
+          data-placeholder-ar="اكتب موضوع الرسالة"
+          data-placeholder-en="Enter the subject">
+      </div>
+
+      <div>
+        <label for="contactMessage"
+          data-i18n data-ar="رسالتك" data-en="Your Message">رسالتك</label>
+        <textarea
+          id="contactMessage"
+          name="message"
+          maxlength="3000"
+          required
+          placeholder="اكتب رسالتك هنا..."
+          data-placeholder-ar="اكتب رسالتك هنا..."
+          data-placeholder-en="Write your message here..."></textarea>
+      </div>
+
+      <button class="contact-submit" type="submit"
+        data-i18n data-ar="نسخ الرسالة" data-en="Copy Message

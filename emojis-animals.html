@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7055ed">
+  <meta name="description" content="اكتشف إيموشات الحيوانات والطبيعة المتحركة، وانسخها أو نزّلها بسهولة.">
+  <title>إيموشات الحيوانات والطبيعة | مملكة الإيموش</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function () {
+      const savedLanguage = localStorage.getItem("emojilandLanguage");
+      const language = savedLanguage === "en" ? "en" : "ar";
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+    })();
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ00TSPTWC');
+  </script>
+
+  <style>
+    .animals-page {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 20px;
+    }
+
+    .animals-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .animals-header h1 {
+      color: #7055ed;
+      margin-bottom: 12px;
+    }
+
+    .animals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+      gap: 14px;
+    }
+
+    .animal-card {
+      background: var(--card-bg, #fff);
+      border: 1px solid #e9e5ff;
+      border-radius: 15px;
+      padding: 12px 8px;
+      min-height: 165px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 9px;
+      box-shadow: 0 3px 12px rgba(50, 30, 100, .06);
+    }
+
+    .animal-visual {
+      width: 76px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .animal-visual img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .animal-fallback {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .animal-name {
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .animal-actions {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .animal-actions button {
+      flex: 1;
+      border: 0;
+      border-radius: 8px;
+      padding: 7px 4px;
+      color: white;
+      background: #7055ed;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .animal-actions button.download {
+      background: #18a477;
+    }
+
+    .animal-actions button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    #copyMessage {
+      text-align: center;
+      color: #18a477;
+      font-weight: bold;
+      margin: 22px 0;
+      min-height: 24px;
+    }
+
+    @media(max-width: 480px) {
+      .animals-page {
+        padding: 12px;
+      }
+
+      .animals-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="index.html" class="logo"
+       data-ar="😊 مملكة الإيموش"
+       data-en="😊 Emojiland">😊 مملكة الإيموش</a>
+
+    <nav class="nav">
+      <a href="index.html"
+         data-ar="الرئيسية"
+         data-en="Home">الرئيسية</a>
+
+      <a href="stickers.html"
+         data-ar="الملصقات"
+         data-en="Stickers">الملصقات</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container animals-page">
+
+  <section class="animals-header">
+    <h1 data-ar="🐶 إيموشات الحيوانات والطبيعة"
+        data-en="🐶 Animals & Nature Emojis">
+      🐶 إيموشات الحيوانات والطبيعة
+    </h1>
+
+    <p data-ar="اكتشف مجموعة متنوعة من الحيوانات والطيور والكائنات البحرية والنباتات. اضغط للنسخ أو التنزيل."
+       data-en="Explore animals, birds, sea creatures and nature emojis. Copy or download your favorites.">
+      اكتشف مجموعة متنوعة من الحيوانات والطيور والكائنات البحرية والنباتات. اضغط للنسخ أو التنزيل.
+    </p>
+  </section>
+
+  <div class="animals-grid" id="animalsGrid"></div>
+
+  <p id="copyMessage" role="status" aria-live="polite"></p>
+
+  <div style="text-align:center;margin-top:25px">
+    <a href="index.html" class="back-home"
+       data-ar="العودة للرئيسية"
+       data-en="Back to Home">العودة للرئيسية</a>
+  </div>
+
+</main>
+
+<script src="app.js"></script>
+
+<script>
+const animals = [
+  ["🐶","كلب","Dog","1f436"],
+  ["🐱","قطة","Cat","1f431"],
+  ["🐭","فأر","Mouse","1f42d"],
+  ["🐹","هامستر","Hamster","1f439"],
+  ["🐰","أرنب","Rabbit","1f430"],
+  ["🦊","ثعلب","Fox","1f98a"],
+  ["🐻","دب","Bear","1f43b"],
+  ["🐼","باندا","Panda","1f43c"],
+  ["🐨","كوالا","Koala","1f428"],
+  ["🐯","نمر","Tiger","1f42f"],
+  ["🦁","أسد","Lion","1f981"],
+  ["🐮","بقرة","Cow","1f42e"],
+  ["🐷","خنزير","Pig","1f437"],
+  ["🐸","ضفدع","Frog","1f438"],
+  ["🐵","قرد","Monkey","1f435"],
+  ["🐔","دجاجة","Chicken","1f414"],
+  ["🐧","بطريق","Penguin","1f427"],
+  ["🐦","طائر","Bird","1f426"],
+  ["🦆","بطة","Duck","1f986"],
+  ["🦅","نسر","Eagle","1f985"],
+  ["🦉","بومة","Owl","1f989"],
+  ["🦇","خفاش","Bat","1f987"],
+  ["🐺","ذئب","Wolf","1f43a"],
+  ["🐗","خنزير بري","Boar","1f417"],
+  ["🐴","حصان","Horse","1f434"],
+  ["🦄","وحيد القرن","Unicorn","1f984"],
+  ["🐝","نحلة","Honeybee","1f41d"],
+  ["🦋","فراشة","Butterfly","1f98b"],
+  ["🐌","حلزون","Snail","1f40c"],
+  ["🐞","دعسوقة","Lady Beetle","1f41e"],
+  ["🐜","نملة","Ant","1f41c"],
+  ["🦟","بعوضة","Mosquito","1f99f"],
+  ["🪲","خنفساء","Beetle","1fab2"],
+  ["🕷️","عنكبوت","Spider","1f577"],
+  ["🐢","سلحفاة","Turtle","1f422"],
+  ["🐍","ثعبان","Snake","1f40d"],
+  ["🦎","سحلية","Lizard","1f98e"],
+  ["🦖","ديناصور","T-Rex","1f996"],
+  ["🐙","أخطبوط","Octopus","1f419"],
+  ["🦑","حبار","Squid","1f991"],
+  ["🦀","سلطعون","Crab","1f980"],
+  ["🐠","سمكة استوائية","Tropical Fish","1f420"],
+  ["🐬","دلفين","Dolphin","1f42c"],
+  ["🐳","حوت ينفث الماء","Spouting Whale","1f433"],
+  ["🦈","قرش","Shark","1f988"],
+  ["🐊","تمساح","Crocodile","1f40a"],
+  ["🐘","فيل","Elephant","1f418"],
+  ["🦒","زرافة","Giraffe","1f992"],
+  ["🦓","حمار وحشي","Zebra","1f993"],
+  ["🌵","صبار","Cactus","1f335"]
+];
+
+const grid = document.getElementById("animalsGrid");
+const message = document.getElementById("copyMessage");
+
+function currentLanguage() {
+  return document.documentElement.lang === "en" ? "en" : "ar";
+}
+
+function translatePage() {
+  const language = currentLanguage();
+
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-ar][data-en]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + language);
+  });
+
+  document.title = language === "ar"
+    ? "إيموشات الحيوانات والطبيعة | مملكة الإيموش"
+    : "Animals & Nature Emojis | Emojiland";
+
+  document.querySelector('meta[name="description"]').content =
+    language === "ar"
+      ? "اكتشف إيموشات الحيوانات والطبيعة المتحركة، وانسخها أو نزّلها بسهولة."
+      : "Discover animated animals and nature emojis. Copy or download them easily.";
+
+  document.querySelectorAll(".animal-name").forEach((element, index) => {
+    element.textContent = animals[index][language === "ar" ? 1 : 2];
+  });
+
+  document.querySelectorAll(".copy-button").forEach(button => {
+    button.textContent = language === "ar" ? "نسخ" : "Copy";
+  });
+
+  document.querySelectorAll(".download-button").forEach(button => {
+    button.textContent = language === "ar" ? "تنزيل" : "Download";
+  });
+}
+
+animals.forEach((item, index) => {
+  const card = document.createElement("div");
+  card.className = "animal-card";
+
+  const visual = document.createElement("div");
+  visual.className = "animal-visual";
+
+  const fallback = document.createElement("span");
+  fallback.className = "animal-fallback";
+  fallback.textContent = item[0];
+
+  const img = document.createElement("img");
+  img.alt = item[1];
+  img.style.display = "none";
+  img.loading = "lazy";
+  img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[3]}/512.gif`;
+
+  img.onload = () => {
+    img.style.display = "block";
+    fallback.style.display = "none";
+  };
+
+  img.onerror = () => {
+    img.style.display = "none";
+    fallback.style.display = "block";
+  };
+
+  visual.appendChild(fallback);
+  visual.appendChild(img);
+
+  const name = document.createElement("div");
+  name.className = "animal-name";
+  name.textContent = item[currentLanguage() === "ar" ? 1 : 2];
+
+  const actions = document.createElement("div");
+  actions.className = "animal-actions";
+
+  const copyButton = document.createElement("button");
+  copyButton.type = "button";
+  copyButton.className = "copy-button";
+  copyButton.textContent = currentLanguage() === "ar" ? "نسخ" : "Copy";
+
+  copyButton.addEventListener("click", async () => {
+    let copied = false;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(item[0]);
+        copied = true;
+      }
+    } catch (error) {
+      copied = false;
+    }
+
+    if (!copied) {
+      const input = document.createElement("textarea");
+      input.value = item[0];
+      input.setAttribute("readonly", "");
+      input.style.position = "fixed";
+      input.style.left = "-9999px";
+      input.style.top = "0";
+
+      document.body.appendChild(input);
+      input.focus();
+      input.select();
+      input.setSelectionRange(0, input.value.length);
+
+      try {
+        copied = document.execCommand("copy");
+      } catch (error) {
+        copied = false;
+      }
+
+      input.remove();
+    }
+
+    const language = currentLanguage();
+
+    message.textContent = copied
+      ? (language === "ar"
+          ? "تم نسخ الإيموش بنجاح! " + item[0]
+          : "Emoji copied successfully! " + item[0])
+      : (language === "ar"
+          ? "تعذر النسخ. حاول مرة أخرى."
+          : "Could not copy. Please try again.");
+  });
+
+  const downloadButton = document.createElement("button");
+  downloadButton.type = "button";
+  downloadButton.className = "download download-button";
+  downloadButton.textContent = currentLanguage() === "ar" ? "تنزيل" : "Download";
+
+  downloadButton.addEventListener("click", async () => {
+    downloadButton.disabled = true;
+
+    const language = currentLanguage();
+    downloadButton.textContent = language === "ar" ? "جاري التنزيل..." : "Downloading...";
+
+    try {
+      const response = await fetch(img.src);
+
+      if (!response.ok) {
+        throw new Error("Download failed");
+      }
+
+      const blob = await response.blob();
+
+      if (!blob.size) {
+        throw new Error("Empty file");
+      }
+
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "animal-emoji-" + (index + 1) + ".gif";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+
+    } catch (error) {
+      message.textContent =
+        currentLanguage() === "ar"
+          ? "تعذر التنزيل من مصدر الصورة. جرّب إيموشًا آخر."
+          : "Download failed. Please try another emoji.";
+    }
+
+    downloadButton.disabled = false;
+    downloadButton.textContent =
+      currentLanguage() === "ar" ? "تنزيل" : "Download";
+  });
+
+  actions.appendChild(copyButton);
+  actions.appendChild(downloadButton);
+
+  card.appendChild(visual);
+  card.appendChild(name);
+  card.appendChild(actions);
+
+  grid.appendChild(card);
+});
+
+translatePage();
+
+window.addEventListener("storage", event => {
+  if (event.key === "emojilandLanguage") {
+    const language = event.newValue === "en" ? "en" : "ar";
+    document.documentElement.lang = language;
+    translatePage();
+  }
+});
+</script>
+
+</body>
+</html>

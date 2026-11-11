@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#7055ed">
+<meta name="description" content="مجموعة إيموشات الأيدي والإشارات المتحركة للنسخ والتنزيل.">
+<title>إيموشات الأيدي | مملكة الإيموش</title>
+<link rel="stylesheet" href="style.css">
+
+<script>
+(function () {
+  const language = localStorage.getItem("emojilandLanguage") === "en" ? "en" : "ar";
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+})();
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-NZ00TSPTWC');
+</script>
+
+<style>
+.hands-grid{
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(125px,1fr));
+gap:13px;
+margin-top:25px;
+}
+.hands-card{
+min-height:145px;
+padding:12px 8px;
+background:var(--card-bg,#fff);
+border:1px solid #eee;
+border-radius:14px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+gap:10px;
+box-shadow:0 3px 12px #0000000d;
+}
+.hands-card img{
+width:80px;
+height:80px;
+object-fit:contain;
+}
+.hands-actions{
+display:flex;
+gap:7px;
+width:100%;
+}
+.hands-actions button{
+flex:1;
+border:0;
+border-radius:7px;
+padding:7px 5px;
+cursor:pointer;
+background:#7055ed;
+color:white;
+font-size:12px;
+}
+.hands-actions button.download{
+background:#18a477;
+}
+.hands-actions button:disabled{
+opacity:.5;
+cursor:not-allowed;
+}
+#copyMessage{
+text-align:center;
+min-height:25px;
+margin:18px 0;
+}
+@media(max-width:480px){
+.hands-grid{
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:10px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+<div class="container header-content">
+<a href="index.html" class="logo"
+data-ar="😊 مملكة الإيموش"
+data-en="😊 Emojiland">😊 مملكة الإيموش</a>
+
+<nav class="nav">
+<a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+<a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
+</nav>
+</div>
+</header>
+
+<main class="container category-page">
+
+<section class="category-page-header">
+<h1 data-ar="إيموشات الأيدي والإشارات"
+data-en="Hands & Gestures Emojis">إيموشات الأيدي والإشارات</h1>
+
+<p data-ar="إيموشات متحركة حقيقية. اضغط على نسخ أو تنزيل."
+data-en="Animated emojis. Click copy or download.">
+إيموشات متحركة حقيقية. اضغط على نسخ أو تنزيل.
+</p>
+</section>
+
+<div class="hands-grid" id="handsGrid"></div>
+
+<p id="copyMessage" role="status" aria-live="polite"></p>
+
+<div style="text-align:center;margin-top:25px">
+<a href="index.html" class="back-home"
+data-ar="العودة للرئيسية"
+data-en="Back to Home">العودة للرئيسية</a>
+</div>
+
+</main>
+
+<script src="app.js"></script>
+
+<script>
+const hands = [
+["👏","1f44f"],
+["👍","1f44d"],
+["👎","1f44e"],
+["🙌","1f64c"],
+["👐","1f450"],
+["🤲","1f932"],
+["👋","1f44b"],
+["🤛","1f91b"],
+["🤜","1f91c"],
+["👊","1f44a"],
+["✊","270a"],
+["✋","270b"],
+["🖐","1f590"],
+["💪","1f4aa"],
+["🤝","1f91d"],
+["🙏","1f64f"],
+["👌","1f44c"],
+["✌️","270c"],
+["🤞","1f91e"],
+["🤟","1f91f"],
+["🤘","1f918"],
+["🤙","1f919"],
+["🤏","1f90f"],
+["🤌","1f90c"],
+["🫶","1faf6"],
+["🫱","1faf1"],
+["🫲","1faf2"],
+["🫰","1faf0"],
+["🫳","1faf3"],
+["🫴","1faf4"],
+["☝️","261d"],
+["👆","1f446"],
+["👇","1f447"],
+["👈","1f448"],
+["👉","1f449"],
+["🖕","1f595"],
+["🖖","1f596"],
+["💅","1f485"],
+["🤳","1f933"],
+["🖊","1f58a"],
+["💪","1f4aa"],
+["🤚","1f91a"],
+["💪","1f4aa"],
+["👋","1f44b"],
+["👏","1f44f"]
+];
+
+const grid = document.getElementById("handsGrid");
+const message = document.getElementById("copyMessage");
+
+function getLanguage(){
+  return document.documentElement.lang === "en" ? "en" : "ar";
+}
+
+function translatePage(){
+  const language = getLanguage();
+
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-ar][data-en]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + language);
+  });
+
+  document.title = language === "ar"
+    ? "إيموشات الأيدي | مملكة الإيموش"
+    : "Hands Emojis | Emojiland";
+
+  document.querySelector('meta[name="description"]').content =
+    language === "ar"
+      ? "مجموعة إيموشات الأيدي والإشارات المتحركة للنسخ والتنزيل."
+      : "A collection of animated hands and gestures emojis to copy and download.";
+
+  document.querySelectorAll(".copy-button").forEach(button => {
+    button.textContent = language === "ar" ? "نسخ" : "Copy";
+  });
+
+  document.querySelectorAll(".download-button").forEach(button => {
+    button.textContent = language === "ar" ? "تنزيل" : "Download";
+  });
+}
+
+hands.forEach((item,index) => {
+  const card = document.createElement("div");
+  card.className = "hands-card";
+
+  const img = document.createElement("img");
+  img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[1]}/512.gif`;
+  img.alt = item[0];
+  img.loading = "lazy";
+
+  img.onerror = () => {
+    img.style.display = "none";
+    const fallback = document.createElement("span");
+    fallback.textContent = item[0];
+    fallback.style.fontSize = "55px";
+    card.insertBefore(fallback,actions);
+  };
+
+  const actions = document.createElement("div");
+  actions.className = "hands-actions";
+
+  const copyButton = document.createElement("button");
+  copyButton.type = "button";
+  copyButton.className = "copy-button";
+  copyButton.textContent = getLanguage() === "ar" ? "نسخ" : "Copy";
+
+  copyButton.addEventListener("click",async () => {
+    let copied = false;
+
+    try {
+      if(navigator.clipboard && window.isSecureContext){
+        await navigator.clipboard.writeText(item[0]);
+        copied = true;
+      }
+    } catch(error){
+      copied = false;
+    }
+
+    if(!copied){
+      const input = document.createElement("textarea");
+      input.value = item[0];
+      input.setAttribute("readonly","");
+      input.style.position = "fixed";
+      input.style.left = "-9999px";
+      document.body.appendChild(input);
+      input.select();
+
+      try{
+        copied = document.execCommand("copy");
+      }catch(error){
+        copied = false;
+      }
+
+      input.remove();
+    }
+
+    message.textContent = copied
+      ? (getLanguage() === "ar"
+          ? "تم نسخ الإيموش بنجاح! " + item[0]
+          : "Emoji copied successfully! " + item[0])
+      : (getLanguage() === "ar"
+          ? "تعذر النسخ. حاول مرة أخرى."
+          : "Could not copy. Please try again.");
+  });
+
+  const downloadButton = document.createElement("button");
+  downloadButton.type = "button";
+  downloadButton.className = "download download-button";
+  downloadButton.textContent = getLanguage() === "ar" ? "تنزيل" : "Download";
+
+  downloadButton.addEventListener("click",async () => {
+    downloadButton.disabled = true;
+    downloadButton.textContent =
+      getLanguage() === "ar" ? "جاري التنزيل..." : "Downloading...";
+
+    try{
+      const url = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[1]}/512.gif`;
+      const response = await fetch(url);
+
+      if(!response.ok){
+        throw new Error("Download failed");
+      }
+
+      const blob = await response.blob();
+
+      if(!blob.size){
+        throw new Error("Empty file");
+      }
+
+      const objectURL = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = objectURL;
+      link.download = "hands-emoji-" + (index+1) + ".gif";
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(objectURL),5000);
+
+    }catch(error){
+      message.textContent = getLanguage() === "ar"
+        ? "تعذر التنزيل. حاول مرة أخرى."
+        : "Download failed. Please try again.";
+    }
+
+    downloadButton.disabled = false;
+    downloadButton.textContent =
+      getLanguage() === "ar" ? "تنزيل" : "Download";
+  });
+
+  actions.appendChild(copyButton);
+  actions.appendChild(downloadButton);
+
+  card.appendChild(img);
+  card.appendChild(actions);
+  grid.appendChild(card);
+});
+
+translatePage();
+
+window.addEventListener("storage",event => {
+  if(event.key === "emojilandLanguage"){
+    document.documentElement.lang = event.newValue === "en" ? "en" : "ar";
+    translatePage();
+  }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مملكة الإيموش | Emojiland</title>
+  <meta name="description" content="اكتشف مكتبة الإيموشات والرموز التعبيرية والملصقات المجانية في مملكة الإيموش.">
+  <meta name="theme-color" content="#7055ed">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .home-about {
+      max-width: 1100px;
+      margin: 15px auto 45px;
+      padding: 30px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #f4f0ff, #fff1f6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .home-about-content {
+      flex: 1;
+    }
+
+    .home-about h2 {
+      margin: 8px 0 12px;
+      color: #35265f;
+    }
+
+    .home-about p {
+      line-height: 1.9;
+      color: #625b70;
+      margin: 0 0 18px;
+    }
+
+    .home-about-icon {
+      font-size: 65px;
+      min-width: 100px;
+      text-align: center;
+    }
+
+    .home-about-link {
+      display: inline-block;
+      background: #7055ed;
+      color: white;
+      text-decoration: none;
+      padding: 11px 23px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .home-about-link:hover {
+      background: #5940cf;
+      transform: translateY(-2px);
+    }
+
+    .tools-banner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tools-banner > div {
+      flex: 1;
+    }
+
+    .tools-banner > a {
+      position: relative;
+      z-index: 5;
+      pointer-events: auto;
+      display: inline-block;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    @media (max-width: 650px) {
+      .home-about {
+        margin: 15px 12px 35px;
+        padding: 22px 18px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .home-about-icon {
+        font-size: 48px;
+      }
+
+      .tools-banner {
+        margin: 15px 12px;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .tools-banner > div {
+        flex-basis: 100%;
+      }
+    }
+  </style>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ00TSPTWC');
+  </script>
+</head>
+
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">
+    <span class="logo-icon">✦</span>
+    <span data-ar="مملكة الإيموش" data-en="Emojiland">مملكة الإيموش</span>
+  </a>
+
+  <nav class="navigation">
+    <a href="#emojis" data-ar="أقسام الإيموشات" data-en="Emoji Categories">أقسام الإيموشات</a>
+    <a href="#stickers" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
+    <a href="#maker" data-ar="صانع الملصقات" data-en="Sticker Maker">صانع الملصقات</a>
+  </nav>
+
+  <button id="languageButton" class="language-button">English</button>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="small-title" data-ar="عالمك مليان تعبيرات" data-en="A world full of expressions">عالمك مليان تعبيرات</span>
+
+      <h1 data-ar="عبّر عن نفسك<br>بطريقتك الخاصة ✨" data-en="Express yourself<br>your own way ✨">
+        عبّر عن نفسك<br>بطريقتك الخاصة ✨
+      </h1>
+
+      <p data-ar="اكتشف آلاف الإيموشات والرموز التعبيرية، واختر ما يعبر عنك وانسخه بسهولة." data-en="Discover emojis and symbols, choose the ones that express you and copy them easily.">
+        اكتشف آلاف الإيموشات والرموز التعبيرية، واختر ما يعبر عنك وانسخه بسهولة.
+      </p>
+
+      <a href="#emojis" class="main-button" data-ar="اكتشف الأقسام" data-en="Explore Categories">اكتشف الأقسام</a>
+    </div>
+
+    <div class="hero-art">
+      <div class="floating-emoji emoji-one">😍</div>
+      <div class="floating-emoji emoji-two">🥳</div>
+      <div class="floating-emoji emoji-three">💖</div>
+      <div class="floating-emoji emoji-four">😂</div>
+      <div class="art-center">✦</div>
+    </div>
+  </section>
+
+  <!-- نبذة عن الموقع -->
+  <section class="home-about">
+    <div class="home-about-content">
+      <span class="small-title" data-ar="أهلاً بك في عالمنا" data-en="Welcome to our world">أهلاً بك في عالمنا</span>
+
+      <h2 data-ar="ما هي مملكة الإيموش؟" data-en="What is Emojiland?">ما هي مملكة الإيموش؟</h2>
+
+      <p
+        data-ar="مملكة الإيموش مكان يجمع الإيموشات والرموز التعبيرية والملصقات في مكتبة واحدة سهلة الاستخدام. هدفنا مساعدتك على التعبير عن أفكارك ومشاعرك بطريقة ممتعة وسريعة."
+        data-en="Emojiland brings emojis, symbols and stickers together in one easy-to-use library. Our goal is to help you express your thoughts and feelings in a fun and simple way.">
+        مملكة الإيموش مكان يجمع الإيموشات والرموز التعبيرية والملصقات في مكتبة واحدة سهلة الاستخدام. هدفنا مساعدتك على التعبير عن أفكارك ومشاعرك بطريقة ممتعة وسريعة.
+      </p>
+
+      <a href="about.html" class="home-about-link"
+         data-ar="اعرف المزيد عنا ←"
+         data-en="Learn more about us →">اعرف المزيد عنا ←</a>
+    </div>
+
+    <div class="home-about-icon">👑✨</div>
+  </section>
+
+  <section class="content-section" id="emojis">
+    <div class="section-heading">
+      <div>
+        <span class="small-title" data-ar="اختار القسم المناسب" data-en="Choose a category">اختار القسم المناسب</span>
+        <h2 data-ar="استكشف أقسام الإيموشات" data-en="Explore Emoji Categories">استكشف أقسام الإيموشات</h2>
+      </div>
+    </div>
+
+    <div class="emoji-categories">
+
+      <a class="category-card" href="emojis-smileys.html">
+        <span class="category-icon">😀</span>
+        <h3 data-ar="الوجوه والابتسامات" data-en="Smileys & Faces">الوجوه والابتسامات</h3>
+        <p data-ar="وجوه مضحكة ومشاعر مختلفة" data-en="Funny faces and different emotions">وجوه مضحكة ومشاعر مختلفة</p>
+        <span class="category-arrow">←</span>
+      </a>
+
+      <a class="category-card" href="emojis-love.html">
+        <span class="category-icon">❤️</span>
+        <h3 data-ar="القلوب والحب" data-en="Hearts & Love">القلوب والحب</h3>
+        <p data-ar="قلوب ورموز الحب والرومانسية" data-en="Hearts and romantic symbols">قلوب ورموز الحب والرومانسية</p>
+        <span class="category-arrow">←</span>
+      </a>
+
+      <a class="category-card" href="emojis-hands.html">
+        <span class="category-icon">👋</span>
+        <h3 data-ar="الأيدي والإشارات" data-en="Hands & Gestures">الأيدي والإشارات</h3>
+        <p data-ar="إشارات وتعبيرات اليد المختلفة" data-en="Hand signs and gestures">إشارات وتعبيرات اليد المختلفة</p>
+        <span class="category-arrow">←</span>
+      </a>
+
+      <a class="category-card" href="emojis-animals.html">
+        <span class="category-icon">🐱</span>
+        <h3 data-ar="الحيوانات والطبيعة" data-en="Animals & Nature">الحيوانات والطبيعة</h3>
+        <p data-ar="حيوانات وطيور ونباتات" data-en="Animals, birds and plants">حيوانات وطيور ونباتات</p>
+        <span class="category-arrow">←</span>
+      </a>
+
+      <a class="category-card" href="emojis-food.html">
+        <span class="category-icon">🍕</span>
+        <h3 data-ar="الطعام والمشروبات" data-en="Food & Drinks">الطعام والمشروبات</h3>
+        <p data-ar="أكلات وفواكه ومشروبات" data-en="Meals, fruits and drinks">أكلات وفواكه ومشروبات</p>
+        <span class="category-arrow">←</span>
+      </a>
+
+      <a class="category-card" href="emojis-activities.html">
+        <span class="category-icon">⚽</span>
+        <h3 data-ar="الأنشطة والألعاب" data-en="Activities & Games">الأنشطة والألعاب</h3>
+        <p data-ar="رياضة وألعاب واحتفالات" data-en="Sports, games and celebrations">رياضة وألعاب واحتفالات</p>
+        <span class="category-arrow">←</span>
+      </a>
+
+    </div>
+
+    <div id="emojiGrid" hidden></div>
+    <p id="copyMessage" class="message" aria-live="polite"></p>
+  </section>
+
+  <section class="content-section stickers-section" id="stickers">
+    <div class="section-heading">
+      <div>
+        <span class="small-title" data-ar="تصميمات مميزة" data-en="Special designs">تصميمات مميزة</span>
+        <h2 data-ar="عالم الملصقات" data-en="Sticker World">عالم الملصقات</h2>
+      </div>
+
+      <input id="stickerSearch" type="search" placeholder="ابحث عن ملصق..." aria-label="Search stickers">
+    </div>
+
+    <div id="stickerGrid" class="sticker-grid">
+
+      <article class="sticker-card">
+        <div class="sticker-art pink">💖</div>
+        <h3 data-ar="حب كبير" data-en="Big Love">حب كبير</h3>
+        <p data-ar="ملصق للتعبير عن الحب" data-en="A sticker to share love">ملصق للتعبير عن الحب</p>
+      </article>
+
+      <article class="sticker-card">
+        <div class="sticker-art purple">✨</div>
+        <h3 data-ar="طاقة إيجابية" data-en="Good Vibes">طاقة إيجابية</h3>
+        <p data-ar="انشر الطاقة الحلوة" data-en="Spread positive vibes">انشر الطاقة الحلوة</p>
+      </article>
+
+      <article class="sticker-card">
+        <div class="sticker-art yellow">🥳</div>
+        <h3 data-ar="يوم سعيد" data-en="Happy Day">يوم سعيد</h3>
+        <p data-ar="احتفل بكل لحظة" data-en="Celebrate every moment">احتفل بكل لحظة</p>
+      </article>
+
+      <article class="sticker-card">
+        <div class="sticker-art blue">😎</div>
+        <h3 data-ar="أنت رائع" data-en="You're Awesome">أنت رائع</h3>
+        <p data-ar="خليك واثق بنفسك" data-en="Stay confident">خليك واثق بنفسك</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="content-section maker-section" id="maker">
+    <div class="maker-heading">
+      <span class="small-title" data-ar="إبداعك يبدأ هنا" data-en="Your creativity starts here">إبداعك يبدأ هنا</span>
+      <h2 data-ar="اصنع ملصقك بنفسك" data-en="Create Your Own Sticker">اصنع ملصقك بنفسك</h2>
+      <p data-ar="اكتب عبارتك واختار اللون والإيموش المناسب." data-en="Write your phrase and choose a color and emoji.">اكتب عبارتك واختار اللون والإيموش المناسب.</p>
+    </div>
+
+    <div class="maker-box">
+      <div class="maker-controls">
+
+        <label for="stickerText" data-ar="اكتب عبارتك" data-en="Write your phrase">اكتب عبارتك</label>
+        <input id="stickerText" type="text" maxlength="30" value="أنت رائع!">
+
+        <label for="stickerColor" data-ar="اختار اللون" data-en="Choose a color">اختار اللون</label>
+        <input id="stickerColor" type="color" value="#ff5b91">
+
+        <label for="stickerEmoji" data-ar="اختار الإيموش" data-en="Choose an emoji">اختار الإيموش</label>
+        <select id="stickerEmoji">
+          <option>💖</option>
+          <option>😍</option>
+          <option>✨</option>
+          <option>😂</option>
+          <option>🥳</option>
+          <option>🌸</option>
+          <option>🔥</option>
+        </select>
+
+        <button id="downloadSticker" class="main-button">
+          <span data-ar="تحميل الملصق" data-en="Download Sticker">تحميل الملصق</span>
+        </button>
+
+      </div>
+
+      <div class="sticker-preview">
+        <canvas id="stickerCanvas" width="700" height="500"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- الربط مع سوق الأدوات -->
+  <section class="tools-banner">
+    <div class="tools-icon">🧰</div>
+
+    <div>
+      <h3 data-ar="اكتشف أدواتنا المجانية" data-en="Discover our free tools">اكتشف أدواتنا المجانية</h3>
+      <p data-ar="أدوات مفيدة للصور وملفات PDF في مكان واحد." data-en="Useful image and PDF tools in one place.">
+        أدوات مفيدة للصور وملفات PDF في مكان واحد.
+      </p>
+    </div>
+
+    <a href="https://medosd6666-png.github.io/tools-market/"
+       target="_blank"
+       rel="noopener noreferrer"
+       data-ar="استخدم أدواتنا المجانية ←"
+       data-en="Explore our free tools →">
+      استخدم أدواتنا المجانية ←
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-logo">✦ مملكة الإيموش</div>
+
+  <div class="footer-links">
+    <a href="about.html" data-ar="من نحن" data-en="About Us">من نحن</a>
+    <a href="contact.html" data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
+    <a href="privacy.html" data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+    <a href="terms.html" data-ar="شروط الاستخدام" data-en="Terms">شروط الاستخدام</a>
+    <a href="copyright.html" data-ar="حقوق الملكية" data-en="Copyright">حقوق الملكية</a>
+  </div>
+
+  <small>© 2026 Emojiland</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

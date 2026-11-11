@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7055ed">
+  <meta name="description" content="«ﬂ ‘› „·’ﬁ«  ≈Ì„Ê‘ √’·Ì… ÊÕ„¯·Â« „Ã«‰« √Ê «’‰⁄ „·’ﬁﬂ «·Œ«’.">
+  <title>«·„·’ﬁ«  | „„·ﬂ… «·≈Ì„Ê‘</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ00TSPTWC');
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">?? „„·ﬂ… «·≈Ì„Ê‘</a>
+
+      <nav class="nav">
+        <a href="index.html" data-ar="«·—∆Ì”Ì…" data-en="Home">«·—∆Ì”Ì…</a>
+        <a href="index.html#emojis" data-ar="«·≈Ì„Ê‘« " data-en="Emojis">«·≈Ì„Ê‘« </a>
+        <a href="stickers.html" data-ar="«·„·’ﬁ« " data-en="Stickers">«·„·’ﬁ« </a>
+      </nav>
+
+      <button id="languageButton" class="language-button" type="button"
+        data-ar="English" data-en="«·⁄—»Ì…">English</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1 data-ar="„·’ﬁ«  ≈Ì„Ê‘ „Ã«‰Ì…" data-en="Free Emoji Stickers">„·’ﬁ«  ≈Ì„Ê‘ „Ã«‰Ì…</h1>
+      <p data-ar="«ﬂ ‘› „·’ﬁ«  —«∆⁄… ÊÕ„¯·Â«° √Ê «’‰⁄ „·’ﬁﬂ «·Œ«’ »”ÂÊ·…."
+         data-en="Discover fun stickers, download them, or create your own easily.">
+        «ﬂ ‘› „·’ﬁ«  —«∆⁄… ÊÕ„¯·Â«° √Ê «’‰⁄ „·’ﬁﬂ «·Œ«’ »”ÂÊ·….
+      </p>
+    </section>
+
+    <section class="stickers-section">
+      <h2 data-ar="„ﬂ »… «·„·’ﬁ« " data-en="Sticker Library">„ﬂ »… «·„·’ﬁ« </h2>
+
+      <input id="stickerSearch" type="search"
+        placeholder="«»ÕÀ ⁄‰ „·’ﬁ..."
+        data-ar-placeholder="«»ÕÀ ⁄‰ „·’ﬁ..."
+        data-en-placeholder="Search stickers..."
+        aria-label="Search stickers">
+
+      <div id="stickerGrid" class="sticker-grid"></div>
+    </section>
+
+    <section class="maker-section">
+      <h2 data-ar="«’‰⁄ „·’ﬁﬂ «·Œ«’" data-en="Create Your Own Sticker">«’‰⁄ „·’ﬁﬂ «·Œ«’</h2>
+
+      <label for="stickerText" data-ar="«ﬂ » «·‰’" data-en="Enter text">«ﬂ » «·‰’</label>
+      <input id="stickerText" type="text" maxlength="40"
+        placeholder="«ﬂ » ⁄»«— ﬂ Â‰«"
+        data-ar-placeholder="«ﬂ » ⁄»«— ﬂ Â‰«"
+        data-en-placeholder="Type your message">
+
+      <label for="stickerEmoji" data-ar="«Œ — «·≈Ì„Ê‘" data-en="Choose emoji">«Œ — «·≈Ì„Ê‘</label>
+      <input id="stickerEmoji" type="text" value="??" maxlength="8">
+
+      <label for="stickerColor" data-ar="·Ê‰ «·„·’ﬁ" data-en="Sticker color">·Ê‰ «·„·’ﬁ</label>
+      <input id="stickerColor" type="color" value="#7055ed">
+
+      <canvas id="stickerCanvas" width="600" height="600"></canvas>
+
+      <button id="downloadSticker" type="button"
+        data-ar=" Õ„Ì· «·„·’ﬁ" data-en="Download Sticker">
+         Õ„Ì· «·„·’ﬁ
+      </button>
+
+      <p id="copyMessage" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="currentYear"></span> <span data-ar="„„·ﬂ… «·≈Ì„Ê‘" data-en="Emojiland">„„·ﬂ… «·≈Ì„Ê‘</span></p>
+    <a href="index.html" data-ar="«·⁄Êœ… ··—∆Ì”Ì…" data-en="Back to Home">«·⁄Êœ… ··—∆Ì”Ì…</a>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

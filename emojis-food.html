@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#7055ed">
+  <meta name="description" content="مجموعة كبيرة من إيموشات الطعام والفاكهة والمشروبات المتحركة للنسخ والتنزيل.">
+  <title>إيموشات الطعام | مملكة الإيموش</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function () {
+      const language = localStorage.getItem("emojilandLanguage") === "en" ? "en" : "ar";
+      document.documentElement.lang = language;
+      document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+    })();
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NZ00TSPTWC');
+  </script>
+
+  <style>
+    .food-page {
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 20px;
+    }
+
+    .food-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .food-header h1 {
+      color: #7055ed;
+      margin-bottom: 12px;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+      gap: 14px;
+    }
+
+    .food-card {
+      background: var(--card-bg, #fff);
+      border: 1px solid #e9e5ff;
+      border-radius: 15px;
+      padding: 12px 8px;
+      min-height: 165px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 9px;
+      box-shadow: 0 3px 12px rgba(50, 30, 100, .06);
+    }
+
+    .food-visual {
+      width: 76px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .food-visual img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+
+    .food-fallback {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .food-name {
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .food-actions {
+      display: flex;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .food-actions button {
+      flex: 1;
+      border: 0;
+      border-radius: 8px;
+      padding: 7px 4px;
+      color: white;
+      background: #7055ed;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .food-actions button.download {
+      background: #18a477;
+    }
+
+    .food-actions button:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    #copyMessage {
+      text-align: center;
+      color: #18a477;
+      font-weight: bold;
+      margin: 22px 0;
+      min-height: 24px;
+    }
+
+    @media(max-width: 480px) {
+      .food-page { padding: 12px; }
+      .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container header-content">
+    <a href="index.html" class="logo"
+       data-ar="😊 مملكة الإيموش"
+       data-en="😊 Emojiland">😊 مملكة الإيموش</a>
+
+    <nav class="nav">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container food-page">
+
+  <section class="food-header">
+    <h1 data-ar="🍕 إيموشات الطعام والمشروبات"
+        data-en="🍕 Food & Drinks Emojis">
+      🍕 إيموشات الطعام والمشروبات
+    </h1>
+
+    <p data-ar="مجموعة متنوعة من إيموشات الأطعمة والفواكه والحلويات والمشروبات. اضغط للنسخ أو التنزيل."
+       data-en="A collection of food, fruit, dessert and drink emojis. Copy or download your favorites.">
+      مجموعة متنوعة من إيموشات الأطعمة والفواكه والحلويات والمشروبات. اضغط للنسخ أو التنزيل.
+    </p>
+  </section>
+
+  <div class="food-grid" id="foodGrid"></div>
+
+  <p id="copyMessage" role="status" aria-live="polite"></p>
+
+  <div style="text-align:center;margin-top:25px">
+    <a href="index.html" class="back-home"
+       data-ar="العودة للرئيسية"
+       data-en="Back to Home">العودة للرئيسية</a>
+  </div>
+
+</main>
+
+<script src="app.js"></script>
+
+<script>
+const foods = [
+  ["🍎","تفاحة","Apple","1f34e"],
+  ["🍏","تفاحة خضراء","Green Apple","1f34f"],
+  ["🍊","برتقالة","Tangerine","1f34a"],
+  ["🍋","ليمونة","Lemon","1f34b"],
+  ["🍌","موزة","Banana","1f34c"],
+  ["🍉","بطيخ","Watermelon","1f349"],
+  ["🍇","عنب","Grapes","1f347"],
+  ["🍓","فراولة","Strawberry","1f353"],
+  ["🫐","توت أزرق","Blueberries","1fad0"],
+  ["🍈","شمام","Melon","1f348"],
+  ["🍒","كرز","Cherries","1f352"],
+  ["🍑","خوخ","Peach","1f351"],
+  ["🥭","مانجو","Mango","1f96d"],
+  ["🍍","أناناس","Pineapple","1f34d"],
+  ["🥥","جوز الهند","Coconut","1f965"],
+  ["🥝","كيوي","Kiwi Fruit","1f95d"],
+  ["🍅","طماطم","Tomato","1f345"],
+  ["🥑","أفوكادو","Avocado","1f951"],
+  ["🍆","باذنجان","Eggplant","1f346"],
+  ["🥔","بطاطس","Potato","1f954"],
+  ["🥕","جزر","Carrot","1f955"],
+  ["🌽","ذرة","Corn","1f33d"],
+  ["🌶️","فلفل حار","Hot Pepper","1f336"],
+  ["🥒","خيار","Cucumber","1f952"],
+  ["🥬","خضروات ورقية","Leafy Green","1f96c"],
+  ["🥦","بروكلي","Broccoli","1f966"],
+  ["🧄","ثوم","Garlic","1f9c4"],
+  ["🧅","بصل","Onion","1f9c5"],
+  ["🍄","مشروم","Mushroom","1f344"],
+  ["🥜","فول سوداني","Peanuts","1f95c"],
+  ["🍞","خبز","Bread","1f35e"],
+  ["🥐","كرواسون","Croissant","1f950"],
+  ["🥖","خبز فرنسي","Baguette","1f956"],
+  ["🧀","جبنة","Cheese","1f9c0"],
+  ["🥚","بيضة","Egg","1f95a"],
+  ["🍳","بيض مقلي","Fried Egg","1f373"],
+  ["🥞","بان كيك","Pancakes","1f95e"],
+  ["🧇","وافل","Waffle","1f9c7"],
+  ["🥓","لحم مقدد","Bacon","1f953"],
+  ["🍔","برجر","Hamburger","1f354"],
+  ["🍟","بطاطس مقلية","French Fries","1f35f"],
+  ["🍕","بيتزا","Pizza","1f355"],
+  ["🌭","هوت دوج","Hot Dog","1f32d"],
+  ["🥪","ساندويتش","Sandwich","1f96a"],
+  ["🌮","تاكو","Taco","1f32e"],
+  ["🌯","بوريتو","Burrito","1f32f"],
+  ["🥗","سلطة","Green Salad","1f957"],
+  ["🍿","فشار","Popcorn","1f37f"],
+  ["🍩","دونات","Doughnut","1f369"],
+  ["🍪","بسكويت","Cookie","1f36a"],
+  ["🎂","كعكة عيد ميلاد","Birthday Cake","1f382"]
+];
+
+const grid = document.getElementById("foodGrid");
+const message = document.getElementById("copyMessage");
+
+function getLanguage() {
+  return document.documentElement.lang === "en" ? "en" : "ar";
+}
+
+function translateFoodPage() {
+  const language = getLanguage();
+
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-ar][data-en]").forEach(element => {
+    element.textContent = element.getAttribute("data-" + language);
+  });
+
+  document.title = language === "ar"
+    ? "إيموشات الطعام | مملكة الإيموش"
+    : "Food Emojis | Emojiland";
+
+  document.querySelector('meta[name="description"]').content =
+    language === "ar"
+      ? "مجموعة كبيرة من إيموشات الطعام والفاكهة والمشروبات المتحركة للنسخ والتنزيل."
+      : "A large collection of animated food, fruit and drink emojis to copy and download.";
+
+  document.querySelectorAll(".food-name").forEach((element, index) => {
+    element.textContent = foods[index][language === "ar" ? 1 : 2];
+  });
+
+  document.querySelectorAll(".copy-button").forEach(button => {
+    button.textContent = language === "ar" ? "نسخ" : "Copy";
+  });
+
+  document.querySelectorAll(".download-button").forEach(button => {
+    button.textContent = language === "ar" ? "تنزيل" : "Download";
+  });
+}
+
+foods.forEach((item, index) => {
+  const card = document.createElement("div");
+  card.className = "food-card";
+
+  const visual = document.createElement("div");
+  visual.className = "food-visual";
+
+  const fallback = document.createElement("span");
+  fallback.className = "food-fallback";
+  fallback.textContent = item[0];
+
+  const img = document.createElement("img");
+  img.alt = item[1];
+  img.loading = "lazy";
+  img.style.display = "none";
+  img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[3]}/512.gif`;
+
+  img.onload = () => {
+    img.style.display = "block";
+    fallback.style.display = "none";
+  };
+
+  img.onerror = () => {
+    img.style.display = "none";
+    fallback.style.display = "block";
+  };
+
+  visual.appendChild(fallback);
+  visual.appendChild(img);
+
+  const name = document.createElement("div");
+  name.className = "food-name";
+  name.textContent = item[getLanguage() === "ar" ? 1 : 2];
+
+  const actions = document.createElement("div");
+  actions.className = "food-actions";
+
+  const copyButton = document.createElement("button");
+  copyButton.type = "button";
+  copyButton.className = "copy-button";
+  copyButton.textContent = getLanguage() === "ar" ? "نسخ" : "Copy";
+
+  copyButton.addEventListener("click", async () => {
+    let copied = false;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(item[0]);
+        copied = true;
+      }
+    } catch (error) {
+      copied = false;
+    }
+
+    if (!copied) {
+      const input = document.createElement("textarea");
+      input.value = item[0];
+      input.setAttribute("readonly", "");
+      input.style.position = "fixed";
+      input.style.left = "-9999px";
+      input.style.top = "0";
+
+      document.body.appendChild(input);
+      input.focus();
+      input.select();
+      input.setSelectionRange(0, input.value.length);
+
+      try {
+        copied = document.execCommand("copy");
+      } catch (error) {
+        copied = false;
+      }
+
+      input.remove();
+    }
+
+    const language = getLanguage();
+
+    message.textContent = copied
+      ? (language === "ar"
+          ? "تم نسخ الإيموش بنجاح! " + item[0]
+          : "Emoji copied successfully! " + item[0])
+      : (language === "ar"
+          ? "تعذر النسخ. حاول مرة أخرى."
+          : "Could not copy. Please try again.");
+  });
+
+  const downloadButton = document.createElement("button");
+  downloadButton.type = "button";
+  downloadButton.className = "download download-button";
+  downloadButton.textContent = getLanguage() === "ar" ? "تنزيل" : "Download";
+
+  downloadButton.addEventListener("click", async () => {
+    downloadButton.disabled = true;
+    downloadButton.textContent =
+      getLanguage() === "ar" ? "جاري التنزيل..." : "Downloading...";
+
+    try {
+      const response = await fetch(img.src);
+
+      if (!response.ok) {
+        throw new Error("Download failed");
+      }
+
+      const blob = await response.blob();
+
+      if (!blob.size) {
+        throw new Error("Empty file");
+      }
+
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "food-emoji-" + (index + 1) + ".gif";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
+
+    } catch (error) {
+      message.textContent =
+        getLanguage() === "ar"
+          ? "تعذر التنزيل من مصدر الصورة. جرّب إيموشًا آخر."
+          : "Download failed. Please try another emoji.";
+    }
+
+    downloadButton.disabled = false;
+    downloadButton.textContent =
+      getLanguage() === "ar" ? "تنزيل" : "Download";
+  });
+
+  actions.appendChild(copyButton);
+  actions.appendChild(downloadButton);
+
+  card.appendChild(visual);
+  card.appendChild(name);
+  card.appendChild(actions);
+
+  grid.appendChild(card);
+});
+
+translateFoodPage();
+
+window.addEventListener("storage", event => {
+  if (event.key === "emojilandLanguage") {
+    const language = event.newValue === "en" ? "en" : "ar";
+    document.documentElement.lang = language;
+    translateFoodPage();
+  }
+});
+</script>
+
+</body>
+</html>

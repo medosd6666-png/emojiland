@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7655c5">
+<meta name="description" content="مجموعة من الإيموشات المتحركة المجانية، انسخها أو نزّلها بصيغة GIF.">
+<title>الإيموشات المتحركة | مملكة الإيموش</title>
+
+<script>
+(() => {
+  const language = localStorage.getItem("emojilandLanguage") || "ar";
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+})();
+</script>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
+</script>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f8f7fc;color:#29243a}
+.page-header{background:#fff;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:0 2px 12px #0000000b}
+.brand{font-size:21px;font-weight:bold;color:#7655c5;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.nav-links a{color:#51466b;text-decoration:none;font-size:14px}
+.main{max-width:1100px;margin:35px auto;padding:0 16px}
+.intro{text-align:center;margin-bottom:25px}
+.intro h1{font-size:30px;color:#6246a6;margin:0 0 12px}
+.intro p{color:#777;margin:0;line-height:1.8}
+.status{background:#fff;border:1px solid #eee7f8;border-radius:12px;padding:13px;text-align:center;margin:20px 0;color:#7655c5}
+.progress{height:7px;background:#eee8f8;border-radius:10px;overflow:hidden;margin-top:10px}
+.progress-bar{height:100%;width:0;background:#7655c5;transition:width .2s}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:14px}
+.emoji-card{background:#fff;border:1px solid #eee8f5;border-radius:14px;padding:13px 8px;text-align:center;box-shadow:0 3px 12px #30205008}
+.emoji-image{width:60px;height:60px;object-fit:contain;display:block;margin:0 auto 10px}
+.card-actions{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
+.card-actions button{border:0;border-radius:7px;padding:7px 10px;background:#7655c5;color:#fff;cursor:pointer;font-size:12px}
+.card-actions button:hover{background:#5e42a5}
+.card-actions button:disabled{opacity:.6;cursor:wait}
+.empty{display:none;text-align:center;background:#fff;padding:25px;border-radius:12px;color:#777;line-height:1.8}
+.footer{text-align:center;padding:25px 12px;color:#777;font-size:13px}
+.footer a{color:#7655c5}
+@media(max-width:500px){
+ .page-header{justify-content:center}
+ .brand{width:100%;text-align:center}
+ .nav-links{justify-content:center}
+ .intro h1{font-size:25px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+}
+</style>
+</head>
+
+<body>
+
+<header class="page-header">
+<a class="brand" href="index.html"
+   data-ar="😊 مملكة الإيموش"
+   data-en="😊 Emojiland">😊 مملكة الإيموش</a>
+
+<nav class="nav-links">
+<a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+<a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
+</nav>
+</header>
+
+<main class="main">
+<section class="intro">
+<h1 data-ar="الإيموشات المتحركة" data-en="Animated Emojis">الإيموشات المتحركة</h1>
+
+<p data-ar="اضغط على نسخ لنسخ الإيموش، أو تنزيل لحفظه بصيغة GIF متحركة."
+data-en="Copy an emoji or download its animated GIF.">
+اضغط على نسخ لنسخ الإيموش، أو تنزيل لحفظه بصيغة GIF متحركة.
+</p>
+</section>
+
+<div class="status" id="status">
+<span id="statusText">جاري تحميل الإيموشات...</span>
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+</div>
+
+<div class="grid" id="emojiGrid"></div>
+
+<div class="empty" id="emptyMessage"
+data-ar="لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة."
+data-en="No animated files are currently available. Try refreshing the page.">
+لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة.
+</div>
+</main>
+
+<footer class="footer">
+<p>Animated Noto Emoji — Google Fonts</p>
+<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+Creative Commons Attribution 4.0
+</a>
+</footer>
+
+<script>
+(function(){
+"use strict";
+
+const LANGUAGE_KEY = "emojilandLanguage";
+let language = localStorage.getItem(LANGUAGE_KEY) || "ar";
+
+const grid = document.getElementById("emojiGrid");
+const statusText = document.getElementById("statusText");
+const progressBar = document.getElementById("progressBar");
+const emptyMessage = document.getElementById("emptyMessage");
+
+const extraCodes = [
+"1f910","1f911","1f912","1f913","1f914",
+"1f915","1f917","1f920","1f921","1f922",
+"1f923","1f924","1f925","1f927","1f929",
+"1f92a","1f92b","1f92c","1f92d","1f92e"
+];
+
+const codes = Array.from({length:80},(_,i)=>
+(0x1f600+i).toString(16)
+).concat(extraCodes);
+
+let completed = 0;
+let loaded = 0;
+
+function t(ar,en){
+ return language === "ar" ? ar : en;
+}
+
+function updateLanguage(){
+ document.documentElement.lang = language;
+ document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+
+ document.querySelectorAll("[data-ar][data-en]").forEach(el=>{
+  el.textContent = el.dataset[language];
+ });
+
+ document.title = t(
+  "الإيموشات المتحركة | مملكة الإيموش",
+  "Animated Emojis | Emojiland"
+ );
+
+ document.querySelector('meta[name="description"]').content = t(
+  "مجموعة من الإيموشات المتحركة المجانية، انسخها أو نزّلها بصيغة GIF.",
+  "Free animated emojis. Copy them or download them as GIF files."
+ );
+
+ updateStatus();
+ updateButtons();
+}
+
+function updateStatus(){
+ if(completed < codes.length){
+  statusText.textContent = t(
+   `جاري الفحص... ${completed} من ${codes.length} — تم تحميل ${loaded}`,
+   `Checking... ${completed} of ${codes.length} — Loaded ${loaded}`
+  );
+ }else{
+  statusText.textContent = t(
+   `تم الانتهاء! تم تحميل ${loaded} إيموش متحرك فعليًا.`,
+   `Finished! ${loaded} animated emojis loaded.`
+  );
+ }
+
+ progressBar.style.width = (completed / codes.length * 100) + "%";
+}
+
+function updateButtons(){
+ document.querySelectorAll(".copy-button").forEach(button=>{
+  if(!button.dataset.feedback){
+   button.textContent = t("نسخ","Copy");
+  }
+ });
+
+ document.querySelectorAll(".download-button").forEach(button=>{
+  if(!button.disabled){
+   button.textContent = t("تنزيل GIF","Download GIF");
+  }
+ });
+}
+
+window.addEventListener("storage",event=>{
+ if(event.key === LANGUAGE_KEY && event.newValue){
+  language = event.newValue === "en" ? "en" : "ar";
+  updateLanguage();
+ }
+});
+
+function makeCard(code,img){
+ const card = document.createElement("div");
+ card.className = "emoji-card";
+
+ const emoji = String.fromCodePoint(parseInt(code,16));
+
+ img.className = "emoji-image";
+ img.alt = emoji;
+ img.width = 60;
+ img.height = 60;
+ img.loading = "lazy";
+
+ const actions = document.createElement("div");
+ actions.className = "card-actions";
+
+ const copyButton = document.createElement("button");
+ copyButton.className = "copy-button";
+ copyButton.textContent = t("نسخ","Copy");
+ copyButton.type = "button";
+
+ copyButton.addEventListener("click",async()=>{
+  let success = false;
+
+  try{
+   if(navigator.clipboard && window.isSecureContext){
+    await navigator.clipboard.writeText(emoji);
+    success = true;
+   }else{
+    const field = document.createElement("textarea");
+    field.value = emoji;
+    field.style.position = "fixed";
+    field.style.opacity = "0";
+    document.body.appendChild(field);
+    field.select();
+    success = document.execCommand("copy");
+    field.remove();
+
+    if(!success) throw new Error("Copy failed");
+   }
+
+   copyButton.dataset.feedback = "true";
+   copyButton.textContent = t("تم النسخ بنجاح ✓","Copied successfully ✓");
+
+   setTimeout(()=>{
+    delete copyButton.dataset.feedback;
+    copyButton.textContent = t("نسخ","Copy");
+   },1300);
+
+  }catch(error){
+   copyButton.dataset.feedback = "true";
+   copyButton.textContent = t("تعذر النسخ","Copy failed");
+
+   setTimeout(()=>{
+    delete copyButton.dataset.feedback;
+    copyButton.textContent = t("نسخ","Copy");
+   },1300);
+  }
+ });
+
+ const downloadButton = document.createElement("button");
+ downloadButton.className = "download-button";
+ downloadButton.textContent = t("تنزيل GIF","Download GIF");
+ downloadButton.type = "button";
+
+ downloadButton.addEventListener("click",async()=>{
+  downloadButton.disabled = true;
+  downloadButton.textContent = t("جاري التنزيل...","Downloading...");
+
+  const url = img.src;
+
+  try{
+   const response = await fetch(url);
+   if(!response.ok) throw new Error("Download failed");
+
+   const blob = await response.blob();
+   if(!blob.size) throw new Error("Empty file");
+
+   const blobUrl = URL.createObjectURL(blob);
+   const link = document.createElement("a");
+
+   link.href = blobUrl;
+   link.download = code + ".gif";
+
+   document.body.appendChild(link);
+   link.click();
+   link.remove();
+
+   setTimeout(()=>URL.revokeObjectURL(blobUrl),2000);
+
+  }catch(error){
+   window.open(url,"_blank","noopener");
+  }
+
+  downloadButton.disabled = false;
+  downloadButton.textContent = t("تنزيل GIF","Download GIF");
+ });
+
+ actions.append(copyButton,downloadButton);
+ card.append(img,actions);
+ grid.appendChild(card);
+}
+
+function loadOne(code){
+ return new Promise(resolve=>{
+  const img = new Image();
+  const url = `https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif`;
+
+  img.onload = ()=>{
+   loaded++;
+   makeCard(code,img);
+   completed++;
+   updateStatus();
+   resolve();
+  };
+
+  img.onerror = ()=>{
+   completed++;
+   updateStatus();
+   resolve();
+  };
+
+  img.src = url;
+ });
+}
+
+async function startLoading(){
+ const batchSize = 8;
+
+ for(let i=0;i<codes.length;i+=batchSize){
+  const batch = codes.slice(i,i+batchSize);
+  await Promise.all(batch.map(loadOne));
+ }
+
+ emptyMessage.style.display = loaded === 0 ? "block" : "none";
+ updateStatus();
+}
+
+updateLanguage();
+startLoading();
+
+})();
+</script>
+
+</body>
+</html>

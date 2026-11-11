@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#7055ed">
+<title>إيموشات الأنشطة المتحركة | مملكة الإيموش</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.activities-page{max-width:1100px;margin:35px auto;padding:15px}
+.activities-title{text-align:center;margin-bottom:25px}
+.activities-title h1{font-size:30px}
+.activities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:14px}
+.activity-card{background:var(--card-bg,#fff);border:1px solid #e8e8ef;border-radius:16px;padding:12px;text-align:center;box-shadow:0 3px 12px #00000008}
+.activity-card img{width:85px;height:85px;object-fit:contain}
+.activity-card p{margin:8px 0;font-weight:600}
+.activity-actions{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.activity-actions button{border:0;border-radius:8px;padding:7px 10px;background:#7055ed;color:white;cursor:pointer}
+.activity-actions button:hover{opacity:.85}
+.activity-actions button:disabled{opacity:.6;cursor:wait}
+.loading{text-align:center;padding:20px}
+</style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-NZ00TSPTWC');
+</script>
+</head>
+
+<body>
+
+<header>
+  <div class="activities-page">
+    <a href="index.html" id="siteLogo">😊 مملكة الإيموش</a>
+    <a href="index.html" id="homeLink">الرئيسية</a>
+    <a href="stickers.html" id="stickersLink">الملصقات</a>
+  </div>
+</header>
+
+<main class="activities-page">
+
+  <section class="activities-title">
+    <h1 data-ar="🎮 إيموشات الأنشطة المتحركة" data-en="🎮 Animated Activities Emoji">🎮 إيموشات الأنشطة المتحركة</h1>
+    <p data-ar="إيموشات متحركة فعلًا للرياضة والألعاب والمرح" data-en="Real animated emoji for sports, games and fun">إيموشات متحركة فعلًا للرياضة والألعاب والمرح</p>
+  </section>
+
+  <div id="loading" class="loading"
+       data-ar="جاري تحميل الإيموشات المتحركة..."
+       data-en="Loading animated emoji...">
+    جاري تحميل الإيموشات المتحركة...
+  </div>
+
+  <section class="activities-grid" id="activitiesGrid"></section>
+
+  <p id="emptyMessage" class="loading" hidden
+     data-ar="لم تتوفر صور متحركة في هذه المجموعة حاليًا."
+     data-en="No animated images are currently available in this collection.">
+    لم تتوفر صور متحركة في هذه المجموعة حاليًا.
+  </p>
+
+</main>
+
+<script src="app.js"></script>
+
+<script>
+// اللغة موحدة مع الصفحة الرئيسية
+const LANGUAGE_KEY = "emojilandLanguage";
+
+function getPageLanguage(){
+  const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+
+  if(savedLanguage === "ar" || savedLanguage === "en"){
+    return savedLanguage;
+  }
+
+  const urlLanguage = new URLSearchParams(location.search).get("lang");
+
+  return urlLanguage === "en" ? "en" : "ar";
+}
+
+let pageLanguage = getPageLanguage();
+
+function applyPageLanguage(language){
+  pageLanguage = language === "en" ? "en" : "ar";
+
+  document.documentElement.lang = pageLanguage;
+  document.documentElement.dir = pageLanguage === "ar" ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-ar][data-en]").forEach(element=>{
+    element.textContent = element.getAttribute("data-" + pageLanguage);
+  });
+
+  document.getElementById("siteLogo").textContent =
+    pageLanguage === "ar" ? "😊 مملكة الإيموش" : "😊 Emojiland";
+
+  document.getElementById("homeLink").textContent =
+    pageLanguage === "ar" ? "الرئيسية" : "Home";
+
+  document.getElementById("stickersLink").textContent =
+    pageLanguage === "ar" ? "الملصقات" : "Stickers";
+
+  document.title = pageLanguage === "ar"
+    ? "إيموشات الأنشطة المتحركة | مملكة الإيموش"
+    : "Animated Activities Emoji | Emojiland";
+
+  document.querySelectorAll(".activity-card").forEach(card=>{
+    const name = card.querySelector(".activity-name");
+    const item = card.dataset.code;
+
+    if(name && item){
+      name.textContent = getActivityName(item);
+    }
+
+    const buttons = card.querySelectorAll(".activity-actions button");
+
+    if(buttons.length === 2){
+      buttons[0].textContent = pageLanguage === "ar" ? "نسخ" : "Copy";
+
+      if(!buttons[1].disabled){
+        buttons[1].textContent = pageLanguage === "ar" ? "تنزيل GIF" : "Download GIF";
+      }
+    }
+  });
+}
+
+// استقبال أي تغيير للغة من الصفحة الرئيسية أو تبويب آخر
+window.addEventListener("storage", event=>{
+  if(event.key === LANGUAGE_KEY){
+    applyPageLanguage(event.newValue || "ar");
+  }
+});
+
+const activities = [
+["🏅","ميدالية رياضية","1f3c5"],
+["🏆","كأس البطولة","1f3c6"],
+["🏇","سباق الخيل","1f3c7"],
+["🤸","الجمباز","1f938"],
+["🤼","المصارعة","1f93c"],
+["🤺","المبارزة","1f93a"],
+["🤾","كرة اليد","1f93e"],
+["🤽","كرة الماء","1f93d"],
+["🥊","الملاكمة","1f94a"],
+["🥋","الفنون القتالية","1f94b"],
+["🥅","مرمى الكرة","1f945"],
+["🥍","اللاكروس","1f94d"],
+["🏌️","الجولف","1f3cc"],
+["🏄","ركوب الأمواج","1f3c4"],
+["🏊","السباحة","1f3ca"],
+["🚣","التجديف","1f6a3"],
+["🚴","ركوب الدراجة","1f6b4"],
+["🚵","الدراجات الجبلية","1f6b5"],
+["🏃","الجري","1f3c3"],
+["🚶","المشي","1f6b6"],
+["🧗","تسلق الجبال","1f9d7"],
+["⛷️","التزلج","26f7"],
+["🏂","التزلج على الثلج","1f3c2"],
+["⛸️","التزلج على الجليد","26f8"],
+["🛹","لوح التزلج","1f6f9"],
+["🛼","التزلج بالعجلات","1f6fc"],
+["💃","الرقص","1f483"],
+["🕺","الرقص","1f57a"],
+["🩰","الباليه","1fa70"],
+["🎯","الهدف","1f3af"],
+["🎳","البولينج","1f3b3"],
+["🎮","ألعاب الفيديو","1f3ae"],
+["🎲","النرد","1f3b2"],
+["🧩","الألغاز","1f9e9"],
+["♟️","الشطرنج","265f"],
+["🎨","الرسم","1f3a8"],
+["🎭","الفنون","1f3ad"],
+["🎤","الغناء","1f3a4"],
+["🎸","الجيتار","1f3b8"],
+["🎹","البيانو","1f3b9"],
+["🥁","الطبول","1f941"],
+["🎺","البوق","1f3ba"],
+["🎻","الكمان","1f3bb"],
+["🎪","السيرك","1f3aa"],
+["🎉","احتفال","1f389"],
+["🎊","قصاصات ملونة","1f38a"],
+["🎈","بالون","1f388"],
+["🎁","هدية","1f381"],
+["🪁","طائرة ورقية","1fa81"],
+["🎟️","تذكرة","1f39f"],
+["🎫","تذكرة عرض","1f3ab"],
+["⚽","كرة القدم","26bd"],
+["🏀","كرة السلة","1f3c0"],
+["🏈","كرة القدم الأمريكية","1f3c8"],
+["⚾","البيسبول","26be"],
+["🥎","السوفتبول","1f94e"],
+["🎾","التنس","1f3be"],
+["🏐","الكرة الطائرة","1f3d0"],
+["🏉","الرجبي","1f3c9"],
+["🏏","الكريكيت","1f3cf"],
+["🏑","الهوكي","1f3d1"],
+["🏒","هوكي الجليد","1f3d2"],
+["🏓","تنس الطاولة","1f3d3"],
+["🏸","الريشة الطائرة","1f3f8"],
+["🥏","القرص الطائر","1f94f"],
+["🪃","البوميرانج","1fa83"],
+["🎣","صيد السمك","1f3a3"],
+["🏋️","رفع الأثقال","1f3cb"],
+["🤹","لعب الخفة","1f939"],
+["🧘","التأمل","1f9d8"],
+["🚣","التجديف","1f6a3"],
+["🏄","ركوب الأمواج","1f3c4"],
+["🏌️","الجولف","1f3cc"],
+["🪂","القفز بالمظلة","1fa82"],
+["🛶","التجديف بالقارب","1f6f6"],
+["🥇","ميدالية ذهبية","1f947"],
+["🥈","ميدالية فضية","1f948"],
+["🥉","ميدالية برونزية","1f949"]
+];
+
+const englishNames = {
+"1f3c5":"Sports Medal",
+"1f3c6":"Trophy",
+"1f3c7":"Horse Racing",
+"1f938":"Gymnastics",
+"1f93c":"Wrestling",
+"1f93a":"Fencing",
+"1f93e":"Handball",
+"1f93d":"Water Polo",
+"1f94a":"Boxing",
+"1f94b":"Martial Arts",
+"1f945":"Goal Net",
+"1f94d":"Lacrosse",
+"1f3cc":"Golf",
+"1f3c4":"Surfing",
+"1f3ca":"Swimming",
+"1f6a3":"Rowing",
+"1f6b4":"Cycling",
+"1f6b5":"Mountain Biking",
+"1f3c3":"Running",
+"1f6b6":"Walking",
+"1f9d7":"Climbing",
+"26f7":"Skiing",
+"1f3c2":"Snowboarding",
+"26f8":"Ice Skating",
+"1f6f9":"Skateboarding",
+"1f6fc":"Roller Skating",
+"1f483":"Dancing",
+"1f57a":"Man Dancing",
+"1fa70":"Ballet",
+"1f3af":"Bullseye",
+"1f3b3":"Bowling",
+"1f3ae":"Video Games",
+"1f3b2":"Dice",
+"1f9e9":"Puzzle",
+"265f":"Chess",
+"1f3a8":"Painting",
+"1f3ad":"Performing Arts",
+"1f3a4":"Singing",
+"1f3b8":"Guitar",
+"1f3b9":"Piano",
+"1f941":"Drums",
+"1f3ba":"Trumpet",
+"1f3bb":"Violin",
+"1f3aa":"Circus",
+"1f389":"Celebration",
+"1f38a":"Confetti",
+"1f388":"Balloon",
+"1f381":"Gift",
+"1fa81":"Kite",
+"1f39f":"Admission Ticket",
+"1f3ab":"Ticket",
+"26bd":"Soccer",
+"1f3c0":"Basketball",
+"1f3c8":"American Football",
+"26be":"Baseball",
+"1f94e":"Softball",
+"1f3be":"Tennis",
+"1f3d0":"Volleyball",
+"1f3c9":"Rugby",
+"1f3cf":"Cricket",
+"1f3d1":"Field Hockey",
+"1f3d2":"Ice Hockey",
+"1f3d3":"Ping Pong",
+"1f3f8":"Badminton",
+"1f94f":"Flying Disc",
+"1fa83":"Boomerang",
+"1f3a3":"Fishing",
+"1f3cb":"Weightlifting",
+"1f939":"Juggling",
+"1f9d8":"Meditation",
+"1fa82":"Parachuting",
+"1f6f6":"Canoeing",
+"1f947":"Gold Medal",
+"1f948":"Silver Medal",
+"1f949":"Bronze Medal"
+};
+
+function getActivityName(code){
+  const item = activities.find(activity=>activity[2] === code);
+  if(!item) return "";
+
+  return pageLanguage === "ar"
+    ? item[1]
+    : (englishNames[code] || item[1]);
+}
+
+const grid = document.getElementById("activitiesGrid");
+const loading = document.getElementById("loading");
+const empty = document.getElementById("emptyMessage");
+
+let loaded = 0;
+let finished = 0;
+
+activities.forEach(item=>{
+  const card = document.createElement("article");
+  card.className = "activity-card";
+  card.hidden = true;
+  card.dataset.code = item[2];
+
+  const img = document.createElement("img");
+  img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[2]}/512.gif`;
+  img.alt = item[1];
+  img.loading = "lazy";
+
+  img.onload = ()=>{
+    loaded++;
+    card.hidden = false;
+
+    loading.textContent = pageLanguage === "ar"
+      ? "تم تحميل الإيموشات المتاحة"
+      : "Available emoji loaded";
+
+    finished++;
+
+    if(finished === activities.length){
+      loading.hidden = true;
+    }
+  };
+
+  img.onerror = ()=>{
+    card.remove();
+    finished++;
+
+    if(finished === activities.length){
+      loading.hidden = true;
+
+      if(loaded === 0){
+        empty.hidden = false;
+      }
+    }
+  };
+
+  const name = document.createElement("p");
+  name.className = "activity-name";
+  name.textContent = getActivityName(item[2]);
+
+  const actions = document.createElement("div");
+  actions.className = "activity-actions";
+
+  const copy = document.createElement("button");
+  copy.textContent = pageLanguage === "ar" ? "نسخ" : "Copy";
+
+  copy.onclick = ()=>{
+    navigator.clipboard.writeText(item[0]).then(()=>{
+      alert(pageLanguage === "ar" ? "تم النسخ" : "Copied");
+    }).catch(()=>{
+      alert(pageLanguage === "ar" ? "تعذر النسخ" : "Unable to copy");
+    });
+  };
+
+  const download = document.createElement("button");
+  download.textContent = pageLanguage === "ar" ? "تنزيل GIF" : "Download GIF";
+
+  download.onclick = async()=>{
+    const originalText = pageLanguage === "ar" ? "تنزيل GIF" : "Download GIF";
+
+    download.textContent = pageLanguage === "ar"
+      ? "جاري التنزيل..."
+      : "Downloading...";
+
+    download.disabled = true;
+
+    try{
+      const response = await fetch(img.src);
+
+      if(!response.ok){
+        throw new Error("Download failed");
+      }
+
+      const blob = await response.blob();
+
+      if(!blob.size){
+        throw new Error("Empty file");
+      }
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+
+      a.href = url;
+      a.download = item[2] + ".gif";
+
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+
+      setTimeout(()=>{
+        URL.revokeObjectURL(url);
+      },5000);
+
+    }catch(error){
+      alert(pageLanguage === "ar"
+        ? "تعذر تنزيل الإيموش. تأكد من اتصال الإنترنت وحاول مرة أخرى."
+        : "Unable to download the emoji. Check your internet connection and try again.");
+    }finally{
+      download.textContent = originalText;
+      download.disabled = false;
+    }
+  };
+
+  actions.append(copy,download);
+  card.append(img,name,actions);
+  grid.append(card);
+});
+
+// تطبيق لغة الرئيسية عند فتح الصفحة
+applyPageLanguage(pageLanguage);
+</script>
+
+</body>
+</html>
