@@ -69,26 +69,29 @@
       transform: translateY(-2px);
     }
 
-    .tools-banner {
-      position: relative;
-      z-index: 2;
-      display: flex;
+    /* رابط سوق الأدوات في الهيدر */
+    .tools-market-link {
+      display: inline-flex;
       align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .tools-banner > div {
-      flex: 1;
-    }
-
-    .tools-banner > a {
-      position: relative;
-      z-index: 5;
-      pointer-events: auto;
-      display: inline-block;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 14px;
+      border: 1px solid #e9d5ff;
+      border-radius: 10px;
+      background: #faf5ff;
+      color: #7655c5;
       text-decoration: none;
-      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 1;
+      transition: all 0.2s ease;
+    }
+
+    .tools-market-link:hover {
+      background: #f3e8ff;
+      border-color: #c084fc;
+      transform: translateY(-1px);
     }
 
     @media (max-width: 650px) {
@@ -103,14 +106,12 @@
         font-size: 48px;
       }
 
-      .tools-banner {
-        margin: 15px 12px;
+      .tools-market-link {
+        max-width: 100%;
+        white-space: normal;
         text-align: center;
-        justify-content: center;
-      }
-
-      .tools-banner > div {
-        flex-basis: 100%;
+        font-size: 12px;
+        padding: 8px 10px;
       }
     }
   </style>
@@ -131,6 +132,17 @@
   <a href="index.html" class="logo">
     <span class="logo-icon">✦</span>
     <span data-ar="مملكة الإيموش" data-en="Emojiland">مملكة الإيموش</span>
+  </a>
+
+  <!-- رابط سوق الأدوات في الهيدر -->
+  <a class="tools-market-link"
+     href="https://medosd6666-png.github.io/tools-market/"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="سوق الأدوات">
+    <span data-ar="اطّلع على موقعنا" data-en="Visit our website">اطّلع على موقعنا</span>
+    👑
+    <span data-ar="سوق الأدوات" data-en="Tools Market">سوق الأدوات</span>
   </a>
 
   <nav class="navigation">
@@ -323,26 +335,6 @@
         <canvas id="stickerCanvas" width="700" height="500"></canvas>
       </div>
     </div>
-  </section>
-
-  <!-- الربط مع سوق الأدوات -->
-  <section class="tools-banner">
-    <div class="tools-icon">🧰</div>
-
-    <div>
-      <h3 data-ar="اكتشف أدواتنا المجانية" data-en="Discover our free tools">اكتشف أدواتنا المجانية</h3>
-      <p data-ar="أدوات مفيدة للصور وملفات PDF في مكان واحد." data-en="Useful image and PDF tools in one place.">
-        أدوات مفيدة للصور وملفات PDF في مكان واحد.
-      </p>
-    </div>
-
-    <a href="https://medosd6666-png.github.io/tools-market/"
-       target="_blank"
-       rel="noopener noreferrer"
-       data-ar="استخدم أدواتنا المجانية ←"
-       data-en="Explore our free tools →">
-      استخدم أدواتنا المجانية ←
-    </a>
   </section>
 
 </main>
