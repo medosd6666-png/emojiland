@@ -8,6 +8,7 @@
   <title>اتصل بنا | مملكة الإيموش</title>
   <link rel="stylesheet" href="style.css">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -164,12 +165,18 @@
 
     <p
       data-i18n
-      data-ar="يسعدنا أن نسمع منك! إذا كان لديك اقتراح لتطوير الموقع، أو واجهت مشكلة أثناء استخدام الإيموشات أو الملصقات، يمكنك كتابة رسالتك وتجهيزها للنسخ."
-      data-en="We would love to hear from you! If you have a suggestion or encounter a problem while using our emojis or stickers, you can write your message and copy it.">
-      يسعدنا أن نسمع منك! إذا كان لديك اقتراح لتطوير الموقع، أو واجهت مشكلة أثناء استخدام الإيموشات أو الملصقات، يمكنك كتابة رسالتك وتجهيزها للنسخ.
+      data-ar="يسعدنا أن نسمع منك! إذا كان لديك اقتراح لتطوير الموقع، أو واجهت مشكلة أثناء استخدام الإيموشات أو الملصقات، أرسل لنا رسالتك من خلال النموذج التالي."
+      data-en="We would love to hear from you! If you have a suggestion or encounter a problem while using our emojis or stickers, send us your message using the form below.">
+      يسعدنا أن نسمع منك! إذا كان لديك اقتراح لتطوير الموقع، أو واجهت مشكلة أثناء استخدام الإيموشات أو الملصقات، أرسل لنا رسالتك من خلال النموذج التالي.
     </p>
 
-    <form class="contact-form" id="contactForm">
+    <form
+      class="contact-form"
+      action="https://formsubmit.co/medosd6666@gmail.com"
+      method="POST">
+
+      <input type="hidden" name="_subject" value="رسالة جديدة من موقع مملكة الإيموش">
+      <input type="hidden" name="_template" value="table">
 
       <div>
         <label for="contactName"
@@ -207,7 +214,7 @@
         <input
           type="text"
           id="contactSubject"
-          name="subject"
+          name="message_subject"
           maxlength="120"
           required
           placeholder="اكتب موضوع الرسالة"
@@ -229,4 +236,27 @@
       </div>
 
       <button class="contact-submit" type="submit"
-        data-i18n data-ar="نسخ الرسالة" data-en="Copy Message
+        data-i18n data-ar="إرسال الرسالة" data-en="Send Message">
+        إرسال الرسالة
+      </button>
+    </form>
+
+    <p class="contact-note"
+      data-i18n
+      data-ar="نشكرك على تواصلك معنا. نحرص على قراءة رسائلك وملاحظاتك."
+      data-en="Thank you for contacting us. We appreciate your messages and feedback.">
+      نشكرك على تواصلك معنا. نحرص على قراءة رسائلك وملاحظاتك.
+    </p>
+
+  </main>
+
+  <footer class="contact-footer">
+    <a href="index.html" data-i18n data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="about.html" data-i18n data-ar="من نحن" data-en="About Us">من نحن</a>
+    <a href="privacy.html" data-i18n data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+    <p>© مملكة الإيموش | Emojiland</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
