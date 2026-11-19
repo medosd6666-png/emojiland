@@ -1,23 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#7055ed">
-  <meta name="description" content="اكتشف إيموشات الحيوانات والطبيعة المتحركة، وانسخها أو نزّلها بسهولة.">
-  <title>إيموشات الحيوانات والطبيعة | مملكة الإيموش</title>
+
+  <meta name="description" content="اكتشف ايموش الحيوانات والطبيعة المتحركة في مملكة الإيموش. مجموعة من إيموشات الحيوانات والطيور والكائنات البحرية والنباتات، مع إمكانية النسخ والتنزيل مجانًا.">
+
+  <meta name="keywords" content="ايموش, ايموش متحرك, ايموشات الحيوانات, ايموشات الطبيعة, ايموشات الطيور, ايموشات الكائنات البحرية">
+
+  <meta name="robots" content="index, follow">
+
+  <title>ايموش الحيوانات والطبيعة المتحركة | مملكة الإيموش</title>
+
   <link rel="stylesheet" href="style.css">
 
   <script>
     (function () {
       const savedLanguage = localStorage.getItem("emojilandLanguage");
-      const language = savedLanguage === "en" ? "en" : "ar";
+      const urlLanguage = new URLSearchParams(location.search).get("lang");
+
+      const language =
+        savedLanguage === "ar" || savedLanguage === "en"
+          ? savedLanguage
+          : urlLanguage === "en" ? "en" : "ar";
+
       document.documentElement.lang = language;
       document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
     })();
   </script>
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -163,9 +176,9 @@
       🐶 إيموشات الحيوانات والطبيعة
     </h1>
 
-    <p data-ar="اكتشف مجموعة متنوعة من الحيوانات والطيور والكائنات البحرية والنباتات. اضغط للنسخ أو التنزيل."
-       data-en="Explore animals, birds, sea creatures and nature emojis. Copy or download your favorites.">
-      اكتشف مجموعة متنوعة من الحيوانات والطيور والكائنات البحرية والنباتات. اضغط للنسخ أو التنزيل.
+    <p data-ar="اكتشف ايموش الحيوانات والطبيعة المتحركة، بما في ذلك الحيوانات والطيور والكائنات البحرية والنباتات. انسخ الإيموش الذي يعجبك أو نزّله بسهولة مجانًا."
+       data-en="Explore animated animals and nature emojis, including animals, birds, sea creatures and plants. Copy your favorite emoji or download it for free.">
+      اكتشف ايموش الحيوانات والطبيعة المتحركة، بما في ذلك الحيوانات والطيور والكائنات البحرية والنباتات. انسخ الإيموش الذي يعجبك أو نزّله بسهولة مجانًا.
     </p>
   </section>
 
@@ -254,16 +267,22 @@ function translatePage() {
   });
 
   document.title = language === "ar"
-    ? "إيموشات الحيوانات والطبيعة | مملكة الإيموش"
-    : "Animals & Nature Emojis | Emojiland";
+    ? "ايموش الحيوانات والطبيعة المتحركة | مملكة الإيموش"
+    : "Animated Animals & Nature Emojis | Emojiland";
 
   document.querySelector('meta[name="description"]').content =
     language === "ar"
-      ? "اكتشف إيموشات الحيوانات والطبيعة المتحركة، وانسخها أو نزّلها بسهولة."
-      : "Discover animated animals and nature emojis. Copy or download them easily.";
+      ? "اكتشف ايموش الحيوانات والطبيعة المتحركة في مملكة الإيموش. انسخ إيموشات الحيوانات والطيور والكائنات البحرية أو نزّلها مجانًا."
+      : "Discover animated animals and nature emojis. Copy or download animal, bird and sea creature emojis for free.";
 
   document.querySelectorAll(".animal-name").forEach((element, index) => {
     element.textContent = animals[index][language === "ar" ? 1 : 2];
+  });
+
+  document.querySelectorAll(".animal-image").forEach((image, index) => {
+    image.alt = language === "ar"
+      ? "ايموش " + animals[index][1]
+      : animals[index][2] + " emoji";
   });
 
   document.querySelectorAll(".copy-button").forEach(button => {
@@ -271,7 +290,9 @@ function translatePage() {
   });
 
   document.querySelectorAll(".download-button").forEach(button => {
-    button.textContent = language === "ar" ? "تنزيل" : "Download";
+    if (!button.disabled) {
+      button.textContent = language === "ar" ? "تنزيل" : "Download";
+    }
   });
 }
 
@@ -287,7 +308,8 @@ animals.forEach((item, index) => {
   fallback.textContent = item[0];
 
   const img = document.createElement("img");
-  img.alt = item[1];
+  img.className = "animal-image";
+  img.alt = item[1] + " emoji";
   img.style.display = "none";
   img.loading = "lazy";
   img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[3]}/512.gif`;
