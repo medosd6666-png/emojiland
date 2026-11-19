@@ -1,11 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#7055ed">
-<title>إيموشات الأنشطة المتحركة | مملكة الإيموش</title>
+<meta name="description" content="اكتشف إيموشات الأنشطة المتحركة والرياضة والألعاب والرقص، وانسخ الإيموشات أو نزّل صور GIF المتحركة مجانًا من مملكة الإيموش.">
+<meta name="robots" content="index, follow">
+<title>إيموشات الأنشطة المتحركة والرياضة والألعاب | مملكة الإيموش</title>
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -23,6 +24,7 @@
 .loading{text-align:center;padding:20px}
 </style>
 
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
 <script>
 window.dataLayer=window.dataLayer||[];
@@ -105,8 +107,8 @@ function applyPageLanguage(language){
     pageLanguage === "ar" ? "الملصقات" : "Stickers";
 
   document.title = pageLanguage === "ar"
-    ? "إيموشات الأنشطة المتحركة | مملكة الإيموش"
-    : "Animated Activities Emoji | Emojiland";
+    ? "إيموشات الأنشطة المتحركة والرياضة والألعاب | مملكة الإيموش"
+    : "Animated Activities, Sports and Games Emoji | Emojiland";
 
   document.querySelectorAll(".activity-card").forEach(card=>{
     const name = card.querySelector(".activity-name");
@@ -114,6 +116,12 @@ function applyPageLanguage(language){
 
     if(name && item){
       name.textContent = getActivityName(item);
+    }
+
+    const img = card.querySelector("img");
+
+    if(img && item){
+      img.alt = getActivityName(item);
     }
 
     const buttons = card.querySelectorAll(".activity-actions button");
@@ -411,7 +419,7 @@ activities.forEach(item=>{
         ? "تعذر تنزيل الإيموش. تأكد من اتصال الإنترنت وحاول مرة أخرى."
         : "Unable to download the emoji. Check your internet connection and try again.");
     }finally{
-      download.textContent = originalText;
+      download.textContent = pageLanguage === "ar" ? "تنزيل GIF" : "Download GIF";
       download.disabled = false;
     }
   };
