@@ -1,17 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#7055ed">
-  <meta name="description" content="مجموعة كبيرة من إيموشات الطعام والفاكهة والمشروبات المتحركة للنسخ والتنزيل.">
-  <title>إيموشات الطعام | مملكة الإيموش</title>
+
+  <meta name="description" content="اكتشف ايموش الطعام المتحركة في مملكة الإيموش. مجموعة متنوعة من ايموشات الفواكه والخضروات والوجبات والحلويات والمشروبات، مع إمكانية النسخ والتنزيل مجانًا.">
+
+  <meta name="keywords" content="ايموش, ايموش متحرك, ايموش الطعام, ايموشات الطعام, ايموشات الفواكه, ايموشات المشروبات, ايموشات الحلويات">
+
+  <meta name="robots" content="index, follow">
+
+  <title>ايموش الطعام والفواكه والمشروبات المتحركة | مملكة الإيموش</title>
+
   <link rel="stylesheet" href="style.css">
 
   <script>
     (function () {
-      const language = localStorage.getItem("emojilandLanguage") === "en" ? "en" : "ar";
+      const savedLanguage = localStorage.getItem("emojilandLanguage");
+      const requestedLanguage = new URLSearchParams(location.search).get("lang");
+
+      const language = savedLanguage === "ar" || savedLanguage === "en"
+        ? savedLanguage
+        : requestedLanguage === "en" ? "en" : "ar";
+
       document.documentElement.lang = language;
       document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
     })();
@@ -122,7 +134,10 @@
     }
 
     @media(max-width: 480px) {
-      .food-page { padding: 12px; }
+      .food-page {
+        padding: 12px;
+      }
+
       .food-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -149,14 +164,14 @@
 <main class="container food-page">
 
   <section class="food-header">
-    <h1 data-ar="🍕 إيموشات الطعام والمشروبات"
-        data-en="🍕 Food & Drinks Emojis">
-      🍕 إيموشات الطعام والمشروبات
+    <h1 data-ar="🍕 ايموش الطعام والمشروبات المتحركة"
+        data-en="🍕 Animated Food & Drinks Emojis">
+      🍕 ايموش الطعام والمشروبات المتحركة
     </h1>
 
-    <p data-ar="مجموعة متنوعة من إيموشات الأطعمة والفواكه والحلويات والمشروبات. اضغط للنسخ أو التنزيل."
-       data-en="A collection of food, fruit, dessert and drink emojis. Copy or download your favorites.">
-      مجموعة متنوعة من إيموشات الأطعمة والفواكه والحلويات والمشروبات. اضغط للنسخ أو التنزيل.
+    <p data-ar="اكتشف مجموعة متنوعة من ايموشات الطعام والفواكه والخضروات والحلويات والمشروبات. اضغط على الإيموش لنسخه أو تنزيل صورته المتحركة مجانًا."
+       data-en="Explore animated food, fruit, vegetable, dessert and drink emojis. Copy your favorite emoji or download its animated image for free.">
+      اكتشف مجموعة متنوعة من ايموشات الطعام والفواكه والخضروات والحلويات والمشروبات. اضغط على الإيموش لنسخه أو تنزيل صورته المتحركة مجانًا.
     </p>
   </section>
 
@@ -239,6 +254,7 @@ function getLanguage() {
 function translateFoodPage() {
   const language = getLanguage();
 
+  document.documentElement.lang = language;
   document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
   document.querySelectorAll("[data-ar][data-en]").forEach(element => {
@@ -246,16 +262,22 @@ function translateFoodPage() {
   });
 
   document.title = language === "ar"
-    ? "إيموشات الطعام | مملكة الإيموش"
-    : "Food Emojis | Emojiland";
+    ? "ايموش الطعام والفواكه والمشروبات المتحركة | مملكة الإيموش"
+    : "Animated Food Emojis, Fruits & Drinks | Emojiland";
 
   document.querySelector('meta[name="description"]').content =
     language === "ar"
-      ? "مجموعة كبيرة من إيموشات الطعام والفاكهة والمشروبات المتحركة للنسخ والتنزيل."
-      : "A large collection of animated food, fruit and drink emojis to copy and download.";
+      ? "اكتشف ايموش الطعام المتحركة في مملكة الإيموش. مجموعة متنوعة من ايموشات الفواكه والخضروات والوجبات والحلويات والمشروبات، مع إمكانية النسخ والتنزيل مجانًا."
+      : "Explore animated food emojis at Emojiland. Discover fruit, vegetable, meal, dessert and drink emojis to copy and download for free.";
 
   document.querySelectorAll(".food-name").forEach((element, index) => {
     element.textContent = foods[index][language === "ar" ? 1 : 2];
+  });
+
+  document.querySelectorAll(".food-visual img").forEach((img, index) => {
+    img.alt = language === "ar"
+      ? "ايموش " + foods[index][1]
+      : foods[index][2] + " emoji";
   });
 
   document.querySelectorAll(".copy-button").forEach(button => {
@@ -263,7 +285,9 @@ function translateFoodPage() {
   });
 
   document.querySelectorAll(".download-button").forEach(button => {
-    button.textContent = language === "ar" ? "تنزيل" : "Download";
+    if (!button.disabled) {
+      button.textContent = language === "ar" ? "تنزيل" : "Download";
+    }
   });
 }
 
@@ -279,7 +303,9 @@ foods.forEach((item, index) => {
   fallback.textContent = item[0];
 
   const img = document.createElement("img");
-  img.alt = item[1];
+  img.alt = getLanguage() === "ar"
+    ? "ايموش " + item[1]
+    : item[2] + " emoji";
   img.loading = "lazy";
   img.style.display = "none";
   img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[3]}/512.gif`;
