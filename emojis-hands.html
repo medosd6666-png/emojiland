@@ -1,17 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#7055ed">
-<meta name="description" content="مجموعة إيموشات الأيدي والإشارات المتحركة للنسخ والتنزيل.">
-<title>إيموشات الأيدي | مملكة الإيموش</title>
+
+<meta name="description" content="اكتشف ايموش الأيدي والإشارات المتحركة في مملكة الإيموش. مجموعة متنوعة من إيموشات التصفيق والإعجاب والتحية وحركات اليد، مع إمكانية النسخ والتنزيل مجانًا.">
+
+<meta name="keywords" content="ايموش, ايموش متحرك, ايموش الأيدي, ايموشات الأيدي, ايموشات الإشارات, ايموش التصفيق, ايموش الإعجاب, ايموش التحية">
+
+<meta name="robots" content="index, follow">
+
+<title>ايموش الأيدي والإشارات المتحركة | مملكة الإيموش</title>
+
 <link rel="stylesheet" href="style.css">
 
 <script>
 (function () {
-  const language = localStorage.getItem("emojilandLanguage") === "en" ? "en" : "ar";
+  const savedLanguage = localStorage.getItem("emojilandLanguage");
+  const requestedLanguage = new URLSearchParams(location.search).get("lang");
+
+  const language = savedLanguage === "ar" || savedLanguage === "en"
+    ? savedLanguage
+    : requestedLanguage === "en" ? "en" : "ar";
+
   document.documentElement.lang = language;
   document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 })();
@@ -49,6 +61,13 @@ box-shadow:0 3px 12px #0000000d;
 width:80px;
 height:80px;
 object-fit:contain;
+}
+.hands-fallback{
+font-size:55px;
+line-height:80px;
+width:80px;
+height:80px;
+text-align:center;
 }
 .hands-actions{
 display:flex;
@@ -104,12 +123,12 @@ data-en="😊 Emojiland">😊 مملكة الإيموش</a>
 <main class="container category-page">
 
 <section class="category-page-header">
-<h1 data-ar="إيموشات الأيدي والإشارات"
-data-en="Hands & Gestures Emojis">إيموشات الأيدي والإشارات</h1>
+<h1 data-ar="ايموش الأيدي والإشارات المتحركة"
+data-en="Animated Hands & Gestures Emojis">ايموش الأيدي والإشارات المتحركة</h1>
 
-<p data-ar="إيموشات متحركة حقيقية. اضغط على نسخ أو تنزيل."
-data-en="Animated emojis. Click copy or download.">
-إيموشات متحركة حقيقية. اضغط على نسخ أو تنزيل.
+<p data-ar="اكتشف مجموعة متنوعة من ايموش الأيدي المتحركة، مثل التصفيق والإعجاب والتحية والإشارات المختلفة. يمكنك نسخ أي ايموش أو تنزيل صورته المتحركة مجانًا."
+data-en="Explore animated hand emojis, including clapping, thumbs up, waving and many other gestures. Copy any emoji or download its animated image for free.">
+اكتشف مجموعة متنوعة من ايموش الأيدي المتحركة، مثل التصفيق والإعجاب والتحية والإشارات المختلفة. يمكنك نسخ أي ايموش أو تنزيل صورته المتحركة مجانًا.
 </p>
 </section>
 
@@ -169,11 +188,7 @@ const hands = [
 ["💅","1f485"],
 ["🤳","1f933"],
 ["🖊","1f58a"],
-["💪","1f4aa"],
-["🤚","1f91a"],
-["💪","1f4aa"],
-["👋","1f44b"],
-["👏","1f44f"]
+["🤚","1f91a"]
 ];
 
 const grid = document.getElementById("handsGrid");
@@ -186,6 +201,7 @@ function getLanguage(){
 function translatePage(){
   const language = getLanguage();
 
+  document.documentElement.lang = language;
   document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
   document.querySelectorAll("[data-ar][data-en]").forEach(element => {
@@ -193,20 +209,22 @@ function translatePage(){
   });
 
   document.title = language === "ar"
-    ? "إيموشات الأيدي | مملكة الإيموش"
-    : "Hands Emojis | Emojiland";
+    ? "ايموش الأيدي والإشارات المتحركة | مملكة الإيموش"
+    : "Animated Hands & Gestures Emojis | Emojiland";
 
   document.querySelector('meta[name="description"]').content =
     language === "ar"
-      ? "مجموعة إيموشات الأيدي والإشارات المتحركة للنسخ والتنزيل."
-      : "A collection of animated hands and gestures emojis to copy and download.";
+      ? "اكتشف ايموش الأيدي والإشارات المتحركة في مملكة الإيموش. مجموعة متنوعة من إيموشات التصفيق والإعجاب والتحية وحركات اليد، مع إمكانية النسخ والتنزيل مجانًا."
+      : "Explore animated hands and gestures emojis at Emojiland. Discover clapping, thumbs up, waving and other hand gestures to copy and download for free.";
 
   document.querySelectorAll(".copy-button").forEach(button => {
     button.textContent = language === "ar" ? "نسخ" : "Copy";
   });
 
   document.querySelectorAll(".download-button").forEach(button => {
-    button.textContent = language === "ar" ? "تنزيل" : "Download";
+    if (!button.disabled) {
+      button.textContent = language === "ar" ? "تنزيل" : "Download";
+    }
   });
 }
 
@@ -216,15 +234,21 @@ hands.forEach((item,index) => {
 
   const img = document.createElement("img");
   img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[1]}/512.gif`;
-  img.alt = item[0];
+  img.alt = getLanguage() === "ar"
+    ? "ايموش يد متحرك " + item[0]
+    : "Animated hand emoji " + item[0];
   img.loading = "lazy";
 
   img.onerror = () => {
     img.style.display = "none";
-    const fallback = document.createElement("span");
-    fallback.textContent = item[0];
-    fallback.style.fontSize = "55px";
-    card.insertBefore(fallback,actions);
+
+    if (!card.querySelector(".hands-fallback")) {
+      const fallback = document.createElement("span");
+      fallback.className = "hands-fallback";
+      fallback.textContent = item[0];
+      fallback.setAttribute("aria-label", item[0]);
+      card.insertBefore(fallback,actions);
+    }
   };
 
   const actions = document.createElement("div");
@@ -253,8 +277,12 @@ hands.forEach((item,index) => {
       input.setAttribute("readonly","");
       input.style.position = "fixed";
       input.style.left = "-9999px";
+      input.style.top = "0";
+
       document.body.appendChild(input);
+      input.focus();
       input.select();
+      input.setSelectionRange(0,input.value.length);
 
       try{
         copied = document.execCommand("copy");
