@@ -1,16 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="مجموعة الإيموشات الرومانسية المتحركة، انسخ الرموز أو نزّل صور GIF مجانًا.">
+  <meta name="description" content="اكتشف ايموش الحب المتحركة في مملكة الإيموش. مجموعة رومانسية من القلوب والقبلات والتعبير عن المشاعر، مع إمكانية نسخ الإيموشات وتنزيل صور GIF مجانًا.">
+  <meta name="keywords" content="ايموش, ايموش متحرك, ايموش الحب, ايموشات الحب, ايموشات رومانسية, ايموشات القلوب, ايموشات القبلات">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#7655c5">
-  <title>إيموشات الحب المتحركة | مملكة الإيموش</title>
+
+  <title>ايموش الحب والقلوب المتحركة | مملكة الإيموش</title>
 
   <script>
     (() => {
-      const language = localStorage.getItem("emojilandLanguage") || "ar";
+      const savedLanguage = localStorage.getItem("emojilandLanguage");
+      const requestedLanguage = new URLSearchParams(location.search).get("lang");
+
+      const language = savedLanguage === "ar" || savedLanguage === "en"
+        ? savedLanguage
+        : requestedLanguage === "en" ? "en" : "ar";
+
       document.documentElement.lang = language;
       document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
     })();
@@ -190,16 +198,16 @@
 
 <main>
   <section class="intro">
-    <h2 data-ar="💗 إيموشات الحب المتحركة"
-        data-en="💗 Animated Love Emojis">💗 إيموشات الحب المتحركة</h2>
+    <h2 data-ar="💗 ايموش الحب والقلوب المتحركة"
+        data-en="💗 Animated Love & Heart Emojis">💗 ايموش الحب والقلوب المتحركة</h2>
 
-    <p data-ar="إيموشات رومانسية متحركة فعلًا. اضغط على نسخ أو تنزيل."
-       data-en="Real animated romantic emojis. Copy or download your favorites.">
-       إيموشات رومانسية متحركة فعلًا. اضغط على نسخ أو تنزيل.
+    <p data-ar="اكتشف مجموعة من ايموش الحب المتحركة والرموز الرومانسية، بما فيها القلوب والقبلات والتعبيرات التي تساعدك على التعبير عن مشاعرك. يمكنك نسخ الإيموش أو تنزيل صور GIF مجانًا."
+       data-en="Explore animated love emojis and romantic symbols, including hearts, kisses and expressions to share your feelings. Copy your favorite emoji or download its GIF for free.">
+       اكتشف مجموعة من ايموش الحب المتحركة والرموز الرومانسية، بما فيها القلوب والقبلات والتعبيرات التي تساعدك على التعبير عن مشاعرك. يمكنك نسخ الإيموش أو تنزيل صور GIF مجانًا.
     </p>
   </section>
 
-  <div class="status" id="status">
+  <div class="status" id="status" aria-live="polite">
     جاري فحص الإيموشات المتحركة...
     <div class="progress"><span id="progressBar"></span></div>
   </div>
@@ -264,7 +272,7 @@
   const progressBar = document.getElementById("progressBar");
   const emptyMessage = document.getElementById("emptyMessage");
 
-  let language = localStorage.getItem(LANGUAGE_KEY) || "ar";
+  let language = localStorage.getItem(LANGUAGE_KEY) === "en" ? "en" : "ar";
   let loaded = 0;
   let finished = 0;
 
@@ -281,13 +289,13 @@
     });
 
     document.title = t(
-      "إيموشات الحب المتحركة | مملكة الإيموش",
-      "Animated Love Emojis | Emojiland"
+      "ايموش الحب والقلوب المتحركة | مملكة الإيموش",
+      "Animated Love & Heart Emojis | Emojiland"
     );
 
     document.querySelector('meta[name="description"]').content = t(
-      "مجموعة الإيموشات الرومانسية المتحركة، انسخ الرموز أو نزّل صور GIF مجانًا.",
-      "Animated romantic emojis. Copy symbols or download free GIF images."
+      "اكتشف ايموش الحب المتحركة في مملكة الإيموش. مجموعة رومانسية من القلوب والقبلات والتعبير عن المشاعر، مع إمكانية نسخ الإيموشات وتنزيل صور GIF مجانًا.",
+      "Explore animated love emojis at Emojiland. A romantic collection of hearts, kisses and expressions to copy and download as free GIF images."
     );
 
     updateStatus();
@@ -330,7 +338,7 @@
   }
 
   window.addEventListener("storage", event => {
-    if (event.key === LANGUAGE_KEY && event.newValue) {
+    if (event.key === LANGUAGE_KEY) {
       language = event.newValue === "en" ? "en" : "ar";
       updateLanguage();
     }
@@ -352,15 +360,25 @@
     let success = false;
 
     try {
-      await navigator.clipboard.writeText(symbol);
-      success = true;
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(symbol);
+        success = true;
+      }
     } catch {
+      success = false;
+    }
+
+    if (!success) {
       const area = document.createElement("textarea");
       area.value = symbol;
+      area.setAttribute("readonly", "");
       area.style.position = "fixed";
+      area.style.left = "-9999px";
       area.style.opacity = "0";
       document.body.appendChild(area);
+      area.focus();
       area.select();
+      area.setSelectionRange(0, area.value.length);
 
       try {
         success = document.execCommand("copy");
@@ -402,7 +420,7 @@
       link.click();
       link.remove();
 
-      setTimeout(() => URL.revokeObjectURL(objectUrl), 2000);
+      setTimeout(() => URL.revokeObjectURL(objectUrl), 5000);
     } catch {
       window.open(url, "_blank", "noopener");
     }
@@ -416,7 +434,7 @@
     card.className = "emoji-card";
 
     const img = item.img;
-    img.alt = item.symbol;
+    img.alt = t("ايموش حب متحرك " + item.symbol, "Animated love emoji " + item.symbol);
     img.loading = "lazy";
 
     const symbol = document.createElement("div");
