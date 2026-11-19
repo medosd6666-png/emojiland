@@ -3,9 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="شروط استخدام موقع مملكة الإيموش، وقواعد استخدام الإيموشات والملصقات وأداة إنشاء الملصقات.">
+  <meta name="theme-color" content="#7055ed">
+
+  <meta name="description" content="اقرأ شروط استخدام مملكة الإيموش، وتعرّف على قواعد استخدام الإيموشات والملصقات وصانع الملصقات وحقوق المحتوى والروابط الخارجية.">
+  <meta name="keywords" content="شروط الاستخدام, مملكة الإيموش, استخدام الإيموش, ملصقات إيموش, صانع الملصقات, حقوق الملكية">
   <meta name="robots" content="index, follow">
-  <title>شروط الاستخدام | مملكة الإيموش</title>
+
+  <link rel="canonical" href="https://emojiland.pages.dev/terms.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="شروط الاستخدام | مملكة الإيموش">
+  <meta property="og:description" content="تعرف على شروط وقواعد استخدام الإيموشات والملصقات وأدوات مملكة الإيموش.">
+  <meta property="og:url" content="https://emojiland.pages.dev/terms.html">
+
+  <title>شروط استخدام مملكة الإيموش | Terms of Use</title>
+
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Analytics -->
@@ -21,14 +33,14 @@
     .legal-page {
       width: min(920px, 92%);
       margin: 40px auto;
-      padding: 30px;
+      padding: 35px;
       background: var(--card-bg, #fff);
+      border: 1px solid var(--border, #ece9f5);
       border-radius: 18px;
+      box-shadow: var(--shadow, 0 8px 25px rgba(60,43,120,.06));
       line-height: 1.9;
     }
-    .legal-page h1 { margin-bottom: 20px; }
-    .legal-page h2 { margin-top: 26px; font-size: 1.2rem; }
-    .legal-page p { margin: 10px 0; }
+
     .legal-top {
       display: flex;
       justify-content: space-between;
@@ -37,100 +49,266 @@
       gap: 12px;
       margin-bottom: 25px;
     }
+
+    .legal-back {
+      color: var(--primary, #7055ed);
+      font-weight: 700;
+    }
+
+    .legal-page h1 {
+      color: var(--primary, #7055ed);
+      font-size: clamp(27px, 5vw, 36px);
+      margin: 0 0 20px;
+    }
+
+    .legal-page h2 {
+      margin-top: 28px;
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      color: var(--dark, #25223b);
+    }
+
+    .legal-page p {
+      margin: 10px 0;
+      color: var(--muted, #626174);
+    }
+
+    .legal-intro {
+      padding: 17px;
+      background: var(--soft, #f7f5ff);
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
     .legal-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 30px;
+      gap: 14px 22px;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border, #ece9f5);
     }
-    .legal-links a { text-decoration: none; }
-    .language-buttons { display: flex; gap: 8px; }
+
+    .legal-links a {
+      color: var(--primary, #7055ed);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .legal-links a:hover,
+    .legal-back:hover {
+      text-decoration: underline;
+    }
+
+    .language-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
     .language-buttons button {
       cursor: pointer;
       padding: 8px 13px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--border, #ddd);
       border-radius: 8px;
-      background: transparent;
+      background: white;
+      color: var(--primary, #7055ed);
+      font-weight: 700;
+      transition: .2s;
     }
+
+    .language-buttons button:hover {
+      background: var(--soft, #f7f5ff);
+      border-color: var(--primary, #7055ed);
+    }
+
+    .legal-note {
+      font-size: 14px;
+      color: var(--muted, #77758b);
+      margin-top: 25px;
+    }
+
     @media (max-width: 600px) {
-      .legal-page { padding: 20px 16px; margin: 20px auto; }
+      .legal-page {
+        padding: 22px 17px;
+        margin: 20px auto;
+      }
+
+      .legal-page h2 {
+        font-size: 1.1rem;
+      }
+
+      .legal-top {
+        align-items: flex-start;
+      }
+
+      .legal-links {
+        gap: 12px 17px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="legal-page">
-    <div class="legal-top">
-      <a href="index.html" data-i18n data-ar="← العودة إلى الرئيسية" data-en="← Back to Home">← العودة إلى الرئيسية</a>
 
-      <div class="language-buttons">
-        <button type="button" data-lang="ar">العربية</button>
-        <button type="button" data-lang="en">English</button>
+  <main class="legal-page">
+
+    <div class="legal-top">
+      <a class="legal-back" href="index.html"
+         data-i18n data-ar="← العودة إلى الرئيسية"
+         data-en="← Back to Home">
+        ← العودة إلى الرئيسية
+      </a>
+
+      <div class="language-buttons" aria-label="Language selection">
+        <button type="button" data-lang="ar" aria-label="العربية">العربية</button>
+        <button type="button" data-lang="en" aria-label="English">English</button>
       </div>
     </div>
 
-    <h1 data-i18n data-ar="شروط الاستخدام" data-en="Terms of Use">شروط الاستخدام</h1>
+    <h1 data-i18n
+        data-ar="شروط الاستخدام"
+        data-en="Terms of Use">
+      شروط الاستخدام
+    </h1>
+
+    <div class="legal-intro">
+      <p data-i18n
+         data-ar="مرحبًا بك في مملكة الإيموش. توضح هذه الصفحة الشروط والقواعد التي تنظم استخدام الموقع ومحتواه وخدماته. باستخدامك للموقع، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق عليها، يُرجى التوقف عن استخدام الموقع."
+         data-en="Welcome to Emojiland. This page explains the terms and rules governing the use of our website, content, and services. By using this website, you agree to these terms. If you do not agree, please stop using the website.">
+        مرحبًا بك في مملكة الإيموش. توضح هذه الصفحة الشروط والقواعد التي تنظم استخدام الموقع ومحتواه وخدماته. باستخدامك للموقع، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق عليها، يُرجى التوقف عن استخدام الموقع.
+      </p>
+    </div>
+
+    <h2 data-i18n
+        data-ar="1. استخدام الموقع"
+        data-en="1. Use of the Website">
+      1. استخدام الموقع
+    </h2>
 
     <p data-i18n
-       data-ar="مرحبًا بك في مملكة الإيموش. باستخدامك لهذا الموقع، فإنك توافق على الشروط الموضحة في هذه الصفحة. يُرجى قراءتها قبل استخدام خدمات الموقع."
-       data-en="Welcome to Emoji Kingdom. By using this website, you agree to the terms described on this page. Please read them before using the website services.">
-      مرحبًا بك في مملكة الإيموش. باستخدامك لهذا الموقع، فإنك توافق على الشروط الموضحة في هذه الصفحة. يُرجى قراءتها قبل استخدام خدمات الموقع.
+       data-ar="يمكنك تصفح مملكة الإيموش واستخدام الإيموشات والملصقات والأدوات المتاحة للأغراض الشخصية والمشروعة. يجب أن يتم الاستخدام بما يتوافق مع القوانين المعمول بها وألا يسبب ضررًا للموقع أو للآخرين."
+       data-en="You may browse Emojiland and use the available emojis, stickers, and tools for lawful personal purposes. Your use must comply with applicable laws and must not harm the website or others.">
+      يمكنك تصفح مملكة الإيموش واستخدام الإيموشات والملصقات والأدوات المتاحة للأغراض الشخصية والمشروعة. يجب أن يتم الاستخدام بما يتوافق مع القوانين المعمول بها وألا يسبب ضررًا للموقع أو للآخرين.
     </p>
 
-    <h2 data-i18n data-ar="1. استخدام الموقع" data-en="1. Using the Website">1. استخدام الموقع</h2>
+    <h2 data-i18n
+        data-ar="2. الاستخدامات غير المسموح بها"
+        data-en="2. Prohibited Uses">
+      2. الاستخدامات غير المسموح بها
+    </h2>
+
     <p data-i18n
-       data-ar="يمكنك استخدام الإيموشات والملصقات وأدوات الموقع للأغراض الشخصية والمشروعة، مع الالتزام بالقوانين المعمول بها وعدم استخدام الموقع بطريقة تضر بالآخرين."
-       data-en="You may use the emojis, stickers, and website tools for lawful personal purposes. You must follow applicable laws and avoid using the website in ways that harm others.">
-      يمكنك استخدام الإيموشات والملصقات وأدوات الموقع للأغراض الشخصية والمشروعة، مع الالتزام بالقوانين المعمول بها وعدم استخدام الموقع بطريقة تضر بالآخرين.
+       data-ar="يُمنع استخدام الموقع في أي نشاط غير قانوني، أو محاولة تعطيل الموقع أو الإضرار به، أو الوصول غير المصرح به إلى أنظمته، أو محاولة استغلال الثغرات التقنية، أو استخدام أدوات آلية بطريقة تؤثر سلبًا على أداء الموقع، أو نشر محتوى ينتهك حقوق الآخرين أو يسيء إليهم."
+       data-en="You must not use the website for illegal activities, attempt to disrupt or damage it, gain unauthorized access to its systems, exploit technical vulnerabilities, use automated tools in ways that negatively affect its performance, or publish content that infringes on or harms the rights of others.">
+      يُمنع استخدام الموقع في أي نشاط غير قانوني، أو محاولة تعطيل الموقع أو الإضرار به، أو الوصول غير المصرح به إلى أنظمته، أو محاولة استغلال الثغرات التقنية، أو استخدام أدوات آلية بطريقة تؤثر سلبًا على أداء الموقع، أو نشر محتوى ينتهك حقوق الآخرين أو يسيء إليهم.
     </p>
 
-    <h2 data-i18n data-ar="2. الاستخدامات غير المسموح بها" data-en="2. Prohibited Uses">2. الاستخدامات غير المسموح بها</h2>
+    <h2 data-i18n
+        data-ar="3. الإيموشات والملصقات والمحتوى"
+        data-en="3. Emojis, Stickers, and Content">
+      3. الإيموشات والملصقات والمحتوى
+    </h2>
+
     <p data-i18n
-       data-ar="يُمنع استخدام الموقع في أي نشاط غير قانوني، أو محاولة تعطيل الموقع أو الإضرار به، أو الوصول غير المصرح به إلى أنظمته، أو نشر محتوى ينتهك حقوق الآخرين أو يسيء إليهم."
-       data-en="You may not use the website for illegal activities, attempt to disrupt or damage it, gain unauthorized access to its systems, or create content that infringes on or harms the rights of others.">
-      يُمنع استخدام الموقع في أي نشاط غير قانوني، أو محاولة تعطيل الموقع أو الإضرار به، أو الوصول غير المصرح به إلى أنظمته، أو نشر محتوى ينتهك حقوق الآخرين أو يسيء إليهم.
+       data-ar="يعرض الموقع مجموعة من الإيموشات والرموز التعبيرية والملصقات. قد تتضمن بعض العناصر موارد مقدمة من جهات خارجية أو تخضع لتراخيص خاصة بمصادرها. لا يعني عرض أي عنصر على الموقع امتلاكنا لجميع الحقوق المتعلقة به. يجب احترام حقوق أصحاب المحتوى والتراخيص المطبقة عليه."
+       data-en="The website provides a collection of emojis, symbols, and stickers. Some items may include resources supplied by third parties or subject to licenses from their original sources. Displaying an item on this website does not mean that we own all rights to it. You must respect the rights of content owners and applicable licenses.">
+      يعرض الموقع مجموعة من الإيموشات والرموز التعبيرية والملصقات. قد تتضمن بعض العناصر موارد مقدمة من جهات خارجية أو تخضع لتراخيص خاصة بمصادرها. لا يعني عرض أي عنصر على الموقع امتلاكنا لجميع الحقوق المتعلقة به. يجب احترام حقوق أصحاب المحتوى والتراخيص المطبقة عليه.
     </p>
 
-    <h2 data-i18n data-ar="3. حقوق الموقع ومحتواه" data-en="3. Website Content and Rights">3. حقوق الموقع ومحتواه</h2>
+    <h2 data-i18n
+        data-ar="4. حقوق الموقع والملكية الفكرية"
+        data-en="4. Website Rights and Intellectual Property">
+      4. حقوق الموقع والملكية الفكرية
+    </h2>
+
     <p data-i18n
-       data-ar="التصميم والعلامة التجارية والنصوص والعناصر والملصقات الأصلية التي يوفرها الموقع مملوكة لمملكة الإيموش أو مستخدمة وفق الحقوق المتاحة لها. لا يجوز نسخ أجزاء الموقع أو إعادة نشرها أو بيعها باعتبارها محتوى خاصًا بك دون إذن مناسب."
-       data-en="The website design, brand, text, elements, and original stickers provided by the website belong to Emoji Kingdom or are used with appropriate rights. You may not copy, republish, or sell website materials as your own without proper permission.">
-      التصميم والعلامة التجارية والنصوص والعناصر والملصقات الأصلية التي يوفرها الموقع مملوكة لمملكة الإيموش أو مستخدمة وفق الحقوق المتاحة لها. لا يجوز نسخ أجزاء الموقع أو إعادة نشرها أو بيعها باعتبارها محتوى خاصًا بك دون إذن مناسب.
+       data-ar="التصميم والعلامة التجارية والنصوص والمحتوى الأصلي والعناصر التي أنشأناها في مملكة الإيموش محمية بحقوق الملكية الفكرية المعمول بها. لا يجوز نسخ هذه المواد أو إعادة نشرها أو بيعها أو نسبتها إلى نفسك دون الحصول على إذن مناسب، مع مراعاة الحقوق والتراخيص الخاصة بموارد الجهات الخارجية."
+       data-en="The design, brand, text, original content, and elements created by Emojiland are protected by applicable intellectual property laws. You may not copy, republish, sell, or claim these materials as your own without appropriate permission, while respecting the rights and licenses of third-party resources.">
+      التصميم والعلامة التجارية والنصوص والمحتوى الأصلي والعناصر التي أنشأناها في مملكة الإيموش محمية بحقوق الملكية الفكرية المعمول بها. لا يجوز نسخ هذه المواد أو إعادة نشرها أو بيعها أو نسبتها إلى نفسك دون الحصول على إذن مناسب، مع مراعاة الحقوق والتراخيص الخاصة بموارد الجهات الخارجية.
     </p>
 
-    <h2 data-i18n data-ar="4. المحتوى الذي تنشئه" data-en="4. Content You Create">4. المحتوى الذي تنشئه</h2>
+    <h2 data-i18n
+        data-ar="5. المحتوى الذي تنشئه باستخدام الأدوات"
+        data-en="5. Content You Create Using Our Tools">
+      5. المحتوى الذي تنشئه باستخدام الأدوات
+    </h2>
+
     <p data-i18n
-       data-ar="إذا استخدمت أداة إنشاء الملصقات، فأنت مسؤول عن الصور والنصوص والعناصر التي تختارها أو تضيفها. تأكد من امتلاكك الحق في استخدام أي صورة أو مادة تضيفها، ولا تنشئ محتوى ينتهك حقوق الملكية الفكرية أو خصوصية الآخرين."
-       data-en="If you use the sticker maker, you are responsible for the images, text, and elements you choose or add. Make sure you have the right to use any material you upload, and do not create content that violates intellectual property rights or other people's privacy.">
-      إذا استخدمت أداة إنشاء الملصقات، فأنت مسؤول عن الصور والنصوص والعناصر التي تختارها أو تضيفها. تأكد من امتلاكك الحق في استخدام أي صورة أو مادة تضيفها، ولا تنشئ محتوى ينتهك حقوق الملكية الفكرية أو خصوصية الآخرين.
+       data-ar="إذا استخدمت أداة إنشاء الملصقات، فأنت مسؤول عن النصوص والرموز والصور والعناصر التي تختارها أو تضيفها. يجب أن تمتلك حق استخدام أي مواد تضيفها، وألا تستخدم الأداة لإنشاء محتوى غير قانوني أو ينتهك حقوق الملكية الفكرية أو الخصوصية أو حقوق الآخرين."
+       data-en="If you use the sticker maker, you are responsible for the text, emojis, images, and elements you choose or add. You must have the right to use any materials you add, and you must not use the tool to create illegal content or content that violates intellectual property, privacy, or other people's rights.">
+      إذا استخدمت أداة إنشاء الملصقات، فأنت مسؤول عن النصوص والرموز والصور والعناصر التي تختارها أو تضيفها. يجب أن تمتلك حق استخدام أي مواد تضيفها، وألا تستخدم الأداة لإنشاء محتوى غير قانوني أو ينتهك حقوق الملكية الفكرية أو الخصوصية أو حقوق الآخرين.
     </p>
 
-    <h2 data-i18n data-ar="5. توفر الموقع" data-en="5. Website Availability">5. توفر الموقع</h2>
+    <h2 data-i18n
+        data-ar="6. توفر الموقع والتحديثات"
+        data-en="6. Website Availability and Updates">
+      6. توفر الموقع والتحديثات
+    </h2>
+
     <p data-i18n
-       data-ar="نسعى إلى إبقاء الموقع متاحًا وعاملًا بصورة جيدة، لكننا لا نضمن استمرار الخدمة دون انقطاع أو خلوها من الأخطاء. قد نجري تحديثات أو تغييرات أو نوقف بعض الميزات عند الحاجة."
-       data-en="We aim to keep the website available and working properly, but we do not guarantee uninterrupted or error-free service. We may update, change, or suspend features when necessary.">
-      نسعى إلى إبقاء الموقع متاحًا وعاملًا بصورة جيدة، لكننا لا نضمن استمرار الخدمة دون انقطاع أو خلوها من الأخطاء. قد نجري تحديثات أو تغييرات أو نوقف بعض الميزات عند الحاجة.
+       data-ar="نسعى إلى إبقاء الموقع متاحًا ويعمل بصورة جيدة، لكننا لا نضمن استمرار الخدمة دون انقطاع أو خلوها من الأخطاء. قد نجري تحديثات أو تغييرات أو صيانة أو نوقف بعض الميزات مؤقتًا أو نهائيًا عند الحاجة."
+       data-en="We aim to keep the website available and functioning properly, but we do not guarantee uninterrupted or error-free service. We may perform updates, changes, or maintenance, or temporarily or permanently discontinue certain features when necessary.">
+      نسعى إلى إبقاء الموقع متاحًا ويعمل بصورة جيدة، لكننا لا نضمن استمرار الخدمة دون انقطاع أو خلوها من الأخطاء. قد نجري تحديثات أو تغييرات أو صيانة أو نوقف بعض الميزات مؤقتًا أو نهائيًا عند الحاجة.
     </p>
 
-    <h2 data-i18n data-ar="6. الروابط الخارجية" data-en="6. External Links">6. الروابط الخارجية</h2>
+    <h2 data-i18n
+        data-ar="7. الروابط والخدمات الخارجية"
+        data-en="7. External Links and Services">
+      7. الروابط والخدمات الخارجية
+    </h2>
+
     <p data-i18n
-       data-ar="قد يحتوي الموقع على روابط لمواقع أو خدمات خارجية. هذه المواقع تخضع لشروطها وسياسات الخصوصية الخاصة بها، ولسنا مسؤولين عن محتواها أو طريقة عملها."
-       data-en="The website may contain links to external websites or services. Those websites are governed by their own terms and privacy policies, and we are not responsible for their content or operation.">
-      قد يحتوي الموقع على روابط لمواقع أو خدمات خارجية. هذه المواقع تخضع لشروطها وسياسات الخصوصية الخاصة بها، ولسنا مسؤولين عن محتواها أو طريقة عملها.
+       data-ar="قد يحتوي الموقع على روابط أو موارد أو خدمات تابعة لجهات خارجية. تخضع هذه الجهات لشروط الاستخدام وسياسات الخصوصية الخاصة بها، ولسنا مسؤولين عن محتواها أو توفرها أو طريقة عملها. ننصحك بمراجعة سياساتها قبل استخدام خدماتها."
+       data-en="The website may contain links, resources, or services provided by third parties. These parties are governed by their own terms and privacy policies. We are not responsible for their content, availability, or operation. We recommend reviewing their policies before using their services.">
+      قد يحتوي الموقع على روابط أو موارد أو خدمات تابعة لجهات خارجية. تخضع هذه الجهات لشروط الاستخدام وسياسات الخصوصية الخاصة بها، ولسنا مسؤولين عن محتواها أو توفرها أو طريقة عملها. ننصحك بمراجعة سياساتها قبل استخدام خدماتها.
     </p>
 
-    <h2 data-i18n data-ar="7. التعديلات على الشروط" data-en="7. Changes to These Terms">7. التعديلات على الشروط</h2>
+    <h2 data-i18n
+        data-ar="8. الخصوصية والبيانات"
+        data-en="8. Privacy and Data">
+      8. الخصوصية والبيانات
+    </h2>
+
     <p data-i18n
-       data-ar="قد نقوم بتحديث شروط الاستخدام من وقت لآخر. سيتم نشر النسخة المحدثة في هذه الصفحة، ويُعد استمرارك في استخدام الموقع بعد التحديث موافقة على الشروط المعدلة."
-       data-en="We may update these terms from time to time. Updated terms will be published on this page. Your continued use of the website after an update indicates acceptance of the revised terms.">
-      قد نقوم بتحديث شروط الاستخدام من وقت لآخر. سيتم نشر النسخة المحدثة في هذه الصفحة، ويُعد استمرارك في استخدام الموقع بعد التحديث موافقة على الشروط المعدلة.
+       data-ar="قد يستخدم الموقع خدمات تحليل الزيارات مثل Google Analytics لفهم كيفية استخدام الزوار للموقع وتحسينه. لمعرفة المزيد عن البيانات وملفات تعريف الارتباط والخدمات المستخدمة، يُرجى قراءة صفحة سياسة الخصوصية."
+       data-en="The website may use visitor analytics services such as Google Analytics to understand how visitors use the website and improve it. For more information about data, cookies, and the services used, please read our Privacy Policy.">
+      قد يستخدم الموقع خدمات تحليل الزيارات مثل Google Analytics لفهم كيفية استخدام الزوار للموقع وتحسينه. لمعرفة المزيد عن البيانات وملفات تعريف الارتباط والخدمات المستخدمة، يُرجى قراءة صفحة سياسة الخصوصية.
     </p>
 
-    <h2 data-i18n data-ar="8. التواصل معنا" data-en="8. Contact Us">8. التواصل معنا</h2>
+    <h2 data-i18n
+        data-ar="9. حدود المسؤولية"
+        data-en="9. Limitation of Liability">
+      9. حدود المسؤولية
+    </h2>
+
     <p data-i18n
-       data-ar="إذا كانت لديك أسئلة حول شروط الاستخدام، يمكنك زيارة صفحة اتصل بنا وإرسال رسالتك من خلالها."
-       data-en="If you have questions about these terms, you can visit our Contact Us page and send us a message through it.">
-      إذا كانت لديك أسئلة حول شروط الاستخدام، يمكنك زيارة صفحة اتصل بنا وإرسال رسالتك من خلالها.
+       data-ar="يُقدّم الموقع ومحتواه وأدواته كما هي وحسب توفرها. نبذل جهدًا معقولًا للحفاظ على جودة الخدمات، لكننا لا نضمن خلوها من الأخطاء أو ملاءمتها لكل استخدام. وبالقدر الذي يسمح به القانون، لا نتحمل مسؤولية الأضرار الناتجة عن سوء استخدام الموقع أو الاعتماد على خدمات الجهات الخارجية أو تعذر الوصول إلى بعض الميزات."
+       data-en="The website, its content, and its tools are provided as available and as is. We make reasonable efforts to maintain service quality, but we do not guarantee that they will be error-free or suitable for every purpose. To the extent permitted by law, we are not responsible for damages resulting from misuse of the website, reliance on third-party services, or the unavailability of certain features.">
+      يُقدّم الموقع ومحتواه وأدواته كما هي وحسب توفرها. نبذل جهدًا معقولًا للحفاظ على جودة الخدمات، لكننا لا نضمن خلوها من الأخطاء أو ملاءمتها لكل استخدام. وبالقدر الذي يسمح به القانون، لا نتحمل مسؤولية الأضرار الناتجة عن سوء استخدام الموقع أو الاعتماد على خدمات الجهات الخارجية أو تعذر الوصول إلى بعض الميزات.
+    </p>
+
+    <h2 data-i18n
+        data-ar="10. التعديلات على شروط الاستخدام"
+        data-en="10. Changes to These Terms">
+      10. التعديلات على شروط الاستخدام
+    </h2>
+
+    <p data-i18n
+       data-ar="قد نقوم بتحديث هذه الشروط من وقت لآخر لتوضيح الخدمات أو مواكبة التغييرات. سيتم نشر النسخة المحدثة في هذه الصفحة، ويُرجى مراجعتها بصورة دورية. ويخضع استخدامك المستمر للموقع بعد نشر التعديلات للشروط المحدثة، بالقدر الذي يسمح به القانون."
+       data-en="We may update these terms from time to time to clarify our services or reflect changes. Updated terms will be published on this page, and we encourage you to review them periodically. Your continued use of the website after changes are published is subject to the updated terms, to the extent permitted by law.">
+      قد نقوم بتحديث هذه الشروط من وقت لآخر لتوضيح الخدمات أو مواكبة التغييرات. سيتم نشر النسخة المحدثة في هذه الصفحة، ويُرجى مراجعتها بصورة دورية. ويخضع استخدامك المستمر للموقع بعد نشر التعديلات للشروط المحدثة، بالقدر الذي يسمح به القانون.
+    </p>
+
+    <h2 data-i18n
+        data-ar="11. التواصل معنا"
+        data-en="11. Contact Us">
+      11. التواصل معنا
+    </h2>
+
+    <p data-i18n
+       data-ar="إذا كانت لديك أسئلة أو استفسارات حول شروط الاستخدام، يمكنك زيارة صفحة اتصل بنا وإرسال رسالتك من خلالها."
+       data-en="If you have any questions or concerns about these terms, you can visit our Contact Us page and send us a message.">
+      إذا كانت لديك أسئلة أو استفسارات حول شروط الاستخدام، يمكنك زيارة صفحة اتصل بنا وإرسال رسالتك من خلالها.
     </p>
 
     <nav class="legal-links" aria-label="روابط الموقع">
@@ -140,6 +318,14 @@
       <a href="privacy.html" data-i18n data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
       <a href="copyright.html" data-i18n data-ar="حقوق الملكية" data-en="Copyright">حقوق الملكية</a>
     </nav>
+
+    <p class="legal-note"
+       data-i18n
+       data-ar="باستخدامك لموقع مملكة الإيموش، فإنك تقر باطلاعك على شروط الاستخدام هذه."
+       data-en="By using Emojiland, you acknowledge that you have read these Terms of Use.">
+      باستخدامك لموقع مملكة الإيموش، فإنك تقر باطلاعك على شروط الاستخدام هذه.
+    </p>
+
   </main>
 
   <script src="app.js"></script>
