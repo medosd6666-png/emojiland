@@ -1,16 +1,19 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#7655c5">
-<meta name="description" content="مجموعة من الإيموشات المتحركة المجانية، انسخها أو نزّلها بصيغة GIF.">
-<title>الإيموشات المتحركة | مملكة الإيموش</title>
+<meta name="robots" content="index, follow">
+<meta name="description" content="اكتشف ايموش متحرك مجاني في مملكة الإيموش. تصفح مجموعة متنوعة من الإيموشات المتحركة، وانسخ ما تريد أو نزّله بصيغة GIF بسهولة.">
+<title>ايموش متحرك مجاني | مكتبة الإيموشات المتحركة - مملكة الإيموش</title>
 
 <script>
 (() => {
-  const language = localStorage.getItem("emojilandLanguage") || "ar";
+  const savedLanguage = localStorage.getItem("emojilandLanguage");
+  const requestedLanguage = new URLSearchParams(location.search).get("lang");
+  const language = savedLanguage || (requestedLanguage === "en" ? "en" : "ar");
+
   document.documentElement.lang = language;
   document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 })();
@@ -76,15 +79,16 @@ body{margin:0;font-family:Arial,sans-serif;background:#f8f7fc;color:#29243a}
 
 <main class="main">
 <section class="intro">
-<h1 data-ar="الإيموشات المتحركة" data-en="Animated Emojis">الإيموشات المتحركة</h1>
+<h1 data-ar="ايموش متحرك مجاني" data-en="Free Animated Emojis">ايموش متحرك مجاني</h1>
 
-<p data-ar="اضغط على نسخ لنسخ الإيموش، أو تنزيل لحفظه بصيغة GIF متحركة."
-data-en="Copy an emoji or download its animated GIF.">
-اضغط على نسخ لنسخ الإيموش، أو تنزيل لحفظه بصيغة GIF متحركة.
+<p
+data-ar="تصفح مكتبة الإيموشات المتحركة المجانية في مملكة الإيموش. اختر الإيموش الذي يعجبك، وانسخه أو نزّله بصيغة GIF متحركة بسهولة."
+data-en="Explore the free animated emoji collection at Emojiland. Choose your favorite emoji, copy it, or download it as an animated GIF.">
+تصفح مكتبة الإيموشات المتحركة المجانية في مملكة الإيموش. اختر الإيموش الذي يعجبك، وانسخه أو نزّله بصيغة GIF متحركة بسهولة.
 </p>
 </section>
 
-<div class="status" id="status">
+<div class="status" id="status" aria-live="polite">
 <span id="statusText">جاري تحميل الإيموشات...</span>
 <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
 </div>
@@ -110,7 +114,9 @@ Creative Commons Attribution 4.0
 "use strict";
 
 const LANGUAGE_KEY = "emojilandLanguage";
-let language = localStorage.getItem(LANGUAGE_KEY) || "ar";
+const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+const requestedLanguage = new URLSearchParams(location.search).get("lang");
+let language = savedLanguage || (requestedLanguage === "en" ? "en" : "ar");
 
 const grid = document.getElementById("emojiGrid");
 const statusText = document.getElementById("statusText");
@@ -143,14 +149,25 @@ function updateLanguage(){
   el.textContent = el.dataset[language];
  });
 
+ document.querySelectorAll("[data-ar][data-en]").forEach(el=>{
+  if(el.tagName === "IMG"){
+   el.alt = el.dataset[language];
+  }
+ });
+
+ emptyMessage.textContent = t(
+  "لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة.",
+  "No animated files are currently available. Try refreshing the page."
+ );
+
  document.title = t(
-  "الإيموشات المتحركة | مملكة الإيموش",
-  "Animated Emojis | Emojiland"
+  "ايموش متحرك مجاني | مكتبة الإيموشات المتحركة - مملكة الإيموش",
+  "Free Animated Emojis | Animated Emoji Library - Emojiland"
  );
 
  document.querySelector('meta[name="description"]').content = t(
-  "مجموعة من الإيموشات المتحركة المجانية، انسخها أو نزّلها بصيغة GIF.",
-  "Free animated emojis. Copy them or download them as GIF files."
+  "اكتشف ايموش متحرك مجاني في مملكة الإيموش. تصفح مجموعة متنوعة من الإيموشات المتحركة، وانسخ ما تريد أو نزّله بصيغة GIF بسهولة.",
+  "Discover free animated emojis at Emojiland. Browse a collection of animated emojis, copy your favorites, or download them as GIF files."
  );
 
  updateStatus();
