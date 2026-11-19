@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="تواصل مع فريق مملكة الإيموش لإرسال اقتراحاتك وملاحظاتك أو الإبلاغ عن مشكلة.">
+
+  <meta name="description" content="تواصل مع مملكة الإيموش لإرسال اقتراحاتك وملاحظاتك أو الإبلاغ عن أي مشكلة في استخدام الإيموش والملصقات. نسعد بمساعدتك.">
+
   <meta name="theme-color" content="#7655c5">
-  <title>اتصل بنا | مملكة الإيموش</title>
+
+  <title>اتصل بنا | مملكة الإيموش - Emojiland</title>
+
   <link rel="stylesheet" href="style.css">
 
   <!-- Google Analytics -->
@@ -186,10 +190,11 @@
           id="contactName"
           name="name"
           maxlength="80"
+          autocomplete="name"
           required
           placeholder="اكتب اسمك"
-          data-placeholder-ar="اكتب اسمك"
-          data-placeholder-en="Enter your name">
+          data-ar-placeholder="اكتب اسمك"
+          data-en-placeholder="Enter your name">
       </div>
 
       <div>
@@ -202,10 +207,11 @@
           id="contactEmail"
           name="email"
           maxlength="150"
+          autocomplete="email"
           required
           placeholder="example@email.com"
-          data-placeholder-ar="example@email.com"
-          data-placeholder-en="example@email.com">
+          data-ar-placeholder="example@email.com"
+          data-en-placeholder="example@email.com">
       </div>
 
       <div>
@@ -218,8 +224,8 @@
           maxlength="120"
           required
           placeholder="اكتب موضوع الرسالة"
-          data-placeholder-ar="اكتب موضوع الرسالة"
-          data-placeholder-en="Enter the subject">
+          data-ar-placeholder="اكتب موضوع الرسالة"
+          data-en-placeholder="Enter the subject">
       </div>
 
       <div>
@@ -231,8 +237,8 @@
           maxlength="3000"
           required
           placeholder="اكتب رسالتك هنا..."
-          data-placeholder-ar="اكتب رسالتك هنا..."
-          data-placeholder-en="Write your message here..."></textarea>
+          data-ar-placeholder="اكتب رسالتك هنا..."
+          data-en-placeholder="Write your message here..."></textarea>
       </div>
 
       <button class="contact-submit" type="submit"
@@ -258,5 +264,6 @@
   </footer>
 
   <script src="app.js"></script>
+
 </body>
 </html>
