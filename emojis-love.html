@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="اكتشف ايموش الحب المتحركة في مملكة الإيموش. مجموعة رومانسية من القلوب والقبلات والتعبير عن المشاعر، مع إمكانية نسخ الإيموشات وتنزيل صور GIF مجانًا.">
-  <meta name="keywords" content="ايموش, ايموش متحرك, ايموش الحب, ايموشات الحب, ايموشات رومانسية, ايموشات القلوب, ايموشات القبلات">
+
+  <meta name="description" content="اكتشف إيموش الحب والقلوب المتحركة في مملكة الإيموش 💗 مجموعة من القلوب والقبلات والرموز الرومانسية، مع إمكانية نسخ الإيموشات وتنزيل صور GIF مجانًا.">
+  <meta name="keywords" content="ايموش الحب, ايموشات حب, ايموش القلوب, قلوب متحركة, ايموشات رومانسية, ايموش القبلات, ايموش حب متحرك, رموز الحب, صور GIF حب, love emojis, animated hearts">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#7655c5">
 
-  <title>ايموش الحب والقلوب المتحركة | مملكة الإيموش</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="إيموش الحب والقلوب المتحركة | مملكة الإيموش">
+  <meta property="og:description" content="مجموعة رومانسية من إيموش القلوب والقبلات والتعبيرات المتحركة. انسخ الإيموش أو نزّل صور GIF مجانًا.">
+  <meta property="og:site_name" content="مملكة الإيموش | Emojiland">
+
+  <title>إيموش الحب والقلوب المتحركة | مملكة الإيموش</title>
 
   <script>
     (() => {
@@ -43,7 +49,10 @@
       color: #29243a;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
     header {
       background: #7655c5;
@@ -56,7 +65,10 @@
       gap: 12px;
     }
 
-    header h1 { font-size: 22px; margin: 0; }
+    header h1 {
+      font-size: 22px;
+      margin: 0;
+    }
 
     nav {
       background: white;
@@ -67,7 +79,15 @@
       box-shadow: 0 2px 8px #00000008;
     }
 
-    nav a { color: #6545aa; font-size: 14px; }
+    nav a {
+      color: #6545aa;
+      font-size: 14px;
+    }
+
+    nav a:hover,
+    .internal-links a:hover {
+      color: #e45d91;
+    }
 
     main {
       width: min(1100px, 92%);
@@ -77,10 +97,49 @@
     .intro {
       text-align: center;
       margin-bottom: 25px;
+      padding: 22px 15px;
+      background: white;
+      border-radius: 16px;
+      border: 1px solid #eee8f7;
     }
 
-    .intro h2 { color: #704db9; font-size: 28px; }
-    .intro p { color: #777; line-height: 1.8; }
+    .intro h2 {
+      color: #704db9;
+      font-size: 28px;
+      line-height: 1.5;
+    }
+
+    .intro p {
+      color: #777;
+      line-height: 2;
+      max-width: 850px;
+      margin: 12px auto 0;
+    }
+
+    .internal-links {
+      background: white;
+      border: 1px solid #eee8f7;
+      border-radius: 12px;
+      padding: 15px 18px;
+      margin: 20px 0;
+      line-height: 2;
+      text-align: center;
+    }
+
+    .internal-links strong {
+      color: #704db9;
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .internal-links a {
+      display: inline-block;
+      color: #7655c5;
+      margin: 3px 8px;
+      font-size: 14px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
 
     .status {
       text-align: center;
@@ -89,6 +148,7 @@
       border-radius: 12px;
       margin: 20px 0;
       color: #704db9;
+      line-height: 1.8;
     }
 
     .progress {
@@ -153,14 +213,85 @@
       font-size: 12px;
     }
 
-    .actions button.download { background: #e45d91; }
-    .actions button:disabled { opacity: .6; cursor: wait; }
+    .actions button.download {
+      background: #e45d91;
+    }
+
+    .actions button:disabled {
+      opacity: .6;
+      cursor: wait;
+    }
 
     .empty {
       text-align: center;
       padding: 25px;
       color: #777;
       display: none;
+      background: white;
+      border-radius: 12px;
+      margin-top: 15px;
+      line-height: 1.8;
+    }
+
+    .love-content {
+      background: white;
+      border: 1px solid #eee8f7;
+      border-radius: 16px;
+      padding: 25px;
+      margin-top: 35px;
+      line-height: 2;
+      color: #514b60;
+    }
+
+    .love-content h2 {
+      color: #704db9;
+      font-size: 23px;
+      margin: 28px 0 12px;
+      line-height: 1.6;
+    }
+
+    .love-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .love-content h3 {
+      color: #805bc5;
+      font-size: 18px;
+      margin: 20px 0 8px;
+    }
+
+    .love-content p {
+      margin: 10px 0;
+    }
+
+    .love-content ul {
+      padding-inline-start: 25px;
+      margin: 10px 0 18px;
+    }
+
+    .love-content li {
+      margin-bottom: 8px;
+    }
+
+    .love-content strong {
+      color: #6545aa;
+    }
+
+    .faq-item {
+      padding: 13px 0;
+      border-bottom: 1px solid #eee8f7;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-item h3 {
+      margin-top: 0;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     footer {
@@ -173,12 +304,32 @@
       line-height: 1.8;
     }
 
-    footer a { color: #7655c5; text-decoration: underline; }
+    footer a {
+      color: #7655c5;
+      text-decoration: underline;
+    }
 
-    @media(max-width: 500px) {
+    @media(max-width: 600px) {
       header h1 { font-size: 18px; }
+
       .intro h2 { font-size: 23px; }
-      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .love-content {
+        padding: 18px 15px;
+      }
+
+      .love-content h2 {
+        font-size: 20px;
+      }
+
+      nav {
+        gap: 13px;
+      }
     }
   </style>
 </head>
@@ -190,30 +341,440 @@
       data-en="😊 Emojiland | مملكة الإيموش">😊 مملكة الإيموش | Emojiland</h1>
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
   <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
   <a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
   <a href="emojis-smileys.html" data-ar="الابتسامات" data-en="Smileys">الابتسامات</a>
+  <a href="emojis-animals.html" data-ar="الحيوانات" data-en="Animals">الحيوانات</a>
+  <a href="emojis-food.html" data-ar="الطعام" data-en="Food">الطعام</a>
+  <a href="emojis-hands.html" data-ar="الأيدي" data-en="Hands">الأيدي</a>
+  <a href="emojis-activities.html" data-ar="الأنشطة" data-en="Activities">الأنشطة</a>
 </nav>
 
 <main>
-  <section class="intro">
-    <h2 data-ar="💗 ايموش الحب والقلوب المتحركة"
-        data-en="💗 Animated Love & Heart Emojis">💗 ايموش الحب والقلوب المتحركة</h2>
 
-    <p data-ar="اكتشف مجموعة من ايموش الحب المتحركة والرموز الرومانسية، بما فيها القلوب والقبلات والتعبيرات التي تساعدك على التعبير عن مشاعرك. يمكنك نسخ الإيموش أو تنزيل صور GIF مجانًا."
-       data-en="Explore animated love emojis and romantic symbols, including hearts, kisses and expressions to share your feelings. Copy your favorite emoji or download its GIF for free.">
-       اكتشف مجموعة من ايموش الحب المتحركة والرموز الرومانسية، بما فيها القلوب والقبلات والتعبيرات التي تساعدك على التعبير عن مشاعرك. يمكنك نسخ الإيموش أو تنزيل صور GIF مجانًا.
+  <section class="intro">
+    <h2 data-ar="💗 إيموش الحب والقلوب المتحركة"
+        data-en="💗 Animated Love & Heart Emojis">💗 إيموش الحب والقلوب المتحركة</h2>
+
+    <p data-ar="عبّر عن أجمل مشاعرك بكلمات قليلة ورموز مليئة بالحب! اكتشف مجموعة متنوعة من إيموش الحب المتحركة والقلوب الرومانسية والقبلات والوجوه المعبرة عن الإعجاب والحنان. ستجد هنا رموزًا مناسبة للتعبير عن الحب والتقدير والاشتياق والمودة في محادثاتك اليومية. اختر الإيموش الذي يناسب إحساسك، وانسخه بسهولة لاستخدامه في رسائلك وتعليقاتك ومنشوراتك. ويمكنك أيضًا تنزيل صور GIF المتحركة المتاحة مجانًا ومشاركتها مع الأشخاص الذين تحبهم."
+       data-en="Share your warmest feelings with expressive animated emojis! Explore a collection of romantic hearts, kisses, affectionate faces and symbols that help you express love, admiration, care and friendship. Whether you are sending a sweet message, writing a social media caption or celebrating a special moment, you can find an emoji that matches your mood. Copy your favorite symbol in seconds or download an available animated GIF to share with someone special.">
+      عبّر عن أجمل مشاعرك بكلمات قليلة ورموز مليئة بالحب! اكتشف مجموعة متنوعة من إيموش الحب المتحركة والقلوب الرومانسية والقبلات والوجوه المعبرة عن الإعجاب والحنان. ستجد هنا رموزًا مناسبة للتعبير عن الحب والتقدير والاشتياق والمودة في محادثاتك اليومية. اختر الإيموش الذي يناسب إحساسك، وانسخه بسهولة لاستخدامه في رسائلك وتعليقاتك ومنشوراتك. ويمكنك أيضًا تنزيل صور GIF المتحركة المتاحة مجانًا ومشاركتها مع الأشخاص الذين تحبهم.
     </p>
   </section>
 
-  <div class="status" id="status" aria-live="polite">
-    جاري فحص الإيموشات المتحركة...
-    <div class="progress"><span id="progressBar"></span></div>
+  <div class="internal-links">
+    <strong data-ar="🌈 اكتشف أقسام مملكة الإيموش الأخرى"
+            data-en="🌈 Explore Other Emojiland Categories">🌈 اكتشف أقسام مملكة الإيموش الأخرى</strong>
+
+    <a href="index.html" data-ar="كل الإيموشات" data-en="All Emojis">كل الإيموشات</a>
+    <a href="emojis-smileys.html" data-ar="إيموش الابتسامات" data-en="Smileys Emojis">إيموش الابتسامات</a>
+    <a href="emojis-animals.html" data-ar="إيموش الحيوانات" data-en="Animal Emojis">إيموش الحيوانات</a>
+    <a href="emojis-food.html" data-ar="إيموش الطعام" data-en="Food Emojis">إيموش الطعام</a>
+    <a href="emojis-hands.html" data-ar="إيموش الأيدي" data-en="Hand Emojis">إيموش الأيدي</a>
+    <a href="emojis-activities.html" data-ar="إيموش الأنشطة" data-en="Activity Emojis">إيموش الأنشطة</a>
+    <a href="stickers.html" data-ar="الملصقات المتحركة" data-en="Animated Stickers">الملصقات المتحركة</a>
   </div>
 
-  <section class="grid" id="emojiGrid"></section>
-  <div class="empty" id="emptyMessage"></div>
+  <div class="status" id="status" aria-live="polite">
+    <span id="statusText">جاري فحص الإيموشات المتحركة...</span>
+    <div class="progress">
+      <span id="progressBar"></span>
+    </div>
+  </div>
+
+  <section class="grid" id="emojiGrid" aria-label="Love emojis"></section>
+  <div class="empty" id="emptyMessage" role="status"></div>
+
+  <!-- Arabic SEO content -->
+  <article class="love-content" data-language="ar">
+
+    <h2>💞 اكتشف معاني إيموش الحب والقلوب</h2>
+
+    <p>
+      أصبحت الإيموشات جزءًا أساسيًا من التواصل عبر الإنترنت؛ فهي تساعدنا على التعبير عن المشاعر بطريقة سريعة وواضحة، وتضيف لمسة شخصية إلى الرسائل النصية. وعندما يتعلق الأمر بالحب والمودة، فإن القلوب والقبلات والوجوه المبتسمة من أكثر الرموز استخدامًا في المحادثات اليومية.
+    </p>
+
+    <p>
+      لكن لكل رمز تعبير مختلف؛ فالقلب الأحمر قد يعبر عن الحب العميق، بينما يمكن للقلب الوردي أن يضيف إحساسًا بالرقة واللطف، وتساعد الوجوه المحبة على إظهار الإعجاب والسعادة. لذلك تضم هذه الصفحة مجموعة متنوعة من الرموز التي يمكنك اختيارها وفقًا للموقف والشخص الذي تتحدث معه.
+    </p>
+
+    <h2>❤️ إيموش القلوب وألوانها المختلفة</h2>
+
+    <p>
+      القلوب من أشهر الرموز المستخدمة للتعبير عن المشاعر. وعلى الرغم من أن أشكالها متقاربة، فإن اختيار قلب معين قد يضيف معنى مختلفًا إلى رسالتك. إليك بعض الرموز الموجودة في المجموعة:
+    </p>
+
+    <h3>❤️ القلب الأحمر والحب الصادق</h3>
+    <p>
+      القلب الأحمر من أكثر رموز الحب شهرة. يستخدم للتعبير عن المودة القوية والحب والتقدير، ويمكن إضافته إلى رسالة رومانسية أو تهنئة أو كلمة شكر لشخص عزيز. وهو اختيار بسيط عندما تريد أن توصل إحساسًا دافئًا دون كتابة جملة طويلة.
+    </p>
+
+    <h3>💖 القلوب اللامعة والقلوب المتحركة</h3>
+    <p>
+      القلوب اللامعة والوردية مثل 💖 و💗 و💓 تضيف إحساسًا بالبهجة والرقة إلى المحادثة. وهي مناسبة للرسائل اللطيفة والتعبير عن السعادة والإعجاب، كما تمنح المنشورات والتعليقات شكلًا أكثر حيوية وجاذبية.
+    </p>
+
+    <h3>💕 القلوب المتعددة والقلوب المتداخلة</h3>
+    <p>
+      يمكن استخدام 💕 و💞 للتعبير عن المودة المتبادلة والاهتمام والمشاعر الجميلة. وتناسب هذه الرموز الرسائل بين الأصدقاء والأشخاص المقربين، كما يمكن استخدامها في التهاني والمنشورات التي تتحدث عن العلاقات الإيجابية.
+    </p>
+
+    <h3>💔 القلب المكسور والتعبير عن الحزن</h3>
+    <p>
+      لا تقتصر رموز الحب على السعادة فقط؛ فالقلب المكسور 💔 قد يستخدم للتعبير عن الحزن أو خيبة الأمل أو الاشتياق أو انتهاء علاقة. ويساعد هذا الرمز على توضيح الحالة العاطفية عندما تكون الكلمات غير كافية.
+    </p>
+
+    <h2>😘 إيموش القبلات والوجوه المحبة</h2>
+
+    <p>
+      الوجوه المحبة والقبلات تضيف طابعًا شخصيًا إلى الرسائل، ويمكن أن تجعل المحادثة أكثر دفئًا وودًا. وتختلف دلالات هذه الرموز حسب السياق وطبيعة العلاقة بين الأشخاص.
+    </p>
+
+    <h3>🥰 الوجه المبتسم بالقلوب</h3>
+    <p>
+      يعبر 🥰 عن السعادة والحنان والشعور بالمحبة. يمكنك استخدامه عندما تتلقى رسالة لطيفة أو هدية جميلة، أو عندما تريد أن تظهر لشخص ما مدى سعادتك بكلامه واهتمامه.
+    </p>
+
+    <h3>😍 وجه العيون على شكل قلوب</h3>
+    <p>
+      يستخدم 😍 للتعبير عن الإعجاب الشديد والانبهار بشيء جميل أو شخص تحبه. ويمكن أن يظهر في التعليقات على الصور أو عند الحديث عن هدية مميزة أو تجربة أعجبتك.
+    </p>
+
+    <h3>😘 و😚 رموز القبلات</h3>
+    <p>
+      تستخدم رموز القبلات للتعبير عن المودة والتحية الرقيقة والمشاعر الودودة. ويمكن إضافتها إلى نهاية رسالة شخصية أو استخدامها في محادثة مرحة مع شخص مقرب، مع مراعاة طبيعة العلاقة والسياق.
+    </p>
+
+    <h3>🤗 الوجه المعانق</h3>
+    <p>
+      يرمز 🤗 إلى العناق والدعم والاهتمام. وهو مناسب عندما تريد مواساة صديق أو تهنئة شخص عزيز أو إرسال رسالة تشجيع ومساندة.
+    </p>
+
+    <h2>🌹 الورود والهدايا والرموز الرومانسية</h2>
+
+    <p>
+      لا يقتصر التعبير عن الحب على القلوب والوجوه فقط؛ فهناك رموز أخرى تضيف معنى جميلًا إلى الرسائل، مثل الورود والهدايا ورسائل الحب.
+    </p>
+
+    <ul>
+      <li>🌹 الوردة الحمراء: رمز مشهور للرومانسية والتقدير والمشاعر الجميلة.</li>
+      <li>💐 باقة الزهور: مناسبة للتهنئة والشكر والاحتفال بالمناسبات السعيدة.</li>
+      <li>🎁 الهدية: تستخدم عند الحديث عن المفاجآت وأعياد الميلاد والمناسبات الخاصة.</li>
+      <li>💌 رسالة الحب: تضيف لمسة شخصية عند إرسال كلمات لطيفة أو رسالة مليئة بالمودة.</li>
+      <li>💝 القلب مع الشريط: يناسب التعبير عن الحب والاهتمام وتقديم المشاعر كهدية.</li>
+    </ul>
+
+    <h2>💑 إيموش العلاقات والمشاركة والمودة</h2>
+
+    <p>
+      توجد أيضًا رموز تعبر عن العلاقات والمشاركة بين شخصين، مثل 💑 و💏 و👫. ويمكن استخدامها في المنشورات التي تتناول العلاقات العاطفية أو المناسبات الرومانسية أو اللحظات السعيدة التي تجمع الأشخاص.
+    </p>
+
+    <p>
+      من الأفضل اختيار الرمز الذي يناسب المعنى الذي تريد التعبير عنه؛ فبعض الرموز تعبر عن الحب الرومانسي، بينما يناسب بعضها الآخر الصداقة أو القرب أو الاحتفال بعلاقة مميزة.
+    </p>
+
+    <h2>📱 كيف تستخدم إيموش الحب في الرسائل والمنشورات؟</h2>
+
+    <p>
+      يمكنك استخدام رموز الحب في تطبيقات المحادثة ومواقع التواصل الاجتماعي والتعليقات والمنشورات ورسائل التهنئة. وهي طريقة سهلة لإضافة تعبير بصري إلى النص وجعل الرسالة أكثر وضوحًا ودفئًا.
+    </p>
+
+    <h3>💬 في المحادثات اليومية</h3>
+    <p>
+      أضف قلبًا أو وجهًا مبتسمًا إلى رسالة شكر أو تحية أو تهنئة. ويمكن أن يساعد اختيار الرمز المناسب على توضيح نبرة الرسالة، خاصة عندما يكون النص قصيرًا.
+    </p>
+
+    <h3>📸 في التعليقات على الصور</h3>
+    <p>
+      يمكن استخدام القلوب والورود والوجوه المعبرة في التعليق على الصور الجميلة أو المناسبات أو الهدايا. اختر عددًا مناسبًا من الرموز حتى تظل رسالتك واضحة وغير مزدحمة.
+    </p>
+
+    <h3>🎉 في المناسبات الخاصة</h3>
+    <p>
+      تناسب رموز الحب أعياد الميلاد واحتفالات الذكرى السنوية والمناسبات السعيدة ورسائل الشكر. ويمكن دمج القلب مع الوردة أو الهدية لصناعة رسالة قصيرة تحمل معنى أجمل.
+    </p>
+
+    <h2>✨ طريقة نسخ إيموش الحب وتنزيل صور GIF</h2>
+
+    <p>
+      صممنا هذه الصفحة لتسهيل الوصول إلى الرموز واستخدامها دون الحاجة إلى البحث عنها في لوحة مفاتيح الهاتف أو الكمبيوتر. يمكنك الاستفادة من الخيارات الموجودة أسفل كل إيموش:
+    </p>
+
+    <ul>
+      <li><strong>📋 نسخ الإيموش:</strong> اضغط على زر «نسخ» الموجود أسفل الرمز، ثم الصقه في المحادثة أو المنشور أو التطبيق الذي تستخدمه.</li>
+      <li><strong>⬇️ تنزيل GIF:</strong> اضغط على زر «تنزيل GIF» للحصول على الصورة المتحركة المتاحة للرمز.</li>
+      <li><strong>💗 اختيار الرمز:</strong> تصفح المجموعة واختر القلب أو الوجه أو الرمز الذي يناسب مشاعرك.</li>
+      <li><strong>📱 الاستخدام على الهاتف:</strong> يمكنك نسخ الرموز ولصقها في تطبيقات التواصل والرسائل المتوافقة مع الإيموشات.</li>
+    </ul>
+
+    <p>
+      ملاحظة: قد يختلف ظهور بعض الإيموشات أو حركتها حسب الجهاز والتطبيق والمتصفح. كما قد يعتمد تنزيل صور GIF على اتصال الإنترنت وإمكانية الوصول إلى مصدر الصورة.
+    </p>
+
+    <h2>🌷 نصائح لاختيار إيموش الحب المناسب</h2>
+
+    <ul>
+      <li>اختر القلب الذي يعبر عن إحساسك بدلًا من استخدام رموز كثيرة دون داعٍ.</li>
+      <li>استخدم الوجوه المحبة عندما تريد إظهار السعادة أو الإعجاب بطريقة واضحة.</li>
+      <li>أضف الورود والهدايا إلى رسائل التهنئة والمناسبات الخاصة.</li>
+      <li>راعِ طبيعة العلاقة بينك وبين الشخص الذي ترسل إليه الرمز.</li>
+      <li>اجمع بين الإيموش والكلمات البسيطة حتى تصل رسالتك بصورة طبيعية.</li>
+      <li>لا تكثر من الرموز في الرسالة الواحدة إذا كان ذلك سيجعل قراءتها صعبة.</li>
+    </ul>
+
+    <h2>❓ الأسئلة الشائعة عن إيموش الحب</h2>
+
+    <div class="faq-item">
+      <h3>💗 ما المقصود بإيموش الحب؟</h3>
+      <p>
+        إيموش الحب هو رمز تعبيري يستخدم لإظهار المودة أو الإعجاب أو الرومانسية أو الاهتمام، ويشمل القلوب والقبلات والوجوه المحبة والورود وغيرها من الرموز المرتبطة بالمشاعر.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>❤️ كيف أنسخ إيموش القلب؟</h3>
+      <p>
+        ابحث عن القلب الذي تريده في شبكة الإيموشات، ثم اضغط على زر «نسخ» أسفله. بعد ذلك يمكنك لصقه في الرسائل أو التعليقات أو المنشورات.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>⬇️ هل يمكن تنزيل إيموش الحب المتحرك؟</h3>
+      <p>
+        نعم، تحتوي الرموز المتاحة على زر «تنزيل GIF». اضغط عليه لمحاولة تنزيل الصورة المتحركة إلى جهازك. وقد يختلف نجاح التنزيل حسب المتصفح والاتصال بالإنترنت.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>💞 ما الفرق بين القلوب المختلفة؟</h3>
+      <p>
+        تختلف القلوب في شكلها ودلالتها الشائعة؛ فالقلب الأحمر يرتبط غالبًا بالحب، والقلوب الوردية واللامعة تضيف إحساسًا بالرقة والبهجة، بينما يعبر القلب المكسور عن الحزن أو خيبة الأمل. ويظل المعنى مرتبطًا بالسياق وطريقة الاستخدام.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📱 هل تعمل إيموشات الحب على الهاتف والكمبيوتر؟</h3>
+      <p>
+        يمكن نسخ الرموز واستخدامها على معظم الأجهزة والتطبيقات الحديثة التي تدعم الإيموشات. وقد يختلف شكل الرمز وطريقة عرض صور GIF من جهاز إلى آخر.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🌹 أين يمكن استخدام إيموش الحب؟</h3>
+      <p>
+        يمكنك استخدامها في تطبيقات المحادثة والتعليقات والمنشورات ورسائل التهنئة والرسائل الشخصية، بحسب الرموز التي يدعمها التطبيق الذي تستخدمه.
+      </p>
+    </div>
+
+    <p>
+      💕 استمتع باكتشاف رموز الحب في مملكة الإيموش، واختر ما يعبر عن مشاعرك وشاركه مع من تحب!
+    </p>
+
+  </article>
+
+  <!-- English SEO content -->
+  <article class="love-content" data-language="en" hidden>
+
+    <h2>💞 Explore Love Emojis and Their Meanings</h2>
+
+    <p>
+      Emojis have become an important part of online communication. They help people express feelings quickly, add personality to messages and make everyday conversations more engaging. When it comes to affection and romance, hearts, kisses and loving faces are among the most recognizable symbols.
+    </p>
+
+    <p>
+      Each emoji can communicate a slightly different feeling. A red heart is commonly associated with love, pink hearts can add a gentle and playful touch, and affectionate faces can show admiration or happiness. This collection brings these expressions together so you can choose a symbol that fits your message and the moment.
+    </p>
+
+    <h2>❤️ Heart Emojis and Their Different Expressions</h2>
+
+    <p>
+      Heart emojis are widely used to express love, care, appreciation and emotional connection. Although many heart symbols look similar, choosing a particular design can add a different tone to your message.
+    </p>
+
+    <h3>❤️ Red Heart</h3>
+    <p>
+      The red heart is one of the most familiar symbols of love and affection. It can be used in romantic messages, thank-you notes, celebrations and everyday conversations with someone special.
+    </p>
+
+    <h3>💖 Sparkling and Pink Hearts</h3>
+    <p>
+      Symbols such as 💖, 💗 and 💓 bring a bright and gentle feeling to messages. They are often used to show excitement, admiration, happiness and appreciation, making them useful for friendly conversations and social media captions.
+    </p>
+
+    <h3>💕 Two Hearts and Revolving Hearts</h3>
+    <p>
+      The 💕 and 💞 symbols can suggest shared affection, warmth and a positive connection. They are suitable for messages between close friends, partners and family members, depending on the context.
+    </p>
+
+    <h3>💔 Broken Heart</h3>
+    <p>
+      Not every emotional message is about happiness. The broken heart can represent sadness, disappointment, heartbreak or missing someone. It offers a simple visual way to communicate difficult feelings.
+    </p>
+
+    <h2>😘 Kiss Emojis and Affectionate Faces</h2>
+
+    <p>
+      Kiss emojis and affectionate faces make messages feel more personal. Their meaning can change depending on the conversation, the relationship and the way the symbol is used.
+    </p>
+
+    <h3>🥰 Smiling Face with Hearts</h3>
+    <p>
+      This emoji is commonly used to express warmth, affection and happiness. It works well when reacting to a kind message, a thoughtful gift or a moment that makes you feel appreciated.
+    </p>
+
+    <h3>😍 Smiling Face with Heart-Eyes</h3>
+    <p>
+      Heart-eyes are often used to show strong admiration or excitement. You might use this emoji when commenting on a beautiful photo, a favorite item or something that you really love.
+    </p>
+
+    <h3>😘 and 😚 Kiss Faces</h3>
+    <p>
+      Kiss emojis can add a friendly, affectionate or romantic tone to a message. They are often used at the end of personal conversations or in playful exchanges with people you know well.
+    </p>
+
+    <h3>🤗 Hugging Face</h3>
+    <p>
+      The hugging face can express comfort, support and care. It is a thoughtful choice when encouraging a friend, celebrating good news or sending someone a warm message.
+    </p>
+
+    <h2>🌹 Roses, Gifts and Romantic Symbols</h2>
+
+    <p>
+      Romantic expression is not limited to hearts and faces. Flowers, gifts and love letters can add another layer of meaning to a message and make a greeting feel more personal.
+    </p>
+
+    <ul>
+      <li>🌹 Rose: commonly associated with romance, appreciation and affection.</li>
+      <li>💐 Bouquet: useful for congratulations, celebrations and thoughtful greetings.</li>
+      <li>🎁 Gift: suitable for birthdays, surprises and special occasions.</li>
+      <li>💌 Love Letter: adds a personal touch to a sweet message.</li>
+      <li>💝 Heart with Ribbon: can represent affection, care and a heartfelt gift.</li>
+    </ul>
+
+    <h2>💑 Relationship and Togetherness Emojis</h2>
+
+    <p>
+      Some symbols represent couples, relationships and shared moments. Emojis such as 💑, 💏 and 👫 can be used in posts about relationships, romantic celebrations and meaningful memories.
+    </p>
+
+    <p>
+      Choose a symbol that matches the message you want to share. Some emojis have a clearly romantic tone, while others can also work in friendly or celebratory conversations.
+    </p>
+
+    <h2>📱 How to Use Love Emojis in Messages and Posts</h2>
+
+    <p>
+      Love emojis can be used in messaging apps, social media captions, comments, greetings and personal conversations. A carefully chosen symbol can make a short message feel warmer and help communicate its tone.
+    </p>
+
+    <h3>💬 Everyday Conversations</h3>
+    <p>
+      Add a heart or affectionate face to a greeting, thank-you message or friendly reply. Emojis can help make the tone of a short text easier to understand.
+    </p>
+
+    <h3>📸 Photo Comments</h3>
+    <p>
+      Hearts, roses and expressive faces can be used when commenting on a lovely photo, a celebration or a thoughtful gift. A small number of relevant emojis is often more effective than a long row of symbols.
+    </p>
+
+    <h3>🎉 Special Occasions</h3>
+    <p>
+      Love emojis can add personality to birthday wishes, anniversaries, congratulations and other happy occasions. Combine a heart with a flower or gift symbol to create a short and cheerful greeting.
+    </p>
+
+    <h2>✨ How to Copy Love Emojis and Download GIF Images</h2>
+
+    <p>
+      This page makes it easy to find and use animated love emojis without searching through your device keyboard. Each available emoji includes simple actions:
+    </p>
+
+    <ul>
+      <li><strong>📋 Copy:</strong> Select the Copy button below an emoji, then paste the symbol into a message, comment or post.</li>
+      <li><strong>⬇️ Download GIF:</strong> Select Download GIF to download the available animated image.</li>
+      <li><strong>💗 Choose a symbol:</strong> Browse the collection and pick a heart, face or romantic symbol that matches your message.</li>
+      <li><strong>📱 Use on mobile:</strong> Copy and paste emojis into compatible messaging and social media apps.</li>
+    </ul>
+
+    <p>
+      Please note that emoji appearance and animation support may vary across devices, browsers and applications. GIF downloads may also depend on your internet connection and access to the image source.
+    </p>
+
+    <h2>🌷 Tips for Choosing the Right Love Emoji</h2>
+
+    <ul>
+      <li>Choose a heart that matches the feeling you want to express.</li>
+      <li>Use affectionate faces when you want to show happiness or admiration.</li>
+      <li>Add flowers and gift symbols to greetings and special occasions.</li>
+      <li>Consider your relationship with the person receiving the message.</li>
+      <li>Combine emojis with simple words to make your message feel natural.</li>
+      <li>Avoid using too many symbols if they make your message difficult to read.</li>
+    </ul>
+
+    <h2>❓ Frequently Asked Questions About Love Emojis</h2>
+
+    <div class="faq-item">
+      <h3>💗 What are love emojis?</h3>
+      <p>
+        Love emojis are symbols used to express affection, admiration, romance or care. They include hearts, kiss faces, affectionate expressions, roses and other symbols associated with positive feelings.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>❤️ How can I copy a heart emoji?</h3>
+      <p>
+        Find the heart you want in the emoji grid and select the Copy button below it. You can then paste the symbol into a message, comment or social media post.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>⬇️ Can I download animated love emojis?</h3>
+      <p>
+        Available emojis include a Download GIF button. Select it to try downloading the animated image. Download behavior may vary depending on your browser and internet connection.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>💞 What is the difference between heart emojis?</h3>
+      <p>
+        Heart symbols have different designs and common associations. Red hearts are often linked with love, pink and sparkling hearts can suggest warmth or excitement, and a broken heart can express sadness or disappointment. Meaning also depends on context.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📱 Do love emojis work on phones and computers?</h3>
+      <p>
+        Most modern devices and applications support standard emoji characters. Their appearance and the way animated GIF images are displayed can differ between platforms.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🌹 Where can I use love emojis?</h3>
+      <p>
+        You can use them in messaging apps, comments, social media posts, greetings and personal messages, depending on the symbols supported by the application.
+      </p>
+    </div>
+
+    <p>
+      💕 Explore the love emoji collection at Emojiland, choose the symbols that express your feelings and share them with someone special!
+    </p>
+
+  </article>
+
+  <div class="internal-links">
+    <strong data-ar="🌈 المزيد من الإيموشات والملصقات"
+            data-en="🌈 More Emojis and Stickers">🌈 المزيد من الإيموشات والملصقات</strong>
+
+    <a href="index.html" data-ar="الصفحة الرئيسية" data-en="Homepage">الصفحة الرئيسية</a>
+    <a href="emojis-smileys.html" data-ar="الابتسامات والمشاعر" data-en="Smileys and Emotions">الابتسامات والمشاعر</a>
+    <a href="emojis-animals.html" data-ar="الحيوانات والطبيعة" data-en="Animals and Nature">الحيوانات والطبيعة</a>
+    <a href="emojis-food.html" data-ar="الطعام والشراب" data-en="Food and Drink">الطعام والشراب</a>
+    <a href="emojis-hands.html" data-ar="الأيدي والإشارات" data-en="Hands and Gestures">الأيدي والإشارات</a>
+    <a href="emojis-activities.html" data-ar="الأنشطة والرياضة" data-en="Activities and Sports">الأنشطة والرياضة</a>
+    <a href="stickers.html" data-ar="ملصقات متحركة" data-en="Animated Stickers">ملصقات متحركة</a>
+  </div>
+
 </main>
 
 <footer>
@@ -223,12 +784,18 @@
   </p>
 
   <p>
-    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
+    <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">
       CC BY 4.0
     </a>
     |
-    <a href="https://googlefonts.github.io/noto-emoji-animation/" target="_blank" rel="noopener">
+    <a href="https://googlefonts.github.io/noto-emoji-animation/" target="_blank" rel="noopener noreferrer">
       <span data-ar="المصدر والترخيص" data-en="Source and license">المصدر والترخيص</span>
+    </a>
+  </p>
+
+  <p>
+    <a href="index.html" data-ar="مملكة الإيموش - الصفحة الرئيسية" data-en="Emojiland - Home">
+      مملكة الإيموش - الصفحة الرئيسية
     </a>
   </p>
 </footer>
@@ -268,11 +835,17 @@
   ];
 
   const grid = document.getElementById("emojiGrid");
-  const status = document.getElementById("status");
+  const statusText = document.getElementById("statusText");
   const progressBar = document.getElementById("progressBar");
   const emptyMessage = document.getElementById("emptyMessage");
 
-  let language = localStorage.getItem(LANGUAGE_KEY) === "en" ? "en" : "ar";
+  const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
+  const requestedLanguage = new URLSearchParams(location.search).get("lang");
+
+  let language = savedLanguage === "ar" || savedLanguage === "en"
+    ? savedLanguage
+    : requestedLanguage === "en" ? "en" : "ar";
+
   let loaded = 0;
   let finished = 0;
 
@@ -288,15 +861,23 @@
       element.textContent = element.dataset[language];
     });
 
+    document.querySelectorAll("[data-language]").forEach(section => {
+      section.hidden = section.dataset.language !== language;
+    });
+
     document.title = t(
-      "ايموش الحب والقلوب المتحركة | مملكة الإيموش",
+      "إيموش الحب والقلوب المتحركة | مملكة الإيموش",
       "Animated Love & Heart Emojis | Emojiland"
     );
 
     document.querySelector('meta[name="description"]').content = t(
-      "اكتشف ايموش الحب المتحركة في مملكة الإيموش. مجموعة رومانسية من القلوب والقبلات والتعبير عن المشاعر، مع إمكانية نسخ الإيموشات وتنزيل صور GIF مجانًا.",
-      "Explore animated love emojis at Emojiland. A romantic collection of hearts, kisses and expressions to copy and download as free GIF images."
+      "اكتشف إيموش الحب والقلوب المتحركة في مملكة الإيموش. مجموعة رومانسية من القلوب والقبلات والتعبيرات، مع إمكانية نسخ الإيموشات وتنزيل صور GIF مجانًا.",
+      "Explore animated love emojis at Emojiland. A romantic collection of hearts, kisses and affectionate expressions to copy and download as GIF images."
     );
+
+    document.querySelector('meta[property="og:title"]').content = document.title;
+    document.querySelector('meta[property="og:description"]').content =
+      document.querySelector('meta[name="description"]').content;
 
     updateStatus();
     updateCardButtons();
@@ -307,7 +888,7 @@
     const percent = Math.round((finished / emojis.length) * 100);
     progressBar.style.width = percent + "%";
 
-    status.firstChild.textContent = t(
+    statusText.textContent = t(
       `تم فحص ${finished} من ${emojis.length} ملفًا — المتاح: ${loaded}`,
       `Checked ${finished} of ${emojis.length} files — available: ${loaded}`
     );
@@ -331,8 +912,8 @@
     if (loaded === 0 && finished === emojis.length) {
       emptyMessage.style.display = "block";
       emptyMessage.textContent = t(
-        "تعذر تحميل الإيموشات. تأكد من اتصال الإنترنت.",
-        "Could not load emojis. Check your internet connection."
+        "تعذر تحميل الإيموشات. تأكد من اتصال الإنترنت وحاول تحديث الصفحة.",
+        "Could not load emojis. Check your internet connection and try refreshing the page."
       );
     }
   }
@@ -375,6 +956,7 @@
       area.style.position = "fixed";
       area.style.left = "-9999px";
       area.style.opacity = "0";
+
       document.body.appendChild(area);
       area.focus();
       area.select();
@@ -416,6 +998,7 @@
 
       link.href = objectUrl;
       link.download = `love-${code}.gif`;
+
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -434,8 +1017,12 @@
     card.className = "emoji-card";
 
     const img = item.img;
-    img.alt = t("ايموش حب متحرك " + item.symbol, "Animated love emoji " + item.symbol);
+    img.alt = t(
+      "إيموش حب متحرك " + item.symbol,
+      "Animated love emoji " + item.symbol
+    );
     img.loading = "lazy";
+    img.decoding = "async";
 
     const symbol = document.createElement("div");
     symbol.className = "emoji-symbol";
