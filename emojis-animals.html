@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#7055ed">
 
-  <meta name="description" content="اكتشف ايموش الحيوانات والطبيعة المتحركة في مملكة الإيموش. مجموعة من إيموشات الحيوانات والطيور والكائنات البحرية والنباتات، مع إمكانية النسخ والتنزيل مجانًا.">
-
-  <meta name="keywords" content="ايموش, ايموش متحرك, ايموشات الحيوانات, ايموشات الطبيعة, ايموشات الطيور, ايموشات الكائنات البحرية">
-
+  <meta name="description" content="اكتشف إيموشات الحيوانات والطبيعة المتحركة في مملكة الإيموش. أكثر من 50 إيموشًا للحيوانات والطيور والحشرات والكائنات البحرية والنباتات، مع إمكانية النسخ والتنزيل مجانًا.">
+  <meta name="keywords" content="إيموش الحيوانات, ايموشات الحيوانات, إيموش الطبيعة, إيموشات متحركة, إيموشات الطيور, إيموشات البحر, إيموشات الحيوانات للنسخ, صور إيموش متحركة">
   <meta name="robots" content="index, follow">
 
-  <title>ايموش الحيوانات والطبيعة المتحركة | مملكة الإيموش</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="إيموشات الحيوانات والطبيعة المتحركة | مملكة الإيموش">
+  <meta property="og:description" content="اكتشف إيموشات الحيوانات والطيور والكائنات البحرية والطبيعة. انسخ الإيموشات أو نزّلها مجانًا.">
+  <meta property="og:site_name" content="مملكة الإيموش | Emojiland">
+
+  <title>إيموشات الحيوانات والطبيعة المتحركة | مملكة الإيموش</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -48,12 +51,52 @@
 
     .animals-header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .animals-header h1 {
       color: #7055ed;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .animals-intro {
+      max-width: 850px;
+      margin: 0 auto;
+      line-height: 2;
+      font-size: 16px;
+      color: var(--text-color, #555);
+    }
+
+    .animals-quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin: 22px auto 30px;
+    }
+
+    .animals-quick-links a,
+    .animals-related-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 14px;
+      border: 1px solid #e5defe;
+      border-radius: 22px;
+      background: var(--card-bg, #fff);
+      color: #7055ed;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .animals-quick-links a:hover,
+    .animals-related-links a:hover {
+      background: #7055ed;
+      color: #fff;
+      transform: translateY(-2px);
     }
 
     .animals-grid {
@@ -135,6 +178,109 @@
       min-height: 24px;
     }
 
+    .animals-content {
+      margin-top: 55px;
+      line-height: 2;
+      color: var(--text-color, #444);
+    }
+
+    .animals-content h2 {
+      color: #7055ed;
+      font-size: 25px;
+      line-height: 1.6;
+      margin: 35px 0 14px;
+    }
+
+    .animals-content h3 {
+      color: var(--heading-color, #5140b8);
+      font-size: 19px;
+      line-height: 1.7;
+      margin: 25px 0 10px;
+    }
+
+    .animals-content p {
+      margin: 12px 0;
+      line-height: 2;
+    }
+
+    .animals-content ul {
+      padding-inline-start: 25px;
+      margin: 12px 0 22px;
+    }
+
+    .animals-content li {
+      margin: 8px 0;
+      line-height: 1.9;
+    }
+
+    .animals-faq {
+      margin-top: 35px;
+    }
+
+    .animals-faq-item {
+      background: var(--card-bg, #fff);
+      border: 1px solid #e9e5ff;
+      border-radius: 12px;
+      padding: 15px 18px;
+      margin: 12px 0;
+    }
+
+    .animals-faq-item h3 {
+      margin: 0 0 7px;
+      font-size: 17px;
+    }
+
+    .animals-faq-item p {
+      margin: 0;
+    }
+
+    .animals-related {
+      margin-top: 45px;
+      padding: 25px 18px;
+      border: 1px solid #e9e5ff;
+      border-radius: 16px;
+      background: var(--card-bg, #fff);
+      text-align: center;
+    }
+
+    .animals-related h2 {
+      color: #7055ed;
+      margin: 0 0 12px;
+      font-size: 23px;
+    }
+
+    .animals-related p {
+      line-height: 1.9;
+      margin: 0 auto 18px;
+      max-width: 750px;
+    }
+
+    .animals-related-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .animals-home-link {
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .animals-home-link a {
+      display: inline-block;
+      background: #7055ed;
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 22px;
+      border-radius: 25px;
+      font-weight: 600;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
     @media(max-width: 480px) {
       .animals-page {
         padding: 12px;
@@ -143,6 +289,24 @@
       .animals-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
+      }
+
+      .animals-intro {
+        font-size: 15px;
+      }
+
+      .animals-content h2 {
+        font-size: 22px;
+      }
+
+      .animals-content h3 {
+        font-size: 18px;
+      }
+
+      .animals-quick-links a,
+      .animals-related-links a {
+        font-size: 13px;
+        padding: 8px 11px;
       }
     }
   </style>
@@ -171,25 +335,320 @@
 <main class="container animals-page">
 
   <section class="animals-header">
-    <h1 data-ar="🐶 إيموشات الحيوانات والطبيعة"
-        data-en="🐶 Animals & Nature Emojis">
-      🐶 إيموشات الحيوانات والطبيعة
+    <h1 data-ar="🐶 إيموشات الحيوانات والطبيعة المتحركة"
+        data-en="🐶 Animated Animals & Nature Emojis">
+      🐶 إيموشات الحيوانات والطبيعة المتحركة
     </h1>
 
-    <p data-ar="اكتشف ايموش الحيوانات والطبيعة المتحركة، بما في ذلك الحيوانات والطيور والكائنات البحرية والنباتات. انسخ الإيموش الذي يعجبك أو نزّله بسهولة مجانًا."
-       data-en="Explore animated animals and nature emojis, including animals, birds, sea creatures and plants. Copy your favorite emoji or download it for free.">
-      اكتشف ايموش الحيوانات والطبيعة المتحركة، بما في ذلك الحيوانات والطيور والكائنات البحرية والنباتات. انسخ الإيموش الذي يعجبك أو نزّله بسهولة مجانًا.
+    <p class="animals-intro"
+       data-ar="مرحبًا بك في قسم إيموشات الحيوانات والطبيعة في مملكة الإيموش! اكتشف مجموعة متنوعة من رموز الحيوانات اللطيفة والمميزة، من الكلاب والقطط والأرانب إلى الأسود والنمور والدببة. ستجد أيضًا إيموشات الطيور والحشرات والفراشات والكائنات البحرية مثل الدلافين والحيتان والأسماك. اختر الإيموش الذي يعجبك، وانسخه بضغطة واحدة أو نزّله كصورة متحركة مجانًا. استخدم هذه الرموز في المحادثات والتعليقات ومنشورات التواصل الاجتماعي للتعبير عن حبك للحيوانات والطبيعة بطريقة ممتعة."
+       data-en="Welcome to the Animals & Nature section of Emojiland! Explore a varied collection of cute and expressive animal emojis, from dogs, cats and rabbits to lions, tigers and bears. You will also find birds, insects, butterflies and sea creatures such as dolphins, whales and fish. Choose your favorite emoji, copy it with one click or download it as an animated image for free. Use these emojis in chats, comments and social media posts to share your love of animals and nature.">
+      مرحبًا بك في قسم إيموشات الحيوانات والطبيعة في مملكة الإيموش! اكتشف مجموعة متنوعة من رموز الحيوانات اللطيفة والمميزة، من الكلاب والقطط والأرانب إلى الأسود والنمور والدببة. ستجد أيضًا إيموشات الطيور والحشرات والفراشات والكائنات البحرية مثل الدلافين والحيتان والأسماك. اختر الإيموش الذي يعجبك، وانسخه بضغطة واحدة أو نزّله كصورة متحركة مجانًا. استخدم هذه الرموز في المحادثات والتعليقات ومنشورات التواصل الاجتماعي للتعبير عن حبك للحيوانات والطبيعة بطريقة ممتعة.
     </p>
   </section>
+
+  <nav class="animals-quick-links" aria-label="روابط أقسام مملكة الإيموش">
+    <a href="index.html" data-ar="🏠 الرئيسية" data-en="🏠 Home">🏠 الرئيسية</a>
+    <a href="emojis-smileys.html" data-ar="😊 الوجوه والابتسامات" data-en="😊 Smileys">😊 الوجوه والابتسامات</a>
+    <a href="emojis-food.html" data-ar="🍕 الطعام والشراب" data-en="🍕 Food & Drink">🍕 الطعام والشراب</a>
+    <a href="emojis-hands.html" data-ar="👋 إيموشات الأيدي" data-en="👋 Hands">👋 إيموشات الأيدي</a>
+    <a href="emojis-love.html" data-ar="❤️ الحب والقلوب" data-en="❤️ Love & Hearts">❤️ الحب والقلوب</a>
+    <a href="emojis-activities.html" data-ar="⚽ الأنشطة" data-en="⚽ Activities">⚽ الأنشطة</a>
+    <a href="stickers.html" data-ar="🎨 الملصقات" data-en="🎨 Stickers">🎨 الملصقات</a>
+  </nav>
 
   <div class="animals-grid" id="animalsGrid"></div>
 
   <p id="copyMessage" role="status" aria-live="polite"></p>
 
-  <div style="text-align:center;margin-top:25px">
-    <a href="index.html" class="back-home"
-       data-ar="العودة للرئيسية"
-       data-en="Back to Home">العودة للرئيسية</a>
+  <section class="animals-content" aria-labelledby="animals-guide-title">
+
+    <div class="language-content" data-language="ar">
+      <h2 id="animals-guide-title">اكتشف أجمل إيموشات الحيوانات والطبيعة</h2>
+
+      <p>
+        أصبحت إيموشات الحيوانات من أكثر الرموز استخدامًا في المحادثات اليومية؛ لأنها تضيف لمسة مرحة وتساعد على التعبير عن المشاعر والأفكار بطريقة بسيطة وسريعة. فبدلًا من كتابة جملة طويلة، يمكنك استخدام إيموش قطة أو كلب أو أرنب للتعبير عن اللطف، أو اختيار أسد ونمر لإظهار القوة والشجاعة، أو استخدام دلفين وفراشة لإضافة لمسة جميلة إلى رسالتك.
+      </p>
+
+      <p>
+        في هذا القسم من مملكة الإيموش جمعنا لك مجموعة متنوعة من إيموشات الحيوانات والطبيعة، تشمل الحيوانات الأليفة والبرية والطيور والحشرات والزواحف والكائنات البحرية، بالإضافة إلى رمز الصبار الذي يمثل عالم النباتات. يمكنك نسخ الرموز مباشرة أو تنزيل صورها المتحركة واستخدامها في التطبيقات والمواقع التي تفضلها.
+      </p>
+
+      <h2>إيموشات الحيوانات الأليفة واللطيفة</h2>
+
+      <p>
+        إذا كنت تحب الحيوانات الأليفة، فستجد هنا رموزًا شهيرة مثل الكلب والقطة والأرنب والهامستر. تُستخدم هذه الإيموشات كثيرًا في رسائل الأصدقاء والعائلة، كما تناسب التعليقات والمنشورات التي تتحدث عن الحيوانات المنزلية والمرح والاهتمام بالحيوانات.
+      </p>
+
+      <h3>إيموش الكلب والقطة والأرنب</h3>
+      <p>
+        يُعد إيموش الكلب من الرموز المناسبة للتعبير عن الوفاء والصداقة والمرح، بينما يُستخدم إيموش القطة للتعبير عن اللطافة والهدوء وحب القطط. أما الأرنب فيضيف إحساسًا بالبراءة والخفة، ويمكن استخدامه في الرسائل اللطيفة والمنشورات الترفيهية.
+      </p>
+
+      <h3>إيموش الدب والباندا والكوالا</h3>
+      <p>
+        تتميز رموز الدب والباندا والكوالا بطابعها الودود والمحبب. يمكنك استخدامها في المحادثات المرحة أو عند مشاركة صور الحيوانات المفضلة لديك، كما أنها مناسبة للمنشورات المتعلقة بالحياة البرية وحماية الحيوانات.
+      </p>
+
+      <h2>إيموشات الحيوانات البرية والمفترسة</h2>
+
+      <p>
+        لمحبي الحياة البرية، تضم المجموعة رموزًا لحيوانات قوية ومميزة مثل الأسد والنمر والثعلب والذئب والفيل والزرافة والحمار الوحشي. تساعد هذه الإيموشات على التعبير عن القوة والسرعة والذكاء والطبيعة البرية، كما يمكن استخدامها في محتوى التعليم والترفيه والحديث عن الحيوانات.
+      </p>
+
+      <p>
+        يرمز الأسد غالبًا إلى الشجاعة والقيادة، بينما يرتبط النمر بالقوة والسرعة. ويمكن استخدام الثعلب للتعبير عن الذكاء والدهاء، والفيل للتعبير عن القوة والذاكرة، والزرافة والحمار الوحشي عند الحديث عن الحيوانات الأفريقية والسفاري.
+      </p>
+
+      <h2>إيموشات الطيور والحيوانات المجنحة</h2>
+
+      <p>
+        تحتوي الصفحة على مجموعة من رموز الطيور، مثل البطريق والبطة والنسر والبومة والخفاش والطائر. لكل رمز استخدامه الخاص؛ فالنسر مناسب للتعبير عن الحرية والتحليق، والبومة ترتبط بالحكمة والمعرفة، والبطريق يضيف طابعًا لطيفًا ومرحًا إلى الرسائل.
+      </p>
+
+      <p>
+        يمكنك استخدام إيموشات الطيور في المنشورات المتعلقة بالطبيعة والبيئة والسفر، أو في الرسائل اليومية التي تحتاج إلى رمز بسيط ومعبّر.
+      </p>
+
+      <h2>إيموشات الحشرات والفراشات والكائنات الصغيرة</h2>
+
+      <p>
+        ستجد أيضًا رموزًا للنحلة والفراشة والدعسوقة والنملة والحلزون والخنفساء والبعوضة والعنكبوت. وتُستخدم هذه الرموز في الحديث عن الحشرات والحدائق والطبيعة والتنوع البيئي، كما تضيف الفراشة والنحلة لمسة جميلة إلى الرسائل والمنشورات.
+      </p>
+
+      <h3>إيموش الفراشة والنحلة</h3>
+      <p>
+        تُعد الفراشة رمزًا للجمال والتغيير والطبيعة، بينما ترتبط النحلة بالنشاط والعمل والتعاون. لذلك يمكن استخدامهما في رسائل التشجيع والمنشورات التي تتناول الربيع والزهور والحدائق.
+      </p>
+
+      <h2>إيموشات الحيوانات البحرية والأسماك</h2>
+
+      <p>
+        لعشاق البحر والكائنات المائية، تضم المجموعة الأخطبوط والحبار والسلطعون والسمكة الاستوائية والدلفين والحوت والقرش. تناسب هذه الرموز منشورات الشواطئ والرحلات البحرية والغوص والأحياء البحرية، كما يمكن استخدامها في المحادثات التي تتحدث عن المحيطات والأسماك.
+      </p>
+
+      <p>
+        يضيف الدلفين إحساسًا بالمرح والود، بينما يمكن استخدام الحوت للتعبير عن عالم البحار، ويُستخدم القرش عند الحديث عن الحيوانات البحرية القوية. أما الأخطبوط والسلطعون فيمنحان الرسائل طابعًا مميزًا وممتعًا.
+      </p>
+
+      <h2>إيموشات الزواحف والديناصورات والطبيعة</h2>
+
+      <p>
+        تضم المجموعة كذلك السلحفاة والثعبان والسحلية والتمساح والديناصور، وهي رموز مناسبة للحديث عن الزواحف والحياة البرية وعالم الحيوانات القديمة. كما يوجد إيموش الصبار الذي يمكن استخدامه في المنشورات المتعلقة بالنباتات والصحراء والطبيعة.
+      </p>
+
+      <h2>كيف تنسخ إيموش الحيوانات أو تنزّله؟</h2>
+
+      <p>
+        استخدام الإيموشات في مملكة الإيموش بسيط ولا يحتاج إلى تسجيل حساب. تصفح شبكة الرموز الموجودة أعلى هذه الصفحة، ثم اختر الحيوان أو الكائن الذي تريده.
+      </p>
+
+      <ul>
+        <li><strong>نسخ الإيموش:</strong> اضغط على زر «نسخ» الموجود أسفل الرمز، ثم الصقه في المحادثة أو المنشور أو التطبيق الذي تستخدمه.</li>
+        <li><strong>تنزيل الإيموش:</strong> اضغط على زر «تنزيل» للحصول على الصورة المتحركة بصيغة GIF عندما يكون ملف الصورة متاحًا.</li>
+        <li><strong>استخدام الإيموش:</strong> يمكنك إضافة الرموز إلى رسائل واتساب وتليجرام ومنشورات التواصل الاجتماعي والتعليقات والمحتوى الرقمي.</li>
+        <li><strong>التصفح من الهاتف:</strong> صُممت الصفحة لتسهيل تصفح الإيموشات واستخدام أزرار النسخ والتنزيل على الهواتف والأجهزة المختلفة.</li>
+      </ul>
+
+      <h2>لماذا تستخدم إيموشات الحيوانات في المحادثات؟</h2>
+
+      <p>
+        تمنح إيموشات الحيوانات رسائلك طابعًا بصريًا واضحًا، وتساعد على توصيل المعنى بسرعة، كما تجعل المحادثات أكثر حيوية. يمكنك اختيار رمز يعبر عن شخصيتك أو عن موضوع الرسالة، واستخدامه في وصف الصور أو التعليقات أو الرسائل القصيرة.
+      </p>
+
+      <p>
+        وتُعد هذه الرموز مفيدة أيضًا لصناع المحتوى ومديري صفحات التواصل الاجتماعي والمعلمين والطلاب، إذ يمكن توظيفها في المنشورات التعليمية والأنشطة الترفيهية والتصميمات البسيطة. اختر الرمز المناسب للموقف، واستخدمه بطريقة تساعد على توضيح الفكرة دون المبالغة في إضافته.
+      </p>
+
+      <section class="animals-faq">
+        <h2>الأسئلة الشائعة عن إيموشات الحيوانات</h2>
+
+        <div class="animals-faq-item">
+          <h3>هل يمكن نسخ إيموشات الحيوانات مجانًا؟</h3>
+          <p>نعم، يمكنك نسخ أي رمز ظاهر في هذه الصفحة مجانًا من خلال الضغط على زر «نسخ» أسفله، ثم لصقه في المكان الذي تريده.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>هل يمكن تنزيل إيموش الحيوانات بصيغة GIF؟</h3>
+          <p>نعم، يتيح زر التنزيل الحصول على ملف GIF المتحرك للرموز التي تتوفر لها صورة من المصدر. وقد يتعذر تنزيل رمز معين إذا لم يكن ملف الصورة متاحًا مؤقتًا.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>ما أنواع الحيوانات الموجودة في هذه الصفحة؟</h3>
+          <p>تضم الصفحة حيوانات أليفة وبرية، وطيورًا وحشرات وزواحف وكائنات بحرية، بالإضافة إلى رمز من رموز النباتات والطبيعة.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>هل تعمل إيموشات الحيوانات على الهاتف؟</h3>
+          <p>نعم، يمكنك تصفح الرموز ونسخها وتنزيل الصور المتاحة من الهاتف أو الكمبيوتر، مع اختلاف طريقة عرض بعض الرموز حسب التطبيق والجهاز.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>أين أجد المزيد من الإيموشات؟</h3>
+          <p>يمكنك زيارة الصفحة الرئيسية لمملكة الإيموش أو الانتقال إلى أقسام الوجوه والابتسامات والطعام والأيدي والحب والأنشطة والملصقات من روابط الأقسام الموجودة أسفل الصفحة.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="language-content" data-language="en" hidden>
+      <h2 id="animals-guide-title-en">Explore Animated Animals & Nature Emojis</h2>
+
+      <p>
+        Animal emojis are among the most popular symbols used in everyday conversations. They add personality to messages and help people express feelings and ideas in a quick, visual way. A dog, cat or rabbit can make a message feel friendly and playful, while a lion or tiger can suggest strength and confidence. A dolphin or butterfly can add a touch of nature to your posts.
+      </p>
+
+      <p>
+        This Emojiland collection brings together a variety of animal and nature emojis, including pets, wild animals, birds, insects, reptiles and sea creatures, as well as a cactus symbol. Browse the collection, copy the emoji you like or download its animated image when available.
+      </p>
+
+      <h2>Pet and Cute Animal Emojis</h2>
+
+      <p>
+        If you love pets, this collection includes familiar symbols such as dogs, cats, rabbits and hamsters. These emojis are useful in messages to friends and family, pet-related posts, comments and playful social media captions.
+      </p>
+
+      <h3>Dog, Cat and Rabbit Emojis</h3>
+      <p>
+        The dog emoji can represent loyalty, friendship and fun. The cat emoji is often used to express cuteness, calmness and a love of cats, while the rabbit adds a gentle and cheerful touch to messages.
+      </p>
+
+      <h3>Bear, Panda and Koala Emojis</h3>
+      <p>
+        Bear, panda and koala emojis have a friendly and lovable appearance. Use them in casual chats, animal-themed posts or conversations about wildlife and animal protection.
+      </p>
+
+      <h2>Wild Animal and Predator Emojis</h2>
+
+      <p>
+        Wildlife fans can explore symbols such as lions, tigers, foxes, wolves, elephants, giraffes and zebras. These emojis can represent strength, speed, intelligence and the natural world. They are also useful for educational content, travel captions and wildlife discussions.
+      </p>
+
+      <p>
+        The lion is commonly associated with courage and leadership, while the tiger can suggest power and speed. The fox is often linked to cleverness, and the elephant can represent strength and memory. Giraffe and zebra emojis are great for African wildlife and safari-related posts.
+      </p>
+
+      <h2>Bird and Flying Animal Emojis</h2>
+
+      <p>
+        This page includes bird-related symbols such as penguins, ducks, eagles, owls, bats and a general bird emoji. Each one can add a different meaning: an eagle may suggest freedom, an owl is often associated with wisdom, and a penguin brings a playful touch to a conversation.
+      </p>
+
+      <p>
+        Use bird emojis in nature posts, environmental content, travel updates or everyday messages that need a simple and expressive symbol.
+      </p>
+
+      <h2>Insect, Butterfly and Small Creature Emojis</h2>
+
+      <p>
+        You will also find bees, butterflies, lady beetles, ants, snails, beetles, mosquitoes and spiders. These symbols are useful for conversations about insects, gardens, wildlife and biodiversity. Butterflies and bees can add a colorful touch to spring and flower-themed posts.
+      </p>
+
+      <h3>Butterfly and Bee Emojis</h3>
+      <p>
+        The butterfly is often used to represent beauty, change and nature, while the bee can symbolize activity, teamwork and hard work. Both are suitable for encouraging messages and garden or spring-themed content.
+      </p>
+
+      <h2>Sea Animal and Fish Emojis</h2>
+
+      <p>
+        Ocean lovers can explore the octopus, squid, crab, tropical fish, dolphin, whale and shark emojis. These symbols are suitable for beach captions, sea trips, diving posts and conversations about marine life and ocean animals.
+      </p>
+
+      <p>
+        The dolphin adds a friendly and playful feeling, while the whale represents the world of the ocean. The shark can be used when talking about powerful sea creatures, and the octopus and crab bring a distinctive touch to messages.
+      </p>
+
+      <h2>Reptile, Dinosaur and Nature Emojis</h2>
+
+      <p>
+        This collection also features turtles, snakes, lizards, crocodiles and a dinosaur. These emojis are useful for wildlife topics, reptile discussions and prehistoric animal content. A cactus symbol is included for plant, desert and nature-related posts.
+      </p>
+
+      <h2>How to Copy or Download Animal Emojis</h2>
+
+      <p>
+        Using animal emojis on Emojiland is simple and does not require an account. Browse the emoji grid above and choose the animal or creature you want.
+      </p>
+
+      <ul>
+        <li><strong>Copy an emoji:</strong> Select the Copy button below the emoji, then paste it into your chat, post or preferred app.</li>
+        <li><strong>Download an emoji:</strong> Select Download to get the animated GIF image when the image file is available.</li>
+        <li><strong>Use your emojis:</strong> Add them to WhatsApp and Telegram messages, social media posts, comments and digital content.</li>
+        <li><strong>Browse on mobile:</strong> The page is designed to make browsing, copying and downloading convenient on phones and other devices.</li>
+      </ul>
+
+      <h2>Why Use Animal Emojis in Your Messages?</h2>
+
+      <p>
+        Animal emojis give messages a visual touch and help communicate ideas quickly. Choose a symbol that matches your personality or the subject of your message, and use it in captions, comments, descriptions and short conversations.
+      </p>
+
+      <p>
+        These symbols can also be useful for content creators, social media managers, teachers and students. They can add visual interest to educational posts, fun activities and simple designs. Choose emojis that support your message and make your content easier to understand.
+      </p>
+
+      <section class="animals-faq">
+        <h2>Frequently Asked Questions About Animal Emojis</h2>
+
+        <div class="animals-faq-item">
+          <h3>Can I copy animal emojis for free?</h3>
+          <p>Yes. You can copy any emoji shown on this page for free by selecting its Copy button and pasting it wherever you want.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>Can I download animal emojis as GIF files?</h3>
+          <p>Yes. The Download button can save the animated GIF for emojis with an available image file. A download may fail temporarily if a particular image is unavailable.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>What types of animals are included?</h3>
+          <p>The collection includes pets, wild animals, birds, insects, reptiles and sea creatures, along with a plant and nature symbol.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>Can I use these animal emojis on my phone?</h3>
+          <p>Yes. You can browse, copy emojis and download available images on phones and computers. The appearance of some symbols may vary by device and app.</p>
+        </div>
+
+        <div class="animals-faq-item">
+          <h3>Where can I find more emojis?</h3>
+          <p>Visit the Emojiland homepage or explore the Smileys, Food, Hands, Love, Activities and Stickers sections using the links at the bottom of this page.</p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="animals-related" aria-labelledby="animals-related-title">
+    <div class="language-content" data-language="ar">
+      <h2 id="animals-related-title">اكتشف المزيد من أقسام مملكة الإيموش</h2>
+      <p>
+        لا تتوقف هنا! انتقل إلى باقي أقسام مملكة الإيموش واكتشف المزيد من الرموز والوجوه والإيموشات المتحركة والملصقات المجانية. جميع الأقسام متاحة بسهولة من الروابط التالية.
+      </p>
+    </div>
+
+    <div class="language-content" data-language="en" hidden>
+      <h2 id="animals-related-title-en">Explore More Emojiland Categories</h2>
+      <p>
+        Keep exploring! Visit other Emojiland sections to discover more symbols, smileys, animated emojis and free stickers. Use the links below to move between categories.
+      </p>
+    </div>
+
+    <nav class="animals-related-links" aria-label="روابط جميع أقسام الموقع">
+      <a href="index.html" data-ar="🏠 الصفحة الرئيسية" data-en="🏠 Homepage">🏠 الصفحة الرئيسية</a>
+      <a href="emojis-smileys.html" data-ar="😊 إيموشات الوجوه والابتسامات" data-en="😊 Smileys & Emotions">😊 إيموشات الوجوه والابتسامات</a>
+      <a href="emojis-animals.html" data-ar="🐶 إيموشات الحيوانات والطبيعة" data-en="🐶 Animals & Nature">🐶 إيموشات الحيوانات والطبيعة</a>
+      <a href="emojis-food.html" data-ar="🍕 إيموشات الطعام والشراب" data-en="🍕 Food & Drink">🍕 إيموشات الطعام والشراب</a>
+      <a href="emojis-hands.html" data-ar="👋 إيموشات الأيدي والإشارات" data-en="👋 Hands & Gestures">👋 إيموشات الأيدي والإشارات</a>
+      <a href="emojis-love.html" data-ar="❤️ إيموشات الحب والقلوب" data-en="❤️ Love & Hearts">❤️ إيموشات الحب والقلوب</a>
+      <a href="emojis-activities.html" data-ar="⚽ إيموشات الأنشطة والرياضة" data-en="⚽ Activities & Sports">⚽ إيموشات الأنشطة والرياضة</a>
+      <a href="stickers.html" data-ar="🎨 الملصقات" data-en="🎨 Stickers">🎨 الملصقات</a>
+    </nav>
+  </section>
+
+  <div class="animals-home-link">
+    <a href="index.html"
+       data-ar="العودة إلى الصفحة الرئيسية"
+       data-en="Back to Homepage">العودة إلى الصفحة الرئيسية</a>
   </div>
 
 </main>
@@ -260,20 +719,35 @@ function currentLanguage() {
 function translatePage() {
   const language = currentLanguage();
 
+  document.documentElement.lang = language;
   document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
   document.querySelectorAll("[data-ar][data-en]").forEach(element => {
     element.textContent = element.getAttribute("data-" + language);
   });
 
+  document.querySelectorAll(".language-content").forEach(section => {
+    section.hidden = section.getAttribute("data-language") !== language;
+  });
+
   document.title = language === "ar"
-    ? "ايموش الحيوانات والطبيعة المتحركة | مملكة الإيموش"
+    ? "إيموشات الحيوانات والطبيعة المتحركة | مملكة الإيموش"
     : "Animated Animals & Nature Emojis | Emojiland";
 
   document.querySelector('meta[name="description"]').content =
     language === "ar"
-      ? "اكتشف ايموش الحيوانات والطبيعة المتحركة في مملكة الإيموش. انسخ إيموشات الحيوانات والطيور والكائنات البحرية أو نزّلها مجانًا."
-      : "Discover animated animals and nature emojis. Copy or download animal, bird and sea creature emojis for free.";
+      ? "اكتشف إيموشات الحيوانات والطبيعة المتحركة في مملكة الإيموش. أكثر من 50 إيموشًا للحيوانات والطيور والحشرات والكائنات البحرية والنباتات، مع إمكانية النسخ والتنزيل مجانًا."
+      : "Explore over 50 animal and nature emojis, including pets, wild animals, birds, insects, sea creatures and plants. Copy emojis or download animated GIFs for free.";
+
+  document.querySelector('meta[property="og:title"]').content =
+    language === "ar"
+      ? "إيموشات الحيوانات والطبيعة المتحركة | مملكة الإيموش"
+      : "Animated Animals & Nature Emojis | Emojiland";
+
+  document.querySelector('meta[property="og:description"]').content =
+    language === "ar"
+      ? "اكتشف إيموشات الحيوانات والطيور والكائنات البحرية والطبيعة. انسخ الإيموشات أو نزّلها مجانًا."
+      : "Discover animal, bird, sea creature and nature emojis. Copy or download your favorites for free.";
 
   document.querySelectorAll(".animal-name").forEach((element, index) => {
     element.textContent = animals[index][language === "ar" ? 1 : 2];
@@ -281,7 +755,7 @@ function translatePage() {
 
   document.querySelectorAll(".animal-image").forEach((image, index) => {
     image.alt = language === "ar"
-      ? "ايموش " + animals[index][1]
+      ? "إيموش " + animals[index][1]
       : animals[index][2] + " emoji";
   });
 
