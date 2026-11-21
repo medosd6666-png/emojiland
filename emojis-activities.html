@@ -5,61 +5,250 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#7055ed">
 
-<meta name="description" content="اكتشف مجموعة كبيرة من إيموشات الأنشطة المتحركة للرياضة والألعاب والرقص والفنون والاحتفالات. انسخ الإيموشات بسهولة أو نزّل صور GIF مجانًا من مملكة الإيموش.">
+<meta name="description" content="اكتشف إيموشات الأنشطة المتحركة والرياضة والألعاب والرقص والموسيقى والفنون. انسخ الرموز التعبيرية أو نزّل صور GIF مجانًا من مملكة الإيموش.">
 
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow, max-image-preview:large">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="إيموشات الأنشطة المتحركة والرياضة والألعاب | مملكة الإيموش">
-<meta property="og:description" content="استمتع بإيموشات متحركة للرياضة والألعاب والرقص والفنون والاحتفالات. انسخ الإيموشات أو نزّل صور GIF مجانًا.">
+<meta property="og:description" content="مجموعة متنوعة من إيموشات الأنشطة والرياضة والألعاب والرقص والموسيقى. انسخ الإيموشات أو نزّل صور GIF مجانًا.">
 <meta property="og:site_name" content="مملكة الإيموش">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="إيموشات الأنشطة المتحركة | مملكة الإيموش">
-<meta name="twitter:description" content="مجموعة إيموشات الأنشطة والرياضة والألعاب والرقص المتحركة للنسخ والتنزيل مجانًا.">
+<meta name="twitter:description" content="اكتشف إيموشات متحركة للرياضة والألعاب والرقص والفنون والاحتفالات، مع إمكانية النسخ والتنزيل مجانًا.">
 
 <title>إيموشات الأنشطة المتحركة والرياضة والألعاب | مملكة الإيموش</title>
 
 <link rel="stylesheet" href="style.css">
 
 <style>
-.activities-page{max-width:1100px;margin:35px auto;padding:15px}
-.activities-title{text-align:center;margin-bottom:25px}
-.activities-title h1{font-size:30px}
-.activities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:14px}
-.activity-card{background:var(--card-bg,#fff);border:1px solid #e8e8ef;border-radius:16px;padding:12px;text-align:center;box-shadow:0 3px 12px #00000008}
-.activity-card img{width:85px;height:85px;object-fit:contain}
-.activity-card p{margin:8px 0;font-weight:600}
-.activity-actions{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
-.activity-actions button{border:0;border-radius:8px;padding:7px 10px;background:#7055ed;color:white;cursor:pointer}
-.activity-actions button:hover{opacity:.85}
-.activity-actions button:disabled{opacity:.6;cursor:wait}
-.loading{text-align:center;padding:20px}
+.activities-page{
+  max-width:1100px;
+  margin:35px auto;
+  padding:15px;
+}
 
-/* محتوى SEO */
+.activities-title{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.activities-title h1{
+  font-size:30px;
+  line-height:1.5;
+}
+
+.activities-intro{
+  max-width:1000px;
+  margin:0 auto 28px;
+  padding:22px;
+  background:var(--card-bg,#fff);
+  border:1px solid #e8e8ef;
+  border-radius:16px;
+  line-height:2;
+  text-align:start;
+}
+
+.activities-intro p{
+  margin:0 0 10px;
+}
+
+.activities-intro p:last-child{
+  margin-bottom:0;
+}
+
+.activities-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(145px,1fr));
+  gap:14px;
+}
+
+.activity-card{
+  background:var(--card-bg,#fff);
+  border:1px solid #e8e8ef;
+  border-radius:16px;
+  padding:12px;
+  text-align:center;
+  box-shadow:0 3px 12px #00000008;
+}
+
+.activity-card img{
+  width:85px;
+  height:85px;
+  object-fit:contain;
+}
+
+.activity-card p{
+  margin:8px 0;
+  font-weight:600;
+}
+
+.activity-actions{
+  display:flex;
+  gap:6px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.activity-actions button{
+  border:0;
+  border-radius:8px;
+  padding:7px 10px;
+  background:#7055ed;
+  color:white;
+  cursor:pointer;
+}
+
+.activity-actions button:hover{
+  opacity:.85;
+}
+
+.activity-actions button:disabled{
+  opacity:.6;
+  cursor:wait;
+}
+
+.loading{
+  text-align:center;
+  padding:20px;
+}
+
+/* محتوى الصفحة التعريفي */
 .activities-seo{
   max-width:1000px;
   margin:40px auto;
+  padding:28px;
+  background:var(--card-bg,#fff);
+  border:1px solid #e8e8ef;
+  border-radius:16px;
+  line-height:2;
+  text-align:start;
+}
+
+.activities-seo h2{
+  font-size:23px;
+  margin:30px 0 12px;
+  color:var(--text-color,#7055ed);
+  line-height:1.6;
+}
+
+.activities-seo h2:first-child{
+  margin-top:0;
+}
+
+.activities-seo h3{
+  font-size:19px;
+  margin:22px 0 8px;
+  line-height:1.6;
+}
+
+.activities-seo p{
+  margin:12px 0;
+}
+
+.activities-seo ul,
+.activities-seo ol{
+  padding-inline-start:25px;
+  margin:12px 0;
+}
+
+.activities-seo li{
+  margin:9px 0;
+}
+
+.activities-seo strong{
+  font-weight:700;
+}
+
+/* روابط أقسام الموقع */
+.emoji-navigation{
+  max-width:1000px;
+  margin:35px auto;
   padding:25px;
   background:var(--card-bg,#fff);
   border:1px solid #e8e8ef;
   border-radius:16px;
-  line-height:1.9;
 }
-.activities-seo h2{
+
+.emoji-navigation h2{
+  text-align:center;
   font-size:23px;
-  margin:25px 0 12px;
+  margin:0 0 12px;
   color:var(--text-color,#7055ed);
 }
-.activities-seo h2:first-child{margin-top:0}
-.activities-seo p{margin:12px 0}
-.activities-seo ul{padding-inline-start:25px}
-.activities-seo li{margin:8px 0}
-.activities-seo strong{font-weight:700}
+
+.emoji-navigation > p{
+  text-align:center;
+  line-height:1.9;
+  margin-bottom:22px;
+}
+
+.emoji-navigation-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:12px;
+}
+
+.emoji-navigation-grid a{
+  display:block;
+  padding:14px 12px;
+  border:1px solid #e8e8ef;
+  border-radius:12px;
+  text-decoration:none;
+  color:inherit;
+  background:var(--card-bg,#fff);
+  text-align:center;
+  font-weight:600;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+.emoji-navigation-grid a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 5px 15px #00000010;
+}
+
 @media(max-width:600px){
-  .activities-seo{padding:18px;margin:25px 10px}
-  .activities-seo h2{font-size:20px}
+  .activities-page{
+    margin:20px auto;
+    padding:10px;
+  }
+
+  .activities-title h1{
+    font-size:25px;
+  }
+
+  .activities-intro{
+    padding:17px;
+    margin-bottom:20px;
+  }
+
+  .activities-seo{
+    padding:18px;
+    margin:25px 10px;
+  }
+
+  .activities-seo h2{
+    font-size:20px;
+  }
+
+  .activities-seo h3{
+    font-size:17px;
+  }
+
+  .emoji-navigation{
+    padding:18px;
+    margin:25px 10px;
+  }
+
+  .emoji-navigation h2{
+    font-size:20px;
+  }
+
+  .emoji-navigation-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
 }
 </style>
 
@@ -90,6 +279,45 @@ gtag('config','G-NZ00TSPTWC');
     <p data-ar="اكتشف إيموشات متحركة للرياضة والألعاب والرقص والفنون والمرح، وانسخ رموزك المفضلة أو نزّل صور GIF بسهولة ومجانًا." data-en="Discover animated emoji for sports, games, dancing, arts and fun. Copy your favorite emoji or download GIF images easily for free.">اكتشف إيموشات متحركة للرياضة والألعاب والرقص والفنون والمرح، وانسخ رموزك المفضلة أو نزّل صور GIF بسهولة ومجانًا.</p>
   </section>
 
+  <!-- مقدمة الصفحة -->
+  <section class="activities-intro" aria-label="مقدمة عن إيموشات الأنشطة">
+    <p
+      data-ar="أهلًا بك في قسم إيموشات الأنشطة المتحركة في مملكة الإيموش، وجهتك لاكتشاف مجموعة متنوعة من الرموز التعبيرية التي تعبّر عن الحركة والرياضة والألعاب والهوايات والإبداع."
+      data-en="Welcome to the Animated Activities Emoji section at Emojiland, your destination for discovering a variety of emoji representing movement, sports, games, hobbies and creativity.">
+      أهلًا بك في قسم إيموشات الأنشطة المتحركة في مملكة الإيموش، وجهتك لاكتشاف مجموعة متنوعة من الرموز التعبيرية التي تعبّر عن الحركة والرياضة والألعاب والهوايات والإبداع.
+    </p>
+
+    <p
+      data-ar="سواء كنت من محبي كرة القدم أو السباحة أو الجري أو الرقص أو الموسيقى، ستجد هنا رموزًا تساعدك على التعبير عن اهتماماتك بطريقة مرئية وممتعة."
+      data-en="Whether you enjoy football, swimming, running, dancing or music, you will find symbols that help you express your interests in a fun visual way.">
+      سواء كنت من محبي كرة القدم أو السباحة أو الجري أو الرقص أو الموسيقى، ستجد هنا رموزًا تساعدك على التعبير عن اهتماماتك بطريقة مرئية وممتعة.
+    </p>
+
+    <p
+      data-ar="تصفح الإيموشات المتاحة، واختر الرمز الذي يناسب رسالتك أو منشورك أو محادثتك اليومية، ثم انسخه بضغطة واحدة."
+      data-en="Browse the available emoji, choose the symbol that fits your message, post or everyday conversation, and copy it with one click.">
+      تصفح الإيموشات المتاحة، واختر الرمز الذي يناسب رسالتك أو منشورك أو محادثتك اليومية، ثم انسخه بضغطة واحدة.
+    </p>
+
+    <p
+      data-ar="يمكنك أيضًا تنزيل صور GIF المتحركة والاحتفاظ بها على جهازك لمشاركتها واستخدامها في الأماكن التي تدعم الصور المتحركة."
+      data-en="You can also download animated GIF images and keep them on your device to share and use wherever animated images are supported.">
+      يمكنك أيضًا تنزيل صور GIF المتحركة والاحتفاظ بها على جهازك لمشاركتها واستخدامها في الأماكن التي تدعم الصور المتحركة.
+    </p>
+
+    <p
+      data-ar="ستجد في هذه المجموعة رموزًا للرياضة والمنافسات والجوائز والألعاب والفنون والاحتفالات، لتتمكن من اختيار التعبير المناسب لكل موقف."
+      data-en="This collection includes symbols for sports, competitions, awards, games, arts and celebrations, helping you choose the right expression for every occasion.">
+      ستجد في هذه المجموعة رموزًا للرياضة والمنافسات والجوائز والألعاب والفنون والاحتفالات، لتتمكن من اختيار التعبير المناسب لكل موقف.
+    </p>
+
+    <p
+      data-ar="استمتع بتجربة سهلة على الهاتف والكمبيوتر، واكتشف عالم الإيموشات في مملكة الإيموش، حيث تجد الرموز التي تضيف إلى كلماتك لمسة من الحيوية والمرح."
+      data-en="Enjoy an easy experience on mobile and desktop, and explore the world of emoji at Emojiland, where you can find symbols that bring more life and fun to your words.">
+      استمتع بتجربة سهلة على الهاتف والكمبيوتر، واكتشف عالم الإيموشات في مملكة الإيموش، حيث تجد الرموز التي تضيف إلى كلماتك لمسة من الحيوية والمرح.
+    </p>
+  </section>
+
   <div id="loading" class="loading"
        data-ar="جاري تحميل الإيموشات المتحركة..."
        data-en="Loading animated emoji...">
@@ -104,110 +332,346 @@ gtag('config','G-NZ00TSPTWC');
     لم تتوفر صور متحركة في هذه المجموعة حاليًا.
   </p>
 
-  <!-- محتوى تعريفي لمحركات البحث والزوار -->
-  <section class="activities-seo" aria-label="معلومات عن إيموشات الأنشطة">
+  <!-- محتوى SEO موسع -->
+  <section class="activities-seo" aria-label="دليل إيموشات الأنشطة المتحركة">
 
-    <h2 data-ar="إيموشات الأنشطة المتحركة لجميع الاستخدامات"
-        data-en="Animated Activity Emoji for Every Occasion">
-      إيموشات الأنشطة المتحركة لجميع الاستخدامات
+    <h2 data-ar="إيموشات الأنشطة المتحركة: عبّر عن الحركة والشغف بطريقتك"
+        data-en="Animated Activity Emoji: Express Movement and Passion Your Way">
+      إيموشات الأنشطة المتحركة: عبّر عن الحركة والشغف بطريقتك
     </h2>
 
     <p
-      data-ar="مرحبًا بك في مجموعة إيموشات الأنشطة داخل مملكة الإيموش، حيث يمكنك استكشاف مجموعة متنوعة من الرموز والصور المتحركة التي تعبّر عن الرياضة والحركة والألعاب والهوايات والفنون والاحتفالات. تساعدك هذه الإيموشات على إضافة لمسة مرئية ممتعة إلى محادثاتك ورسائلك ومنشوراتك على الإنترنت."
-      data-en="Welcome to the Activities Emoji collection at Emojiland. Explore a variety of emoji and animated images representing sports, movement, games, hobbies, arts and celebrations. These emoji help you add a fun visual touch to your conversations, messages and online posts.">
-      مرحبًا بك في مجموعة إيموشات الأنشطة داخل مملكة الإيموش، حيث يمكنك استكشاف مجموعة متنوعة من الرموز والصور المتحركة التي تعبّر عن الرياضة والحركة والألعاب والهوايات والفنون والاحتفالات. تساعدك هذه الإيموشات على إضافة لمسة مرئية ممتعة إلى محادثاتك ورسائلك ومنشوراتك على الإنترنت.
+      data-ar="أصبحت الرموز التعبيرية جزءًا مهمًا من التواصل الرقمي، فهي تمنح الرسائل معنى إضافيًا وتساعد على توصيل الأفكار والمشاعر بسرعة وبأسلوب بسيط. ومن بين أكثر مجموعات الإيموشات تنوعًا تأتي إيموشات الأنشطة، التي تشمل الرياضة والحركة والألعاب والموسيقى والفنون والاحتفالات. هذه الرموز ليست مجرد صور صغيرة، بل وسيلة لطيفة لإظهار ما تحبه وما تمارسه وما تريد مشاركته مع الآخرين."
+      data-en="Emoji have become an important part of digital communication. They add meaning to messages and help people express ideas and feelings quickly. One of the most diverse emoji collections is the activities category, which includes sports, movement, games, music, arts and celebrations. These symbols are more than small pictures: they are a simple way to show what you enjoy, what you do and what you want to share with others.">
+      أصبحت الرموز التعبيرية جزءًا مهمًا من التواصل الرقمي، فهي تمنح الرسائل معنى إضافيًا وتساعد على توصيل الأفكار والمشاعر بسرعة وبأسلوب بسيط. ومن بين أكثر مجموعات الإيموشات تنوعًا تأتي إيموشات الأنشطة، التي تشمل الرياضة والحركة والألعاب والموسيقى والفنون والاحتفالات. هذه الرموز ليست مجرد صور صغيرة، بل وسيلة لطيفة لإظهار ما تحبه وما تمارسه وما تريد مشاركته مع الآخرين.
     </p>
 
-    <h2 data-ar="إيموشات الرياضة والتمارين والحركة"
-        data-en="Sports, Exercise and Movement Emoji">
-      إيموشات الرياضة والتمارين والحركة
-    </h2>
-
     <p
-      data-ar="إذا كنت من محبي الرياضة والأنشطة البدنية، ستجد هنا رموزًا تعبّر عن كرة القدم وكرة السلة والتنس والسباحة والجري وركوب الدراجات والملاكمة ورفع الأثقال والجمباز والتزلج وتسلق الجبال وغيرها من الأنشطة الرياضية. يمكنك استخدام هذه الإيموشات للتعبير عن التشجيع والفوز والمنافسة والإنجاز الرياضي، أو لمشاركة أصدقائك لحظات الحماس."
-      data-en="If you enjoy sports and physical activities, you can find emoji representing soccer, basketball, tennis, swimming, running, cycling, boxing, weightlifting, gymnastics, skiing, climbing and many other sports. Use these emoji to express support, victory, competition and sporting achievements, or share exciting moments with friends.">
-      إذا كنت من محبي الرياضة والأنشطة البدنية، ستجد هنا رموزًا تعبّر عن كرة القدم وكرة السلة والتنس والسباحة والجري وركوب الدراجات والملاكمة ورفع الأثقال والجمباز والتزلج وتسلق الجبال وغيرها من الأنشطة الرياضية. يمكنك استخدام هذه الإيموشات للتعبير عن التشجيع والفوز والمنافسة والإنجاز الرياضي، أو لمشاركة أصدقائك لحظات الحماس.
+      data-ar="في مملكة الإيموش جمعنا لك رموزًا متنوعة في مكان واحد، حتى لا تضطر إلى البحث طويلًا عن رمز رياضي أو آلة موسيقية أو لعبة أو ميدالية. يمكنك تصفح المجموعة واختيار الإيموش المناسب ونسخه مباشرة، كما يمكنك تنزيل صور GIF المتحركة المتاحة للاحتفاظ بها واستخدامها لاحقًا."
+      data-en="At Emojiland, we bring a variety of symbols together in one place, so you do not have to spend time searching for a sports symbol, musical instrument, game or medal. Browse the collection, choose the emoji you need and copy it instantly. You can also download available animated GIF images for later use.">
+      في مملكة الإيموش جمعنا لك رموزًا متنوعة في مكان واحد، حتى لا تضطر إلى البحث طويلًا عن رمز رياضي أو آلة موسيقية أو لعبة أو ميدالية. يمكنك تصفح المجموعة واختيار الإيموش المناسب ونسخه مباشرة، كما يمكنك تنزيل صور GIF المتحركة المتاحة للاحتفاظ بها واستخدامها لاحقًا.
     </p>
 
-    <h2 data-ar="إيموشات الألعاب والتسلية والهوايات"
-        data-en="Games, Entertainment and Hobby Emoji">
-      إيموشات الألعاب والتسلية والهوايات
+    <h2 data-ar="إيموشات الرياضة: كرة القدم والسلة والتنس والسباحة"
+        data-en="Sports Emoji: Football, Basketball, Tennis and Swimming">
+      إيموشات الرياضة: كرة القدم والسلة والتنس والسباحة
     </h2>
 
     <p
-      data-ar="تضم المجموعة أيضًا إيموشات ألعاب الفيديو والنرد والألغاز والشطرنج والبولينج وغيرها من الرموز المرتبطة بالترفيه والتسلية. سواء كنت تتحدث عن لعبة جديدة أو تتحدى أصدقاءك في مسابقة أو تشارك هوايتك المفضلة، يمكنك اختيار الرمز المناسب للتعبير عن فكرتك بطريقة بسيطة وممتعة."
-      data-en="This collection also includes emoji for video games, dice, puzzles, chess, bowling and other entertainment activities. Whether you are talking about a new game, challenging friends or sharing your favorite hobby, choose the right emoji to express your idea in a simple and enjoyable way.">
-      تضم المجموعة أيضًا إيموشات ألعاب الفيديو والنرد والألغاز والشطرنج والبولينج وغيرها من الرموز المرتبطة بالترفيه والتسلية. سواء كنت تتحدث عن لعبة جديدة أو تتحدى أصدقاءك في مسابقة أو تشارك هوايتك المفضلة، يمكنك اختيار الرمز المناسب للتعبير عن فكرتك بطريقة بسيطة وممتعة.
+      data-ar="تحتل الرياضة مكانة كبيرة في حياة الكثير من الأشخاص، ولهذا تضم مجموعة الأنشطة رموزًا رياضية متعددة تناسب عشاق المنافسات والتمارين والبطولات. ستجد رموز كرة القدم وكرة السلة وكرة الطائرة والتنس والبيسبول والرجبي والكريكيت والهوكي وتنس الطاولة والريشة الطائرة، وغيرها من الألعاب الرياضية المعروفة."
+      data-en="Sports are an important part of many people's lives, which is why the activities collection includes a wide range of sports symbols for fans of competitions, training and tournaments. You can find football, basketball, volleyball, tennis, baseball, rugby, cricket, hockey, table tennis, badminton and many other familiar sports.">
+      تحتل الرياضة مكانة كبيرة في حياة الكثير من الأشخاص، ولهذا تضم مجموعة الأنشطة رموزًا رياضية متعددة تناسب عشاق المنافسات والتمارين والبطولات. ستجد رموز كرة القدم وكرة السلة وكرة الطائرة والتنس والبيسبول والرجبي والكريكيت والهوكي وتنس الطاولة والريشة الطائرة، وغيرها من الألعاب الرياضية المعروفة.
     </p>
 
-    <h2 data-ar="إيموشات الرقص والموسيقى والفنون"
-        data-en="Dancing, Music and Arts Emoji">
-      إيموشات الرقص والموسيقى والفنون
-    </h2>
-
     <p
-      data-ar="عبّر عن حبك للموسيقى والإبداع باستخدام إيموشات الرقص والباليه والغناء والعزف على الجيتار والبيانو والكمان والطبول والبوق. كما يمكنك استخدام رموز الرسم والفنون الاستعراضية والسيرك للتعبير عن مواهبك واهتماماتك ومشاركة الأجواء الفنية مع الآخرين."
-      data-en="Express your love of music and creativity with dancing, ballet, singing, guitar, piano, violin, drums and trumpet emoji. You can also use painting, performing arts and circus symbols to share your talents, interests and artistic moments with others.">
-      عبّر عن حبك للموسيقى والإبداع باستخدام إيموشات الرقص والباليه والغناء والعزف على الجيتار والبيانو والكمان والطبول والبوق. كما يمكنك استخدام رموز الرسم والفنون الاستعراضية والسيرك للتعبير عن مواهبك واهتماماتك ومشاركة الأجواء الفنية مع الآخرين.
+      data-ar="يمكنك استخدام إيموشات الرياضة عند الحديث عن مباراة مهمة أو تشجيع فريقك المفضل أو مشاركة نتيجة بطولة أو التعبير عن حبك للعبة معينة. كما تساعدك هذه الرموز على جعل منشوراتك الرياضية أكثر وضوحًا وجاذبية، سواء كنت تتحدث عن مباراة كرة قدم أو تدريب يومي أو منافسة بين الأصدقاء."
+      data-en="Use sports emoji when discussing an important match, supporting your favorite team, sharing a tournament result or expressing your love for a particular game. These symbols can also make sports posts clearer and more engaging, whether you are talking about a football match, a daily workout or a friendly competition.">
+      يمكنك استخدام إيموشات الرياضة عند الحديث عن مباراة مهمة أو تشجيع فريقك المفضل أو مشاركة نتيجة بطولة أو التعبير عن حبك للعبة معينة. كما تساعدك هذه الرموز على جعل منشوراتك الرياضية أكثر وضوحًا وجاذبية، سواء كنت تتحدث عن مباراة كرة قدم أو تدريب يومي أو منافسة بين الأصدقاء.
     </p>
 
-    <h2 data-ar="إيموشات الاحتفالات والجوائز والمناسبات"
-        data-en="Celebration, Awards and Event Emoji">
-      إيموشات الاحتفالات والجوائز والمناسبات
-    </h2>
+    <h3 data-ar="رموز التمارين واللياقة البدنية"
+        data-en="Fitness and Workout Symbols">
+      رموز التمارين واللياقة البدنية
+    </h3>
 
     <p
-      data-ar="تجد في هذه المجموعة أيضًا رموز الكؤوس والميداليات الذهبية والفضية والبرونزية والجوائز والبالونات والهدايا والتذاكر والقصاصات الملونة. استخدمها للاحتفال بالنجاح أو الفوز في المسابقات أو أعياد الميلاد أو المناسبات السعيدة، وأضف لمسة احتفالية إلى رسائلك ومنشوراتك."
-      data-en="You will also find trophies, gold, silver and bronze medals, awards, balloons, gifts, tickets and confetti emoji. Use them to celebrate success, competition victories, birthdays and happy occasions, adding a festive touch to your messages and posts.">
-      تجد في هذه المجموعة أيضًا رموز الكؤوس والميداليات الذهبية والفضية والبرونزية والجوائز والبالونات والهدايا والتذاكر والقصاصات الملونة. استخدمها للاحتفال بالنجاح أو الفوز في المسابقات أو أعياد الميلاد أو المناسبات السعيدة، وأضف لمسة احتفالية إلى رسائلك ومنشوراتك.
+      data-ar="تضم المجموعة أيضًا رموز الجري والمشي ورفع الأثقال والجمباز والملاكمة والفنون القتالية والتأمل وتسلق الجبال وركوب الدراجات. يمكنك الاستعانة بهذه الإيموشات عند مشاركة إنجاز رياضي أو الحديث عن نشاطك اليومي أو التعبير عن حبك للحركة واللياقة البدنية."
+      data-en="The collection also includes running, walking, weightlifting, gymnastics, boxing, martial arts, meditation, climbing and cycling symbols. Use these emoji to share a fitness achievement, talk about your daily activity or express your interest in movement and exercise.">
+      تضم المجموعة أيضًا رموز الجري والمشي ورفع الأثقال والجمباز والملاكمة والفنون القتالية والتأمل وتسلق الجبال وركوب الدراجات. يمكنك الاستعانة بهذه الإيموشات عند مشاركة إنجاز رياضي أو الحديث عن نشاطك اليومي أو التعبير عن حبك للحركة واللياقة البدنية.
     </p>
 
-    <h2 data-ar="كيفية نسخ وتنزيل الإيموشات المتحركة؟"
-        data-en="How to Copy and Download Animated Emoji">
-      كيفية نسخ وتنزيل الإيموشات المتحركة؟
+    <h2 data-ar="إيموشات الألعاب والترفيه والتحديات"
+        data-en="Games, Entertainment and Challenge Emoji">
+      إيموشات الألعاب والترفيه والتحديات
     </h2>
 
     <p
-      data-ar="استخدام الإيموشات في مملكة الإيموش سهل وبسيط. تصفح المجموعة واختر الرمز الذي تريده، ثم استخدم زر نسخ للحصول على رمز الإيموش وإضافته إلى محادثاتك أو نصوصك. وإذا أردت الاحتفاظ بالصورة المتحركة على جهازك، اضغط على زر تنزيل GIF لحفظها. يمكنك الاستفادة من المجموعة عبر الهاتف المحمول أو الكمبيوتر."
-      data-en="Using emoji on Emojiland is easy. Browse the collection and choose the emoji you want, then select the Copy button to add its symbol to your conversations or text. If you want to keep the animated image on your device, select Download GIF to save it. You can explore the collection on both mobile phones and computers.">
-      استخدام الإيموشات في مملكة الإيموش سهل وبسيط. تصفح المجموعة واختر الرمز الذي تريده، ثم استخدم زر نسخ للحصول على رمز الإيموش وإضافته إلى محادثاتك أو نصوصك. وإذا أردت الاحتفاظ بالصورة المتحركة على جهازك، اضغط على زر تنزيل GIF لحفظها. يمكنك الاستفادة من المجموعة عبر الهاتف المحمول أو الكمبيوتر.
+      data-ar="إذا كنت تحب الألعاب والتحديات الذهنية والترفيه، فستجد رموزًا مناسبة للحديث عن ألعاب الفيديو والنرد والألغاز والشطرنج والبولينج والتصويب. هذه الإيموشات مناسبة لمحادثات الأصدقاء ومجموعات الألعاب والمنشورات التي تتحدث عن المنافسة والتحدي والمرح."
+      data-en="If you enjoy games, mental challenges and entertainment, you will find symbols for video games, dice, puzzles, chess, bowling and target practice. These emoji are useful in conversations with friends, gaming groups and posts about competition, challenges and fun.">
+      إذا كنت تحب الألعاب والتحديات الذهنية والترفيه، فستجد رموزًا مناسبة للحديث عن ألعاب الفيديو والنرد والألغاز والشطرنج والبولينج والتصويب. هذه الإيموشات مناسبة لمحادثات الأصدقاء ومجموعات الألعاب والمنشورات التي تتحدث عن المنافسة والتحدي والمرح.
+    </p>
+
+    <p
+      data-ar="يمكنك إضافة رمز لعبة الفيديو إلى منشور يتحدث عن لعبتك المفضلة، أو استخدام رمز الأحجية عند مشاركة لغز جديد، أو اختيار الشطرنج للتعبير عن التفكير والتخطيط. وباستخدام الرمز المناسب تستطيع توصيل فكرة المنشور بسرعة دون الحاجة إلى كتابة شرح طويل في كل مرة."
+      data-en="Add a video game symbol to a post about your favorite game, use the puzzle emoji when sharing a new riddle, or choose the chess symbol to represent thinking and strategy. The right emoji can communicate the idea of your post quickly without requiring a long explanation every time.">
+      يمكنك إضافة رمز لعبة الفيديو إلى منشور يتحدث عن لعبتك المفضلة، أو استخدام رمز الأحجية عند مشاركة لغز جديد، أو اختيار الشطرنج للتعبير عن التفكير والتخطيط. وباستخدام الرمز المناسب تستطيع توصيل فكرة المنشور بسرعة دون الحاجة إلى كتابة شرح طويل في كل مرة.
+    </p>
+
+    <h2 data-ar="إيموشات الرقص والموسيقى والفنون والإبداع"
+        data-en="Dancing, Music, Arts and Creativity Emoji">
+      إيموشات الرقص والموسيقى والفنون والإبداع
+    </h2>
+
+    <p
+      data-ar="الموسيقى والفنون لغة عالمية تجمع الناس وتمنحهم طرقًا مختلفة للتعبير عن أنفسهم. لهذا تحتوي مجموعة إيموشات الأنشطة على رموز الرقص والباليه والغناء والجيتار والبيانو والطبول والبوق والكمان والفنون الاستعراضية والسيرك والرسم."
+      data-en="Music and art are universal ways for people to connect and express themselves. That is why the activities emoji collection includes dancing, ballet, singing, guitar, piano, drums, trumpet, violin, performing arts, circus and painting symbols.">
+      الموسيقى والفنون لغة عالمية تجمع الناس وتمنحهم طرقًا مختلفة للتعبير عن أنفسهم. لهذا تحتوي مجموعة إيموشات الأنشطة على رموز الرقص والباليه والغناء والجيتار والبيانو والطبول والبوق والكمان والفنون الاستعراضية والسيرك والرسم.
+    </p>
+
+    <p
+      data-ar="استخدم إيموشات الموسيقى عند مشاركة أغنية تحبها أو الحديث عن حفلة موسيقية أو التعبير عن تعلم آلة جديدة. ويمكنك استخدام رموز الرقص للاحتفال بلحظة سعيدة أو إضافة أجواء مرحة إلى المحادثات، بينما تناسب رموز الرسم والفنون المنشورات الإبداعية والأعمال الفنية والهوايات."
+      data-en="Use music emoji when sharing a song you love, talking about a concert or expressing your interest in learning an instrument. Dancing symbols are great for celebrating happy moments and adding fun to conversations, while painting and arts emoji suit creative posts, artwork and hobbies.">
+      استخدم إيموشات الموسيقى عند مشاركة أغنية تحبها أو الحديث عن حفلة موسيقية أو التعبير عن تعلم آلة جديدة. ويمكنك استخدام رموز الرقص للاحتفال بلحظة سعيدة أو إضافة أجواء مرحة إلى المحادثات، بينما تناسب رموز الرسم والفنون المنشورات الإبداعية والأعمال الفنية والهوايات.
+    </p>
+
+    <h2 data-ar="إيموشات الجوائز والميداليات والاحتفالات"
+        data-en="Awards, Medals and Celebration Emoji">
+      إيموشات الجوائز والميداليات والاحتفالات
+    </h2>
+
+    <p
+      data-ar="لا تكتمل أجواء الفوز والنجاح دون رموز تعبّر عن الإنجاز والتقدير. تضم المجموعة الكأس الرياضي والميدالية الرياضية والميداليات الذهبية والفضية والبرونزية، وهي رموز مناسبة للاحتفال بالفوز في المسابقات أو تحقيق هدف أو إنهاء تحدٍ صعب."
+      data-en="Winning and success deserve symbols that express achievement and recognition. This collection includes trophies, sports medals, and gold, silver and bronze medals. These symbols are ideal for celebrating competition victories, reaching a goal or completing a difficult challenge.">
+      لا تكتمل أجواء الفوز والنجاح دون رموز تعبّر عن الإنجاز والتقدير. تضم المجموعة الكأس الرياضي والميدالية الرياضية والميداليات الذهبية والفضية والبرونزية، وهي رموز مناسبة للاحتفال بالفوز في المسابقات أو تحقيق هدف أو إنهاء تحدٍ صعب.
+    </p>
+
+    <p
+      data-ar="كما تجد رموز البالونات والهدايا والتذاكر والقصاصات الملونة التي تضيف طابعًا احتفاليًا إلى رسائلك. يمكنك استخدامها في أعياد الميلاد والمناسبات السعيدة والاحتفالات العائلية والمنشورات التي ترغب في جعلها أكثر بهجة."
+      data-en="You will also find balloons, gifts, tickets and confetti symbols that add a festive touch to your messages. Use them for birthdays, happy occasions, family celebrations and posts that deserve a little extra joy.">
+      كما تجد رموز البالونات والهدايا والتذاكر والقصاصات الملونة التي تضيف طابعًا احتفاليًا إلى رسائلك. يمكنك استخدامها في أعياد الميلاد والمناسبات السعيدة والاحتفالات العائلية والمنشورات التي ترغب في جعلها أكثر بهجة.
+    </p>
+
+    <h2 data-ar="إيموشات الأنشطة للرسائل ومواقع التواصل الاجتماعي"
+        data-en="Activity Emoji for Messages and Social Media">
+      إيموشات الأنشطة للرسائل ومواقع التواصل الاجتماعي
+    </h2>
+
+    <p
+      data-ar="يمكن استخدام إيموشات الأنشطة في أنواع كثيرة من المحتوى الرقمي. فهي مناسبة للرسائل الخاصة والتعليقات والمنشورات ومجموعات الأصدقاء ومحادثات الألعاب والصفحات المهتمة بالرياضة والفنون. كما يمكن أن تساعد على تنظيم النص بصريًا وإبراز موضوع المنشور وجعل الرسالة أكثر تعبيرًا."
+      data-en="Activity emoji can be used in many types of digital content. They are suitable for private messages, comments, posts, friend groups, gaming conversations and pages focused on sports or arts. They can also help organize text visually, highlight a post's topic and make a message more expressive.">
+      يمكن استخدام إيموشات الأنشطة في أنواع كثيرة من المحتوى الرقمي. فهي مناسبة للرسائل الخاصة والتعليقات والمنشورات ومجموعات الأصدقاء ومحادثات الألعاب والصفحات المهتمة بالرياضة والفنون. كما يمكن أن تساعد على تنظيم النص بصريًا وإبراز موضوع المنشور وجعل الرسالة أكثر تعبيرًا.
+    </p>
+
+    <h3 data-ar="أفكار لاستخدام الإيموشات في حياتك الرقمية"
+        data-en="Ideas for Using Emoji in Your Digital Life">
+      أفكار لاستخدام الإيموشات في حياتك الرقمية
+    </h3>
+
+    <ul>
+      <li data-ar="استخدم إيموشات كرة القدم والرياضة عند الحديث عن المباريات والبطولات." data-en="Use football and sports emoji when discussing matches and tournaments.">استخدم إيموشات كرة القدم والرياضة عند الحديث عن المباريات والبطولات.</li>
+      <li data-ar="أضف رموز الجري والتمارين إلى منشورات النشاط واللياقة البدنية." data-en="Add running and workout symbols to fitness and activity posts.">أضف رموز الجري والتمارين إلى منشورات النشاط واللياقة البدنية.</li>
+      <li data-ar="استخدم إيموشات الألعاب عند مشاركة تحدياتك أو الحديث عن ألعاب الفيديو." data-en="Use gaming emoji when sharing challenges or discussing video games.">استخدم إيموشات الألعاب عند مشاركة تحدياتك أو الحديث عن ألعاب الفيديو.</li>
+      <li data-ar="أضف رموز الموسيقى والرقص إلى المنشورات الفنية والترفيهية." data-en="Add music and dancing symbols to artistic and entertainment posts.">أضف رموز الموسيقى والرقص إلى المنشورات الفنية والترفيهية.</li>
+      <li data-ar="استخدم الميداليات والكؤوس للتعبير عن النجاح والفوز والإنجاز." data-en="Use medals and trophies to express success, victory and achievement.">استخدم الميداليات والكؤوس للتعبير عن النجاح والفوز والإنجاز.</li>
+      <li data-ar="أضف البالونات والهدايا والقصاصات الملونة إلى رسائل التهنئة والاحتفال." data-en="Add balloons, gifts and confetti to congratulations and celebration messages.">أضف البالونات والهدايا والقصاصات الملونة إلى رسائل التهنئة والاحتفال.</li>
+    </ul>
+
+    <h2 data-ar="كيفية نسخ إيموشات الأنشطة المتحركة وتنزيل صور GIF"
+        data-en="How to Copy Activity Emoji and Download GIF Images">
+      كيفية نسخ إيموشات الأنشطة المتحركة وتنزيل صور GIF
+    </h2>
+
+    <p
+      data-ar="صممنا صفحة إيموشات الأنشطة في مملكة الإيموش لتكون سهلة الاستخدام، بحيث يمكنك الوصول إلى الرمز الذي تريده دون خطوات معقدة. تظهر الإيموشات المتاحة في بطاقات منفصلة، وتحتوي كل بطاقة على الرمز واسمه وزري النسخ والتنزيل."
+      data-en="The Emojiland activities page is designed to be easy to use, allowing you to find the symbol you need without complicated steps. Available emoji appear in separate cards, and each card includes the symbol, its name and Copy and Download buttons.">
+      صممنا صفحة إيموشات الأنشطة في مملكة الإيموش لتكون سهلة الاستخدام، بحيث يمكنك الوصول إلى الرمز الذي تريده دون خطوات معقدة. تظهر الإيموشات المتاحة في بطاقات منفصلة، وتحتوي كل بطاقة على الرمز واسمه وزري النسخ والتنزيل.
+    </p>
+
+    <h3 data-ar="طريقة نسخ الإيموش"
+        data-en="How to Copy an Emoji">
+      طريقة نسخ الإيموش
+    </h3>
+
+    <ol>
+      <li data-ar="تصفح بطاقات الإيموشات حتى تجد الرمز الذي تحتاج إليه." data-en="Browse the emoji cards until you find the symbol you need.">تصفح بطاقات الإيموشات حتى تجد الرمز الذي تحتاج إليه.</li>
+      <li data-ar="اضغط على زر نسخ الموجود أسفل الإيموش." data-en="Press the Copy button below the emoji.">اضغط على زر نسخ الموجود أسفل الإيموش.</li>
+      <li data-ar="ستظهر رسالة تؤكد نسخ الرمز بنجاح." data-en="A message will confirm that the symbol has been copied.">ستظهر رسالة تؤكد نسخ الرمز بنجاح.</li>
+      <li data-ar="الصق الإيموش في المحادثة أو المنشور أو النص الذي تريده." data-en="Paste the emoji into your conversation, post or text.">الصق الإيموش في المحادثة أو المنشور أو النص الذي تريده.</li>
+    </ol>
+
+    <h3 data-ar="طريقة تنزيل صورة GIF المتحركة"
+        data-en="How to Download an Animated GIF">
+      طريقة تنزيل صورة GIF المتحركة
+    </h3>
+
+    <ol>
+      <li data-ar="اختر الإيموش الذي تريد الاحتفاظ بصورته المتحركة." data-en="Choose the emoji whose animated image you want to keep.">اختر الإيموش الذي تريد الاحتفاظ بصورته المتحركة.</li>
+      <li data-ar="اضغط على زر تنزيل GIF." data-en="Press the Download GIF button.">اضغط على زر تنزيل GIF.</li>
+      <li data-ar="انتظر حتى يكتمل تنزيل الصورة على جهازك." data-en="Wait for the image to finish downloading to your device.">انتظر حتى يكتمل تنزيل الصورة على جهازك.</li>
+      <li data-ar="ابحث عن الملف في مجلد التنزيلات واستخدمه في الأماكن التي تدعم ملفات GIF." data-en="Find the file in your downloads folder and use it wherever GIF files are supported.">ابحث عن الملف في مجلد التنزيلات واستخدمه في الأماكن التي تدعم ملفات GIF.</li>
+    </ol>
+
+    <h2 data-ar="ما الفرق بين رمز الإيموجي وصورة GIF المتحركة؟"
+        data-en="What Is the Difference Between an Emoji and an Animated GIF?">
+      ما الفرق بين رمز الإيموجي وصورة GIF المتحركة؟
+    </h2>
+
+    <p
+      data-ar="رمز الإيموجي هو حرف أو رمز تعبيري يمكن نسخه ولصقه داخل النصوص والمحادثات، ويعتمد شكله النهائي على الجهاز أو نظام التشغيل أو التطبيق الذي يعرضه. أما صورة GIF فهي ملف صورة متحركة يمكن تنزيله ومشاركته كصورة، وقد يظهر بشكل مختلف عن الرمز النصي العادي."
+      data-en="An emoji is a character or expressive symbol that can be copied and pasted into text and conversations. Its final appearance depends on the device, operating system or app displaying it. A GIF is an animated image file that can be downloaded and shared as an image, and it may look different from a standard text emoji.">
+      رمز الإيموجي هو حرف أو رمز تعبيري يمكن نسخه ولصقه داخل النصوص والمحادثات، ويعتمد شكله النهائي على الجهاز أو نظام التشغيل أو التطبيق الذي يعرضه. أما صورة GIF فهي ملف صورة متحركة يمكن تنزيله ومشاركته كصورة، وقد يظهر بشكل مختلف عن الرمز النصي العادي.
+    </p>
+
+    <p
+      data-ar="لهذا توفر لك الصفحة طريقتين للاستفادة من المجموعة: نسخ الرمز التعبيري لاستخدامه داخل النصوص، أو تنزيل صورة GIF المتحركة للاحتفاظ بها كملف مستقل. اختر الطريقة التي تناسب استخدامك والتطبيق الذي تريد مشاركة المحتوى من خلاله."
+      data-en="That is why this page offers two ways to use the collection: copy the emoji character for use in text, or download the animated GIF as a separate file. Choose the method that suits your needs and the app where you want to share the content.">
+      لهذا توفر لك الصفحة طريقتين للاستفادة من المجموعة: نسخ الرمز التعبيري لاستخدامه داخل النصوص، أو تنزيل صورة GIF المتحركة للاحتفاظ بها كملف مستقل. اختر الطريقة التي تناسب استخدامك والتطبيق الذي تريد مشاركة المحتوى من خلاله.
+    </p>
+
+    <h2 data-ar="استخدام إيموشات الأنشطة على الهاتف والكمبيوتر"
+        data-en="Using Activity Emoji on Mobile and Desktop">
+      استخدام إيموشات الأنشطة على الهاتف والكمبيوتر
+    </h2>
+
+    <p
+      data-ar="يمكنك تصفح مملكة الإيموش من الهاتف المحمول أو الكمبيوتر والاستفادة من مجموعة الأنشطة بالطريقة التي تناسب جهازك. صُممت بطاقات الإيموشات لتظهر في شبكة مرنة تتكيف مع مساحة الشاشة، حتى تتمكن من تصفح الرموز بسهولة سواء كنت تستخدم هاتفًا صغيرًا أو شاشة كمبيوتر كبيرة."
+      data-en="You can browse Emojiland from a mobile phone or desktop computer and explore the activities collection in the way that suits your device. The emoji cards are displayed in a flexible grid that adapts to screen size, making browsing easy on both small phones and large computer screens.">
+      يمكنك تصفح مملكة الإيموش من الهاتف المحمول أو الكمبيوتر والاستفادة من مجموعة الأنشطة بالطريقة التي تناسب جهازك. صُممت بطاقات الإيموشات لتظهر في شبكة مرنة تتكيف مع مساحة الشاشة، حتى تتمكن من تصفح الرموز بسهولة سواء كنت تستخدم هاتفًا صغيرًا أو شاشة كمبيوتر كبيرة.
+    </p>
+
+    <p
+      data-ar="على الهاتف يمكنك الضغط على الأزرار مباشرة لنسخ الرموز أو تنزيل الصور، وعلى الكمبيوتر يمكنك استخدام الفأرة للوصول إلى الإيموش المطلوب. وقد يعتمد نجاح النسخ أو التنزيل على إعدادات المتصفح واتصال الإنترنت والأذونات المتاحة للجهاز."
+      data-en="On mobile, tap the buttons to copy symbols or download images. On desktop, use your mouse to select the emoji you need. Copying and downloading may depend on browser settings, internet connectivity and the permissions available on your device.">
+      على الهاتف يمكنك الضغط على الأزرار مباشرة لنسخ الرموز أو تنزيل الصور، وعلى الكمبيوتر يمكنك استخدام الفأرة للوصول إلى الإيموش المطلوب. وقد يعتمد نجاح النسخ أو التنزيل على إعدادات المتصفح واتصال الإنترنت والأذونات المتاحة للجهاز.
+    </p>
+
+    <h2 data-ar="لماذا تختار مملكة الإيموش لاكتشاف الرموز التعبيرية؟"
+        data-en="Why Explore Emoji at Emojiland?">
+      لماذا تختار مملكة الإيموش لاكتشاف الرموز التعبيرية؟
+    </h2>
+
+    <p
+      data-ar="نهدف في مملكة الإيموش إلى تسهيل الوصول إلى الرموز التعبيرية والملصقات من خلال أقسام واضحة وتجربة استخدام بسيطة. بدلًا من البحث في أماكن متعددة، يمكنك الانتقال بين مجموعات الإيموش المختلفة والعثور على الرموز التي تناسب اهتماماتك ومحادثاتك."
+      data-en="At Emojiland, our goal is to make emoji and stickers easier to discover through clear categories and a simple browsing experience. Instead of searching in many places, you can move between different emoji collections and find symbols that match your interests and conversations.">
+      نهدف في مملكة الإيموش إلى تسهيل الوصول إلى الرموز التعبيرية والملصقات من خلال أقسام واضحة وتجربة استخدام بسيطة. بدلًا من البحث في أماكن متعددة، يمكنك الانتقال بين مجموعات الإيموش المختلفة والعثور على الرموز التي تناسب اهتماماتك ومحادثاتك.
     </p>
 
     <ul>
-      <li
-        data-ar="تصفح إيموشات الأنشطة واختر الرمز المناسب."
-        data-en="Browse the activity emoji and choose the right symbol.">
-        تصفح إيموشات الأنشطة واختر الرمز المناسب.
-      </li>
-      <li
-        data-ar="اضغط على زر نسخ لاستخدام رمز الإيموش في رسائلك."
-        data-en="Press Copy to use the emoji symbol in your messages.">
-        اضغط على زر نسخ لاستخدام رمز الإيموش في رسائلك.
-      </li>
-      <li
-        data-ar="اضغط على تنزيل GIF لحفظ الصورة المتحركة."
-        data-en="Press Download GIF to save the animated image.">
-        اضغط على تنزيل GIF لحفظ الصورة المتحركة.
-      </li>
-      <li
-        data-ar="استمتع باستخدام الإيموشات في المحادثات والمنشورات والمشاركة مع الأصدقاء."
-        data-en="Enjoy using emoji in conversations, posts and sharing with friends.">
-        استمتع باستخدام الإيموشات في المحادثات والمنشورات والمشاركة مع الأصدقاء.
-      </li>
+      <li data-ar="أقسام متنوعة تساعدك على الوصول إلى نوع الإيموش الذي تبحث عنه." data-en="Different categories help you find the type of emoji you are looking for.">أقسام متنوعة تساعدك على الوصول إلى نوع الإيموش الذي تبحث عنه.</li>
+      <li data-ar="إمكانية نسخ الرموز التعبيرية بسهولة." data-en="An easy way to copy emoji characters.">إمكانية نسخ الرموز التعبيرية بسهولة.</li>
+      <li data-ar="إمكانية تنزيل صور GIF المتحركة المتاحة." data-en="The ability to download available animated GIF images.">إمكانية تنزيل صور GIF المتحركة المتاحة.</li>
+      <li data-ar="تصميم متجاوب يناسب الهواتف وأجهزة الكمبيوتر." data-en="A responsive design for phones and computers.">تصميم متجاوب يناسب الهواتف وأجهزة الكمبيوتر.</li>
+      <li data-ar="محتوى عربي وإنجليزي لتسهيل التصفح بلغات مختلفة." data-en="Arabic and English content for easier browsing in different languages.">محتوى عربي وإنجليزي لتسهيل التصفح بلغات مختلفة.</li>
     </ul>
 
-    <h2 data-ar="اكتشف المزيد من الإيموشات في مملكة الإيموش"
-        data-en="Discover More Emoji at Emojiland">
-      اكتشف المزيد من الإيموشات في مملكة الإيموش
+    <h2 data-ar="اكتشف المزيد من الإيموشات والأقسام"
+        data-en="Explore More Emoji Collections">
+      اكتشف المزيد من الإيموشات والأقسام
     </h2>
 
     <p
-      data-ar="مملكة الإيموش مكانك لاستكشاف الإيموشات والرموز التعبيرية التي تساعدك على التعبير عن الأفكار والمشاعر والاهتمامات بطرق متنوعة. اكتشف المزيد من المجموعات والأقسام، وتصفح الملصقات والرموز التي تناسب محادثاتك اليومية. نعمل على تقديم تجربة سهلة تساعدك في العثور على الإيموش المناسب ونسخه أو تنزيله بسهولة."
-      data-en="Emojiland is your place to explore emoji and expressive symbols that help you share ideas, feelings and interests in different ways. Discover more collections and categories, browse stickers and find symbols for your everyday conversations. Our goal is to provide an easy experience that helps you find, copy or download the emoji you need.">
-      مملكة الإيموش مكانك لاستكشاف الإيموشات والرموز التعبيرية التي تساعدك على التعبير عن الأفكار والمشاعر والاهتمامات بطرق متنوعة. اكتشف المزيد من المجموعات والأقسام، وتصفح الملصقات والرموز التي تناسب محادثاتك اليومية. نعمل على تقديم تجربة سهلة تساعدك في العثور على الإيموش المناسب ونسخه أو تنزيله بسهولة.
+      data-ar="لا تتوقف جولتك عند إيموشات الأنشطة فقط! تضم مملكة الإيموش أقسامًا أخرى لمجموعات متنوعة من الرموز التعبيرية، بداية من الوجوه والابتسامات والحب، مرورًا بالحيوانات والطعام وإيموشات الأيدي، وصولًا إلى الملصقات. انتقل إلى القسم الذي يناسبك واكتشف المزيد من الرموز التي يمكنك نسخها واستخدامها."
+      data-en="Your journey does not have to end with activity emoji! Emojiland has other collections covering smileys, love, animals, food, hand symbols and stickers. Visit the category that interests you and discover more symbols to copy and use.">
+      لا تتوقف جولتك عند إيموشات الأنشطة فقط! تضم مملكة الإيموش أقسامًا أخرى لمجموعات متنوعة من الرموز التعبيرية، بداية من الوجوه والابتسامات والحب، مرورًا بالحيوانات والطعام وإيموشات الأيدي، وصولًا إلى الملصقات. انتقل إلى القسم الذي يناسبك واكتشف المزيد من الرموز التي يمكنك نسخها واستخدامها.
+    </p>
+
+    <h2 data-ar="الأسئلة الشائعة عن إيموشات الأنشطة"
+        data-en="Frequently Asked Questions About Activity Emoji">
+      الأسئلة الشائعة عن إيموشات الأنشطة
+    </h2>
+
+    <h3 data-ar="هل يمكن نسخ إيموشات الأنشطة مجانًا؟"
+        data-en="Can I Copy Activity Emoji for Free?">
+      هل يمكن نسخ إيموشات الأنشطة مجانًا؟
+    </h3>
+
+    <p
+      data-ar="نعم، يمكنك استخدام زر النسخ الموجود أسفل كل بطاقة لنسخ رمز الإيموش المتاح، ثم لصقه في الرسائل أو النصوص أو المنشورات التي تريدها."
+      data-en="Yes. Use the Copy button below each card to copy the available emoji character, then paste it into your messages, text or posts.">
+      نعم، يمكنك استخدام زر النسخ الموجود أسفل كل بطاقة لنسخ رمز الإيموش المتاح، ثم لصقه في الرسائل أو النصوص أو المنشورات التي تريدها.
+    </p>
+
+    <h3 data-ar="هل يمكن تنزيل الإيموشات المتحركة بصيغة GIF؟"
+        data-en="Can I Download Animated Emoji as GIF Files?">
+      هل يمكن تنزيل الإيموشات المتحركة بصيغة GIF؟
+    </h3>
+
+    <p
+      data-ar="نعم، تحتوي البطاقات على زر تنزيل GIF. اضغط عليه لحفظ الصورة المتحركة المتاحة على جهازك. يعتمد التنزيل على توفر الصورة واتصال الإنترنت وإعدادات المتصفح."
+      data-en="Yes. The cards include a Download GIF button. Press it to save the available animated image to your device. Downloads depend on image availability, internet connection and browser settings.">
+      نعم، تحتوي البطاقات على زر تنزيل GIF. اضغط عليه لحفظ الصورة المتحركة المتاحة على جهازك. يعتمد التنزيل على توفر الصورة واتصال الإنترنت وإعدادات المتصفح.
+    </p>
+
+    <h3 data-ar="هل تعمل الصفحة على الهواتف المحمولة؟"
+        data-en="Does the Page Work on Mobile Phones?">
+      هل تعمل الصفحة على الهواتف المحمولة؟
+    </h3>
+
+    <p
+      data-ar="نعم، الصفحة مصممة لتناسب شاشات الهواتف وأجهزة الكمبيوتر، ويمكنك تصفح الإيموشات واستخدام أزرار النسخ والتنزيل من الأجهزة المدعومة."
+      data-en="Yes. The page is designed to adapt to mobile and desktop screens, and you can browse emoji and use the copy and download buttons on supported devices.">
+      نعم، الصفحة مصممة لتناسب شاشات الهواتف وأجهزة الكمبيوتر، ويمكنك تصفح الإيموشات واستخدام أزرار النسخ والتنزيل من الأجهزة المدعومة.
+    </p>
+
+    <h3 data-ar="لماذا قد يختلف شكل الإيموش من جهاز لآخر؟"
+        data-en="Why Can an Emoji Look Different on Different Devices?">
+      لماذا قد يختلف شكل الإيموش من جهاز لآخر؟
+    </h3>
+
+    <p
+      data-ar="قد يختلف شكل رموز الإيموجي النصية حسب نظام التشغيل والخطوط والتطبيق المستخدم. أما صور GIF التي يتم تنزيلها فهي ملفات صور متحركة، ويعتمد عرضها على دعم التطبيق لهذا النوع من الملفات."
+      data-en="Standard emoji characters may look different depending on the operating system, fonts and app. Downloaded GIFs are animated image files, and their display depends on whether the app supports this file type.">
+      قد يختلف شكل رموز الإيموجي النصية حسب نظام التشغيل والخطوط والتطبيق المستخدم. أما صور GIF التي يتم تنزيلها فهي ملفات صور متحركة، ويعتمد عرضها على دعم التطبيق لهذا النوع من الملفات.
+    </p>
+
+    <p
+      data-ar="استمتع باستكشاف إيموشات الأنشطة المتحركة في مملكة الإيموش، واختر الرموز التي تعبّر عن شغفك واهتماماتك، وشارك لحظاتك الرياضية والفنية والترفيهية مع أصدقائك بطريقة بسيطة وممتعة."
+      data-en="Enjoy exploring animated activity emoji at Emojiland. Choose symbols that express your passions and interests, and share your sports, artistic and entertainment moments with friends in a simple and fun way.">
+      استمتع باستكشاف إيموشات الأنشطة المتحركة في مملكة الإيموش، واختر الرموز التي تعبّر عن شغفك واهتماماتك، وشارك لحظاتك الرياضية والفنية والترفيهية مع أصدقائك بطريقة بسيطة وممتعة.
     </p>
 
   </section>
+
+  <!-- روابط بقية أقسام مملكة الإيموش -->
+  <nav class="emoji-navigation" aria-label="أقسام مملكة الإيموش">
+    <h2
+      data-ar="🌟 اكتشف باقي أقسام مملكة الإيموش"
+      data-en="🌟 Explore More Emojiland Categories">
+      🌟 اكتشف باقي أقسام مملكة الإيموش
+    </h2>
+
+    <p
+      data-ar="تصفح المزيد من مجموعات الإيموش والرموز التعبيرية والملصقات، وانتقل بسهولة إلى القسم الذي تبحث عنه."
+      data-en="Explore more emoji collections and stickers, and easily visit the category you are looking for.">
+      تصفح المزيد من مجموعات الإيموش والرموز التعبيرية والملصقات، وانتقل بسهولة إلى القسم الذي تبحث عنه.
+    </p>
+
+    <div class="emoji-navigation-grid">
+
+      <a href="index.html"
+         data-ar="🏠 الرئيسية – جميع الأقسام"
+         data-en="🏠 Home – All Categories">
+        🏠 الرئيسية – جميع الأقسام
+      </a>
+
+      <a href="emojis-smileys.html"
+         data-ar="😊 إيموشات الوجوه والابتسامات"
+         data-en="😊 Smileys and Faces Emoji">
+        😊 إيموشات الوجوه والابتسامات
+      </a>
+
+      <a href="emojis-animals.html"
+         data-ar="🐶 إيموشات الحيوانات والطبيعة"
+         data-en="🐶 Animals and Nature Emoji">
+        🐶 إيموشات الحيوانات والطبيعة
+      </a>
+
+      <a href="emojis-food.html"
+         data-ar="🍕 إيموشات الطعام والشراب"
+         data-en="🍕 Food and Drink Emoji">
+        🍕 إيموشات الطعام والشراب
+      </a>
+
+      <a href="emojis-hands.html"
+         data-ar="👋 إيموشات الأيدي والإشارات"
+         data-en="👋 Hand Gestures Emoji">
+        👋 إيموشات الأيدي والإشارات
+      </a>
+
+      <a href="emojis-love.html"
+         data-ar="❤️ إيموشات الحب والقلوب"
+         data-en="❤️ Love and Hearts Emoji">
+        ❤️ إيموشات الحب والقلوب
+      </a>
+
+      <a href="stickers.html"
+         data-ar="🎨 الملصقات"
+         data-en="🎨 Stickers">
+        🎨 الملصقات
+      </a>
+
+    </div>
+  </nav>
 
 </main>
 
@@ -258,8 +722,8 @@ function applyPageLanguage(language){
   document.querySelector('meta[name="description"]').setAttribute(
     "content",
     pageLanguage === "ar"
-      ? "اكتشف مجموعة كبيرة من إيموشات الأنشطة المتحركة للرياضة والألعاب والرقص والفنون والاحتفالات. انسخ الإيموشات بسهولة أو نزّل صور GIF مجانًا من مملكة الإيموش."
-      : "Explore animated activity emoji for sports, games, dancing, arts and celebrations. Copy your favorite emoji or download free GIF images from Emojiland."
+      ? "اكتشف إيموشات الأنشطة المتحركة والرياضة والألعاب والرقص والموسيقى والفنون. انسخ الرموز التعبيرية أو نزّل صور GIF مجانًا من مملكة الإيموش."
+      : "Explore animated activity emoji for sports, games, dancing, music and arts. Copy emoji characters or download free GIF images from Emojiland."
   );
 
   document.querySelector('meta[property="og:title"]').setAttribute(
@@ -272,8 +736,8 @@ function applyPageLanguage(language){
   document.querySelector('meta[property="og:description"]').setAttribute(
     "content",
     pageLanguage === "ar"
-      ? "استمتع بإيموشات متحركة للرياضة والألعاب والرقص والفنون والاحتفالات. انسخ الإيموشات أو نزّل صور GIF مجانًا."
-      : "Explore animated emoji for sports, games, dancing, arts and celebrations. Copy emoji or download free GIF images."
+      ? "مجموعة متنوعة من إيموشات الأنشطة والرياضة والألعاب والرقص والموسيقى. انسخ الإيموشات أو نزّل صور GIF مجانًا."
+      : "Explore animated activity, sports, games, dancing and music emoji. Copy emoji or download free GIF images."
   );
 
   document.querySelector('meta[name="twitter:title"]').setAttribute(
@@ -286,8 +750,8 @@ function applyPageLanguage(language){
   document.querySelector('meta[name="twitter:description"]').setAttribute(
     "content",
     pageLanguage === "ar"
-      ? "مجموعة إيموشات الأنشطة والرياضة والألعاب والرقص المتحركة للنسخ والتنزيل مجانًا."
-      : "Animated activity, sports, games and dancing emoji to copy and download for free."
+      ? "اكتشف إيموشات متحركة للرياضة والألعاب والرقص والفنون والاحتفالات، مع إمكانية النسخ والتنزيل مجانًا."
+      : "Discover animated emoji for sports, games, dancing, arts and celebrations. Copy and download for free."
   );
 
   document.querySelectorAll(".activity-card").forEach(card=>{
@@ -559,8 +1023,6 @@ activities.forEach(item=>{
   download.textContent = pageLanguage === "ar" ? "تنزيل GIF" : "Download GIF";
 
   download.onclick = async()=>{
-    const originalText = pageLanguage === "ar" ? "تنزيل GIF" : "Download GIF";
-
     download.textContent = pageLanguage === "ar"
       ? "جاري التنزيل..."
       : "Downloading...";
