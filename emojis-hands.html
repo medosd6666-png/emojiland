@@ -5,13 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#7055ed">
 
-<meta name="description" content="اكتشف ايموش الأيدي والإشارات المتحركة في مملكة الإيموش. مجموعة متنوعة من إيموشات التصفيق والإعجاب والتحية وحركات اليد، مع إمكانية النسخ والتنزيل مجانًا.">
-
-<meta name="keywords" content="ايموش, ايموش متحرك, ايموش الأيدي, ايموشات الأيدي, ايموشات الإشارات, ايموش التصفيق, ايموش الإعجاب, ايموش التحية">
-
+<meta name="description" content="اكتشف إيموشات الأيدي والإشارات المتحركة في مملكة الإيموش! تصفيق وإعجاب وتحية ومصافحة وإشارات اليد المختلفة. انسخ الإيموشات واستخدمها أو نزّل صورها مجانًا.">
+<meta name="keywords" content="إيموش الأيدي, ايموشات اليد, إيموش الإشارات, إيموش التصفيق, إيموش الإعجاب, إيموش التحية, إيموش المصافحة, رموز اليد, إيموش متحرك">
 <meta name="robots" content="index, follow">
 
-<title>ايموش الأيدي والإشارات المتحركة | مملكة الإيموش</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="إيموش الأيدي والإشارات المتحركة | مملكة الإيموش">
+<meta property="og:description" content="مجموعة متنوعة من إيموشات الأيدي والإشارات للتعبير عن التصفيق والإعجاب والتحية والمشاعر. انسخ واستخدم مجانًا.">
+<meta property="og:site_name" content="مملكة الإيموش">
+
+<title>إيموش الأيدي والإشارات المتحركة | مملكة الإيموش</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -31,76 +34,206 @@
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
 <script>
-window.dataLayer=window.dataLayer||[];
+window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());
-gtag('config','G-NZ00TSPTWC');
+gtag('js', new Date());
+gtag('config', 'G-NZ00TSPTWC');
 </script>
 
 <style>
 .hands-grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(125px,1fr));
-gap:13px;
-margin-top:25px;
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(125px,1fr));
+  gap:13px;
+  margin-top:25px;
 }
+
 .hands-card{
-min-height:145px;
-padding:12px 8px;
-background:var(--card-bg,#fff);
-border:1px solid #eee;
-border-radius:14px;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-gap:10px;
-box-shadow:0 3px 12px #0000000d;
+  min-height:145px;
+  padding:12px 8px;
+  background:var(--card-bg,#fff);
+  border:1px solid #eee;
+  border-radius:14px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  box-shadow:0 3px 12px #0000000d;
 }
+
 .hands-card img{
-width:80px;
-height:80px;
-object-fit:contain;
+  width:80px;
+  height:80px;
+  object-fit:contain;
 }
+
 .hands-fallback{
-font-size:55px;
-line-height:80px;
-width:80px;
-height:80px;
-text-align:center;
+  font-size:55px;
+  line-height:80px;
+  width:80px;
+  height:80px;
+  text-align:center;
 }
+
 .hands-actions{
-display:flex;
-gap:7px;
-width:100%;
+  display:flex;
+  gap:7px;
+  width:100%;
 }
+
 .hands-actions button{
-flex:1;
-border:0;
-border-radius:7px;
-padding:7px 5px;
-cursor:pointer;
-background:#7055ed;
-color:white;
-font-size:12px;
+  flex:1;
+  border:0;
+  border-radius:7px;
+  padding:7px 5px;
+  cursor:pointer;
+  background:#7055ed;
+  color:white;
+  font-size:12px;
+  transition:opacity .2s, transform .2s;
 }
+
 .hands-actions button.download{
-background:#18a477;
+  background:#18a477;
 }
+
+.hands-actions button:hover{
+  opacity:.88;
+  transform:translateY(-1px);
+}
+
 .hands-actions button:disabled{
-opacity:.5;
-cursor:not-allowed;
+  opacity:.5;
+  cursor:not-allowed;
+  transform:none;
 }
+
 #copyMessage{
-text-align:center;
-min-height:25px;
-margin:18px 0;
+  text-align:center;
+  min-height:25px;
+  margin:18px 0;
 }
+
+.hands-intro{
+  margin:20px 0 25px;
+  padding:20px;
+  border-radius:15px;
+  background:var(--card-bg,#fff);
+  border:1px solid #eee;
+  line-height:2;
+}
+
+.hands-intro p{
+  margin:8px 0;
+}
+
+.hands-section-links{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:22px 0;
+}
+
+.hands-section-links a{
+  display:inline-block;
+  padding:9px 15px;
+  border-radius:9px;
+  background:var(--card-bg,#fff);
+  border:1px solid #e5e0ff;
+  color:var(--primary-color,#7055ed);
+  text-decoration:none;
+  font-size:14px;
+  transition:background .2s, transform .2s;
+}
+
+.hands-section-links a:hover{
+  background:#f1edff;
+  transform:translateY(-2px);
+}
+
+.hands-content{
+  margin-top:35px;
+  line-height:2;
+}
+
+.hands-content section{
+  margin:30px 0;
+}
+
+.hands-content h2{
+  margin:25px 0 14px;
+  padding-bottom:9px;
+  border-bottom:2px solid #eee;
+  font-size:1.45rem;
+}
+
+.hands-content h3{
+  margin:22px 0 10px;
+  font-size:1.15rem;
+}
+
+.hands-content p{
+  margin:10px 0;
+}
+
+.hands-content ul,
+.hands-content ol{
+  padding-inline-start:25px;
+  margin:12px 0;
+}
+
+.hands-content li{
+  margin:8px 0;
+}
+
+.hands-note{
+  padding:15px 18px;
+  margin:18px 0;
+  border-radius:12px;
+  background:var(--card-bg,#fff);
+  border-inline-start:4px solid #7055ed;
+}
+
+.hands-faq{
+  margin:16px 0;
+  padding:15px 18px;
+  border:1px solid #eee;
+  border-radius:12px;
+  background:var(--card-bg,#fff);
+}
+
+.hands-faq h3{
+  margin-top:0;
+}
+
+.hands-content[hidden]{
+  display:none !important;
+}
+
 @media(max-width:480px){
-.hands-grid{
-grid-template-columns:repeat(2,minmax(0,1fr));
-gap:10px;
-}
+  .hands-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .hands-intro{
+    padding:15px;
+  }
+
+  .hands-content h2{
+    font-size:1.25rem;
+  }
+
+  .hands-section-links{
+    gap:7px;
+  }
+
+  .hands-section-links a{
+    padding:8px 11px;
+    font-size:13px;
+  }
 }
 </style>
 </head>
@@ -108,39 +241,475 @@ gap:10px;
 <body>
 
 <header class="header">
-<div class="container header-content">
-<a href="index.html" class="logo"
-data-ar="😊 مملكة الإيموش"
-data-en="😊 Emojiland">😊 مملكة الإيموش</a>
+  <div class="container header-content">
+    <a href="index.html" class="logo"
+       data-ar="😊 مملكة الإيموش"
+       data-en="😊 Emojiland">😊 مملكة الإيموش</a>
 
-<nav class="nav">
-<a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-<a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
-</nav>
-</div>
+    <nav class="nav" aria-label="روابط الموقع">
+      <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
+    </nav>
+  </div>
 </header>
 
 <main class="container category-page">
 
-<section class="category-page-header">
-<h1 data-ar="ايموش الأيدي والإشارات المتحركة"
-data-en="Animated Hands & Gestures Emojis">ايموش الأيدي والإشارات المتحركة</h1>
+  <section class="category-page-header">
+    <h1 data-ar="إيموش الأيدي والإشارات المتحركة"
+        data-en="Animated Hands & Gestures Emojis">
+      إيموش الأيدي والإشارات المتحركة
+    </h1>
 
-<p data-ar="اكتشف مجموعة متنوعة من ايموش الأيدي المتحركة، مثل التصفيق والإعجاب والتحية والإشارات المختلفة. يمكنك نسخ أي ايموش أو تنزيل صورته المتحركة مجانًا."
-data-en="Explore animated hand emojis, including clapping, thumbs up, waving and many other gestures. Copy any emoji or download its animated image for free.">
-اكتشف مجموعة متنوعة من ايموش الأيدي المتحركة، مثل التصفيق والإعجاب والتحية والإشارات المختلفة. يمكنك نسخ أي ايموش أو تنزيل صورته المتحركة مجانًا.
-</p>
-</section>
+    <p data-ar="عبّر عن أفكارك ومشاعرك بحركات بسيطة يفهمها الجميع! اكتشف مجموعة متنوعة من إيموشات الأيدي والإشارات، من التصفيق والإعجاب إلى التحية والمصافحة وعلامات الحب والصداقة. اختر الرمز الذي يناسب رسالتك، وانسخه بسهولة أو نزّل صورته المتحركة مجانًا. اجعل محادثاتك أكثر وضوحًا وحيوية باستخدام رموز اليد المناسبة لكل موقف."
+       data-en="Express your thoughts and feelings with gestures everyone can recognize! Explore a wide collection of hand and gesture emojis, from clapping and thumbs up to waving, handshakes, love signs and friendly gestures. Choose the symbol that fits your message, copy it instantly or download its animated image for free. Make your conversations clearer and more expressive with the right hand emoji.">
+      عبّر عن أفكارك ومشاعرك بحركات بسيطة يفهمها الجميع! اكتشف مجموعة متنوعة من إيموشات الأيدي والإشارات، من التصفيق والإعجاب إلى التحية والمصافحة وعلامات الحب والصداقة. اختر الرمز الذي يناسب رسالتك، وانسخه بسهولة أو نزّل صورته المتحركة مجانًا. اجعل محادثاتك أكثر وضوحًا وحيوية باستخدام رموز اليد المناسبة لكل موقف.
+    </p>
+  </section>
 
-<div class="hands-grid" id="handsGrid"></div>
+  <section class="hands-intro language-content" data-language="ar">
+    <p>👋 أهلًا بك في عالم إيموشات الأيدي! أحيانًا تكون حركة يد واحدة كافية لتوصيل معنى كامل دون الحاجة إلى كتابة جملة طويلة. إشارة الإعجاب قد تعبّر عن الموافقة، والتصفيق قد يوضح مدى إعجابك بإنجاز شخص آخر، بينما يمكن للتحية أن تبدأ محادثة لطيفة.</p>
+    <p>👏 تضم هذه الصفحة مجموعة من أشهر رموز اليد والإشارات التي يمكنك استخدامها في الدردشة والتعليقات والمنشورات ورسائل التهنئة. ستجد هنا إشارات تدل على التشجيع والاحترام والصداقة والحب، إلى جانب حركات الأصابع واليد المختلفة.</p>
+    <p>✨ تصفح الرموز، واختر الإيموش الذي يعبر عنك، ثم اضغط على زر النسخ لاستخدامه في أي تطبيق أو موقع يدعم الإيموشات. ويمكنك أيضًا تنزيل صورة الإيموش المتحركة عندما تكون متاحة.</p>
+  </section>
 
-<p id="copyMessage" role="status" aria-live="polite"></p>
+  <section class="hands-intro language-content" data-language="en" hidden>
+    <p>👋 Welcome to the world of hand emojis! Sometimes a single hand gesture can communicate a complete thought without writing a long sentence. A thumbs-up can show approval, clapping can celebrate someone's achievement, and a waving hand can start a friendly conversation.</p>
+    <p>👏 This page brings together popular hand and gesture emojis for chats, comments, social media posts and greeting messages. Explore symbols for encouragement, respect, friendship and love, as well as a variety of finger and hand gestures.</p>
+    <p>✨ Browse the collection, choose the emoji that expresses your message, and press Copy to use it in any app or website that supports emojis. You can also download an animated emoji image when available.</p>
+  </section>
 
-<div style="text-align:center;margin-top:25px">
-<a href="index.html" class="back-home"
-data-ar="العودة للرئيسية"
-data-en="Back to Home">العودة للرئيسية</a>
-</div>
+  <nav class="hands-section-links" aria-label="أقسام مملكة الإيموش">
+    <a href="index.html" data-ar="🏠 الرئيسية" data-en="🏠 Home">🏠 الرئيسية</a>
+    <a href="emojis-smileys.html" data-ar="😊 الوجوه والابتسامات" data-en="😊 Smileys">😊 الوجوه والابتسامات</a>
+    <a href="emojis-animals.html" data-ar="🐻 الحيوانات والطبيعة" data-en="🐻 Animals">🐻 الحيوانات والطبيعة</a>
+    <a href="emojis-food.html" data-ar="🍎 الطعام والفواكه" data-en="🍎 Food">🍎 الطعام والفواكه</a>
+    <a href="emojis-love.html" data-ar="❤️ الحب والمشاعر" data-en="❤️ Love">❤️ الحب والمشاعر</a>
+    <a href="emojis-activities.html" data-ar="⚽ الأنشطة" data-en="⚽ Activities">⚽ الأنشطة</a>
+    <a href="stickers.html" data-ar="🌟 الملصقات" data-en="🌟 Stickers">🌟 الملصقات</a>
+  </nav>
+
+  <div class="hands-grid" id="handsGrid" aria-label="مجموعة إيموشات الأيدي"></div>
+
+  <p id="copyMessage" role="status" aria-live="polite"></p>
+
+  <div class="hands-content language-content" data-language="ar">
+
+    <section>
+      <h2>👋 إيموش الأيدي والإشارات: طريقة سهلة للتعبير دون كلمات</h2>
+      <p>أصبحت الإيموشات جزءًا أساسيًا من التواصل الرقمي؛ فنحن نستخدمها يوميًا في الرسائل الخاصة ومجموعات المحادثة والتعليقات ومنشورات مواقع التواصل الاجتماعي. ومن بين أكثر الرموز استخدامًا تأتي إيموشات الأيدي، لأنها تقدم طريقة سريعة للتعبير عن ردود الأفعال والمواقف المختلفة.</p>
+      <p>قد تستخدم 👋 لإلقاء التحية أو توديع صديق، وتختار 👍 لتوضيح أنك موافق، أو ترسل 👏 عندما تريد تشجيع شخص على نجاحه. هذه الرموز البسيطة تضيف معنى إلى الكلام وتساعد على جعل الرسائل أكثر دفئًا وتفاعلًا.</p>
+      <p>تتميز رموز اليد بتنوعها؛ فهناك إشارات للتشجيع والتعاون والامتنان والمرح، وأخرى تستخدم للتعبير عن الحب أو الإشارة إلى شيء معين. لذلك من المفيد معرفة الرموز المتاحة واختيار ما يناسب سياق الحديث.</p>
+    </section>
+
+    <section>
+      <h2>👏 إيموشات التصفيق والتشجيع والاحتفال</h2>
+      <p>التصفيق من أشهر طرق التعبير عن التقدير والاحتفال، ولهذا يعد إيموش 👏 من الرموز المناسبة عندما تريد تهنئة شخص أو إظهار إعجابك بعمل قام به.</p>
+
+      <h3>👏 التصفيق والتقدير</h3>
+      <p>يمكن استخدام إيموش التصفيق في رسائل النجاح والتخرج والإنجازات الشخصية، كما يناسب التعليقات التي تشجع صديقًا أو تثني على فكرة مميزة.</p>
+
+      <h3>🙌 رفع اليدين احتفالًا</h3>
+      <p>يرمز 🙌 غالبًا إلى الفرح والاحتفال والحماس وتحقيق هدف. يمكنك إضافته إلى رسالة تهنئة أو منشور تعبر فيه عن سعادتك بخبر جميل.</p>
+
+      <h3>💪 القوة والإصرار</h3>
+      <p>يستخدم إيموش 💪 للتعبير عن القوة والعزيمة والثقة بالنفس. وهو مناسب لرسائل التشجيع والتحفيز والرياضة والحديث عن تجاوز التحديات.</p>
+
+      <div class="hands-note">✨ مثال: "مبروك النجاح! 👏🙌 تستحق كل التقدير 💪"</div>
+    </section>
+
+    <section>
+      <h2>👍 إيموشات الإعجاب والموافقة والرفض</h2>
+      <p>تساعد إشارات الإبهام على إرسال رد فعل سريع دون كتابة الكثير من الكلمات. وهي من الرموز الشائعة في المحادثات اليومية، خاصة عندما تريد إظهار رأيك في اقتراح أو خبر أو صورة.</p>
+
+      <h3>👍 إشارة الإعجاب والموافقة</h3>
+      <p>يستخدم 👍 للتعبير عن الموافقة أو القبول أو أن الأمر جيد. يمكنك إرساله ردًا على اقتراح صديق أو لتأكيد أنك فهمت الرسالة.</p>
+
+      <h3>👎 إشارة عدم الإعجاب</h3>
+      <p>يستخدم 👎 للتعبير عن عدم الموافقة أو عدم الرضا عن أمر معين. ومن الأفضل استخدامه مع مراعاة أسلوب الحديث حتى لا تبدو الرسالة حادة أو غير ودية.</p>
+
+      <h3>👌 كل شيء على ما يرام</h3>
+      <p>تعبر 👌 في كثير من المحادثات عن أن الأمور جيدة أو أن شيئًا ما مناسب. وقد يختلف تفسيرها بحسب البلد والثقافة والسياق، لذلك من المهم الانتباه إلى طبيعة الحديث.</p>
+
+      <h3>🤏 شيء صغير أو مقدار قليل</h3>
+      <p>يمكن استخدام 🤏 عند الحديث عن كمية صغيرة أو مسافة بسيطة أو فرق محدود، كما يضيف لمسة مرحة إلى بعض الرسائل.</p>
+
+      <div class="hands-note">💬 مثال: "هل الموعد مناسب؟ 👍" أو "كل شيء تمام 👌"</div>
+    </section>
+
+    <section>
+      <h2>👋 إيموشات التحية والترحيب والتواصل</h2>
+      <p>تبدأ المحادثات الجميلة غالبًا بتحية بسيطة، وتساعد رموز اليد على جعل هذه البداية أكثر ودية. كما يمكن استخدامها عند إنهاء الحديث أو الترحيب بشخص انضم حديثًا إلى مجموعة.</p>
+
+      <h3>👋 التلويح باليد</h3>
+      <p>من أشهر رموز التحية، ويستخدم لقول مرحبًا أو مع السلامة. يمكنك إرساله في بداية الرسائل أو نهايتها، أو عند رؤية صديق عبر الإنترنت.</p>
+
+      <h3>🤝 المصافحة والتعاون</h3>
+      <p>ترمز المصافحة إلى الاتفاق والتعاون والاحترام، ويمكن استخدامها عند قبول عرض أو الاحتفال باتفاق ناجح أو التعبير عن الشراكة.</p>
+
+      <h3>🙏 الشكر والامتنان والدعاء</h3>
+      <p>يستخدم 🙏 في سياقات متعددة، منها الشكر والامتنان والرجاء والدعاء. ويمكن أن يضيف إحساسًا بالتقدير إلى رسالة شكر أو طلب مهذب.</p>
+
+      <h3>👐 الترحيب والانفتاح</h3>
+      <p>تعبر 👐 عن الانفتاح أو الترحيب أو تقديم شيء، وقد تستخدم لإظهار الحماس أو الاستعداد للتواصل بحسب سياق الرسالة.</p>
+    </section>
+
+    <section>
+      <h2>✌️ إيموشات الأصابع والإشارات المميزة</h2>
+      <p>توجد مجموعة كبيرة من الإشارات التي تعتمد على وضع الأصابع، ولكل واحدة منها استخدامات ومعانٍ شائعة في المحادثات الرقمية. بعضها يعبر عن السلام أو الصداقة، وبعضها يستخدم للتأكيد أو الإشارة أو إضافة لمسة مرحة.</p>
+
+      <h3>✌️ علامة السلام والنصر</h3>
+      <p>تستخدم علامة ✌️ للتعبير عن السلام أو النصر أو الأجواء الإيجابية. وهي مناسبة للصور والرسائل والمنشورات التي تحمل طابعًا مرحًا.</p>
+
+      <h3>🤞 تمني الحظ الجيد</h3>
+      <p>يستخدم 🤞 للتعبير عن الأمل في حدوث شيء جيد أو تمني التوفيق لشخص ينتظر نتيجة أو يخوض تجربة مهمة.</p>
+
+      <h3>🤟 و 🤘 إشارات ذات طابع خاص</h3>
+      <p>تظهر هذه الرموز في سياقات مختلفة مرتبطة بالموسيقى والمرح والتعبير عن الحماس أو الانتماء إلى أسلوب معين. ويعتمد معناها الدقيق على السياق والثقافة.</p>
+
+      <h3>☝️ الإشارة إلى نقطة مهمة</h3>
+      <p>يمكن استخدام ☝️ عند لفت الانتباه إلى معلومة أو فكرة مهمة، أو عند إضافة ملاحظة قبل متابعة الحديث.</p>
+
+      <h3>👆👇👈👉 توجيه الانتباه</h3>
+      <p>تساعد هذه الإشارات على توجيه القارئ إلى شيء أعلى أو أسفل أو إلى اليمين أو اليسار. وهي مفيدة في الشروحات والمنشورات التي تحتوي على روابط أو صور أو تعليمات.</p>
+
+      <h3>🫶 إشارة القلب باليدين</h3>
+      <p>أصبحت 🫶 من الرموز المحبوبة للتعبير عن الحب والمودة والدعم والتقدير. ويمكن استخدامها في رسائل الأصدقاء والعائلة والتعليقات الإيجابية.</p>
+    </section>
+
+    <section>
+      <h2>🤝 إيموشات الصداقة والتعاون والاحترام</h2>
+      <p>لا تقتصر رموز اليد على ردود الأفعال السريعة، بل يمكنها أيضًا التعبير عن معانٍ اجتماعية مهمة مثل التعاون والوفاء والاحترام والمساندة.</p>
+      <ul>
+        <li>🤝 المصافحة: للتعبير عن الاتفاق والتعاون وبداية شراكة.</li>
+        <li>🙏 الامتنان: لشكر شخص على مساعدة أو موقف طيب.</li>
+        <li>🫶 المودة: لإظهار المحبة والدعم والتقدير.</li>
+        <li>🙌 التشجيع: لمشاركة شخص فرحته أو الاحتفال بإنجازه.</li>
+        <li>👊 الدعم: لإظهار الحماس أو التشجيع في بعض المحادثات.</li>
+        <li>🤲 العطاء: للتعبير عن تقديم شيء أو طلبه أو الدعاء بحسب السياق.</li>
+      </ul>
+      <p>اختيار الرمز المناسب يجعل الرسالة أكثر وضوحًا، ويساعد على توصيل نبرة الكلام بطريقة لطيفة، خاصة عندما لا يستطيع الطرف الآخر سماع صوتك أو رؤية تعبيرات وجهك.</p>
+    </section>
+
+    <section>
+      <h2>📱 كيف تنسخ إيموش الأيدي وتستخدمه؟</h2>
+      <p>يمكنك استخدام أي إيموش موجود في هذه الصفحة بخطوات بسيطة، دون الحاجة إلى تثبيت تطبيق إضافي أو كتابة الرمز بنفسك.</p>
+      <ol>
+        <li>🔎 تصفح شبكة الإيموشات وابحث عن حركة اليد التي تريد استخدامها.</li>
+        <li>👆 اضغط على زر "نسخ" الموجود أسفل الإيموش.</li>
+        <li>📋 افتح التطبيق أو الموقع الذي تريد إرسال الرمز إليه.</li>
+        <li>💬 اضغط مطولًا في مكان الكتابة ثم اختر "لصق".</li>
+        <li>🚀 أرسل رسالتك أو أضف الإيموش إلى منشورك أو تعليقك.</li>
+      </ol>
+      <p>وإذا كنت تريد الاحتفاظ بصورة الإيموش المتحركة على جهازك، اضغط على زر "تنزيل" أسفل الرمز. يعتمد نجاح تنزيل الصورة على توفر الملف واتصال الإنترنت وإعدادات المتصفح.</p>
+      <div class="hands-note">💡 ملاحظة: قد يختلف شكل الإيموش قليلًا بين الهواتف وأجهزة الكمبيوتر والتطبيقات؛ لأن كل نظام قد يستخدم تصميمًا خاصًا لعرض الرموز.</div>
+    </section>
+
+    <section>
+      <h2>💬 أين يمكنك استخدام إيموشات الأيدي؟</h2>
+      <p>تعمل إيموشات الأيدي في معظم التطبيقات والمواقع التي تدعم رموز Unicode، ولذلك يمكنك استخدامها في أنواع كثيرة من المحتوى والتواصل اليومي.</p>
+
+      <h3>📲 تطبيقات المحادثة</h3>
+      <p>أضف رموز التصفيق والإعجاب والتحية إلى رسائلك في تطبيقات الدردشة لتوضيح رد فعلك وجعل المحادثة أكثر تفاعلًا.</p>
+
+      <h3>🌐 مواقع التواصل الاجتماعي</h3>
+      <p>استخدم رموز اليد في التعليقات والمنشورات والردود على الصور ومقاطع الفيديو، أو للتعبير عن دعمك وتشجيعك للآخرين.</p>
+
+      <h3>🎓 الدراسة والعمل</h3>
+      <p>يمكن استخدام بعض الإشارات في مجموعات الدراسة والعمل لتأكيد استلام معلومة أو إظهار الموافقة أو شكر زميل على المساعدة، مع مراعاة أسلوب التواصل الرسمي عند الحاجة.</p>
+
+      <h3>🎉 المناسبات والتهاني</h3>
+      <p>أضف 👏 و🙌 إلى رسائل النجاح والتخرج والاحتفال، واستخدم 🫶 و🙏 في رسائل التقدير والمودة والشكر.</p>
+    </section>
+
+    <section>
+      <h2>✨ نصائح لاختيار إيموش اليد المناسب</h2>
+      <ul>
+        <li>🎯 اختر الرمز الذي يعبر عن المعنى الذي تريد إيصاله، بدلًا من استخدام رموز كثيرة دون هدف.</li>
+        <li>💬 راعِ سياق المحادثة؛ فالإشارة نفسها قد تحمل معاني مختلفة من موقف إلى آخر.</li>
+        <li>🤝 استخدم رموز الشكر والمصافحة عندما تريد إظهار الاحترام والتقدير.</li>
+        <li>👏 شارك الآخرين لحظات النجاح والتشجيع باستخدام الرموز المناسبة.</li>
+        <li>❤️ أضف رموز المودة عندما تريد جعل رسالتك أكثر دفئًا.</li>
+        <li>🌍 تذكر أن بعض الإشارات قد تختلف دلالتها باختلاف الثقافات والمناطق.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌟 لماذا تختار مملكة الإيموش؟</h2>
+      <p>في مملكة الإيموش نسعى إلى جمع الرموز التعبيرية في أقسام منظمة تجعل الوصول إلى الإيموش المناسب أمرًا سهلًا. بدلًا من البحث الطويل، يمكنك تصفح القسم الذي تحتاج إليه واختيار الرمز مباشرة.</p>
+      <ul>
+        <li>😊 مجموعة متنوعة من الإيموشات في مكان واحد.</li>
+        <li>📋 إمكانية نسخ الرموز بسرعة لاستخدامها في المحادثات.</li>
+        <li>⬇️ إمكانية تنزيل صور الإيموشات المتاحة.</li>
+        <li>📱 تصميم مناسب للتصفح من الهاتف والكمبيوتر.</li>
+        <li>🌐 دعم المحتوى باللغتين العربية والإنجليزية.</li>
+        <li>🧭 أقسام وروابط تساعدك على اكتشاف المزيد من الرموز.</li>
+      </ul>
+      <p>سواء كنت تبحث عن إيموش للتصفيق أو التحية أو التعبير عن الحب أو الموافقة، ستجد في هذه الصفحة مجموعة تساعدك على جعل تواصلك اليومي أكثر تعبيرًا.</p>
+    </section>
+
+    <section>
+      <h2>❓ الأسئلة الشائعة حول إيموش الأيدي والإشارات</h2>
+
+      <div class="hands-faq">
+        <h3>ما هي إيموشات الأيدي؟</h3>
+        <p>هي رموز تعبيرية تمثل حركات اليد والأصابع، وتستخدم للتعبير عن التحية والتصفيق والإعجاب والموافقة والشكر والحب وغيرها من المعاني.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>كيف أنسخ إيموش اليد من مملكة الإيموش؟</h3>
+        <p>اضغط على زر "نسخ" أسفل الإيموش الذي تريده، ثم انتقل إلى التطبيق أو الموقع الذي تستخدمه والصق الرمز في مكان الكتابة.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>هل يمكن تنزيل إيموشات الأيدي المتحركة؟</h3>
+        <p>نعم، يمكنك الضغط على زر "تنزيل" أسفل الإيموش لمحاولة حفظ صورته المتحركة بصيغة GIF على جهازك، إذا كان الملف متاحًا.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>ما الفرق بين 👍 و👎؟</h3>
+        <p>يستخدم 👍 غالبًا للتعبير عن الإعجاب أو الموافقة، بينما يستخدم 👎 للتعبير عن عدم الإعجاب أو عدم الموافقة.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>ماذا يعني إيموش 👏؟</h3>
+        <p>يرمز 👏 إلى التصفيق والتشجيع والتقدير، ويستخدم كثيرًا لتهنئة الآخرين على النجاح أو الإنجاز.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>ماذا يعني إيموش 🫶؟</h3>
+        <p>يستخدم 🫶 للتعبير عن الحب والمودة والدعم والتقدير، وهو من الرموز المناسبة للرسائل الإيجابية.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>هل تعمل إيموشات الأيدي على جميع الهواتف؟</h3>
+        <p>تدعم معظم الهواتف الحديثة رموز Unicode، لكن شكل بعض الإيموشات قد يختلف حسب نظام التشغيل وإصدار الخط والتطبيق المستخدم.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>هل استخدام الإيموشات مجاني؟</h3>
+        <p>يمكنك نسخ الرموز التعبيرية المعروضة في هذه الصفحة واستخدامها مجانًا في رسائلك ومنشوراتك الشخصية.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="hands-content language-content" data-language="en" hidden>
+
+    <section>
+      <h2>👋 Hand and Gesture Emojis: Express More with Simple Symbols</h2>
+      <p>Emojis have become an essential part of digital communication. We use them every day in private messages, group chats, comments and social media posts. Hand emojis are especially useful because they offer a quick way to express reactions, feelings and everyday gestures.</p>
+      <p>You can use 👋 to greet or say goodbye to a friend, choose 👍 to show agreement, or send 👏 when you want to celebrate someone's achievement. These simple symbols add meaning to your words and make messages feel more personal and engaging.</p>
+      <p>Hand emojis cover many different situations, including encouragement, cooperation, gratitude, friendship, affection and pointing. Exploring the available gestures can help you choose the right symbol for every conversation.</p>
+    </section>
+
+    <section>
+      <h2>👏 Clapping, Celebration and Encouragement Emojis</h2>
+      <p>Clapping is a familiar way to show appreciation and celebrate achievements. That is why 👏 is a popular choice when congratulating someone or showing admiration for something they have done.</p>
+
+      <h3>👏 Clapping Hands</h3>
+      <p>Use the clapping emoji in messages about success, graduation, personal achievements and special moments. It also works well in comments when you want to encourage a friend or praise a great idea.</p>
+
+      <h3>🙌 Raising Hands</h3>
+      <p>The 🙌 emoji often represents celebration, excitement, happiness and reaching a goal. Add it to congratulations or posts sharing good news.</p>
+
+      <h3>💪 Strength and Determination</h3>
+      <p>The 💪 emoji is commonly used to express strength, confidence, motivation and determination. It fits messages about fitness, personal goals and overcoming challenges.</p>
+
+      <div class="hands-note">✨ Example: "Congratulations on your success! 👏🙌 You deserve it! 💪"</div>
+    </section>
+
+    <section>
+      <h2>👍 Approval, Agreement and Disagreement Emojis</h2>
+      <p>Thumb gestures make it easy to send a quick reaction without writing a long response. They are useful in everyday chats when reacting to an idea, suggestion, photo or update.</p>
+
+      <h3>👍 Thumbs Up</h3>
+      <p>The thumbs-up emoji usually expresses approval, agreement or a positive reaction. You can send it in response to a suggestion or to confirm that you understand a message.</p>
+
+      <h3>👎 Thumbs Down</h3>
+      <p>The thumbs-down emoji is often used to show disagreement or disapproval. Consider the tone of the conversation so your message does not sound unnecessarily harsh.</p>
+
+      <h3>👌 OK Hand</h3>
+      <p>The 👌 emoji can communicate that everything is fine or that something is acceptable. Its meaning may vary across cultures and situations, so context matters.</p>
+
+      <h3>🤏 Pinching Hand</h3>
+      <p>Use 🤏 when talking about a small amount, a tiny distance or a slight difference. It can also add a playful touch to casual messages.</p>
+
+      <div class="hands-note">💬 Example: "Does this time work for you? 👍" or "Everything is fine 👌"</div>
+    </section>
+
+    <section>
+      <h2>👋 Greeting, Welcome and Communication Emojis</h2>
+      <p>A friendly conversation often starts with a simple greeting. Hand gestures can make that opening feel warmer and more personal. They are also useful when saying goodbye or welcoming someone to a group.</p>
+
+      <h3>👋 Waving Hand</h3>
+      <p>One of the most recognizable greeting symbols, the waving hand can mean hello or goodbye. Use it at the beginning or end of a message or when greeting a friend online.</p>
+
+      <h3>🤝 Handshake</h3>
+      <p>The handshake often represents agreement, cooperation, partnership and respect. It can be used when accepting an offer or celebrating a successful agreement.</p>
+
+      <h3>🙏 Folded Hands</h3>
+      <p>The 🙏 emoji has several common uses, including gratitude, appreciation, prayer and polite requests. It can make a thank-you message feel more thoughtful.</p>
+
+      <h3>👐 Open Hands</h3>
+      <p>The 👐 emoji may express openness, welcome or offering something. Its meaning depends on the surrounding message and situation.</p>
+    </section>
+
+    <section>
+      <h2>✌️ Finger Gestures and Special Hand Signs</h2>
+      <p>There are many emojis based on different finger positions. Each has common uses in digital conversations. Some represent peace or friendship, while others help emphasize a point or add a playful tone.</p>
+
+      <h3>✌️ Victory and Peace Sign</h3>
+      <p>The ✌️ symbol is commonly associated with peace, victory and positive moods. It is suitable for photos, casual messages and cheerful social media posts.</p>
+
+      <h3>🤞 Crossed Fingers</h3>
+      <p>The 🤞 emoji is often used to express hope or wish someone good luck, especially when waiting for results or facing an important challenge.</p>
+
+      <h3>🤟 and 🤘 Expressive Gestures</h3>
+      <p>These gestures appear in different contexts related to music, excitement and personal expression. Their exact meaning depends on the situation and cultural context.</p>
+
+      <h3>☝️ Pointing Up</h3>
+      <p>Use ☝️ to draw attention to an important point, highlight information or introduce an additional note.</p>
+
+      <h3>👆👇👈👉 Directional Pointing</h3>
+      <p>These symbols help direct attention upward, downward, left or right. They are useful in tutorials, posts and messages that refer to links, images or instructions.</p>
+
+      <h3>🫶 Heart Hands</h3>
+      <p>The 🫶 emoji is a popular way to express love, affection, support and appreciation. It works well in friendly messages and positive comments.</p>
+    </section>
+
+    <section>
+      <h2>🤝 Friendship, Cooperation and Respect Emojis</h2>
+      <p>Hand emojis are not limited to quick reactions. They can also communicate important social meanings such as cooperation, loyalty, respect and support.</p>
+      <ul>
+        <li>🤝 Handshake: agreement, teamwork and partnership.</li>
+        <li>🙏 Gratitude: thanking someone for help or kindness.</li>
+        <li>🫶 Affection: showing love, care and support.</li>
+        <li>🙌 Encouragement: celebrating someone's happiness or achievement.</li>
+        <li>👊 Support: showing enthusiasm or encouragement in casual conversations.</li>
+        <li>🤲 Giving Hands: offering, receiving or expressing a prayer depending on context.</li>
+      </ul>
+      <p>Choosing an appropriate gesture can make your message clearer and help communicate its tone, especially when the other person cannot hear your voice or see your facial expressions.</p>
+    </section>
+
+    <section>
+      <h2>📱 How to Copy and Use Hand Emojis</h2>
+      <p>You can use any hand emoji on this page in just a few simple steps. There is no need to install an additional app or type the symbol yourself.</p>
+      <ol>
+        <li>🔎 Browse the emoji collection and find the hand gesture you want.</li>
+        <li>👆 Press the Copy button below the emoji.</li>
+        <li>📋 Open the app or website where you want to use it.</li>
+        <li>💬 Tap and hold the text field, then choose Paste.</li>
+        <li>🚀 Send your message or add the emoji to your post or comment.</li>
+      </ol>
+      <p>If you want to keep an animated emoji image on your device, press the Download button below it. Successful downloads depend on file availability, your internet connection and browser settings.</p>
+      <div class="hands-note">💡 Note: Emoji appearance may vary between phones, computers and apps because each platform can use its own design.</div>
+    </section>
+
+    <section>
+      <h2>💬 Where Can You Use Hand Emojis?</h2>
+      <p>Hand emojis work in most apps and websites that support Unicode symbols. You can use them in many types of everyday communication.</p>
+
+      <h3>📲 Messaging Apps</h3>
+      <p>Add clapping, thumbs-up and waving symbols to your chats to make your reactions clearer and your conversations more expressive.</p>
+
+      <h3>🌐 Social Media</h3>
+      <p>Use hand gestures in comments, posts and replies to photos or videos, or to show support and encouragement.</p>
+
+      <h3>🎓 Study and Work</h3>
+      <p>Some gestures can help in study groups and workplace conversations when confirming information, showing agreement or thanking a colleague. Keep formal communication requirements in mind.</p>
+
+      <h3>🎉 Celebrations and Greetings</h3>
+      <p>Add 👏 and 🙌 to congratulations and celebration messages. Use 🫶 and 🙏 when expressing appreciation, kindness and affection.</p>
+    </section>
+
+    <section>
+      <h2>✨ Tips for Choosing the Right Hand Emoji</h2>
+      <ul>
+        <li>🎯 Choose a symbol that matches the meaning you want to communicate.</li>
+        <li>💬 Consider the conversation context because the same gesture may have different meanings in different situations.</li>
+        <li>🤝 Use handshake and gratitude symbols to show respect and appreciation.</li>
+        <li>👏 Celebrate other people's achievements with suitable encouraging gestures.</li>
+        <li>❤️ Add affectionate symbols when you want your message to feel warmer.</li>
+        <li>🌍 Remember that some gestures can have different meanings across cultures and regions.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🌟 Why Choose Emojiland?</h2>
+      <p>Emojiland brings emoji collections together in organized categories, making it easier to find the symbol you need. Instead of searching through endless lists, you can explore the right category and choose an emoji quickly.</p>
+      <ul>
+        <li>😊 A varied collection of emojis in one place.</li>
+        <li>📋 Quick copying for use in everyday conversations.</li>
+        <li>⬇️ Download options for available emoji images.</li>
+        <li>📱 A browsing experience designed for phones and computers.</li>
+        <li>🌐 Arabic and English content support.</li>
+        <li>🧭 Category links that help you discover more emoji collections.</li>
+      </ul>
+      <p>Whether you are looking for a clapping emoji, a greeting, a love gesture or a sign of agreement, this collection can help make your everyday communication more expressive.</p>
+    </section>
+
+    <section>
+      <h2>❓ Frequently Asked Questions About Hand Emojis</h2>
+
+      <div class="hands-faq">
+        <h3>What are hand emojis?</h3>
+        <p>Hand emojis are digital symbols representing hand and finger gestures. They are used to express greetings, applause, approval, thanks, love and many other meanings.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>How do I copy a hand emoji from Emojiland?</h3>
+        <p>Press the Copy button below the emoji you want, then open your app or website and paste the symbol into the text field.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>Can I download animated hand emojis?</h3>
+        <p>Yes. Press the Download button below an emoji to try saving its animated GIF image to your device, when the file is available.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>What is the difference between 👍 and 👎?</h3>
+        <p>👍 is commonly used to show approval or agreement, while 👎 is generally used to express disapproval or disagreement.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>What does the 👏 emoji mean?</h3>
+        <p>👏 represents applause, encouragement and appreciation. It is often used to congratulate people on their achievements.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>What does the 🫶 emoji mean?</h3>
+        <p>🫶 is commonly used to express love, affection, support and appreciation. It is a popular choice for positive messages.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>Do hand emojis work on all phones?</h3>
+        <p>Most modern phones support Unicode emojis, but the appearance of some symbols may vary depending on the operating system, font version and app.</p>
+      </div>
+
+      <div class="hands-faq">
+        <h3>Are the emojis free to use?</h3>
+        <p>You can copy the emoji symbols displayed on this page and use them in your personal messages and posts for free.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <nav class="hands-section-links" aria-label="More Emojiland categories">
+    <a href="index.html" data-ar="🏠 الرئيسية" data-en="🏠 Home">🏠 الرئيسية</a>
+    <a href="emojis-smileys.html" data-ar="😊 الوجوه والابتسامات" data-en="😊 Smileys">😊 الوجوه والابتسامات</a>
+    <a href="emojis-animals.html" data-ar="🐻 الحيوانات والطبيعة" data-en="🐻 Animals">🐻 الحيوانات والطبيعة</a>
+    <a href="emojis-food.html" data-ar="🍎 الطعام والفواكه" data-en="🍎 Food">🍎 الطعام والفواكه</a>
+    <a href="emojis-love.html" data-ar="❤️ الحب والمشاعر" data-en="❤️ Love">❤️ الحب والمشاعر</a>
+    <a href="emojis-activities.html" data-ar="⚽ الأنشطة" data-en="⚽ Activities">⚽ الأنشطة</a>
+    <a href="stickers.html" data-ar="🌟 الملصقات" data-en="🌟 Stickers">🌟 الملصقات</a>
+  </nav>
+
+  <div style="text-align:center;margin:25px 0">
+    <a href="index.html" class="back-home"
+       data-ar="العودة إلى الصفحة الرئيسية"
+       data-en="Back to Home">العودة إلى الصفحة الرئيسية</a>
+  </div>
 
 </main>
 
@@ -148,47 +717,47 @@ data-en="Back to Home">العودة للرئيسية</a>
 
 <script>
 const hands = [
-["👏","1f44f"],
-["👍","1f44d"],
-["👎","1f44e"],
-["🙌","1f64c"],
-["👐","1f450"],
-["🤲","1f932"],
-["👋","1f44b"],
-["🤛","1f91b"],
-["🤜","1f91c"],
-["👊","1f44a"],
-["✊","270a"],
-["✋","270b"],
-["🖐","1f590"],
-["💪","1f4aa"],
-["🤝","1f91d"],
-["🙏","1f64f"],
-["👌","1f44c"],
-["✌️","270c"],
-["🤞","1f91e"],
-["🤟","1f91f"],
-["🤘","1f918"],
-["🤙","1f919"],
-["🤏","1f90f"],
-["🤌","1f90c"],
-["🫶","1faf6"],
-["🫱","1faf1"],
-["🫲","1faf2"],
-["🫰","1faf0"],
-["🫳","1faf3"],
-["🫴","1faf4"],
-["☝️","261d"],
-["👆","1f446"],
-["👇","1f447"],
-["👈","1f448"],
-["👉","1f449"],
-["🖕","1f595"],
-["🖖","1f596"],
-["💅","1f485"],
-["🤳","1f933"],
-["🖊","1f58a"],
-["🤚","1f91a"]
+  ["👏","1f44f"],
+  ["👍","1f44d"],
+  ["👎","1f44e"],
+  ["🙌","1f64c"],
+  ["👐","1f450"],
+  ["🤲","1f932"],
+  ["👋","1f44b"],
+  ["🤛","1f91b"],
+  ["🤜","1f91c"],
+  ["👊","1f44a"],
+  ["✊","270a"],
+  ["✋","270b"],
+  ["🖐","1f590"],
+  ["💪","1f4aa"],
+  ["🤝","1f91d"],
+  ["🙏","1f64f"],
+  ["👌","1f44c"],
+  ["✌️","270c"],
+  ["🤞","1f91e"],
+  ["🤟","1f91f"],
+  ["🤘","1f918"],
+  ["🤙","1f919"],
+  ["🤏","1f90f"],
+  ["🤌","1f90c"],
+  ["🫶","1faf6"],
+  ["🫱","1faf1"],
+  ["🫲","1faf2"],
+  ["🫰","1faf0"],
+  ["🫳","1faf3"],
+  ["🫴","1faf4"],
+  ["☝️","261d"],
+  ["👆","1f446"],
+  ["👇","1f447"],
+  ["👈","1f448"],
+  ["👉","1f449"],
+  ["🖕","1f595"],
+  ["🖖","1f596"],
+  ["💅","1f485"],
+  ["🤳","1f933"],
+  ["🖊","1f58a"],
+  ["🤚","1f91a"]
 ];
 
 const grid = document.getElementById("handsGrid");
@@ -208,14 +777,30 @@ function translatePage(){
     element.textContent = element.getAttribute("data-" + language);
   });
 
+  document.querySelectorAll(".language-content").forEach(section => {
+    const shouldShow = section.dataset.language === language;
+    section.hidden = !shouldShow;
+    section.classList.toggle("active", shouldShow);
+  });
+
   document.title = language === "ar"
-    ? "ايموش الأيدي والإشارات المتحركة | مملكة الإيموش"
+    ? "إيموش الأيدي والإشارات المتحركة | مملكة الإيموش"
     : "Animated Hands & Gestures Emojis | Emojiland";
 
   document.querySelector('meta[name="description"]').content =
     language === "ar"
-      ? "اكتشف ايموش الأيدي والإشارات المتحركة في مملكة الإيموش. مجموعة متنوعة من إيموشات التصفيق والإعجاب والتحية وحركات اليد، مع إمكانية النسخ والتنزيل مجانًا."
-      : "Explore animated hands and gestures emojis at Emojiland. Discover clapping, thumbs up, waving and other hand gestures to copy and download for free.";
+      ? "اكتشف إيموشات الأيدي والإشارات المتحركة في مملكة الإيموش! تصفيق وإعجاب وتحية ومصافحة وإشارات اليد المختلفة. انسخ الإيموشات واستخدمها أو نزّل صورها مجانًا."
+      : "Explore hand and gesture emojis at Emojiland. Find clapping, thumbs up, waving, handshakes and more. Copy emoji symbols or download available animated images for free.";
+
+  document.querySelector('meta[property="og:title"]').content =
+    language === "ar"
+      ? "إيموش الأيدي والإشارات المتحركة | مملكة الإيموش"
+      : "Animated Hands & Gestures Emojis | Emojiland";
+
+  document.querySelector('meta[property="og:description"]').content =
+    language === "ar"
+      ? "مجموعة متنوعة من إيموشات الأيدي والإشارات للتعبير عن التصفيق والإعجاب والتحية والمشاعر. انسخ واستخدم مجانًا."
+      : "Explore hand gesture emojis for clapping, approval, greetings and more. Copy and use your favorite emojis for free.";
 
   document.querySelectorAll(".copy-button").forEach(button => {
     button.textContent = language === "ar" ? "نسخ" : "Copy";
@@ -226,6 +811,23 @@ function translatePage(){
       button.textContent = language === "ar" ? "تنزيل" : "Download";
     }
   });
+
+  document.querySelectorAll(".hands-card img").forEach((img, index) => {
+    const item = hands[index];
+    if (item) {
+      img.alt = language === "ar"
+        ? "إيموش يد " + item[0]
+        : "Hand emoji " + item[0];
+    }
+  });
+
+  const nav = document.querySelector(".header .nav");
+  if (nav) {
+    nav.setAttribute(
+      "aria-label",
+      language === "ar" ? "روابط الموقع" : "Site navigation"
+    );
+  }
 }
 
 hands.forEach((item,index) => {
@@ -235,9 +837,13 @@ hands.forEach((item,index) => {
   const img = document.createElement("img");
   img.src = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[1]}/512.gif`;
   img.alt = getLanguage() === "ar"
-    ? "ايموش يد متحرك " + item[0]
-    : "Animated hand emoji " + item[0];
+    ? "إيموش يد " + item[0]
+    : "Hand emoji " + item[0];
   img.loading = "lazy";
+  img.decoding = "async";
+
+  const actions = document.createElement("div");
+  actions.className = "hands-actions";
 
   img.onerror = () => {
     img.style.display = "none";
@@ -247,34 +853,37 @@ hands.forEach((item,index) => {
       fallback.className = "hands-fallback";
       fallback.textContent = item[0];
       fallback.setAttribute("aria-label", item[0]);
-      card.insertBefore(fallback,actions);
+      card.insertBefore(fallback, actions);
     }
   };
-
-  const actions = document.createElement("div");
-  actions.className = "hands-actions";
 
   const copyButton = document.createElement("button");
   copyButton.type = "button";
   copyButton.className = "copy-button";
   copyButton.textContent = getLanguage() === "ar" ? "نسخ" : "Copy";
+  copyButton.setAttribute(
+    "aria-label",
+    getLanguage() === "ar"
+      ? "نسخ الإيموش " + item[0]
+      : "Copy emoji " + item[0]
+  );
 
-  copyButton.addEventListener("click",async () => {
+  copyButton.addEventListener("click", async () => {
     let copied = false;
 
     try {
-      if(navigator.clipboard && window.isSecureContext){
+      if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(item[0]);
         copied = true;
       }
-    } catch(error){
+    } catch(error) {
       copied = false;
     }
 
-    if(!copied){
+    if (!copied) {
       const input = document.createElement("textarea");
       input.value = item[0];
-      input.setAttribute("readonly","");
+      input.setAttribute("readonly", "");
       input.style.position = "fixed";
       input.style.left = "-9999px";
       input.style.top = "0";
@@ -282,11 +891,11 @@ hands.forEach((item,index) => {
       document.body.appendChild(input);
       input.focus();
       input.select();
-      input.setSelectionRange(0,input.value.length);
+      input.setSelectionRange(0, input.value.length);
 
-      try{
+      try {
         copied = document.execCommand("copy");
-      }catch(error){
+      } catch(error) {
         copied = false;
       }
 
@@ -306,23 +915,29 @@ hands.forEach((item,index) => {
   downloadButton.type = "button";
   downloadButton.className = "download download-button";
   downloadButton.textContent = getLanguage() === "ar" ? "تنزيل" : "Download";
+  downloadButton.setAttribute(
+    "aria-label",
+    getLanguage() === "ar"
+      ? "تنزيل صورة الإيموش " + item[0]
+      : "Download emoji image " + item[0]
+  );
 
-  downloadButton.addEventListener("click",async () => {
+  downloadButton.addEventListener("click", async () => {
     downloadButton.disabled = true;
     downloadButton.textContent =
       getLanguage() === "ar" ? "جاري التنزيل..." : "Downloading...";
 
-    try{
+    try {
       const url = `https://fonts.gstatic.com/s/e/notoemoji/latest/${item[1]}/512.gif`;
       const response = await fetch(url);
 
-      if(!response.ok){
+      if (!response.ok) {
         throw new Error("Download failed");
       }
 
       const blob = await response.blob();
 
-      if(!blob.size){
+      if (!blob.size) {
         throw new Error("Empty file");
       }
 
@@ -330,15 +945,19 @@ hands.forEach((item,index) => {
       const link = document.createElement("a");
 
       link.href = objectURL;
-      link.download = "hands-emoji-" + (index+1) + ".gif";
+      link.download = "hands-emoji-" + (index + 1) + ".gif";
 
       document.body.appendChild(link);
       link.click();
       link.remove();
 
-      setTimeout(() => URL.revokeObjectURL(objectURL),5000);
+      setTimeout(() => URL.revokeObjectURL(objectURL), 5000);
 
-    }catch(error){
+      message.textContent = getLanguage() === "ar"
+        ? "تم تجهيز تنزيل الإيموش " + item[0]
+        : "Download started for emoji " + item[0];
+
+    } catch(error) {
       message.textContent = getLanguage() === "ar"
         ? "تعذر التنزيل. حاول مرة أخرى."
         : "Download failed. Please try again.";
@@ -359,8 +978,8 @@ hands.forEach((item,index) => {
 
 translatePage();
 
-window.addEventListener("storage",event => {
-  if(event.key === "emojilandLanguage"){
+window.addEventListener("storage", event => {
+  if (event.key === "emojilandLanguage") {
     document.documentElement.lang = event.newValue === "en" ? "en" : "ar";
     translatePage();
   }
