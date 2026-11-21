@@ -3,16 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="theme-color" content="#7655c5">
 <meta name="robots" content="index, follow">
-<meta name="description" content="اكتشف ايموش متحرك مجاني في مملكة الإيموش. تصفح مجموعة متنوعة من الإيموشات المتحركة، وانسخ ما تريد أو نزّله بصيغة GIF بسهولة.">
-<title>ايموش متحرك مجاني | مكتبة الإيموشات المتحركة - مملكة الإيموش</title>
+<meta name="description" content="اكتشف مكتبة الإيموشات المتحركة المجانية في مملكة الإيموش 😊 تصفح رموز المشاعر والوجوه المضحكة والتعبيرات المتنوعة، وانسخ الإيموشات أو نزّل صور GIF بسهولة.">
+<meta name="keywords" content="ايموش متحرك, ايموشات متحركة, ايموشات مجانية, مكتبة ايموشات, رموز متحركة, صور GIF, ايموش مضحك, ايموشات تعبيرية, animated emojis, free emojis, animated emoji library">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="مكتبة الإيموشات المتحركة المجانية | مملكة الإيموش">
+<meta property="og:description" content="تصفح مكتبة متنوعة من الإيموشات المتحركة، وانسخ الرموز التي تحبها أو نزّل صور GIF بسهولة.">
+<meta property="og:site_name" content="مملكة الإيموش | Emojiland">
+
+<title>مكتبة الإيموشات المتحركة المجانية | مملكة الإيموش</title>
 
 <script>
 (() => {
   const savedLanguage = localStorage.getItem("emojilandLanguage");
   const requestedLanguage = new URLSearchParams(location.search).get("lang");
-  const language = savedLanguage || (requestedLanguage === "en" ? "en" : "ar");
+
+  const language = savedLanguage === "ar" || savedLanguage === "en"
+    ? savedLanguage
+    : requestedLanguage === "en" ? "en" : "ar";
 
   document.documentElement.lang = language;
   document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
@@ -32,34 +43,310 @@ gtag('config', 'G-NZ00TSPTWC');
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f8f7fc;color:#29243a}
-.page-header{background:#fff;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;box-shadow:0 2px 12px #0000000b}
-.brand{font-size:21px;font-weight:bold;color:#7655c5;text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.nav-links a{color:#51466b;text-decoration:none;font-size:14px}
-.main{max-width:1100px;margin:35px auto;padding:0 16px}
-.intro{text-align:center;margin-bottom:25px}
-.intro h1{font-size:30px;color:#6246a6;margin:0 0 12px}
-.intro p{color:#777;margin:0;line-height:1.8}
-.status{background:#fff;border:1px solid #eee7f8;border-radius:12px;padding:13px;text-align:center;margin:20px 0;color:#7655c5}
-.progress{height:7px;background:#eee8f8;border-radius:10px;overflow:hidden;margin-top:10px}
-.progress-bar{height:100%;width:0;background:#7655c5;transition:width .2s}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:14px}
-.emoji-card{background:#fff;border:1px solid #eee8f5;border-radius:14px;padding:13px 8px;text-align:center;box-shadow:0 3px 12px #30205008}
-.emoji-image{width:60px;height:60px;object-fit:contain;display:block;margin:0 auto 10px}
-.card-actions{display:flex;justify-content:center;gap:6px;flex-wrap:wrap}
-.card-actions button{border:0;border-radius:7px;padding:7px 10px;background:#7655c5;color:#fff;cursor:pointer;font-size:12px}
-.card-actions button:hover{background:#5e42a5}
-.card-actions button:disabled{opacity:.6;cursor:wait}
-.empty{display:none;text-align:center;background:#fff;padding:25px;border-radius:12px;color:#777;line-height:1.8}
-.footer{text-align:center;padding:25px 12px;color:#777;font-size:13px}
-.footer a{color:#7655c5}
-@media(max-width:500px){
- .page-header{justify-content:center}
- .brand{width:100%;text-align:center}
- .nav-links{justify-content:center}
- .intro h1{font-size:25px}
- .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+
+body{
+  margin:0;
+  font-family:Arial,Tahoma,sans-serif;
+  background:#f8f7fc;
+  color:#29243a;
+}
+
+.page-header{
+  background:#fff;
+  padding:16px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  box-shadow:0 2px 12px #0000000b;
+}
+
+.brand{
+  font-size:21px;
+  font-weight:bold;
+  color:#7655c5;
+  text-decoration:none;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:#51466b;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.nav-links a:hover,
+.internal-links a:hover{
+  color:#e45d91;
+}
+
+.main{
+  max-width:1100px;
+  margin:35px auto;
+  padding:0 16px;
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:25px;
+  padding:22px 15px;
+  background:#fff;
+  border:1px solid #eee7f8;
+  border-radius:16px;
+}
+
+.intro h1{
+  font-size:30px;
+  color:#6246a6;
+  margin:0 0 12px;
+  line-height:1.5;
+}
+
+.intro p{
+  color:#777;
+  margin:0 auto;
+  max-width:850px;
+  line-height:2;
+}
+
+.internal-links{
+  background:#fff;
+  border:1px solid #eee7f8;
+  border-radius:12px;
+  padding:15px 18px;
+  margin:20px 0;
+  line-height:2;
+  text-align:center;
+}
+
+.internal-links strong{
+  color:#704db9;
+  display:block;
+  margin-bottom:7px;
+}
+
+.internal-links a{
+  display:inline-block;
+  color:#7655c5;
+  margin:3px 8px;
+  font-size:14px;
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+.status{
+  background:#fff;
+  border:1px solid #eee7f8;
+  border-radius:12px;
+  padding:13px;
+  text-align:center;
+  margin:20px 0;
+  color:#7655c5;
+  line-height:1.8;
+}
+
+.progress{
+  height:7px;
+  background:#eee8f8;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:10px;
+}
+
+.progress-bar{
+  height:100%;
+  width:0;
+  background:#7655c5;
+  transition:width .2s;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(135px,1fr));
+  gap:14px;
+}
+
+.emoji-card{
+  background:#fff;
+  border:1px solid #eee8f5;
+  border-radius:14px;
+  padding:13px 8px;
+  text-align:center;
+  box-shadow:0 3px 12px #30205008;
+}
+
+.emoji-image{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+  display:block;
+  margin:0 auto 10px;
+}
+
+.emoji-symbol{
+  color:#777;
+  font-size:13px;
+  margin-bottom:10px;
+}
+
+.card-actions{
+  display:flex;
+  justify-content:center;
+  gap:6px;
+  flex-wrap:wrap;
+}
+
+.card-actions button{
+  border:0;
+  border-radius:7px;
+  padding:7px 10px;
+  background:#7655c5;
+  color:#fff;
+  cursor:pointer;
+  font-size:12px;
+}
+
+.card-actions button.download-button{
+  background:#e45d91;
+}
+
+.card-actions button:hover{
+  filter:brightness(.94);
+}
+
+.card-actions button:disabled{
+  opacity:.6;
+  cursor:wait;
+}
+
+.empty{
+  display:none;
+  text-align:center;
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  color:#777;
+  line-height:1.8;
+  margin-top:15px;
+}
+
+.content-section{
+  background:#fff;
+  border:1px solid #eee7f8;
+  border-radius:16px;
+  padding:25px;
+  margin-top:35px;
+  color:#514b60;
+  line-height:2;
+}
+
+.content-section h2{
+  color:#704db9;
+  font-size:23px;
+  line-height:1.6;
+  margin:28px 0 12px;
+}
+
+.content-section h2:first-child{
+  margin-top:0;
+}
+
+.content-section h3{
+  color:#805bc5;
+  font-size:18px;
+  margin:20px 0 8px;
+  line-height:1.6;
+}
+
+.content-section p{
+  margin:10px 0;
+}
+
+.content-section ul{
+  padding-inline-start:25px;
+  margin:10px 0 18px;
+}
+
+.content-section li{
+  margin-bottom:8px;
+}
+
+.content-section strong{
+  color:#6545aa;
+}
+
+.faq-item{
+  padding:13px 0;
+  border-bottom:1px solid #eee8f7;
+}
+
+.faq-item:last-child{
+  border-bottom:0;
+}
+
+.faq-item h3{
+  margin-top:0;
+}
+
+[hidden]{
+  display:none!important;
+}
+
+.footer{
+  text-align:center;
+  padding:25px 12px;
+  color:#777;
+  font-size:13px;
+  line-height:1.8;
+  background:#fff;
+  margin-top:40px;
+}
+
+.footer a{
+  color:#7655c5;
+}
+
+@media(max-width:600px){
+  .page-header{
+    justify-content:center;
+  }
+
+  .brand{
+    width:100%;
+    text-align:center;
+  }
+
+  .nav-links{
+    justify-content:center;
+  }
+
+  .intro h1{
+    font-size:25px;
+  }
+
+  .grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .content-section{
+    padding:18px 15px;
+  }
+
+  .content-section h2{
+    font-size:20px;
+  }
+
+  .nav-links{
+    gap:13px;
+  }
 }
 </style>
 </head>
@@ -67,46 +354,433 @@ body{margin:0;font-family:Arial,sans-serif;background:#f8f7fc;color:#29243a}
 <body>
 
 <header class="page-header">
-<a class="brand" href="index.html"
-   data-ar="?? مملكة الإيموش"
-   data-en="?? Emojiland">?? مملكة الإيموش</a>
+  <a class="brand" href="index.html"
+     data-ar="😊 مملكة الإيموش"
+     data-en="😊 Emojiland">😊 مملكة الإيموش</a>
 
-<nav class="nav-links">
-<a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-<a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
-</nav>
+  <nav class="nav-links" aria-label="Main navigation">
+    <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
+    <a href="emojis-smileys.html" data-ar="الابتسامات" data-en="Smileys">الابتسامات</a>
+  </nav>
 </header>
 
 <main class="main">
-<section class="intro">
-<h1 data-ar="ايموش متحرك مجاني" data-en="Free Animated Emojis">ايموش متحرك مجاني</h1>
 
-<p
-data-ar="تصفح مكتبة الإيموشات المتحركة المجانية في مملكة الإيموش. اختر الإيموش الذي يعجبك، وانسخه أو نزّله بصيغة GIF متحركة بسهولة."
-data-en="Explore the free animated emoji collection at Emojiland. Choose your favorite emoji, copy it, or download it as an animated GIF.">
-تصفح مكتبة الإيموشات المتحركة المجانية في مملكة الإيموش. اختر الإيموش الذي يعجبك، وانسخه أو نزّله بصيغة GIF متحركة بسهولة.
-</p>
-</section>
+  <section class="intro">
+    <h1 data-ar="🌈 مكتبة الإيموشات المتحركة المجانية"
+        data-en="🌈 Free Animated Emoji Library">
+      🌈 مكتبة الإيموشات المتحركة المجانية
+    </h1>
 
-<div class="status" id="status" aria-live="polite">
-<span id="statusText">جاري تحميل الإيموشات...</span>
-<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
-</div>
+    <p
+      data-ar="مرحبًا بك في مكتبة الإيموشات المتحركة في مملكة الإيموش! اكتشف مجموعة متنوعة من الوجوه التعبيرية والرموز التي تساعدك على التعبير عن مشاعرك وإضافة المرح إلى محادثاتك. ستجد هنا إيموشات للضحك والدهشة والتفكير والفرح والعديد من التعبيرات اليومية. تصفح الرموز المتاحة واختر ما يناسب رسالتك، ثم انسخه بضغطة واحدة أو حاول تنزيل صورته المتحركة بصيغة GIF. استمتع بمكتبة سهلة الاستخدام على الهاتف والكمبيوتر، واكتشف المزيد من الأقسام المتخصصة في مملكة الإيموش."
+      data-en="Welcome to the animated emoji library at Emojiland! Explore a variety of expressive faces and symbols that help you share feelings and bring personality to everyday conversations. Discover emojis for laughter, surprise, thinking, happiness and many other moods. Browse the available collection, choose a symbol that fits your message, then copy it with one click or try downloading its animated GIF. Enjoy a simple experience on mobile and desktop, and explore more specialized emoji categories across Emojiland.">
+      مرحبًا بك في مكتبة الإيموشات المتحركة في مملكة الإيموش! اكتشف مجموعة متنوعة من الوجوه التعبيرية والرموز التي تساعدك على التعبير عن مشاعرك وإضافة المرح إلى محادثاتك. ستجد هنا إيموشات للضحك والدهشة والتفكير والفرح والعديد من التعبيرات اليومية. تصفح الرموز المتاحة واختر ما يناسب رسالتك، ثم انسخه بضغطة واحدة أو حاول تنزيل صورته المتحركة بصيغة GIF. استمتع بمكتبة سهلة الاستخدام على الهاتف والكمبيوتر، واكتشف المزيد من الأقسام المتخصصة في مملكة الإيموش.
+    </p>
+  </section>
 
-<div class="grid" id="emojiGrid"></div>
+  <div class="internal-links">
+    <strong data-ar="✨ تصفح أقسام الإيموشات المتخصصة"
+            data-en="✨ Explore Specialized Emoji Categories">
+      ✨ تصفح أقسام الإيموشات المتخصصة
+    </strong>
 
-<div class="empty" id="emptyMessage"
-data-ar="لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة."
-data-en="No animated files are currently available. Try refreshing the page.">
-لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة.
-</div>
+    <a href="index.html" data-ar="كل الإيموشات" data-en="All Emojis">كل الإيموشات</a>
+    <a href="emojis-smileys.html" data-ar="الابتسامات والمشاعر" data-en="Smileys and Emotions">الابتسامات والمشاعر</a>
+    <a href="emojis-love.html" data-ar="الحب والقلوب" data-en="Love and Hearts">الحب والقلوب</a>
+    <a href="emojis-animals.html" data-ar="الحيوانات والطبيعة" data-en="Animals and Nature">الحيوانات والطبيعة</a>
+    <a href="emojis-food.html" data-ar="الطعام والشراب" data-en="Food and Drink">الطعام والشراب</a>
+    <a href="emojis-hands.html" data-ar="الأيدي والإشارات" data-en="Hands and Gestures">الأيدي والإشارات</a>
+    <a href="emojis-activities.html" data-ar="الأنشطة والرياضة" data-en="Activities and Sports">الأنشطة والرياضة</a>
+    <a href="stickers.html" data-ar="الملصقات المتحركة" data-en="Animated Stickers">الملصقات المتحركة</a>
+  </div>
+
+  <div class="status" id="status" aria-live="polite">
+    <span id="statusText">جاري تحميل الإيموشات...</span>
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+  </div>
+
+  <section class="grid" id="emojiGrid" aria-label="Animated emoji collection"></section>
+
+  <div class="empty" id="emptyMessage" role="status">
+    لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة.
+  </div>
+
+  <!-- Arabic content -->
+  <article class="content-section" data-language="ar">
+
+    <h2>😊 ما هي الإيموشات المتحركة؟</h2>
+
+    <p>
+      الإيموشات المتحركة هي رموز تعبيرية تظهر في صورة متحركة بدلًا من الرمز الثابت المعتاد. وتساعد هذه الرسومات على إضافة إحساس بالحركة والتفاعل إلى الرسائل والمحادثات الرقمية. فبدلًا من كتابة وصف طويل لمشاعرك، يمكنك اختيار وجه ضاحك أو متفاجئ أو مبتسم ليعبّر عن الفكرة بطريقة بصرية سريعة.
+    </p>
+
+    <p>
+      أصبحت الرموز التعبيرية جزءًا مهمًا من التواصل اليومي على الإنترنت؛ فهي تظهر في تطبيقات المحادثة والتعليقات والمنشورات ورسائل التهنئة. وتوفر الإيموشات المتحركة طريقة إضافية لجعل التواصل أكثر حيوية، خاصة عندما تكون الحركة جزءًا من التعبير نفسه.
+    </p>
+
+    <h2>🎭 اكتشف أنواع الإيموشات والتعبيرات المختلفة</h2>
+
+    <p>
+      تضم مكتبة الإيموشات رموزًا متعددة يمكن استخدامها في مواقف كثيرة. ويمكنك تصفح المجموعة واختيار التعبير الذي يناسب الحالة التي تريد مشاركتها.
+    </p>
+
+    <h3>😂 إيموشات الضحك والمرح</h3>
+
+    <p>
+      تستخدم الوجوه الضاحكة للتعبير عن السعادة والفكاهة والمواقف المضحكة. وهي من أكثر الرموز انتشارًا في المحادثات اليومية، ويمكن أن تجعل الردود القصيرة أكثر ودًا ومرحًا. استخدمها عند مشاركة نكتة أو التعليق على موقف طريف أو التعبير عن الضحك.
+    </p>
+
+    <h3>😍 إيموشات الحب والإعجاب</h3>
+
+    <p>
+      تساعد الوجوه المحبة والقلوب على إظهار الإعجاب والمودة والاهتمام. ويمكن استخدامها في الرسائل الشخصية والتعليقات على الصور والمنشورات التي تحمل مشاعر إيجابية. وإذا كنت تبحث عن مجموعة أكثر تخصصًا، يمكنك زيارة قسم <a href="emojis-love.html">إيموش الحب والقلوب</a>.
+    </p>
+
+    <h3>😮 إيموشات الدهشة والمفاجأة</h3>
+
+    <p>
+      تعبر الوجوه المتفاجئة عن الاستغراب أو الانبهار أو سماع خبر غير متوقع. وتناسب هذه الرموز المحادثات التي تتضمن أحداثًا مفاجئة أو مواقف مثيرة للاهتمام، كما يمكن استخدامها لإظهار رد فعل سريع دون الحاجة إلى كتابة الكثير من الكلمات.
+    </p>
+
+    <h3>🤔 إيموشات التفكير والحيرة</h3>
+
+    <p>
+      تستخدم تعبيرات التفكير عندما تريد إظهار أنك تراجع فكرة أو تحاول فهم موضوع أو تبحث عن إجابة. وهي مفيدة في النقاشات والأسئلة والمحادثات التي تتطلب بعض التأمل أو الاستفسار.
+    </p>
+
+    <h3>😎 إيموشات الثقة والمزاح</h3>
+
+    <p>
+      يمكن استخدام الوجوه ذات النظارات والتعبيرات المرحة لإضافة طابع واثق أو فكاهي إلى الرسالة. ويعتمد معناها على سياق المحادثة، فقد تكون تعبيرًا عن الثقة أو المزاح أو الاستمتاع بموقف معين.
+    </p>
+
+    <h2>💬 لماذا نستخدم الإيموشات في المحادثات؟</h2>
+
+    <p>
+      تساعد الرموز التعبيرية على نقل نبرة الرسالة وتوضيح المشاعر التي قد لا تظهر بوضوح في النص وحده. فعندما ترسل رسالة قصيرة، قد يساعد رمز مناسب على جعلها تبدو أكثر لطفًا أو مرحًا أو تعاطفًا.
+    </p>
+
+    <ul>
+      <li>😊 توضيح المشاعر: تساعد الإيموشات على إظهار السعادة أو الحزن أو الدهشة أو الإعجاب.</li>
+      <li>💬 تحسين المحادثة: تضيف لمسة شخصية إلى الرسائل النصية والردود السريعة.</li>
+      <li>🎉 مشاركة اللحظات: يمكن استخدامها في التهاني والاحتفالات والمناسبات اليومية.</li>
+      <li>😂 إضافة المرح: تجعل التعليقات والنقاشات الخفيفة أكثر تفاعلًا.</li>
+      <li>📱 سهولة الاستخدام: يمكن نسخ الرمز ولصقه في التطبيقات التي تدعم الإيموشات.</li>
+    </ul>
+
+    <h2>📱 أين يمكنك استخدام الإيموشات المتحركة؟</h2>
+
+    <h3>💬 تطبيقات المحادثة</h3>
+    <p>
+      يمكنك استخدام الرموز التعبيرية في الرسائل الشخصية والمحادثات الجماعية، سواء للتعبير عن رد فعل سريع أو لإضافة لمسة مرحة إلى الحديث. وقد يختلف دعم الصور المتحركة حسب التطبيق وطريقة إرسال الملف.
+    </p>
+
+    <h3>🌐 مواقع التواصل الاجتماعي</h3>
+    <p>
+      تساعد الإيموشات على إضافة طابع شخصي إلى التعليقات والمنشورات والردود. ويمكن استخدام الرموز الثابتة في النصوص بسهولة، بينما تعتمد مشاركة ملفات GIF المتحركة على دعم المنصة لنوع الملف.
+    </p>
+
+    <h3>✉️ الرسائل والتهاني</h3>
+    <p>
+      يمكنك إضافة رمز تعبيري مناسب إلى رسائل التهنئة والشكر والتشجيع. اختيار الرمز الصحيح يجعل الرسالة أكثر تعبيرًا ويضيف إليها لمسة ودودة.
+    </p>
+
+    <h2>📋 كيف تنسخ الإيموشات من مملكة الإيموش؟</h2>
+
+    <p>
+      جعلنا استخدام الرموز بسيطًا حتى تتمكن من نسخ الإيموش الذي تريده بسرعة. اتبع الخطوات التالية:
+    </p>
+
+    <ul>
+      <li>🔎 تصفح شبكة الإيموشات الموجودة في أعلى الصفحة.</li>
+      <li>😊 اختر الرمز الذي تريد استخدامه.</li>
+      <li>📋 اضغط على زر «نسخ» الموجود أسفل الرمز.</li>
+      <li>💬 انتقل إلى التطبيق أو الموقع الذي تريد الكتابة فيه.</li>
+      <li>📌 الصق الرمز في المكان المناسب.</li>
+    </ul>
+
+    <h2>⬇️ كيف تحاول تنزيل الإيموش بصيغة GIF؟</h2>
+
+    <p>
+      إذا كان ملف الإيموش المتحرك متاحًا، يمكنك الضغط على زر «تنزيل GIF» الموجود أسفل الرمز. تحاول الصفحة تنزيل الصورة المتحركة إلى جهازك، وإذا لم يسمح المتصفح بالتنزيل المباشر فقد يتم فتح مصدر الصورة في نافذة جديدة.
+    </p>
+
+    <p>
+      تذكر أن نجاح التنزيل قد يتأثر باتصال الإنترنت وإعدادات المتصفح وإمكانية الوصول إلى مصدر الصورة. كما أن بعض التطبيقات تعرض صور GIF بطريقة مختلفة عن عرض الرموز التعبيرية العادية.
+    </p>
+
+    <h2>⚡ نصائح للحصول على أفضل تجربة</h2>
+
+    <ul>
+      <li>🌈 اختر الإيموش الذي يناسب معنى رسالتك بدلًا من استخدام رموز عشوائية.</li>
+      <li>📱 استخدم اتصال إنترنت مستقرًا لتحميل الصور المتحركة.</li>
+      <li>🔄 إذا لم يظهر أحد الرموز، حاول تحديث الصفحة بعد التأكد من اتصالك بالإنترنت.</li>
+      <li>💬 لا تكثر من الرموز في الرسالة الواحدة حتى تظل سهلة القراءة.</li>
+      <li>🎨 جرّب الأقسام المتخصصة في الموقع للعثور على رموز تناسب موضوعك.</li>
+      <li>⬇️ عند تنزيل GIF، تأكد من أن المتصفح يسمح بفتح الملفات وتنزيلها.</li>
+    </ul>
+
+    <h2>❓ الأسئلة الشائعة عن الإيموشات المتحركة</h2>
+
+    <div class="faq-item">
+      <h3>😊 ما الفرق بين الإيموش الثابت والإيموش المتحرك؟</h3>
+      <p>
+        الإيموش الثابت يظهر كرمز أو صورة دون حركة، أما الإيموش المتحرك فيعرض تعبيرًا أو رسمًا يتحرك بمرور الوقت، وغالبًا ما يكون في صيغة GIF أو تنسيق متحرك آخر.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📋 هل يمكن نسخ الإيموشات مجانًا؟</h3>
+      <p>
+        نعم، يمكنك استخدام زر «نسخ» الموجود أسفل الرموز لنسخ محارف الإيموش المتاحة، ثم لصقها في التطبيقات والمواقع التي تدعم هذه الرموز.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>⬇️ هل يمكن تنزيل الإيموش المتحرك؟</h3>
+      <p>
+        تحتوي الرموز المتاحة على زر «تنزيل GIF» لمحاولة تنزيل الصورة المتحركة. وقد تختلف النتيجة حسب المتصفح والاتصال بالإنترنت ومصدر الملف.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📱 هل تعمل الإيموشات على الهاتف والكمبيوتر؟</h3>
+      <p>
+        يمكن استخدام محارف الإيموش على معظم الأجهزة الحديثة التي تدعمها. أما الصور المتحركة فقد يختلف عرضها أو تشغيلها حسب التطبيق والمتصفح.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🔄 لماذا لا تظهر بعض الإيموشات في المكتبة؟</h3>
+      <p>
+        قد لا يتوفر ملف GIF لبعض الرموز في مصدر الصور المستخدم، أو قد يتعذر تحميله بسبب اتصال الإنترنت أو مشكلة مؤقتة في الوصول إلى المصدر. تعرض المكتبة الملفات التي ينجح تحميلها فقط.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🌈 هل توجد أقسام أخرى للإيموشات في مملكة الإيموش؟</h3>
+      <p>
+        نعم، يمكنك تصفح أقسام الابتسامات والحب والحيوانات والطعام والأيدي والأنشطة، بالإضافة إلى مكتبة الملصقات المتحركة.
+      </p>
+    </div>
+
+    <p>
+      💜 استكشف مكتبة مملكة الإيموش، واختر الرموز التي تناسبك، واجعل محادثاتك أكثر تعبيرًا ومتعة!
+    </p>
+
+  </article>
+
+  <!-- English content -->
+  <article class="content-section" data-language="en" hidden>
+
+    <h2>😊 What Are Animated Emojis?</h2>
+
+    <p>
+      Animated emojis are expressive symbols that include movement instead of appearing only as still images. They add personality and visual interest to digital conversations. Rather than writing a long description of how you feel, you can choose a laughing, surprised or smiling face to communicate a reaction quickly.
+    </p>
+
+    <p>
+      Emojis have become a familiar part of online communication. They appear in messaging apps, social media comments, posts and greetings. Animated versions provide another way to make digital conversations feel more lively and expressive.
+    </p>
+
+    <h2>🎭 Explore Different Types of Emojis</h2>
+
+    <p>
+      Emoji collections include many expressions that can be useful in different situations. Browse the library and choose a symbol that matches the mood or message you want to share.
+    </p>
+
+    <h3>😂 Laughing and Funny Emojis</h3>
+
+    <p>
+      Laughing faces are commonly used to express happiness, humor and amusement. They are among the most popular symbols in everyday conversations. Use them when sharing a joke, reacting to a funny moment or making a friendly reply feel more playful.
+    </p>
+
+    <h3>😍 Love and Affection Emojis</h3>
+
+    <p>
+      Hearts and affectionate faces help express admiration, care and positive feelings. They can be used in personal messages, photo comments and cheerful posts. For a more focused collection, visit our <a href="emojis-love.html">Love and Heart Emojis</a> category.
+    </p>
+
+    <h3>😮 Surprise and Amazement Emojis</h3>
+
+    <p>
+      Surprised expressions can communicate wonder, disbelief or excitement about unexpected news. They are useful in conversations about surprising events and interesting discoveries.
+    </p>
+
+    <h3>🤔 Thinking and Confused Emojis</h3>
+
+    <p>
+      Thinking faces can show that you are considering an idea, trying to understand something or looking for an answer. They are useful in discussions, questions and conversations that involve reflection.
+    </p>
+
+    <h3>😎 Cool and Playful Emojis</h3>
+
+    <p>
+      Sunglasses and playful expressions can add a confident or humorous tone to a message. Their meaning depends on the context and may suggest confidence, joking or enjoyment.
+    </p>
+
+    <h2>💬 Why Do People Use Emojis in Conversations?</h2>
+
+    <p>
+      Emojis help communicate the tone of a message and express feelings that may not be obvious from text alone. A suitable symbol can make a short reply feel friendlier, more cheerful or more supportive.
+    </p>
+
+    <ul>
+      <li>😊 Express feelings: show happiness, sadness, surprise or admiration.</li>
+      <li>💬 Improve conversations: add personality to messages and quick replies.</li>
+      <li>🎉 Celebrate moments: use emojis in greetings and special occasions.</li>
+      <li>😂 Add humor: make light conversations and comments more engaging.</li>
+      <li>📱 Easy to use: copy and paste supported emoji characters into compatible apps.</li>
+    </ul>
+
+    <h2>📱 Where Can You Use Animated Emojis?</h2>
+
+    <h3>💬 Messaging Apps</h3>
+    <p>
+      Emojis can be used in private messages and group conversations to express quick reactions or add a playful touch. Support for animated images may vary depending on the application and how the file is shared.
+    </p>
+
+    <h3>🌐 Social Media</h3>
+    <p>
+      Emojis can add personality to comments, posts and replies. Standard emoji characters are easy to include in text, while sharing animated GIF files depends on the platform's supported formats.
+    </p>
+
+    <h3>✉️ Greetings and Personal Messages</h3>
+    <p>
+      Add a suitable emoji to a greeting, thank-you note or encouraging message. Choosing the right symbol can make your words feel warmer and more expressive.
+    </p>
+
+    <h2>📋 How to Copy Emojis from Emojiland</h2>
+
+    <p>
+      The library makes it simple to copy the symbols you want. Follow these steps:
+    </p>
+
+    <ul>
+      <li>🔎 Browse the emoji grid at the top of the page.</li>
+      <li>😊 Choose the symbol you want to use.</li>
+      <li>📋 Select the Copy button below the emoji.</li>
+      <li>💬 Open the app or website where you want to write.</li>
+      <li>📌 Paste the copied symbol into your message.</li>
+    </ul>
+
+    <h2>⬇️ How to Try Downloading an Animated GIF</h2>
+
+    <p>
+      If an animated file is available, select the Download GIF button below the emoji. The page will try to download the animation to your device. If the browser does not allow a direct download, the image source may open in a new tab instead.
+    </p>
+
+    <p>
+      Download success can depend on your internet connection, browser settings and access to the image source. Different applications may also display GIF files differently from standard emoji characters.
+    </p>
+
+    <h2>⚡ Tips for a Better Experience</h2>
+
+    <ul>
+      <li>🌈 Choose an emoji that matches the meaning of your message.</li>
+      <li>📱 Use a stable internet connection when loading animated images.</li>
+      <li>🔄 If an emoji does not appear, check your connection and refresh the page.</li>
+      <li>💬 Avoid using too many symbols in one message if they make it harder to read.</li>
+      <li>🎨 Explore specialized categories to find emojis related to your topic.</li>
+      <li>⬇️ Make sure your browser allows downloads and file access when saving GIFs.</li>
+    </ul>
+
+    <h2>❓ Frequently Asked Questions About Animated Emojis</h2>
+
+    <div class="faq-item">
+      <h3>😊 What is the difference between a static and animated emoji?</h3>
+      <p>
+        A static emoji appears as a symbol or still image, while an animated emoji includes movement and may be provided as a GIF or another animated format.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📋 Can I copy emojis for free?</h3>
+      <p>
+        Yes. Use the Copy button below an available emoji to copy its character, then paste it into applications and websites that support emoji symbols.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>⬇️ Can I download animated emojis?</h3>
+      <p>
+        Available items include a Download GIF button that attempts to download the animated image. Results may vary depending on your browser, internet connection and the image source.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>📱 Do emojis work on phones and computers?</h3>
+      <p>
+        Emoji characters work on most modern devices that support them. Animated images may be displayed or played differently depending on the browser or application.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🔄 Why are some emojis missing from the library?</h3>
+      <p>
+        An animated GIF may not be available for every character in the image source. A temporary network or loading problem may also prevent an image from appearing. The library displays files that load successfully.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <h3>🌈 Are there other emoji categories on Emojiland?</h3>
+      <p>
+        Yes. Explore smileys, love, animals, food, hands and activities, as well as the animated sticker collection.
+      </p>
+    </div>
+
+    <p>
+      💜 Explore the Emojiland library, choose the symbols you like and make your conversations more expressive and fun!
+    </p>
+
+  </article>
+
+  <div class="internal-links">
+    <strong data-ar="🌟 اكتشف المزيد من مملكة الإيموش"
+            data-en="🌟 Discover More on Emojiland">
+      🌟 اكتشف المزيد من مملكة الإيموش
+    </strong>
+
+    <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="emojis-smileys.html" data-ar="الابتسامات" data-en="Smileys">الابتسامات</a>
+    <a href="emojis-love.html" data-ar="الحب والقلوب" data-en="Love and Hearts">الحب والقلوب</a>
+    <a href="emojis-animals.html" data-ar="الحيوانات" data-en="Animals">الحيوانات</a>
+    <a href="emojis-food.html" data-ar="الطعام" data-en="Food">الطعام</a>
+    <a href="emojis-hands.html" data-ar="الأيدي" data-en="Hands">الأيدي</a>
+    <a href="emojis-activities.html" data-ar="الأنشطة" data-en="Activities">الأنشطة</a>
+    <a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
+  </div>
+
 </main>
 
 <footer class="footer">
-<p>Animated Noto Emoji — Google Fonts</p>
-<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">
-Creative Commons Attribution 4.0
-</a>
+  <p>Animated Noto Emoji — Google Fonts</p>
+
+  <p>
+    <a href="https://creativecommons.org/licenses/by/4.0/"
+       target="_blank" rel="noopener noreferrer">
+      Creative Commons Attribution 4.0
+    </a>
+    |
+    <a href="https://googlefonts.github.io/noto-emoji-animation/"
+       target="_blank" rel="noopener noreferrer"
+       data-ar="المصدر والترخيص"
+       data-en="Source and License">
+      المصدر والترخيص
+    </a>
+  </p>
+
+  <p>
+    <a href="index.html"
+       data-ar="مملكة الإيموش - الصفحة الرئيسية"
+       data-en="Emojiland - Home">
+      مملكة الإيموش - الصفحة الرئيسية
+    </a>
+  </p>
 </footer>
 
 <script>
@@ -114,9 +788,13 @@ Creative Commons Attribution 4.0
 "use strict";
 
 const LANGUAGE_KEY = "emojilandLanguage";
+
 const savedLanguage = localStorage.getItem(LANGUAGE_KEY);
 const requestedLanguage = new URLSearchParams(location.search).get("lang");
-let language = savedLanguage || (requestedLanguage === "en" ? "en" : "ar");
+
+let language = savedLanguage === "ar" || savedLanguage === "en"
+  ? savedLanguage
+  : requestedLanguage === "en" ? "en" : "ar";
 
 const grid = document.getElementById("emojiGrid");
 const statusText = document.getElementById("statusText");
@@ -131,221 +809,265 @@ const extraCodes = [
 ];
 
 const codes = Array.from({length:80},(_,i)=>
-(0x1f600+i).toString(16)
+  (0x1f600+i).toString(16)
 ).concat(extraCodes);
 
 let completed = 0;
 let loaded = 0;
 
 function t(ar,en){
- return language === "ar" ? ar : en;
+  return language === "ar" ? ar : en;
 }
 
 function updateLanguage(){
- document.documentElement.lang = language;
- document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = language;
+  document.documentElement.dir = language === "ar" ? "rtl" : "ltr";
 
- document.querySelectorAll("[data-ar][data-en]").forEach(el=>{
-  el.textContent = el.dataset[language];
- });
+  document.querySelectorAll("[data-ar][data-en]").forEach(el=>{
+    if(el.tagName === "IMG"){
+      el.alt = el.dataset[language];
+    }else{
+      el.textContent = el.dataset[language];
+    }
+  });
 
- document.querySelectorAll("[data-ar][data-en]").forEach(el=>{
-  if(el.tagName === "IMG"){
-   el.alt = el.dataset[language];
-  }
- });
+  document.querySelectorAll("[data-language]").forEach(section=>{
+    section.hidden = section.dataset.language !== language;
+  });
 
- emptyMessage.textContent = t(
-  "لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة.",
-  "No animated files are currently available. Try refreshing the page."
- );
+  document.title = t(
+    "مكتبة الإيموشات المتحركة المجانية | مملكة الإيموش",
+    "Free Animated Emojis | Animated Emoji Library - Emojiland"
+  );
 
- document.title = t(
-  "ايموش متحرك مجاني | مكتبة الإيموشات المتحركة - مملكة الإيموش",
-  "Free Animated Emojis | Animated Emoji Library - Emojiland"
- );
+  document.querySelector('meta[name="description"]').content = t(
+    "اكتشف مكتبة الإيموشات المتحركة المجانية في مملكة الإيموش. تصفح رموز المشاعر والوجوه المضحكة والتعبيرات المتنوعة، وانسخ الإيموشات أو نزّل صور GIF بسهولة.",
+    "Discover free animated emojis at Emojiland. Browse expressive faces and animated symbols, copy your favorites or try downloading them as GIF files."
+  );
 
- document.querySelector('meta[name="description"]').content = t(
-  "اكتشف ايموش متحرك مجاني في مملكة الإيموش. تصفح مجموعة متنوعة من الإيموشات المتحركة، وانسخ ما تريد أو نزّله بصيغة GIF بسهولة.",
-  "Discover free animated emojis at Emojiland. Browse a collection of animated emojis, copy your favorites, or download them as GIF files."
- );
+  document.querySelector('meta[property="og:title"]').content = document.title;
+  document.querySelector('meta[property="og:description"]').content =
+    document.querySelector('meta[name="description"]').content;
 
- updateStatus();
- updateButtons();
+  updateStatus();
+  updateButtons();
+  updateEmptyMessage();
 }
 
 function updateStatus(){
- if(completed < codes.length){
-  statusText.textContent = t(
-   `جاري الفحص... ${completed} من ${codes.length} — تم تحميل ${loaded}`,
-   `Checking... ${completed} of ${codes.length} — Loaded ${loaded}`
-  );
- }else{
-  statusText.textContent = t(
-   `تم الانتهاء! تم تحميل ${loaded} إيموش متحرك فعليًا.`,
-   `Finished! ${loaded} animated emojis loaded.`
-  );
- }
+  if(completed < codes.length){
+    statusText.textContent = t(
+      `جاري الفحص... ${completed} من ${codes.length} — تم تحميل ${loaded}`,
+      `Checking... ${completed} of ${codes.length} — Loaded ${loaded}`
+    );
+  }else{
+    statusText.textContent = t(
+      `اكتمل الفحص! تم تحميل ${loaded} إيموش متحرك من أصل ${codes.length}.`,
+      `Scan complete! ${loaded} animated emojis loaded out of ${codes.length}.`
+    );
+  }
 
- progressBar.style.width = (completed / codes.length * 100) + "%";
+  progressBar.style.width =
+    (completed / codes.length * 100) + "%";
 }
 
 function updateButtons(){
- document.querySelectorAll(".copy-button").forEach(button=>{
-  if(!button.dataset.feedback){
-   button.textContent = t("نسخ","Copy");
-  }
- });
+  document.querySelectorAll(".copy-button").forEach(button=>{
+    if(!button.dataset.feedback){
+      button.textContent = t("نسخ","Copy");
+    }
+  });
 
- document.querySelectorAll(".download-button").forEach(button=>{
-  if(!button.disabled){
-   button.textContent = t("تنزيل GIF","Download GIF");
+  document.querySelectorAll(".download-button").forEach(button=>{
+    if(!button.disabled){
+      button.textContent = t("تنزيل GIF","Download GIF");
+    }
+  });
+}
+
+function updateEmptyMessage(){
+  if(completed === codes.length && loaded === 0){
+    emptyMessage.style.display = "block";
+    emptyMessage.textContent = t(
+      "لم يتم العثور على ملفات متحركة متاحة حاليًا. تأكد من اتصال الإنترنت وحاول تحديث الصفحة.",
+      "No animated files are currently available. Check your internet connection and try refreshing the page."
+    );
+  }else{
+    emptyMessage.style.display = "none";
   }
- });
 }
 
 window.addEventListener("storage",event=>{
- if(event.key === LANGUAGE_KEY && event.newValue){
-  language = event.newValue === "en" ? "en" : "ar";
-  updateLanguage();
- }
+  if(event.key === LANGUAGE_KEY){
+    language = event.newValue === "en" ? "en" : "ar";
+    updateLanguage();
+  }
 });
 
-function makeCard(code,img){
- const card = document.createElement("div");
- card.className = "emoji-card";
-
- const emoji = String.fromCodePoint(parseInt(code,16));
-
- img.className = "emoji-image";
- img.alt = emoji;
- img.width = 60;
- img.height = 60;
- img.loading = "lazy";
-
- const actions = document.createElement("div");
- actions.className = "card-actions";
-
- const copyButton = document.createElement("button");
- copyButton.className = "copy-button";
- copyButton.textContent = t("نسخ","Copy");
- copyButton.type = "button";
-
- copyButton.addEventListener("click",async()=>{
+async function copyEmoji(emoji,button){
   let success = false;
 
   try{
-   if(navigator.clipboard && window.isSecureContext){
-    await navigator.clipboard.writeText(emoji);
-    success = true;
-   }else{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(emoji);
+      success = true;
+    }
+  }catch(error){
+    success = false;
+  }
+
+  if(!success){
     const field = document.createElement("textarea");
     field.value = emoji;
+    field.setAttribute("readonly","");
     field.style.position = "fixed";
+    field.style.left = "-9999px";
     field.style.opacity = "0";
+
     document.body.appendChild(field);
+    field.focus();
     field.select();
-    success = document.execCommand("copy");
+    field.setSelectionRange(0,field.value.length);
+
+    try{
+      success = document.execCommand("copy");
+    }catch(error){
+      success = false;
+    }
+
     field.remove();
-
-    if(!success) throw new Error("Copy failed");
-   }
-
-   copyButton.dataset.feedback = "true";
-   copyButton.textContent = t("تم النسخ بنجاح ?","Copied successfully ?");
-
-   setTimeout(()=>{
-    delete copyButton.dataset.feedback;
-    copyButton.textContent = t("نسخ","Copy");
-   },1300);
-
-  }catch(error){
-   copyButton.dataset.feedback = "true";
-   copyButton.textContent = t("تعذر النسخ","Copy failed");
-
-   setTimeout(()=>{
-    delete copyButton.dataset.feedback;
-    copyButton.textContent = t("نسخ","Copy");
-   },1300);
   }
- });
 
- const downloadButton = document.createElement("button");
- downloadButton.className = "download-button";
- downloadButton.textContent = t("تنزيل GIF","Download GIF");
- downloadButton.type = "button";
+  button.dataset.feedback = "true";
+  button.textContent = success
+    ? t("تم النسخ ✓","Copied ✓")
+    : t("تعذر النسخ","Copy failed");
 
- downloadButton.addEventListener("click",async()=>{
-  downloadButton.disabled = true;
-  downloadButton.textContent = t("جاري التنزيل...","Downloading...");
+  setTimeout(()=>{
+    delete button.dataset.feedback;
+    button.textContent = t("نسخ","Copy");
+  },1400);
+}
 
-  const url = img.src;
+async function downloadGif(url,code,button){
+  button.disabled = true;
+  button.textContent = t("جاري التنزيل...","Downloading...");
 
   try{
-   const response = await fetch(url);
-   if(!response.ok) throw new Error("Download failed");
+    const response = await fetch(url);
 
-   const blob = await response.blob();
-   if(!blob.size) throw new Error("Empty file");
+    if(!response.ok){
+      throw new Error("Download failed");
+    }
 
-   const blobUrl = URL.createObjectURL(blob);
-   const link = document.createElement("a");
+    const blob = await response.blob();
 
-   link.href = blobUrl;
-   link.download = code + ".gif";
+    if(!blob.size){
+      throw new Error("Empty file");
+    }
 
-   document.body.appendChild(link);
-   link.click();
-   link.remove();
+    const blobUrl = URL.createObjectURL(blob);
+    const link = document.createElement("a");
 
-   setTimeout(()=>URL.revokeObjectURL(blobUrl),2000);
+    link.href = blobUrl;
+    link.download = `emoji-${code}.gif`;
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    setTimeout(()=>{
+      URL.revokeObjectURL(blobUrl);
+    },3000);
 
   }catch(error){
-   window.open(url,"_blank","noopener");
+    window.open(url,"_blank","noopener");
   }
 
-  downloadButton.disabled = false;
-  downloadButton.textContent = t("تنزيل GIF","Download GIF");
- });
+  button.disabled = false;
+  button.textContent = t("تنزيل GIF","Download GIF");
+}
 
- actions.append(copyButton,downloadButton);
- card.append(img,actions);
- grid.appendChild(card);
+function makeCard(code,img){
+  const card = document.createElement("article");
+  card.className = "emoji-card";
+
+  const emoji = String.fromCodePoint(parseInt(code,16));
+
+  img.className = "emoji-image";
+  img.alt = t(
+    "إيموش متحرك " + emoji,
+    "Animated emoji " + emoji
+  );
+  img.width = 60;
+  img.height = 60;
+  img.loading = "lazy";
+  img.decoding = "async";
+
+  const symbol = document.createElement("div");
+  symbol.className = "emoji-symbol";
+  symbol.textContent = emoji;
+  symbol.setAttribute("aria-hidden","true");
+
+  const actions = document.createElement("div");
+  actions.className = "card-actions";
+
+  const copyButton = document.createElement("button");
+  copyButton.className = "copy-button";
+  copyButton.textContent = t("نسخ","Copy");
+  copyButton.type = "button";
+  copyButton.addEventListener("click",()=>{
+    copyEmoji(emoji,copyButton);
+  });
+
+  const downloadButton = document.createElement("button");
+  downloadButton.className = "download-button";
+  downloadButton.textContent = t("تنزيل GIF","Download GIF");
+  downloadButton.type = "button";
+
+  downloadButton.addEventListener("click",()=>{
+    downloadGif(img.src,code,downloadButton);
+  });
+
+  actions.append(copyButton,downloadButton);
+  card.append(img,symbol,actions);
+  grid.appendChild(card);
 }
 
 function loadOne(code){
- return new Promise(resolve=>{
-  const img = new Image();
-  const url = `https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif`;
+  return new Promise(resolve=>{
+    const img = new Image();
+    const url =
+      `https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif`;
 
-  img.onload = ()=>{
-   loaded++;
-   makeCard(code,img);
-   completed++;
-   updateStatus();
-   resolve();
-  };
+    img.onload = ()=>{
+      loaded++;
+      makeCard(code,img);
+      completed++;
+      updateStatus();
+      resolve();
+    };
 
-  img.onerror = ()=>{
-   completed++;
-   updateStatus();
-   resolve();
-  };
+    img.onerror = ()=>{
+      completed++;
+      updateStatus();
+      resolve();
+    };
 
-  img.src = url;
- });
+    img.src = url;
+  });
 }
 
 async function startLoading(){
- const batchSize = 8;
+  const batchSize = 8;
 
- for(let i=0;i<codes.length;i+=batchSize){
-  const batch = codes.slice(i,i+batchSize);
-  await Promise.all(batch.map(loadOne));
- }
+  for(let i=0;i<codes.length;i+=batchSize){
+    const batch = codes.slice(i,i+batchSize);
+    await Promise.all(batch.map(loadOne));
+  }
 
- emptyMessage.style.display = loaded === 0 ? "block" : "none";
- updateStatus();
+  updateEmptyMessage();
+  updateStatus();
 }
 
 updateLanguage();
