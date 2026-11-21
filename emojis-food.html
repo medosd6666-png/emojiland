@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#7055ed">
 
-  <meta name="description" content="اكتشف ايموش الطعام المتحركة في مملكة الإيموش. مجموعة متنوعة من ايموشات الفواكه والخضروات والوجبات والحلويات والمشروبات، مع إمكانية النسخ والتنزيل مجانًا.">
-
-  <meta name="keywords" content="ايموش, ايموش متحرك, ايموش الطعام, ايموشات الطعام, ايموشات الفواكه, ايموشات المشروبات, ايموشات الحلويات">
-
+  <meta name="description" content="اكتشف إيموشات الطعام والفواكه والخضروات والوجبات والحلويات والمشروبات في مملكة الإيموش. انسخ الإيموش المفضل لديك أو نزّل صورته المتحركة مجانًا.">
+  <meta name="keywords" content="إيموش الطعام, إيموشات الطعام, إيموش فواكه, إيموش خضروات, إيموش بيتزا, إيموش برجر, إيموش حلويات, إيموش مشروبات, إيموش متحرك, رموز الطعام">
   <meta name="robots" content="index, follow">
 
-  <title>ايموش الطعام والفواكه والمشروبات المتحركة | مملكة الإيموش</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="إيموش الطعام والفواكه والمشروبات المتحركة | مملكة الإيموش">
+  <meta property="og:description" content="مجموعة متنوعة من إيموشات الطعام والفواكه والخضروات والوجبات والحلويات. انسخ أو نزّل إيموشاتك المفضلة مجانًا.">
+  <meta property="og:site_name" content="مملكة الإيموش | Emojiland">
+
+  <title>إيموش الطعام والفواكه والمشروبات المتحركة | مملكة الإيموش</title>
 
   <link rel="stylesheet" href="style.css">
 
@@ -46,12 +49,47 @@
 
     .food-header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .food-header h1 {
       color: #7055ed;
       margin-bottom: 12px;
+    }
+
+    .food-intro {
+      max-width: 900px;
+      margin: 18px auto 25px;
+      line-height: 2;
+      text-align: center;
+      color: var(--text-color, inherit);
+    }
+
+    .food-category-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin: 25px 0 30px;
+    }
+
+    .food-category-nav a,
+    .food-related-links a {
+      display: inline-block;
+      padding: 9px 15px;
+      border-radius: 20px;
+      background: rgba(112, 85, 237, .09);
+      color: #7055ed;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .food-category-nav a:hover,
+    .food-related-links a:hover {
+      background: rgba(112, 85, 237, .17);
+      transform: translateY(-2px);
     }
 
     .food-grid {
@@ -133,6 +171,99 @@
       min-height: 24px;
     }
 
+    .food-seo-content {
+      max-width: 1000px;
+      margin: 45px auto 30px;
+      line-height: 2;
+    }
+
+    .food-seo-content h2 {
+      color: #7055ed;
+      font-size: 25px;
+      margin: 35px 0 15px;
+      line-height: 1.6;
+    }
+
+    .food-seo-content h3 {
+      color: var(--heading-color, #5941c8);
+      font-size: 19px;
+      margin: 25px 0 10px;
+      line-height: 1.7;
+    }
+
+    .food-seo-content p {
+      margin: 12px 0;
+      line-height: 2;
+    }
+
+    .food-seo-content ul {
+      padding-inline-start: 25px;
+      margin: 12px 0 20px;
+    }
+
+    .food-seo-content li {
+      margin: 8px 0;
+      line-height: 1.9;
+    }
+
+    .food-seo-content .food-tip {
+      padding: 17px 20px;
+      margin: 20px 0;
+      border-inline-start: 4px solid #7055ed;
+      background: rgba(112, 85, 237, .07);
+      border-radius: 10px;
+    }
+
+    .food-faq {
+      margin-top: 35px;
+    }
+
+    .food-faq-item {
+      margin: 15px 0;
+      padding: 15px 18px;
+      border: 1px solid #e9e5ff;
+      border-radius: 12px;
+      background: var(--card-bg, #fff);
+    }
+
+    .food-faq-item h3 {
+      margin-top: 0;
+    }
+
+    .food-related {
+      margin: 40px 0 25px;
+      padding: 25px 18px;
+      text-align: center;
+      border-radius: 15px;
+      background: rgba(112, 85, 237, .06);
+    }
+
+    .food-related h2 {
+      color: #7055ed;
+      margin-top: 0;
+    }
+
+    .food-related-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .language-content {
+      display: none;
+    }
+
+    .language-content.active {
+      display: block;
+    }
+
+    .food-back-home {
+      text-align: center;
+      margin: 30px 0 15px;
+    }
+
     @media(max-width: 480px) {
       .food-page {
         padding: 12px;
@@ -141,6 +272,20 @@
       .food-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
+      }
+
+      .food-seo-content h2 {
+        font-size: 22px;
+      }
+
+      .food-seo-content h3 {
+        font-size: 17px;
+      }
+
+      .food-category-nav a,
+      .food-related-links a {
+        font-size: 13px;
+        padding: 8px 12px;
       }
     }
   </style>
@@ -154,7 +299,7 @@
        data-ar="😊 مملكة الإيموش"
        data-en="😊 Emojiland">😊 مملكة الإيموش</a>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="روابط الموقع">
       <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
       <a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
     </nav>
@@ -164,25 +309,523 @@
 <main class="container food-page">
 
   <section class="food-header">
-    <h1 data-ar="🍕 ايموش الطعام والمشروبات المتحركة"
+    <h1 data-ar="🍕 إيموش الطعام والمشروبات المتحركة"
         data-en="🍕 Animated Food & Drinks Emojis">
-      🍕 ايموش الطعام والمشروبات المتحركة
+      🍕 إيموش الطعام والمشروبات المتحركة
     </h1>
 
-    <p data-ar="اكتشف مجموعة متنوعة من ايموشات الطعام والفواكه والخضروات والحلويات والمشروبات. اضغط على الإيموش لنسخه أو تنزيل صورته المتحركة مجانًا."
-       data-en="Explore animated food, fruit, vegetable, dessert and drink emojis. Copy your favorite emoji or download its animated image for free.">
-      اكتشف مجموعة متنوعة من ايموشات الطعام والفواكه والخضروات والحلويات والمشروبات. اضغط على الإيموش لنسخه أو تنزيل صورته المتحركة مجانًا.
+    <p data-ar="اكتشف مجموعة متنوعة من إيموشات الطعام والفواكه والخضروات والحلويات والمشروبات. اضغط على الإيموش لنسخه أو تنزيل صورته المتحركة مجانًا."
+       data-en="Explore a wide collection of animated food, fruit, vegetable, dessert and drink emojis. Copy your favorite emoji or download its animated image for free.">
+      اكتشف مجموعة متنوعة من إيموشات الطعام والفواكه والخضروات والحلويات والمشروبات. اضغط على الإيموش لنسخه أو تنزيل صورته المتحركة مجانًا.
     </p>
+
+    <div class="food-intro language-content active" data-language="ar">
+      مرحبًا بك في قسم إيموش الطعام داخل مملكة الإيموش! هنا ستجد مجموعة متنوعة من الرموز التعبيرية التي تمثل الأطعمة والمأكولات اليومية، بداية من الفواكه الطازجة والخضروات الملونة، وصولًا إلى الوجبات السريعة والخبز والحلويات. يمكنك استخدام هذه الإيموشات للتعبير عن حبك للطعام، أو مشاركة صور وجباتك، أو إضافة لمسة مرحة إلى رسائلك ومنشوراتك. اختر الإيموش الذي يعجبك من المجموعة، ثم انسخه بسهولة أو نزّل صورته المتحركة. جمعنا لك رموزًا متنوعة تناسب المحادثات الشخصية والتعليقات ومحتوى مواقع التواصل الاجتماعي.
+    </div>
+
+    <div class="food-intro language-content" data-language="en">
+      Welcome to the Food Emojis section at Emojiland! Explore a colorful collection of food-related emojis, including fresh fruits, vegetables, everyday meals, bread, snacks and delicious desserts. These symbols make it easy to express food cravings, share what you are eating, describe your favorite dishes or add a playful touch to everyday conversations. Choose any emoji from the collection, copy it with one click or download its animated image. Whether you are writing a social media caption, sending a message to a friend or sharing a meal idea, you can find a food emoji that fits the moment.
+    </div>
   </section>
+
+  <nav class="food-category-nav" aria-label="التنقل داخل أقسام الموقع">
+    <a href="index.html" data-ar="🏠 الرئيسية" data-en="🏠 Home">🏠 الرئيسية</a>
+    <a href="emojis-smileys.html" data-ar="😊 الوجوه والابتسامات" data-en="😊 Smileys">😊 الوجوه والابتسامات</a>
+    <a href="emojis-animals.html" data-ar="🐻 الحيوانات والطبيعة" data-en="🐻 Animals & Nature">🐻 الحيوانات والطبيعة</a>
+    <a href="emojis-hands.html" data-ar="👋 الأيدي والإشارات" data-en="👋 Hands & Gestures">👋 الأيدي والإشارات</a>
+    <a href="emojis-love.html" data-ar="❤️ الحب والمشاعر" data-en="❤️ Love & Emotions">❤️ الحب والمشاعر</a>
+    <a href="emojis-activities.html" data-ar="⚽ الأنشطة والرياضة" data-en="⚽ Activities">⚽ الأنشطة والرياضة</a>
+    <a href="stickers.html" data-ar="✨ الملصقات" data-en="✨ Stickers">✨ الملصقات</a>
+  </nav>
 
   <div class="food-grid" id="foodGrid"></div>
 
   <p id="copyMessage" role="status" aria-live="polite"></p>
 
-  <div style="text-align:center;margin-top:25px">
+  <!-- Arabic SEO Content -->
+  <article class="food-seo-content language-content active" data-language="ar">
+
+    <h2>🍎 اكتشف عالم إيموش الطعام والفواكه والخضروات</h2>
+
+    <p>
+      أصبحت الإيموشات جزءًا مهمًا من طريقة التواصل عبر الإنترنت، فهي تساعدنا على التعبير عن الأفكار والمشاعر بطريقة سريعة وبسيطة. ومن أكثر الرموز استخدامًا في المحادثات اليومية إيموشات الطعام؛ لأنها ترتبط بأشياء نعيشها كل يوم، مثل تناول الإفطار والغداء والعشاء، وتجربة وصفة جديدة، وطلب الطعام، ومشاركة صور الأكلات المفضلة.
+    </p>
+
+    <p>
+      تضم هذه الصفحة مجموعة من إيموشات الطعام المتنوعة التي تشمل الفواكه والخضروات والمخبوزات والوجبات السريعة والحلويات. ويمكنك اختيار الرمز المناسب حسب الموضوع الذي تتحدث عنه، سواء كنت تريد التعبير عن الجوع أو مشاركة وجبة شهية أو الحديث عن نظامك الغذائي أو الاحتفال بمناسبة خاصة.
+    </p>
+
+    <p>
+      لا تقتصر فائدة هذه الرموز على المحادثات الشخصية فقط؛ إذ يمكن استخدامها أيضًا في وصف الصور والمنشورات والتعليقات والرسائل التسويقية وقوائم الطعام الرقمية. فإيموش البيتزا مثلًا قد يجعل منشورًا عن وجبة العشاء أكثر وضوحًا، بينما يمكن استخدام إيموش الفراولة أو المانجو عند الحديث عن الفواكه الصيفية والوصفات الطازجة.
+    </p>
+
+    <h2>🍓 إيموش الفواكه: رموز ملونة للمذاق الطازج</h2>
+
+    <p>
+      الفواكه من أكثر مجموعات الطعام التي تتميز بها الإيموشات، فلكل نوع شكل ولون يسهل التعرف عليه. ستجد في المجموعة التفاح الأحمر والأخضر والبرتقال والليمون والموز والبطيخ والعنب والفراولة والتوت والشمام والكرز والخوخ والمانجو والأناناس وجوز الهند والكيوي.
+    </p>
+
+    <p>
+      تساعدك إيموشات الفواكه على توضيح نوع الطعام الذي تتحدث عنه دون الحاجة إلى كتابة وصف طويل. يمكنك استخدامها عند مشاركة وجبة صحية، أو نشر صورة عصير طبيعي، أو الحديث عن التسوق من سوق الفاكهة، أو وصف مكونات سلطة الفواكه والحلويات المنزلية.
+    </p>
+
+    <h3>كيف تستخدم إيموشات الفواكه في الرسائل والمنشورات؟</h3>
+
+    <ul>
+      <li>🍎 للتعبير عن التفاح والوجبات الخفيفة والفواكه اليومية.</li>
+      <li>🍌 عند الحديث عن الموز أو وجبات الإفطار السريعة.</li>
+      <li>🍉 لمشاركة أجواء الصيف والفواكه المنعشة.</li>
+      <li>🍓 لإضافة لمسة لطيفة إلى منشورات الفراولة والحلويات.</li>
+      <li>🥭 عند الحديث عن المانجو والعصائر والوصفات الاستوائية.</li>
+      <li>🍍 للتعبير عن الأناناس والمشروبات والوجبات ذات الطابع الاستوائي.</li>
+      <li>🥝 عند مشاركة وصفات الفواكه أو أفكار الطعام الصحي.</li>
+    </ul>
+
+    <p>
+      ويمكنك الجمع بين أكثر من رمز لتكوين وصف بصري لطيف، مثل استخدام 🍓🍌🍇 عند الحديث عن طبق فواكه متنوع، أو 🍉🍍🥭 للتعبير عن مجموعة من الفواكه الصيفية. هذه الطريقة تجعل الرسالة أكثر حيوية وتساعد القارئ على فهم موضوعها بسرعة.
+    </p>
+
+    <h2>🥑 إيموش الخضروات: للتعبير عن الطعام الصحي والوصفات</h2>
+
+    <p>
+      تحتوي المجموعة أيضًا على رموز متنوعة للخضروات والمكونات النباتية، مثل الطماطم والأفوكادو والباذنجان والبطاطس والجزر والذرة والفلفل الحار والخيار والخضروات الورقية والبروكلي والثوم والبصل والمشروم. وتناسب هذه الإيموشات الحديث عن الطبخ المنزلي والوصفات والسلطات والأطعمة النباتية.
+    </p>
+
+    <p>
+      إذا كنت تشارك وصفة سلطة أو تتحدث عن مكونات وجبة الغداء، يمكنك استخدام الرموز المناسبة لتوضيح المكونات. كما يمكن إضافة إيموش الخضروات إلى منشورات التسوق أو قوائم المشتريات أو النصائح المتعلقة بإعداد الطعام في المنزل.
+    </p>
+
+    <h3>أفكار لاستخدام رموز الخضروات</h3>
+
+    <ul>
+      <li>🥕 عند الحديث عن الجزر أو تحضير طبق من الخضروات.</li>
+      <li>🥦 لمشاركة وصفات البروكلي والأطباق النباتية.</li>
+      <li>🥑 عند الحديث عن الأفوكادو أو وصفات الإفطار.</li>
+      <li>🍅 لإضافة رمز واضح إلى وصفات الطماطم والسلطات.</li>
+      <li>🌽 عند مشاركة وصفات الذرة أو الوجبات المنزلية.</li>
+      <li>🥒 للتعبير عن الخيار والسلطات والأطعمة الطازجة.</li>
+      <li>🌶️ عندما تتحدث عن الأطعمة الحارة والتوابل.</li>
+    </ul>
+
+    <div class="food-tip">
+      <strong>نصيحة:</strong>
+      عند كتابة وصفة طعام، يمكنك وضع إيموش صغير بجانب اسم المكون أو عنوان الخطوة. استخدم الرموز باعتدال حتى تظل الوصفة واضحة وسهلة القراءة على الهاتف والكمبيوتر.
+    </div>
+
+    <h2>🍔 إيموش الوجبات والمأكولات: عبّر عن وجبتك المفضلة</h2>
+
+    <p>
+      من أشهر استخدامات إيموش الطعام التعبير عن الوجبات اليومية والأكلات التي نحبها. تضم هذه الصفحة رموزًا للخبز والكرواسون والخبز الفرنسي والجبن والبيض والبيض المقلي والبان كيك والوافل، بالإضافة إلى البرجر والبطاطس المقلية والبيتزا والهوت دوج والساندويتش والتاكو والبوريتو والسلطة والفشار.
+    </p>
+
+    <p>
+      يمكنك استخدام هذه الرموز عند إرسال رسالة عن وجبة الغداء أو العشاء، أو عند سؤال الأصدقاء عن الطعام الذي يفضلونه، أو عند مشاركة صورة من مطعمك المفضل. كما أنها مناسبة لمنشورات وصفات الطبخ ومراجعات المطاعم والتعليقات على صور الطعام.
+    </p>
+
+    <h3>إيموشات مناسبة لكل وجبة</h3>
+
+    <ul>
+      <li>🍳 و🥞 و🧇 لرسائل الإفطار والوجبات الصباحية.</li>
+      <li>🥪 و🍞 و🥐 للتعبير عن الساندويتشات والمخبوزات.</li>
+      <li>🍔 و🍟 و🍕 عند الحديث عن الوجبات السريعة.</li>
+      <li>🌮 و🌯 لمشاركة الأكلات المكسيكية والوصفات المختلفة.</li>
+      <li>🥗 عند الحديث عن السلطات والوجبات الخفيفة.</li>
+      <li>🍿 لمشاركة أجواء مشاهدة الأفلام والوجبات الخفيفة.</li>
+      <li>🧀 و🥚 عند الحديث عن مكونات الطعام والوصفات المنزلية.</li>
+    </ul>
+
+    <p>
+      ويمكنك أيضًا دمج الرموز مع بعضها لتوضيح وجبة كاملة. على سبيل المثال، 🍔🍟🥤 يمكن أن تعبر عن وجبة سريعة، بينما 🍳🍞☕ تناسب الحديث عن الإفطار. أما 🥗🥑🥕 فتناسب المنشورات التي تتناول السلطات والمكونات النباتية.
+    </p>
+
+    <h2>🍩 إيموش الحلويات والمخبوزات: لمسة لطيفة لكل مناسبة</h2>
+
+    <p>
+      لا تكتمل مجموعة الطعام دون الحلويات، فهي من الرموز المحببة في الرسائل والتهاني والمناسبات. ستجد هنا الدونات والبسكويت وكعكة عيد الميلاد، إلى جانب مجموعة من المخبوزات مثل الكرواسون والوافل والبان كيك.
+    </p>
+
+    <p>
+      يمكن استخدام إيموش الحلويات عند الحديث عن وصفة حلوى جديدة، أو مشاركة صورة كعكة، أو الاحتفال بعيد ميلاد، أو التعبير عن الرغبة في تناول شيء حلو. كما تضيف هذه الرموز طابعًا مرحًا إلى رسائل التهنئة والمنشورات الخاصة بالمناسبات العائلية.
+    </p>
+
+    <h3>أمثلة على استخدام إيموش الحلويات</h3>
+
+    <ul>
+      <li>🎂 للاحتفال بعيد الميلاد وتهنئة الأصدقاء.</li>
+      <li>🍩 عند الحديث عن الدونات والحلويات المفضلة.</li>
+      <li>🍪 لمشاركة وصفات البسكويت والمخبوزات.</li>
+      <li>🥞 و🧇 عند نشر أفكار الإفطار الحلو.</li>
+      <li>🥐 للتعبير عن المخبوزات ووجبة الصباح.</li>
+    </ul>
+
+    <h2>📱 كيف تنسخ إيموش الطعام وتستخدمه؟</h2>
+
+    <p>
+      صممنا هذه الصفحة لتجعل الوصول إلى رموز الطعام سهلًا وسريعًا. لا تحتاج إلى تثبيت برنامج أو إنشاء حساب؛ يمكنك اختيار الإيموش مباشرة من الشبكة واستخدام الأزرار الموجودة أسفله.
+    </p>
+
+    <h3>طريقة نسخ الإيموش</h3>
+
+    <ol>
+      <li>تصفح مجموعة إيموشات الطعام الموجودة أعلى الصفحة.</li>
+      <li>اختر الرمز الذي تريد استخدامه، مثل 🍕 أو 🍓 أو 🍔.</li>
+      <li>اضغط على زر «نسخ» الموجود أسفل الإيموش.</li>
+      <li>افتح التطبيق أو الموقع الذي تريد الكتابة فيه.</li>
+      <li>اضغط مطولًا أو استخدم خيار اللصق لإضافة الإيموش إلى رسالتك.</li>
+    </ol>
+
+    <h3>طريقة تنزيل صورة الإيموش المتحركة</h3>
+
+    <p>
+      إذا أردت الاحتفاظ بصورة الإيموش على جهازك، اضغط على زر «تنزيل» أسفل الرمز المطلوب. عند نجاح التنزيل، سيُحفظ ملف الصورة بصيغة GIF على جهازك، ويمكنك الرجوع إليه لاحقًا حسب إمكانيات التطبيق الذي تستخدمه.
+    </p>
+
+    <p>
+      قد يختلف عرض الصور المتحركة من تطبيق إلى آخر؛ فبعض التطبيقات تعرض ملفات GIF بشكل متحرك، بينما قد تعرضها تطبيقات أخرى كصورة ثابتة أو لا تدعمها بالطريقة نفسها. أما رموز الإيموش النصية التي تنسخها، فيعتمد شكلها النهائي على نظام التشغيل والتطبيق والخط المستخدم لدى الشخص الذي يستقبل الرسالة.
+    </p>
+
+    <h2>💬 أين يمكنك استخدام إيموشات الطعام؟</h2>
+
+    <p>
+      رموز الطعام مناسبة للعديد من الاستخدامات اليومية على الإنترنت. يمكنك إضافتها إلى رسائل الدردشة، ومنشورات وسائل التواصل الاجتماعي، والتعليقات، ووصف الصور، ومراجعات المطاعم، وقوائم الطعام، والمدونات التي تتناول الطبخ والوصفات.
+    </p>
+
+    <ul>
+      <li><strong>المحادثات:</strong> أخبر أصدقاءك بما تتناوله أو بما ترغب في طلبه باستخدام رمز بسيط.</li>
+      <li><strong>منشورات الطعام:</strong> أضف إيموشًا مناسبًا إلى عنوان صورة وجبتك أو وصفها.</li>
+      <li><strong>الوصفات:</strong> استخدم رموز المكونات لتوضيح نوع الطعام المذكور.</li>
+      <li><strong>المناسبات:</strong> أضف كعكة عيد الميلاد والحلويات إلى رسائل التهنئة.</li>
+      <li><strong>المحتوى التعليمي:</strong> استخدم رموز الفواكه والخضروات في الأنشطة التعليمية والمحتوى المبسط.</li>
+      <li><strong>المشروعات والمطاعم:</strong> يمكن أن تساعد الرموز في جعل بعض العناوين والمنشورات أكثر وضوحًا وجاذبية.</li>
+    </ul>
+
+    <h2>✨ لماذا تستخدم مملكة الإيموش؟</h2>
+
+    <p>
+      تهدف مملكة الإيموش إلى جمع الرموز التعبيرية في مكان واحد ليسهل العثور عليها واستخدامها. بدلًا من البحث عن كل رمز بصورة منفصلة، يمكنك تصفح المجموعة واختيار ما تحتاج إليه من صفحة واحدة.
+    </p>
+
+    <ul>
+      <li>مجموعة متنوعة من إيموشات الطعام والفواكه والخضروات.</li>
+      <li>إمكانية نسخ الإيموش بسرعة بضغطة واحدة.</li>
+      <li>إمكانية تنزيل الصور المتحركة المتاحة بصيغة GIF.</li>
+      <li>واجهة بسيطة تناسب الهواتف والأجهزة اللوحية والكمبيوتر.</li>
+      <li>دعم اللغتين العربية والإنجليزية.</li>
+      <li>الوصول إلى أقسام أخرى من الإيموشات والملصقات من خلال الروابط الداخلية.</li>
+      <li>استخدام مجاني دون الحاجة إلى إنشاء حساب.</li>
+    </ul>
+
+    <h2>❓ الأسئلة الشائعة عن إيموش الطعام</h2>
+
+    <div class="food-faq">
+
+      <div class="food-faq-item">
+        <h3>ما إيموشات الطعام الموجودة في هذه الصفحة؟</h3>
+        <p>
+          تضم الصفحة 50 رمزًا متنوعًا تشمل الفواكه والخضروات والخبز والمخبوزات والوجبات السريعة والسلطات والحلويات. يمكنك تصفح المجموعة كاملة واختيار الرمز المناسب.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>كيف أنسخ إيموش الطعام إلى هاتفي؟</h3>
+        <p>
+          اضغط على زر «نسخ» أسفل الإيموش المطلوب، ثم انتقل إلى التطبيق الذي تستخدمه والصق الرمز في الرسالة أو المنشور.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>هل يمكن تنزيل إيموشات الطعام المتحركة مجانًا؟</h3>
+        <p>
+          نعم، يمكنك استخدام زر «تنزيل» لمحاولة حفظ صورة الإيموش المتحركة المتاحة بصيغة GIF على جهازك، دون الحاجة إلى تثبيت تطبيق إضافي.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>هل تعمل إيموشات الطعام على جميع الهواتف؟</h3>
+        <p>
+          الرموز التعبيرية النصية مدعومة في معظم الهواتف والتطبيقات الحديثة، لكن شكل الرمز قد يختلف من جهاز إلى آخر. أما صور GIF، فيعتمد تشغيلها على دعم التطبيق أو الجهاز لملفات الصور المتحركة.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>هل أحتاج إلى إنشاء حساب لاستخدام الإيموشات؟</h3>
+        <p>
+          لا، يمكنك تصفح الرموز ونسخها واستخدام خيارات التنزيل المتاحة مباشرة من الصفحة.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>هل يمكن استخدام الإيموشات في منشورات مواقع التواصل؟</h3>
+        <p>
+          نعم، يمكنك نسخ الرموز النصية وإضافتها إلى الرسائل والتعليقات والمنشورات والأوصاف، مع مراعاة أن شكلها قد يختلف حسب التطبيق والجهاز.
+        </p>
+      </div>
+
+    </div>
+
+    <section class="food-related">
+      <h2>🌟 اكتشف المزيد من أقسام مملكة الإيموش</h2>
+      <p>
+        هل تبحث عن رموز تعبيرية أخرى؟ تصفح بقية أقسام الموقع واكتشف مجموعة أكبر من الإيموشات والملصقات المناسبة لمحادثاتك ومنشوراتك.
+      </p>
+
+      <div class="food-related-links">
+        <a href="index.html">🏠 الصفحة الرئيسية</a>
+        <a href="emojis-smileys.html">😊 إيموش الوجوه والابتسامات</a>
+        <a href="emojis-animals.html">🐻 إيموش الحيوانات والطبيعة</a>
+        <a href="emojis-hands.html">👋 إيموش الأيدي والإشارات</a>
+        <a href="emojis-love.html">❤️ إيموش الحب والمشاعر</a>
+        <a href="emojis-activities.html">⚽ إيموش الأنشطة والرياضة</a>
+        <a href="stickers.html">✨ الملصقات</a>
+      </div>
+    </section>
+
+  </article>
+
+  <!-- English SEO Content -->
+  <article class="food-seo-content language-content" data-language="en">
+
+    <h2>🍎 Explore Food, Fruit and Vegetable Emojis</h2>
+
+    <p>
+      Emojis have become an important part of everyday digital communication. They help people express ideas, reactions and feelings in a simple visual way. Food emojis are especially popular because food is part of our daily lives. We use them when talking about breakfast, lunch, dinner, favorite meals, cooking ideas, restaurant visits and delicious treats.
+    </p>
+
+    <p>
+      This page brings together a varied collection of food emojis, including fresh fruits, vegetables, bread, baked goods, fast food, snacks and desserts. You can choose a symbol that matches your conversation, whether you are sharing a meal, talking about a new recipe, describing a food photo or simply telling someone what you would like to eat.
+    </p>
+
+    <p>
+      Food emojis are useful in personal messages, social media captions, comments, digital menus and food-related content. A pizza emoji can make a dinner post instantly recognizable, while fruit emojis can add a colorful touch to a healthy recipe or summer drink caption.
+    </p>
+
+    <h2>🍓 Fruit Emojis: Colorful Symbols for Fresh Food</h2>
+
+    <p>
+      Fruit emojis are among the most recognizable food symbols. This collection includes red and green apples, tangerines, lemons, bananas, watermelons, grapes, strawberries, blueberries, melons, cherries, peaches, mangoes, pineapples, coconuts and kiwis.
+    </p>
+
+    <p>
+      These symbols make it easy to describe fruit without writing a long explanation. Use them when sharing a healthy snack, posting a fresh juice photo, talking about grocery shopping or describing ingredients for a fruit salad or homemade dessert.
+    </p>
+
+    <h3>How to Use Fruit Emojis in Messages and Captions</h3>
+
+    <ul>
+      <li>🍎 For apples, everyday fruit and snack conversations.</li>
+      <li>🍌 When talking about bananas and quick breakfast ideas.</li>
+      <li>🍉 For summer fruit, refreshing snacks and sunny days.</li>
+      <li>🍓 For strawberry desserts, sweet recipes and colorful posts.</li>
+      <li>🥭 For mangoes, smoothies and tropical recipes.</li>
+      <li>🍍 For pineapple, tropical drinks and fruit combinations.</li>
+      <li>🥝 For fruit recipes and fresh food ideas.</li>
+    </ul>
+
+    <p>
+      You can combine several symbols to create a simple visual description. For example, 🍓🍌🍇 can represent a mixed fruit bowl, while 🍉🍍🥭 can suggest a selection of summer fruits. A small group of relevant emojis can make a caption more expressive and easier to understand.
+    </p>
+
+    <h2>🥑 Vegetable Emojis for Healthy Meals and Recipes</h2>
+
+    <p>
+      The collection also features a variety of vegetable and plant-based food symbols, including tomatoes, avocados, eggplants, potatoes, carrots, corn, hot peppers, cucumbers, leafy greens, broccoli, garlic, onions and mushrooms.
+    </p>
+
+    <p>
+      Vegetable emojis are useful when sharing cooking instructions, describing salad ingredients, discussing homemade meals or posting grocery lists. They can also make food-related educational content easier to follow by giving readers a recognizable visual clue for each ingredient.
+    </p>
+
+    <h3>Ideas for Using Vegetable Emojis</h3>
+
+    <ul>
+      <li>🥕 For carrots and vegetable dishes.</li>
+      <li>🥦 For broccoli recipes and plant-based meals.</li>
+      <li>🥑 For avocado dishes and breakfast ideas.</li>
+      <li>🍅 For tomato recipes, salads and sauces.</li>
+      <li>🌽 For corn dishes and homemade meals.</li>
+      <li>🥒 For cucumbers and fresh salads.</li>
+      <li>🌶️ For spicy food and seasoning discussions.</li>
+    </ul>
+
+    <div class="food-tip">
+      <strong>Helpful tip:</strong>
+      When writing a recipe, you can place a small food emoji beside an ingredient or step heading. Use emojis thoughtfully so your instructions remain clear and easy to read on phones and computers.
+    </div>
+
+    <h2>🍔 Meal and Fast Food Emojis</h2>
+
+    <p>
+      Food emojis are a simple way to talk about everyday meals and favorite dishes. This page includes bread, croissants, baguettes, cheese, eggs, fried eggs, pancakes, waffles, bacon, hamburgers, French fries, pizza, hot dogs, sandwiches, tacos, burritos, salads and popcorn.
+    </p>
+
+    <p>
+      Use these symbols when sharing lunch or dinner ideas, asking friends what they want to eat, posting a restaurant photo or commenting on a favorite dish. They are also useful for cooking blogs, food reviews, recipe posts and digital menus.
+    </p>
+
+    <h3>Food Emojis for Different Meals</h3>
+
+    <ul>
+      <li>🍳, 🥞 and 🧇 for breakfast and morning meal conversations.</li>
+      <li>🥪, 🍞 and 🥐 for sandwiches and baked goods.</li>
+      <li>🍔, 🍟 and 🍕 for fast food and casual meals.</li>
+      <li>🌮 and 🌯 for Mexican-inspired dishes and food ideas.</li>
+      <li>🥗 for salads and light meals.</li>
+      <li>🍿 for movie nights and snacks.</li>
+      <li>🧀 and 🥚 for ingredients and homemade recipes.</li>
+    </ul>
+
+    <p>
+      You can also combine food emojis to describe a complete meal. For example, 🍔🍟🥤 can represent a fast-food meal, while 🍳🍞☕ works well for a breakfast caption. The combination 🥗🥑🥕 can be used for salad and vegetable-based meal ideas.
+    </p>
+
+    <h2>🍩 Dessert and Bakery Emojis for Sweet Moments</h2>
+
+    <p>
+      No food emoji collection feels complete without desserts. This page includes doughnuts, cookies and birthday cake, along with bakery favorites such as croissants, waffles and pancakes.
+    </p>
+
+    <p>
+      Dessert emojis are perfect for sharing a new baking recipe, posting a cake photo, celebrating a birthday or expressing a craving for something sweet. They can also add a cheerful touch to greetings, celebration messages and family occasion posts.
+    </p>
+
+    <h3>Examples of Dessert Emoji Uses</h3>
+
+    <ul>
+      <li>🎂 For birthdays and celebration messages.</li>
+      <li>🍩 For doughnuts and favorite sweet treats.</li>
+      <li>🍪 For cookies and homemade baking recipes.</li>
+      <li>🥞 and 🧇 For sweet breakfast ideas.</li>
+      <li>🥐 For pastries and morning bakery posts.</li>
+    </ul>
+
+    <h2>📱 How to Copy and Use Food Emojis</h2>
+
+    <p>
+      This page is designed to make food emojis easy to find and use. You do not need to install an application or create an account. Simply browse the collection and use the buttons below the emoji you want.
+    </p>
+
+    <h3>How to Copy an Emoji</h3>
+
+    <ol>
+      <li>Browse the food emoji collection near the top of this page.</li>
+      <li>Choose the symbol you want, such as 🍕, 🍓 or 🍔.</li>
+      <li>Click the Copy button below the emoji.</li>
+      <li>Open the application or website where you want to use it.</li>
+      <li>Paste the copied emoji into your message, caption or post.</li>
+    </ol>
+
+    <h3>How to Download an Animated Emoji Image</h3>
+
+    <p>
+      If you want to keep an emoji image on your device, click the Download button below the selected symbol. When the download is successful, the available animated image will be saved as a GIF file, which you can access later depending on the applications installed on your device.
+    </p>
+
+    <p>
+      Animated GIF support can vary between applications. Some platforms display GIF files as animations, while others may show a still image or handle them differently. Copied text emojis also depend on the operating system, application and font used by the sender and recipient, so their appearance may vary between devices.
+    </p>
+
+    <h2>💬 Where Can You Use Food Emojis?</h2>
+
+    <p>
+      Food emojis are useful in many everyday online situations. Add them to chat messages, social media posts, comments, photo captions, restaurant reviews, digital menus and food blogs. A suitable emoji can help readers understand the topic of a message quickly.
+    </p>
+
+    <ul>
+      <li><strong>Chat messages:</strong> Tell friends what you are eating or what you would like to order.</li>
+      <li><strong>Food posts:</strong> Add a relevant symbol to a meal photo or food caption.</li>
+      <li><strong>Recipes:</strong> Use ingredient emojis to make recipe sections easier to recognize.</li>
+      <li><strong>Celebrations:</strong> Add birthday cake and dessert emojis to greetings.</li>
+      <li><strong>Educational content:</strong> Use fruit and vegetable symbols in simple learning activities.</li>
+      <li><strong>Restaurants and projects:</strong> Add suitable symbols to selected headings and food-related posts.</li>
+    </ul>
+
+    <h2>✨ Why Use Emojiland?</h2>
+
+    <p>
+      Emojiland brings useful emoji collections together in one convenient place. Instead of searching for every symbol separately, you can browse a dedicated category and choose the emojis that fit your needs.
+    </p>
+
+    <ul>
+      <li>A varied collection of food, fruit and vegetable emojis.</li>
+      <li>Quick emoji copying with a single click.</li>
+      <li>Download options for available animated GIF images.</li>
+      <li>A simple interface for phones, tablets and computers.</li>
+      <li>Support for Arabic and English.</li>
+      <li>Links to other emoji categories and sticker collections.</li>
+      <li>Free access without creating an account.</li>
+    </ul>
+
+    <h2>❓ Frequently Asked Questions About Food Emojis</h2>
+
+    <div class="food-faq">
+
+      <div class="food-faq-item">
+        <h3>What food emojis are available on this page?</h3>
+        <p>
+          This page includes 50 food-related symbols covering fruits, vegetables, bread, bakery items, fast food, salads, snacks and desserts. Browse the collection to find the emoji you need.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>How can I copy a food emoji to my phone?</h3>
+        <p>
+          Click the Copy button below the emoji you want. Then open your preferred application and paste the symbol into your message, comment or post.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>Can I download animated food emojis for free?</h3>
+        <p>
+          Yes. Use the Download button to save an available animated emoji image as a GIF file to your device. No additional application is required for using the page.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>Do food emojis work on all phones?</h3>
+        <p>
+          Text emojis are supported by most modern phones and applications, although their appearance may vary. Animated GIF images depend on the application's support for animated files.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>Do I need an account to use these emojis?</h3>
+        <p>
+          No. You can browse the collection, copy symbols and use the available download options directly from this page.
+        </p>
+      </div>
+
+      <div class="food-faq-item">
+        <h3>Can I use food emojis in social media posts?</h3>
+        <p>
+          Yes. You can copy text emojis and add them to messages, captions, comments and posts. Their appearance may differ depending on the application and device.
+        </p>
+      </div>
+
+    </div>
+
+    <section class="food-related">
+      <h2>🌟 Explore More Emojiland Categories</h2>
+      <p>
+        Looking for more expressive symbols? Explore the other Emojiland sections and discover additional emoji collections and stickers for your messages and posts.
+      </p>
+
+      <div class="food-related-links">
+        <a href="index.html">🏠 Home</a>
+        <a href="emojis-smileys.html">😊 Smileys & People</a>
+        <a href="emojis-animals.html">🐻 Animals & Nature</a>
+        <a href="emojis-hands.html">👋 Hands & Gestures</a>
+        <a href="emojis-love.html">❤️ Love & Emotions</a>
+        <a href="emojis-activities.html">⚽ Activities & Sports</a>
+        <a href="stickers.html">✨ Stickers</a>
+      </div>
+    </section>
+
+  </article>
+
+  <div class="food-back-home">
     <a href="index.html" class="back-home"
-       data-ar="العودة للرئيسية"
-       data-en="Back to Home">العودة للرئيسية</a>
+       data-ar="العودة إلى الصفحة الرئيسية"
+       data-en="Back to Home">العودة إلى الصفحة الرئيسية</a>
   </div>
 
 </main>
@@ -261,14 +904,32 @@ function translateFoodPage() {
     element.textContent = element.getAttribute("data-" + language);
   });
 
+  document.querySelectorAll(".language-content").forEach(section => {
+    section.classList.toggle(
+      "active",
+      section.getAttribute("data-language") === language
+    );
+  });
+
   document.title = language === "ar"
-    ? "ايموش الطعام والفواكه والمشروبات المتحركة | مملكة الإيموش"
+    ? "إيموش الطعام والفواكه والمشروبات المتحركة | مملكة الإيموش"
     : "Animated Food Emojis, Fruits & Drinks | Emojiland";
 
   document.querySelector('meta[name="description"]').content =
     language === "ar"
-      ? "اكتشف ايموش الطعام المتحركة في مملكة الإيموش. مجموعة متنوعة من ايموشات الفواكه والخضروات والوجبات والحلويات والمشروبات، مع إمكانية النسخ والتنزيل مجانًا."
-      : "Explore animated food emojis at Emojiland. Discover fruit, vegetable, meal, dessert and drink emojis to copy and download for free.";
+      ? "اكتشف إيموشات الطعام والفواكه والخضروات والوجبات والحلويات والمشروبات في مملكة الإيموش. انسخ الإيموش المفضل لديك أو نزّل صورته المتحركة مجانًا."
+      : "Explore food emojis at Emojiland, including fruits, vegetables, meals, desserts and drinks. Copy your favorite emoji or download its animated image for free.";
+
+  document.querySelector('meta[name="keywords"]').content =
+    language === "ar"
+      ? "إيموش الطعام, إيموشات الطعام, إيموش فواكه, إيموش خضروات, إيموش بيتزا, إيموش برجر, إيموش حلويات, إيموش مشروبات, إيموش متحرك"
+      : "food emojis, fruit emojis, vegetable emojis, animated food emojis, pizza emoji, burger emoji, dessert emojis, food symbols, free emojis";
+
+  document.querySelector('meta[property="og:title"]').content =
+    document.title;
+
+  document.querySelector('meta[property="og:description"]').content =
+    document.querySelector('meta[name="description"]').content;
 
   document.querySelectorAll(".food-name").forEach((element, index) => {
     element.textContent = foods[index][language === "ar" ? 1 : 2];
@@ -276,7 +937,7 @@ function translateFoodPage() {
 
   document.querySelectorAll(".food-visual img").forEach((img, index) => {
     img.alt = language === "ar"
-      ? "ايموش " + foods[index][1]
+      ? "إيموش " + foods[index][1]
       : foods[index][2] + " emoji";
   });
 
@@ -289,6 +950,11 @@ function translateFoodPage() {
       button.textContent = language === "ar" ? "تنزيل" : "Download";
     }
   });
+
+  document.querySelector('nav[aria-label]').setAttribute(
+    "aria-label",
+    language === "ar" ? "روابط الموقع" : "Website navigation"
+  );
 }
 
 foods.forEach((item, index) => {
@@ -304,7 +970,7 @@ foods.forEach((item, index) => {
 
   const img = document.createElement("img");
   img.alt = getLanguage() === "ar"
-    ? "ايموش " + item[1]
+    ? "إيموش " + item[1]
     : item[2] + " emoji";
   img.loading = "lazy";
   img.style.display = "none";
