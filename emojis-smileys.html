@@ -52,6 +52,12 @@ body{margin:0;font-family:Arial,sans-serif;background:#f8f7fc;color:#29243a}
 .card-actions button:hover{background:#5e42a5}
 .card-actions button:disabled{opacity:.6;cursor:wait}
 .empty{display:none;text-align:center;background:#fff;padding:25px;border-radius:12px;color:#777;line-height:1.8}
+.seo-box{background:#fff;border:1px solid #eee7f8;border-radius:14px;padding:24px;margin-top:35px;line-height:1.9;color:#51466b}
+.seo-box h2{color:#6246a6;font-size:20px;margin:0 0 10px}
+.seo-box p{margin:0 0 16px}
+.internal-links{padding-top:16px;border-top:1px solid #f0ebf8;display:flex;gap:14px;flex-wrap:wrap;font-size:14px;align-items:center}
+.internal-links a{color:#7655c5;text-decoration:none;font-weight:bold}
+.internal-links a:hover{text-decoration:underline}
 .footer{text-align:center;padding:25px 12px;color:#777;font-size:13px}
 .footer a{color:#7655c5}
 @media(max-width:500px){
@@ -100,6 +106,18 @@ data-ar="لم يتم العثور على ملفات متحركة متاحة حا
 data-en="No animated files are currently available. Try refreshing the page.">
 لم يتم العثور على ملفات متحركة متاحة حاليًا. حاول تحديث الصفحة.
 </div>
+
+<section class="seo-box">
+  <h2 data-ar="حول مكتبة الإيموشات المتحركة المجانية" data-en="About the Free Animated Emojis Library">حول مكتبة الإيموشات المتحركة المجانية</h2>
+  <p data-ar="تقدم لك مملكة الإيموش أكبر تشكيلة من الإيموشات المتحركة عالية الجودة (Animated Noto Emoji) بصيغة GIF مجاناً وبدون حقوق. يمكنك استعراض الوجوه التعبيرية المضحكة، القلوب، والرموز التفاعلية ونسخها بضغطة زر أو تحميلها مباشرة لاستخدامها في المحادثات ومنشورات التواصل الاجتماعي." data-en="Emojiland offers a wide collection of high-quality animated emojis (Animated Noto Emoji) in GIF format for free. Browse expressive faces, hearts, and reaction icons to copy with one click or download directly for your chats and social media posts.">
+    تقدم لك مملكة الإيموش أكبر تشكيلة من الإيموشات المتحركة عالية الجودة (Animated Noto Emoji) بصيغة GIF مجاناً وبدون حقوق. يمكنك استعراض الوجوه التعبيرية المضحكة، القلوب، والرموز التفاعلية ونسخها بضغطة زر أو تحميلها مباشرة لاستخدامها في المحادثات ومنشورات التواصل الاجتماعي.
+  </p>
+  <div class="internal-links">
+    <span style="color:#29243a;font-weight:bold;" data-ar="أقسام الموقع:" data-en="Site Sections:">أقسام الموقع:</span>
+    <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+    <a href="stickers.html" data-ar="عالم الملصقات" data-en="Stickers">عالم الملصقات</a>
+  </div>
+</section>
 </main>
 
 <footer class="footer">
@@ -227,132 +245,3 @@ function makeCard(code,img){
  actions.className = "card-actions";
 
  const copyButton = document.createElement("button");
- copyButton.className = "copy-button";
- copyButton.textContent = t("نسخ","Copy");
- copyButton.type = "button";
-
- copyButton.addEventListener("click",async()=>{
-  let success = false;
-
-  try{
-   if(navigator.clipboard && window.isSecureContext){
-    await navigator.clipboard.writeText(emoji);
-    success = true;
-   }else{
-    const field = document.createElement("textarea");
-    field.value = emoji;
-    field.style.position = "fixed";
-    field.style.opacity = "0";
-    document.body.appendChild(field);
-    field.select();
-    success = document.execCommand("copy");
-    field.remove();
-
-    if(!success) throw new Error("Copy failed");
-   }
-
-   copyButton.dataset.feedback = "true";
-   copyButton.textContent = t("تم النسخ بنجاح ✓","Copied successfully ✓");
-
-   setTimeout(()=>{
-    delete copyButton.dataset.feedback;
-    copyButton.textContent = t("نسخ","Copy");
-   },1300);
-
-  }catch(error){
-   copyButton.dataset.feedback = "true";
-   copyButton.textContent = t("تعذر النسخ","Copy failed");
-
-   setTimeout(()=>{
-    delete copyButton.dataset.feedback;
-    copyButton.textContent = t("نسخ","Copy");
-   },1300);
-  }
- });
-
- const downloadButton = document.createElement("button");
- downloadButton.className = "download-button";
- downloadButton.textContent = t("تنزيل GIF","Download GIF");
- downloadButton.type = "button";
-
- downloadButton.addEventListener("click",async()=>{
-  downloadButton.disabled = true;
-  downloadButton.textContent = t("جاري التنزيل...","Downloading...");
-
-  const url = img.src;
-
-  try{
-   const response = await fetch(url);
-   if(!response.ok) throw new Error("Download failed");
-
-   const blob = await response.blob();
-   if(!blob.size) throw new Error("Empty file");
-
-   const blobUrl = URL.createObjectURL(blob);
-   const link = document.createElement("a");
-
-   link.href = blobUrl;
-   link.download = code + ".gif";
-
-   document.body.appendChild(link);
-   link.click();
-   link.remove();
-
-   setTimeout(()=>URL.revokeObjectURL(blobUrl),2000);
-
-  }catch(error){
-   window.open(url,"_blank","noopener");
-  }
-
-  downloadButton.disabled = false;
-  downloadButton.textContent = t("تنزيل GIF","Download GIF");
- });
-
- actions.append(copyButton,downloadButton);
- card.append(img,actions);
- grid.appendChild(card);
-}
-
-function loadOne(code){
- return new Promise(resolve=>{
-  const img = new Image();
-  const url = `https://fonts.gstatic.com/s/e/notoemoji/latest/${code}/512.gif`;
-
-  img.onload = ()=>{
-   loaded++;
-   makeCard(code,img);
-   completed++;
-   updateStatus();
-   resolve();
-  };
-
-  img.onerror = ()=>{
-   completed++;
-   updateStatus();
-   resolve();
-  };
-
-  img.src = url;
- });
-}
-
-async function startLoading(){
- const batchSize = 8;
-
- for(let i=0;i<codes.length;i+=batchSize){
-  const batch = codes.slice(i,i+batchSize);
-  await Promise.all(batch.map(loadOne));
- }
-
- emptyMessage.style.display = loaded === 0 ? "block" : "none";
- updateStatus();
-}
-
-updateLanguage();
-startLoading();
-
-})();
-</script>
-
-</body>
-</html>
