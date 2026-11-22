@@ -5,18 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#7055ed">
 
-  <meta name="description" content="اكتشف ملصقات إيموش مجانية في مملكة الإيموش. تصفح مكتبة الملصقات، وحمّل ملصقاتك المفضلة أو اصنع ملصقك الخاص بسهولة.">
-  <meta name="keywords" content="ايموش, ايموش متحرك, ملصقات إيموش, ملصقات مجانية, صانع ملصقات, ملصقات تعبيرية">
+  <title>ملصقات إيموش مجانية وصانع الملصقات | مملكة الإيموش</title>
+
+  <meta name="description" content="اكتشف مكتبة ملصقات إيموش مجانية من مملكة الإيموش. حمّل ملصقات تعبيرية للمحادثات، وابحث عن تصميمك المفضل، أو اصنع ملصقك الخاص بالنص والإيموش واللون الذي تختاره.">
+
+  <meta name="keywords" content="ملصقات إيموش, ملصقات مجانية, ملصقات تعبيرية, تحميل ملصقات, صانع ملصقات, تصميم ملصقات, ملصقات واتساب, Emoji Stickers, Free Stickers">
+
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Emojiland">
 
   <link rel="canonical" href="https://emojiland.pages.dev/stickers.html">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ملصقات إيموش مجانية | مملكة الإيموش">
-  <meta property="og:description" content="اكتشف ملصقات إيموش مجانية وحمّلها أو اصنع ملصقك الخاص بسهولة.">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="مملكة الإيموش | Emojiland">
+  <meta property="og:title" content="ملصقات إيموش مجانية وصانع الملصقات | مملكة الإيموش">
+  <meta property="og:description" content="تصفح ملصقات إيموش مجانية، وحمّل تصميماتك المفضلة أو اصنع ملصقك الخاص بسهولة.">
   <meta property="og:url" content="https://emojiland.pages.dev/stickers.html">
 
-  <title>ملصقات إيموش مجانية وصانع الملصقات | مملكة الإيموش</title>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ملصقات إيموش مجانية | مملكة الإيموش">
+  <meta name="twitter:description" content="اكتشف ملصقات تعبيرية مجانية وصمّم ملصقك الخاص أونلاين.">
 
   <link rel="stylesheet" href="style.css">
 
@@ -27,79 +36,764 @@
     gtag('js', new Date());
     gtag('config', 'G-NZ00TSPTWC');
   </script>
+
+  <style>
+    .stickers-intro,
+    .stickers-guide,
+    .stickers-benefits,
+    .stickers-ideas,
+    .stickers-faq,
+    .stickers-links {
+      margin: 35px 0;
+      padding: 25px;
+      background: var(--card-bg, #fff);
+      border-radius: 18px;
+      border: 1px solid rgba(112, 85, 237, 0.12);
+      line-height: 1.9;
+    }
+
+    .stickers-intro p,
+    .stickers-guide p,
+    .stickers-benefits p,
+    .stickers-ideas p {
+      margin: 12px 0;
+      line-height: 1.9;
+    }
+
+    .stickers-intro h2,
+    .stickers-guide h2,
+    .stickers-benefits h2,
+    .stickers-ideas h2,
+    .stickers-faq h2,
+    .stickers-links h2 {
+      color: var(--primary-color, #7055ed);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .stickers-guide h3,
+    .stickers-benefits h3,
+    .stickers-ideas h3 {
+      margin: 22px 0 10px;
+      line-height: 1.6;
+    }
+
+    .stickers-guide ul,
+    .stickers-benefits ul,
+    .stickers-ideas ul {
+      padding-inline-start: 25px;
+      margin: 12px 0;
+    }
+
+    .stickers-guide li,
+    .stickers-benefits li,
+    .stickers-ideas li {
+      margin: 9px 0;
+      line-height: 1.8;
+    }
+
+    .stickers-section,
+    .maker-section {
+      margin: 35px 0;
+      padding: 25px;
+      border-radius: 18px;
+      background: var(--card-bg, #fff);
+    }
+
+    .stickers-section > h2,
+    .maker-section > h2 {
+      margin-bottom: 20px;
+    }
+
+    #stickerSearch {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: 15px auto 25px;
+      padding: 13px 16px;
+      border: 1px solid #d8d2f5;
+      border-radius: 12px;
+      font: inherit;
+      outline: none;
+    }
+
+    #stickerSearch:focus,
+    #stickerText:focus,
+    #stickerEmoji:focus {
+      border-color: #7055ed;
+      box-shadow: 0 0 0 3px rgba(112, 85, 237, 0.12);
+    }
+
+    .maker-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .maker-section label {
+      font-weight: 600;
+      margin-top: 8px;
+    }
+
+    #stickerText,
+    #stickerEmoji {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d8d2f5;
+      border-radius: 10px;
+      font: inherit;
+    }
+
+    #stickerColor {
+      width: 75px;
+      height: 45px;
+      border: 0;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    #stickerCanvas {
+      display: block;
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      margin: 15px auto;
+      border-radius: 18px;
+      border: 1px solid #eee8ff;
+      background: #fff5f8;
+    }
+
+    #downloadCustomSticker {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: 10px auto;
+      padding: 13px 20px;
+      border: none;
+      border-radius: 12px;
+      background: #7055ed;
+      color: #fff;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    #downloadCustomSticker:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    #copyMessage {
+      text-align: center;
+      min-height: 24px;
+      color: #159b83;
+      font-weight: 600;
+    }
+
+    .stickers-faq details {
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(112, 85, 237, 0.15);
+    }
+
+    .stickers-faq details:last-child {
+      border-bottom: none;
+    }
+
+    .stickers-faq summary {
+      cursor: pointer;
+      font-weight: bold;
+      line-height: 1.7;
+      color: var(--text-color, #333);
+    }
+
+    .stickers-faq details p {
+      margin: 12px 0 0;
+      line-height: 1.9;
+    }
+
+    .stickers-links .internal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .stickers-links .internal-links a {
+      display: inline-block;
+      padding: 9px 15px;
+      border-radius: 10px;
+      background: rgba(112, 85, 237, 0.09);
+      color: var(--primary-color, #7055ed);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .stickers-links .internal-links a:hover {
+      background: rgba(112, 85, 237, 0.17);
+    }
+
+    .stickers-note {
+      padding: 15px;
+      margin-top: 18px;
+      border-radius: 12px;
+      background: rgba(112, 85, 237, 0.07);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .stickers-intro,
+      .stickers-guide,
+      .stickers-benefits,
+      .stickers-ideas,
+      .stickers-faq,
+      .stickers-links,
+      .stickers-section,
+      .maker-section {
+        padding: 17px;
+        margin: 22px 0;
+      }
+
+      .stickers-links .internal-links {
+        flex-direction: column;
+      }
+
+      .stickers-links .internal-links a {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
   <header class="header">
     <div class="container header-content">
-      <a href="index.html" class="logo">🎨 مملكة الإيموش</a>
 
-      <nav class="nav">
+      <a href="index.html" class="logo">
+        🎨 مملكة الإيموش
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
         <a href="index.html" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
         <a href="index.html#emojis" data-ar="الإيموشات" data-en="Emojis">الإيموشات</a>
         <a href="stickers.html" data-ar="الملصقات" data-en="Stickers">الملصقات</a>
       </nav>
 
       <button id="languageButton" class="language-button" type="button"
-        data-ar="English" data-en="العربية">English</button>
+        data-ar="English" data-en="العربية">
+        English
+      </button>
+
     </div>
   </header>
 
   <main class="container">
+
+    <!-- مقدمة الصفحة -->
     <section class="hero">
-      <h1 data-ar="ملصقات إيموش مجانية" data-en="Free Emoji Stickers">ملصقات إيموش مجانية</h1>
-      <p data-ar="اكتشف ملصقات إيموش رائعة وحمّلها، أو اصنع ملصقك الخاص بسهولة."
-         data-en="Discover fun emoji stickers, download them, or create your own easily.">
-        اكتشف ملصقات إيموش رائعة وحمّلها، أو اصنع ملصقك الخاص بسهولة.
+      <h1 data-ar="ملصقات إيموش مجانية وصانع الملصقات 🎨"
+          data-en="Free Emoji Stickers & Sticker Maker 🎨">
+        ملصقات إيموش مجانية وصانع الملصقات 🎨
+      </h1>
+
+      <p data-ar="اكتشف عالمًا ممتعًا من ملصقات الإيموش التعبيرية في مملكة الإيموش! تصفح مكتبة الملصقات المجانية، واختر التصميم الذي يعبر عن مشاعرك، وحمّله بسهولة لاستخدامه في محادثاتك ورسائلك اليومية. وإذا كنت تحب الإبداع، يمكنك تصميم ملصقك الخاص بإضافة عبارة وإيموش ولونك المفضل، ثم تنزيله كصورة PNG."
+         data-en="Explore a fun collection of expressive emoji stickers at Emojiland! Browse our free sticker library, choose a design that matches your feelings, and download it for your everyday messages and conversations. If you enjoy creating, use our simple sticker maker to combine your own text, emoji, and favorite color, then save your custom design as a PNG image.">
+        اكتشف عالمًا ممتعًا من ملصقات الإيموش التعبيرية في مملكة الإيموش! تصفح مكتبة الملصقات المجانية، واختر التصميم الذي يعبر عن مشاعرك، وحمّله بسهولة لاستخدامه في محادثاتك ورسائلك اليومية. وإذا كنت تحب الإبداع، يمكنك تصميم ملصقك الخاص بإضافة عبارة وإيموش ولونك المفضل، ثم تنزيله كصورة PNG.
       </p>
     </section>
 
-    <section class="stickers-section">
-      <h2 data-ar="مكتبة الملصقات" data-en="Sticker Library">مكتبة الملصقات</h2>
+    <!-- محتوى تمهيدي -->
+    <section class="stickers-intro">
 
-      <input id="stickerSearch" type="search"
+      <h2 data-ar="💜 عالم ملصقات الإيموش في مكان واحد"
+          data-en="💜 Your World of Emoji Stickers in One Place">
+        💜 عالم ملصقات الإيموش في مكان واحد
+      </h2>
+
+      <p data-ar="أصبحت الملصقات التعبيرية جزءًا أساسيًا من التواصل الرقمي؛ فهي تضيف لمسة شخصية إلى الرسائل، وتساعد على توصيل المشاعر والأفكار بطريقة سريعة ومرحة. أحيانًا تكون صورة صغيرة أكثر قدرة على التعبير عن السعادة أو الحب أو الامتنان من جملة طويلة."
+         data-en="Stickers have become an important part of digital communication. They add personality to messages and help express feelings and ideas in a quick, playful way. Sometimes, a small expressive image can communicate happiness, love, or gratitude better than a long sentence.">
+        أصبحت الملصقات التعبيرية جزءًا أساسيًا من التواصل الرقمي؛ فهي تضيف لمسة شخصية إلى الرسائل، وتساعد على توصيل المشاعر والأفكار بطريقة سريعة ومرحة. أحيانًا تكون صورة صغيرة أكثر قدرة على التعبير عن السعادة أو الحب أو الامتنان من جملة طويلة.
+      </p>
+
+      <p data-ar="في مملكة الإيموش جمعنا لك مكتبة من التصميمات الجاهزة التي تناسب مواقف مختلفة، مثل التحية والشكر والتشجيع والتهنئة والتعبير عن الحب. ويمكنك أيضًا استخدام صانع الملصقات لإنشاء تصميم يعبر عن أسلوبك بدلًا من الاكتفاء بالتصميمات الجاهزة."
+         data-en="At Emojiland, you can explore ready-made designs for different occasions, including greetings, gratitude, encouragement, congratulations, and love. You can also use the sticker maker to create a design that reflects your own style instead of relying only on ready-made stickers.">
+        في مملكة الإيموش جمعنا لك مكتبة من التصميمات الجاهزة التي تناسب مواقف مختلفة، مثل التحية والشكر والتشجيع والتهنئة والتعبير عن الحب. ويمكنك أيضًا استخدام صانع الملصقات لإنشاء تصميم يعبر عن أسلوبك بدلًا من الاكتفاء بالتصميمات الجاهزة.
+      </p>
+
+      <p data-ar="سواء كنت تبحث عن ملصق لطيف لصديق، أو صورة تعبر عن امتنانك، أو تصميم مبهج لمشاركة مناسبة سعيدة، ستجد هنا طريقة بسيطة لاختيار الملصق المناسب وتجهيزه للاستخدام."
+         data-en="Whether you need a cute sticker for a friend, an image to show appreciation, or a cheerful design for a special occasion, you will find an easy way to choose and prepare a sticker for your messages.">
+        سواء كنت تبحث عن ملصق لطيف لصديق، أو صورة تعبر عن امتنانك، أو تصميم مبهج لمشاركة مناسبة سعيدة، ستجد هنا طريقة بسيطة لاختيار الملصق المناسب وتجهيزه للاستخدام.
+      </p>
+
+    </section>
+
+    <!-- مكتبة الملصقات -->
+    <section class="stickers-section" id="sticker-library">
+
+      <h2 data-ar="🌟 مكتبة الملصقات المجانية"
+          data-en="🌟 Free Sticker Library">
+        🌟 مكتبة الملصقات المجانية
+      </h2>
+
+      <p data-ar="تصفح مجموعة من الملصقات الجاهزة واختر التصميم الذي يناسب رسالتك. يمكنك البحث باسم الملصق أو استخدام الإيموش المرتبط به للوصول إلى التصميم الذي تريده."
+         data-en="Browse a collection of ready-made stickers and choose a design that fits your message. Search by sticker name or use its associated emoji to find the design you want.">
+        تصفح مجموعة من الملصقات الجاهزة واختر التصميم الذي يناسب رسالتك. يمكنك البحث باسم الملصق أو استخدام الإيموش المرتبط به للوصول إلى التصميم الذي تريده.
+      </p>
+
+      <label for="stickerSearch" data-ar="🔎 ابحث في مكتبة الملصقات"
+        data-en="🔎 Search the sticker library">
+        🔎 ابحث في مكتبة الملصقات
+      </label>
+
+      <input
+        id="stickerSearch"
+        type="search"
         placeholder="ابحث عن ملصق..."
         data-ar-placeholder="ابحث عن ملصق..."
         data-en-placeholder="Search stickers..."
-        aria-label="البحث عن ملصقات">
+        aria-label="البحث عن الملصقات | Search stickers"
+        autocomplete="off">
 
-      <div id="stickerGrid" class="sticker-grid"></div>
+      <div id="stickerGrid" class="sticker-grid" aria-live="polite"></div>
+
+      <noscript>
+        <p>لتصفح الملصقات واستخدام صانع الملصقات، يرجى تفعيل JavaScript في المتصفح.</p>
+      </noscript>
+
     </section>
 
-    <section class="maker-section">
-      <h2 data-ar="اصنع ملصقك الخاص" data-en="Create Your Own Sticker">اصنع ملصقك الخاص</h2>
+    <!-- صانع الملصقات -->
+    <section class="maker-section" id="sticker-maker">
 
-      <label for="stickerText" data-ar="اكتب النص" data-en="Enter text">اكتب النص</label>
-      <input id="stickerText" type="text" maxlength="40"
+      <h2 data-ar="🖌️ اصنع ملصقك الخاص"
+          data-en="🖌️ Create Your Own Sticker">
+        🖌️ اصنع ملصقك الخاص
+      </h2>
+
+      <p data-ar="حوّل فكرتك إلى ملصق مميز! اكتب عبارة قصيرة، واختر الإيموش الذي تحبه، وحدد لون التصميم، ثم شاهد معاينة ملصقك قبل تنزيله."
+         data-en="Turn your idea into a unique sticker! Enter a short message, choose an emoji, select a design color, and preview your sticker before downloading it.">
+        حوّل فكرتك إلى ملصق مميز! اكتب عبارة قصيرة، واختر الإيموش الذي تحبه، وحدد لون التصميم، ثم شاهد معاينة ملصقك قبل تنزيله.
+      </p>
+
+      <label for="stickerText" data-ar="✏️ اكتب العبارة التي تريدها"
+        data-en="✏️ Enter your message">
+        ✏️ اكتب العبارة التي تريدها
+      </label>
+
+      <input
+        id="stickerText"
+        type="text"
+        maxlength="40"
         placeholder="اكتب عبارتك هنا"
         data-ar-placeholder="اكتب عبارتك هنا"
-        data-en-placeholder="Type your message">
+        data-en-placeholder="Type your message"
+        autocomplete="off">
 
-      <label for="stickerEmoji" data-ar="اختر الإيموش" data-en="Choose emoji">اختر الإيموش</label>
-      <input id="stickerEmoji" type="text" value="😀" maxlength="8">
+      <label for="stickerEmoji" data-ar="😀 اختر الإيموش المناسب"
+        data-en="😀 Choose your emoji">
+        😀 اختر الإيموش المناسب
+      </label>
 
-      <label for="stickerColor" data-ar="لون الملصق" data-en="Sticker color">لون الملصق</label>
-      <input id="stickerColor" type="color" value="#7055ed">
+      <input
+        id="stickerEmoji"
+        type="text"
+        value="😀"
+        maxlength="8"
+        aria-label="الإيموش المستخدم في الملصق | Sticker emoji">
 
-      <canvas id="stickerCanvas" width="600" height="600"></canvas>
+      <label for="stickerColor" data-ar="🎨 اختر لون الملصق"
+        data-en="🎨 Choose sticker color">
+        🎨 اختر لون الملصق
+      </label>
 
-      <button id="downloadSticker" type="button"
-        data-ar="تحميل الملصق" data-en="Download Sticker">
-        تحميل الملصق
+      <input
+        id="stickerColor"
+        type="color"
+        value="#7055ed"
+        aria-label="لون الملصق | Sticker color">
+
+      <p data-ar="معاينة التصميم:"
+         data-en="Sticker preview:">
+        معاينة التصميم:
+      </p>
+
+      <canvas
+        id="stickerCanvas"
+        width="600"
+        height="600"
+        role="img"
+        aria-label="معاينة الملصق الذي تقوم بتصميمه | Preview of your custom sticker">
+      </canvas>
+
+      <button
+        id="downloadCustomSticker"
+        type="button"
+        data-ar="⬇️ تحميل الملصق بصيغة PNG"
+        data-en="⬇️ Download Sticker as PNG">
+        ⬇️ تحميل الملصق بصيغة PNG
       </button>
 
       <p id="copyMessage" role="status" aria-live="polite"></p>
+
+      <div class="stickers-note">
+        <p data-ar="💡 نصيحة: جرّب عبارات قصيرة وإيموشات مختلفة وألوانًا متناسقة للحصول على تصميم واضح وجذاب. يمكنك تعديل اختياراتك ومشاهدة المعاينة قبل كل عملية تحميل."
+           data-en="💡 Tip: Try short messages, different emojis, and matching colors to create a clear and attractive design. You can change your choices and preview the result before downloading.">
+          💡 نصيحة: جرّب عبارات قصيرة وإيموشات مختلفة وألوانًا متناسقة للحصول على تصميم واضح وجذاب. يمكنك تعديل اختياراتك ومشاهدة المعاينة قبل كل عملية تحميل.
+        </p>
+      </div>
+
     </section>
+
+    <!-- دليل استخدام الملصقات -->
+    <section class="stickers-guide">
+
+      <h2 data-ar="📱 كيف تستخدم ملصقات الإيموش؟"
+          data-en="📱 How to Use Emoji Stickers">
+        📱 كيف تستخدم ملصقات الإيموش؟
+      </h2>
+
+      <p data-ar="استخدام الملصقات سهل، ولا يحتاج إلى خبرة في التصميم أو برامج معقدة. اختر الملصق الذي يعجبك من المكتبة، واضغط على زر التحميل الموجود أسفله لحفظ التصميم على جهازك."
+         data-en="Using stickers is simple and does not require design experience or complicated software. Choose a sticker from the library and click its download button to save the design to your device.">
+        استخدام الملصقات سهل، ولا يحتاج إلى خبرة في التصميم أو برامج معقدة. اختر الملصق الذي يعجبك من المكتبة، واضغط على زر التحميل الموجود أسفله لحفظ التصميم على جهازك.
+      </p>
+
+      <h3 data-ar="1️⃣ اختيار ملصق جاهز"
+          data-en="1️⃣ Choose a Ready-Made Sticker">
+        1️⃣ اختيار ملصق جاهز
+      </h3>
+
+      <ul>
+        <li data-ar="تصفح التصميمات المتاحة في مكتبة الملصقات."
+            data-en="Browse the available designs in the sticker library.">
+          تصفح التصميمات المتاحة في مكتبة الملصقات.
+        </li>
+        <li data-ar="استخدم مربع البحث للعثور على ملصق معين."
+            data-en="Use the search box to find a specific sticker.">
+          استخدم مربع البحث للعثور على ملصق معين.
+        </li>
+        <li data-ar="اضغط على زر التحميل أسفل التصميم الذي اخترته."
+            data-en="Click the download button below your chosen design.">
+          اضغط على زر التحميل أسفل التصميم الذي اخترته.
+        </li>
+        <li data-ar="احفظ الصورة على جهازك واستخدمها بالطريقة التي تناسبك."
+            data-en="Save the image to your device and use it however you like.">
+          احفظ الصورة على جهازك واستخدمها بالطريقة التي تناسبك.
+        </li>
+      </ul>
+
+      <h3 data-ar="2️⃣ إنشاء ملصق مخصص"
+          data-en="2️⃣ Create a Custom Sticker">
+        2️⃣ إنشاء ملصق مخصص
+      </h3>
+
+      <ul>
+        <li data-ar="انتقل إلى قسم صانع الملصقات."
+            data-en="Go to the sticker maker section.">
+          انتقل إلى قسم صانع الملصقات.
+        </li>
+        <li data-ar="اكتب النص أو العبارة التي تريد ظهورها على التصميم."
+            data-en="Enter the text or message you want on your design.">
+          اكتب النص أو العبارة التي تريد ظهورها على التصميم.
+        </li>
+        <li data-ar="اختر الإيموش المناسب لموضوع الملصق."
+            data-en="Choose an emoji that matches your sticker's theme.">
+          اختر الإيموش المناسب لموضوع الملصق.
+        </li>
+        <li data-ar="حدد اللون الذي تفضله وشاهد النتيجة في المعاينة."
+            data-en="Select your preferred color and view the preview.">
+          حدد اللون الذي تفضله وشاهد النتيجة في المعاينة.
+        </li>
+        <li data-ar="اضغط على تحميل الملصق لحفظ التصميم بصيغة PNG."
+            data-en="Click Download Sticker to save your design as a PNG image.">
+          اضغط على تحميل الملصق لحفظ التصميم بصيغة PNG.
+        </li>
+      </ul>
+
+      <h3 data-ar="3️⃣ استخدام الملصقات في المحادثات"
+          data-en="3️⃣ Using Stickers in Conversations">
+        3️⃣ استخدام الملصقات في المحادثات
+      </h3>
+
+      <p data-ar="بعد تنزيل الملصق، يمكنك الاحتفاظ به في معرض الصور أو مجلد التنزيلات، ثم مشاركته في التطبيقات التي تسمح بإرسال الصور. وقد تختلف طريقة إضافة الصور كملصقات من تطبيق إلى آخر؛ لذلك قد تحتاج إلى استخدام ميزة الملصقات الموجودة داخل التطبيق أو تطبيق مخصص لإدارة الملصقات."
+         data-en="After downloading a sticker, you can keep it in your photo gallery or downloads folder and share it through apps that support image messages. The process of adding images as stickers differs between apps, so you may need to use the app's built-in sticker feature or a dedicated sticker manager.">
+        بعد تنزيل الملصق، يمكنك الاحتفاظ به في معرض الصور أو مجلد التنزيلات، ثم مشاركته في التطبيقات التي تسمح بإرسال الصور. وقد تختلف طريقة إضافة الصور كملصقات من تطبيق إلى آخر؛ لذلك قد تحتاج إلى استخدام ميزة الملصقات الموجودة داخل التطبيق أو تطبيق مخصص لإدارة الملصقات.
+      </p>
+
+    </section>
+
+    <!-- فوائد الملصقات -->
+    <section class="stickers-benefits">
+
+      <h2 data-ar="✨ لماذا يحب الناس استخدام الملصقات التعبيرية؟"
+          data-en="✨ Why Do People Love Using Stickers?">
+        ✨ لماذا يحب الناس استخدام الملصقات التعبيرية؟
+      </h2>
+
+      <p data-ar="الملصقات ليست مجرد صور جميلة؛ إنها وسيلة مرئية تضيف معنى ونبرة إلى الرسائل الرقمية. ويمكن أن تجعل المحادثة أكثر دفئًا ومرحًا، خصوصًا عندما يكون من الصعب التعبير عن الشعور بالكلمات وحدها."
+         data-en="Stickers are more than decorative images. They are a visual way to add meaning and tone to digital messages. They can make conversations feel warmer and more playful, especially when words alone are not enough to express a feeling.">
+        الملصقات ليست مجرد صور جميلة؛ إنها وسيلة مرئية تضيف معنى ونبرة إلى الرسائل الرقمية. ويمكن أن تجعل المحادثة أكثر دفئًا ومرحًا، خصوصًا عندما يكون من الصعب التعبير عن الشعور بالكلمات وحدها.
+      </p>
+
+      <h3 data-ar="💬 التعبير عن المشاعر بسرعة"
+          data-en="💬 Express Feelings Quickly">
+        💬 التعبير عن المشاعر بسرعة
+      </h3>
+
+      <p data-ar="يمكن لملصق مبتسم أن يضيف جوًا إيجابيًا إلى الحديث، بينما يساعد ملصق القلب على إظهار المحبة، ويمكن لتصميم يحمل كلمة شكر أن يجعل رسالة الامتنان أكثر تميزًا."
+         data-en="A smiling sticker can add a positive mood to a conversation, while a heart can show affection. A design with a thank-you message can also make an expression of gratitude feel more personal.">
+        يمكن لملصق مبتسم أن يضيف جوًا إيجابيًا إلى الحديث، بينما يساعد ملصق القلب على إظهار المحبة، ويمكن لتصميم يحمل كلمة شكر أن يجعل رسالة الامتنان أكثر تميزًا.
+      </p>
+
+      <h3 data-ar="🎉 إضافة لمسة شخصية للمحادثات"
+          data-en="🎉 Add Personality to Conversations">
+        🎉 إضافة لمسة شخصية للمحادثات
+      </h3>
+
+      <p data-ar="اختيار الملصقات المناسبة يساعدك على جعل رسائلك أكثر تعبيرًا عن شخصيتك. ويمكنك استخدام تصميمات مختلفة حسب الموقف، سواء كنت تتحدث مع الأصدقاء أو العائلة أو تشارك تهنئة في مناسبة."
+         data-en="Choosing the right stickers helps make your messages reflect your personality. You can use different designs depending on the situation, whether you are chatting with friends and family or sharing a greeting for a special occasion.">
+        اختيار الملصقات المناسبة يساعدك على جعل رسائلك أكثر تعبيرًا عن شخصيتك. ويمكنك استخدام تصميمات مختلفة حسب الموقف، سواء كنت تتحدث مع الأصدقاء أو العائلة أو تشارك تهنئة في مناسبة.
+      </p>
+
+      <h3 data-ar="🎨 مساحة للإبداع والتصميم"
+          data-en="🎨 A Space for Creativity and Design">
+        🎨 مساحة للإبداع والتصميم
+      </h3>
+
+      <p data-ar="مع صانع الملصقات يمكنك تجربة كلمات وألوان وإيموشات مختلفة، وتحويل فكرة بسيطة إلى تصميم يحمل رسالتك الخاصة. هذه الطريقة تمنحك حرية أكبر بدلًا من الاعتماد على تصميم واحد يناسب الجميع."
+         data-en="With the sticker maker, you can experiment with different words, colors, and emojis to turn a simple idea into a design with your own message. This gives you more freedom than relying on one design for every situation.">
+        مع صانع الملصقات يمكنك تجربة كلمات وألوان وإيموشات مختلفة، وتحويل فكرة بسيطة إلى تصميم يحمل رسالتك الخاصة. هذه الطريقة تمنحك حرية أكبر بدلًا من الاعتماد على تصميم واحد يناسب الجميع.
+      </p>
+
+    </section>
+
+    <!-- أفكار الاستخدام -->
+    <section class="stickers-ideas">
+
+      <h2 data-ar="💡 أفكار لاستخدام ملصقات الإيموش في حياتك اليومية"
+          data-en="💡 Everyday Ideas for Using Emoji Stickers">
+        💡 أفكار لاستخدام ملصقات الإيموش في حياتك اليومية
+      </h2>
+
+      <p data-ar="يمكنك استخدام الملصقات في مواقف كثيرة، وليس فقط في المحادثات العادية. إليك بعض الأفكار التي تساعدك على اختيار التصميم المناسب:"
+         data-en="You can use stickers in many situations, not just everyday chats. Here are some ideas to help you choose the right design:">
+        يمكنك استخدام الملصقات في مواقف كثيرة، وليس فقط في المحادثات العادية. إليك بعض الأفكار التي تساعدك على اختيار التصميم المناسب:
+      </p>
+
+      <ul>
+        <li data-ar="❤️ الحب والمودة: أرسل ملصقًا لطيفًا للتعبير عن اهتمامك بشخص تحبه."
+            data-en="❤️ Love and affection: Send a sweet sticker to show someone you care.">
+          ❤️ الحب والمودة: أرسل ملصقًا لطيفًا للتعبير عن اهتمامك بشخص تحبه.
+        </li>
+        <li data-ar="☀️ التحيات الصباحية: استخدم تصميمًا مبهجًا لتبدأ يوم أصدقائك برسالة جميلة."
+            data-en="☀️ Morning greetings: Use a cheerful design to start your friends' day with a lovely message.">
+          ☀️ التحيات الصباحية: استخدم تصميمًا مبهجًا لتبدأ يوم أصدقائك برسالة جميلة.
+        </li>
+        <li data-ar="🙏 الشكر والامتنان: شارك ملصقًا يعبر عن تقديرك للمساعدة أو الاهتمام."
+            data-en="🙏 Gratitude: Share a sticker to show appreciation for help or kindness.">
+          🙏 الشكر والامتنان: شارك ملصقًا يعبر عن تقديرك للمساعدة أو الاهتمام.
+        </li>
+        <li data-ar="🎉 التهاني والمناسبات: أضف لمسة احتفالية إلى رسائل النجاح وأعياد الميلاد."
+            data-en="🎉 Congratulations and celebrations: Add a festive touch to success messages and birthdays.">
+          🎉 التهاني والمناسبات: أضف لمسة احتفالية إلى رسائل النجاح وأعياد الميلاد.
+        </li>
+        <li data-ar="😊 التشجيع والدعم: اختر ملصقًا إيجابيًا لمساندة صديق أو رفع معنوياته."
+            data-en="😊 Encouragement and support: Choose a positive sticker to support a friend or lift their spirits.">
+          😊 التشجيع والدعم: اختر ملصقًا إيجابيًا لمساندة صديق أو رفع معنوياته.
+        </li>
+        <li data-ar="💬 الرسائل اليومية: استخدم الملصقات لإضافة روح مرحة إلى المحادثات المعتادة."
+            data-en="💬 Everyday messages: Use stickers to bring a playful touch to regular conversations.">
+          💬 الرسائل اليومية: استخدم الملصقات لإضافة روح مرحة إلى المحادثات المعتادة.
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section class="stickers-faq">
+
+      <h2 data-ar="❓ الأسئلة الشائعة عن ملصقات الإيموش"
+          data-en="❓ Frequently Asked Questions About Emoji Stickers">
+        ❓ الأسئلة الشائعة عن ملصقات الإيموش
+      </h2>
+
+      <details>
+        <summary data-ar="هل يمكن تحميل الملصقات مجانًا؟"
+                 data-en="Can I download the stickers for free?">
+          هل يمكن تحميل الملصقات مجانًا؟
+        </summary>
+        <p data-ar="نعم، يمكنك تصفح مكتبة الملصقات المتاحة في مملكة الإيموش وتنزيل التصميمات الموجودة بها مجانًا من خلال زر التحميل."
+           data-en="Yes. You can browse the available sticker library at Emojiland and download its designs for free using the download button.">
+          نعم، يمكنك تصفح مكتبة الملصقات المتاحة في مملكة الإيموش وتنزيل التصميمات الموجودة بها مجانًا من خلال زر التحميل.
+        </p>
+      </details>
+
+      <details>
+        <summary data-ar="كيف أصنع ملصقًا خاصًا بي؟"
+                 data-en="How can I create my own sticker?">
+          كيف أصنع ملصقًا خاصًا بي؟
+        </summary>
+        <p data-ar="انتقل إلى قسم صانع الملصقات، واكتب العبارة التي تريدها، واختر الإيموش واللون المناسبين، ثم اضغط على زر تحميل الملصق لحفظ التصميم."
+           data-en="Go to the sticker maker, enter your message, choose an emoji and a color, then click the download button to save your design.">
+          انتقل إلى قسم صانع الملصقات، واكتب العبارة التي تريدها، واختر الإيموش واللون المناسبين، ثم اضغط على زر تحميل الملصق لحفظ التصميم.
+        </p>
+      </details>
+
+      <details>
+        <summary data-ar="بأي صيغة يتم تنزيل الملصق الذي أصممه؟"
+                 data-en="What format is my custom sticker downloaded in?">
+          بأي صيغة يتم تنزيل الملصق الذي أصممه؟
+        </summary>
+        <p data-ar="يتم تنزيل التصميم الذي تنشئه باستخدام صانع الملصقات بصيغة PNG، وهي صيغة صور شائعة يمكن فتحها ومشاركتها على معظم الأجهزة."
+           data-en="Your custom design is downloaded as a PNG image, a common image format that can be opened and shared on most devices.">
+          يتم تنزيل التصميم الذي تنشئه باستخدام صانع الملصقات بصيغة PNG، وهي صيغة صور شائعة يمكن فتحها ومشاركتها على معظم الأجهزة.
+        </p>
+      </details>
+
+      <details>
+        <summary data-ar="هل أستطيع تغيير النص والإيموش واللون؟"
+                 data-en="Can I change the text, emoji, and color?">
+          هل أستطيع تغيير النص والإيموش واللون؟
+        </summary>
+        <p data-ar="بالتأكيد. يمكنك تعديل العبارة واختيار إيموش آخر وتغيير اللون، وستظهر التغييرات في معاينة التصميم قبل تنزيله."
+           data-en="Absolutely. You can edit the message, choose another emoji, and change the color. Your changes will appear in the preview before downloading.">
+          بالتأكيد. يمكنك تعديل العبارة واختيار إيموش آخر وتغيير اللون، وستظهر التغييرات في معاينة التصميم قبل تنزيله.
+        </p>
+      </details>
+
+      <details>
+        <summary data-ar="هل أحتاج إلى تثبيت برنامج لاستخدام صانع الملصقات؟"
+                 data-en="Do I need to install software to use the sticker maker?">
+          هل أحتاج إلى تثبيت برنامج لاستخدام صانع الملصقات؟
+        </summary>
+        <p data-ar="لا، يمكنك استخدام صانع الملصقات مباشرة من متصفح الويب على جهازك، دون الحاجة إلى تثبيت برنامج تصميم إضافي."
+           data-en="No. You can use the sticker maker directly in your web browser without installing additional design software.">
+          لا، يمكنك استخدام صانع الملصقات مباشرة من متصفح الويب على جهازك، دون الحاجة إلى تثبيت برنامج تصميم إضافي.
+        </p>
+      </details>
+
+      <details>
+        <summary data-ar="هل تعمل الصفحة على الهاتف؟"
+                 data-en="Does this page work on mobile devices?">
+          هل تعمل الصفحة على الهاتف؟
+        </summary>
+        <p data-ar="نعم، تم إعداد الصفحة لتناسب الشاشات المختلفة، ويمكنك تصفح الملصقات واستخدام صانع الملصقات من الهاتف أو الكمبيوتر."
+           data-en="Yes. The page is designed to adapt to different screen sizes, so you can browse stickers and use the sticker maker on both phones and computers.">
+          نعم، تم إعداد الصفحة لتناسب الشاشات المختلفة، ويمكنك تصفح الملصقات واستخدام صانع الملصقات من الهاتف أو الكمبيوتر.
+        </p>
+      </details>
+
+      <details>
+        <summary data-ar="كيف أستخدم الملصق بعد تنزيله؟"
+                 data-en="How do I use a sticker after downloading it?">
+          كيف أستخدم الملصق بعد تنزيله؟
+        </summary>
+        <p data-ar="بعد حفظ الصورة على جهازك، يمكنك مشاركتها في التطبيقات التي تدعم إرسال الصور. وإذا أردت إضافتها إلى حزمة ملصقات داخل تطبيق معين، فقد تحتاج إلى استخدام أداة الملصقات الخاصة بذلك التطبيق."
+           data-en="After saving the image to your device, you can share it through apps that support image messages. To add it to a sticker pack in a specific app, you may need that app's own sticker feature or a compatible sticker manager.">
+          بعد حفظ الصورة على جهازك، يمكنك مشاركتها في التطبيقات التي تدعم إرسال الصور. وإذا أردت إضافتها إلى حزمة ملصقات داخل تطبيق معين، فقد تحتاج إلى استخدام أداة الملصقات الخاصة بذلك التطبيق.
+        </p>
+      </details>
+
+    </section>
+
+    <!-- روابط داخلية -->
+    <section class="stickers-links">
+
+      <h2 data-ar="🌍 اكتشف المزيد في مملكة الإيموش"
+          data-en="🌍 Explore More at Emojiland">
+        🌍 اكتشف المزيد في مملكة الإيموش
+      </h2>
+
+      <p data-ar="هل تريد المزيد من الإيموشات والرموز التعبيرية؟ تصفح أقسام مملكة الإيموش واكتشف مجموعات متنوعة تناسب مشاعرك ومحادثاتك."
+         data-en="Want more emojis and expressive symbols? Explore the different Emojiland sections and discover collections for your feelings and conversations.">
+        هل تريد المزيد من الإيموشات والرموز التعبيرية؟ تصفح أقسام مملكة الإيموش واكتشف مجموعات متنوعة تناسب مشاعرك ومحادثاتك.
+      </p>
+
+      <div class="internal-links">
+
+        <a href="index.html"
+           data-ar="🏠 الصفحة الرئيسية"
+           data-en="🏠 Home">
+          🏠 الصفحة الرئيسية
+        </a>
+
+        <a href="emojis-smileys.html"
+           data-ar="😀 إيموش الوجوه والابتسامات"
+           data-en="😀 Smileys & Emotions">
+          😀 إيموش الوجوه والابتسامات
+        </a>
+
+        <a href="emojis-love.html"
+           data-ar="❤️ إيموش الحب والقلوب"
+           data-en="❤️ Love & Hearts">
+          ❤️ إيموش الحب والقلوب
+        </a>
+
+        <a href="emojis-animals.html"
+           data-ar="🐻 إيموش الحيوانات"
+           data-en="🐻 Animal Emojis">
+          🐻 إيموش الحيوانات
+        </a>
+
+        <a href="emojis-food.html"
+           data-ar="🍕 إيموش الطعام"
+           data-en="🍕 Food Emojis">
+          🍕 إيموش الطعام
+        </a>
+
+        <a href="emojis-hands.html"
+           data-ar="👋 إيموش الأيدي والإشارات"
+           data-en="👋 Hands & Gestures">
+          👋 إيموش الأيدي والإشارات
+        </a>
+
+        <a href="emojis-activities.html"
+           data-ar="⚽ إيموش الأنشطة والاحتفالات"
+           data-en="⚽ Activities & Celebration">
+          ⚽ إيموش الأنشطة والاحتفالات
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- خاتمة -->
+    <section class="stickers-intro">
+
+      <h2 data-ar="💜 اجعل رسائلك أكثر تعبيرًا مع مملكة الإيموش"
+          data-en="💜 Make Your Messages More Expressive with Emojiland">
+        💜 اجعل رسائلك أكثر تعبيرًا مع مملكة الإيموش
+      </h2>
+
+      <p data-ar="الملصق المناسب يمكن أن يضيف ابتسامة إلى محادثة عادية، أو يجعل تهنئة بسيطة أكثر تميزًا. استكشف مكتبة الملصقات، وجرّب تصميماتك الخاصة، وشارك أفكارك بطريقتك. مملكة الإيموش تجمع لك الإيموشات والملصقات في تجربة سهلة وممتعة."
+         data-en="The right sticker can bring a smile to an ordinary conversation or make a simple greeting more memorable. Explore the sticker library, try your own designs, and share your ideas in your own way. Emojiland brings emojis and stickers together in one simple and enjoyable experience.">
+        الملصق المناسب يمكن أن يضيف ابتسامة إلى محادثة عادية، أو يجعل تهنئة بسيطة أكثر تميزًا. استكشف مكتبة الملصقات، وجرّب تصميماتك الخاصة، وشارك أفكارك بطريقتك. مملكة الإيموش تجمع لك الإيموشات والملصقات في تجربة سهلة وممتعة.
+      </p>
+
+    </section>
+
   </main>
 
   <footer class="footer">
-    <p>© <span id="currentYear"></span> <span data-ar="مملكة الإيموش" data-en="Emojiland">مملكة الإيموش</span></p>
-    <a href="index.html" data-ar="العودة للرئيسية" data-en="Back to Home">العودة للرئيسية</a>
+    <p>
+      © <span id="currentYear"></span>
+      <span data-ar="مملكة الإيموش" data-en="Emojiland">مملكة الإيموش</span>
+    </p>
+
+    <a href="index.html"
+       data-ar="العودة إلى الصفحة الرئيسية"
+       data-en="Back to Home">
+      العودة إلى الصفحة الرئيسية
+    </a>
   </footer>
 
   <script src="app.js"></script>
+
   <script>
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
