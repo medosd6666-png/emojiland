@@ -3,10 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="تعرف على حقوق الملكية الفكرية في مملكة الإيموش، وسياسة استخدام الإيموش والملصقات والتصميمات والمحتوى الأصلي، وكيفية الإبلاغ عن انتهاك الحقوق.">
-  <meta name="robots" content="index, follow">
+
   <title>حقوق الملكية الفكرية | مملكة الإيموش - Emojiland</title>
+
+  <meta name="description" content="تعرف على حقوق الملكية الفكرية في مملكة الإيموش، وسياسة استخدام الإيموشات والملصقات والتصميمات والمحتوى الأصلي، وكيفية الإبلاغ عن أي انتهاك للحقوق.">
+  <meta name="keywords" content="حقوق الملكية الفكرية, حقوق النشر, حقوق المحتوى, مملكة الإيموش, Emojiland, استخدام الإيموشات, حقوق الملصقات">
+  <meta name="author" content="Emojiland">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#7655c5">
+
+  <link rel="canonical" href="https://emojiland.pages.dev/copyright.html">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="حقوق الملكية الفكرية | مملكة الإيموش - Emojiland">
+  <meta property="og:description" content="اطلع على توضيحات مملكة الإيموش بشأن حقوق المحتوى الأصلي والإيموشات والملصقات واستخدام التصميمات والإبلاغ عن انتهاكات الحقوق.">
+  <meta property="og:url" content="https://emojiland.pages.dev/copyright.html">
+  <meta property="og:site_name" content="مملكة الإيموش | Emojiland">
+  <meta property="og:locale" content="ar_EG">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="حقوق الملكية الفكرية | مملكة الإيموش">
+  <meta name="twitter:description" content="تعرف على سياسة مملكة الإيموش بشأن حقوق المحتوى والتصميمات والإبلاغ عن انتهاك الحقوق.">
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
@@ -18,116 +38,561 @@
   </script>
 
   <style>
-    .legal-page {
-      width: min(920px, 92%);
-      margin: 40px auto;
-      padding: 30px;
-      background: var(--card-bg, #fff);
-      border-radius: 18px;
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #faf9fd;
+      color: #302747;
+      font-family: inherit;
+    }
+
+    .copyright-page {
+      width: min(960px, 92%);
+      margin: 38px auto;
+      padding: 35px;
+      background: #fff;
+      border: 1px solid #eee9f7;
+      border-radius: 22px;
+      box-shadow: 0 8px 35px rgba(30,25,60,.06);
       line-height: 1.9;
     }
-    .legal-page h1 { margin-bottom: 20px; }
-    .legal-page h2 { margin-top: 26px; font-size: 1.2rem; }
-    .legal-page p { margin: 10px 0; }
-    .legal-top {
+
+    .copyright-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 25px;
-    }
-    .legal-links {
-      display: flex;
-      flex-wrap: wrap;
       gap: 14px;
-      margin-top: 30px;
+      padding-bottom: 20px;
+      margin-bottom: 25px;
+      border-bottom: 1px solid #eee9f7;
     }
-    .legal-links a { text-decoration: none; }
-    .language-buttons { display: flex; gap: 8px; }
+
+    .copyright-home {
+      color: #7655c5;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color .2s;
+    }
+
+    .copyright-home:hover {
+      color: #55349f;
+      text-decoration: underline;
+    }
+
+    .language-buttons {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .language-buttons button {
       cursor: pointer;
       padding: 8px 13px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      background: transparent;
+      border: 1px solid #e5def5;
+      border-radius: 9px;
+      background: #fff;
+      color: #7655c5;
+      font: inherit;
+      transition: .2s ease;
     }
+
+    .language-buttons button:hover {
+      background: #f5f0ff;
+    }
+
+    .language-buttons button.active {
+      background: #7655c5;
+      color: #fff;
+      border-color: #7655c5;
+    }
+
+    .copyright-hero {
+      text-align: center;
+      padding: 12px 10px 25px;
+    }
+
+    .copyright-icon {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 70px;
+      height: 70px;
+      margin-bottom: 12px;
+      border-radius: 20px;
+      background: #f0eaff;
+      font-size: 35px;
+    }
+
+    .copyright-hero h1 {
+      color: #7655c5;
+      font-size: clamp(27px, 5vw, 37px);
+      line-height: 1.4;
+      margin: 0 0 14px;
+    }
+
+    .copyright-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #686477;
+      font-size: 16px;
+      line-height: 1.95;
+    }
+
+    .copyright-section {
+      padding: 21px 0;
+      border-bottom: 1px solid #f0edf5;
+    }
+
+    .copyright-section:last-of-type {
+      border-bottom: 0;
+    }
+
+    .copyright-section h2 {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: #7655c5;
+      font-size: 21px;
+      line-height: 1.5;
+      margin: 0 0 12px;
+    }
+
+    .copyright-section p {
+      color: #5f5b6d;
+      font-size: 15px;
+      line-height: 2;
+      margin: 8px 0;
+    }
+
+    .copyright-section ul {
+      padding-inline-start: 24px;
+      margin: 12px 0;
+      color: #5f5b6d;
+    }
+
+    .copyright-section li {
+      padding: 4px 0;
+      line-height: 1.9;
+    }
+
+    .copyright-highlight {
+      margin-top: 24px;
+      padding: 19px;
+      border: 1px solid #eee5ff;
+      border-radius: 15px;
+      background: #f7f3ff;
+      color: #5e507e;
+      line-height: 1.9;
+    }
+
+    .copyright-highlight strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #7655c5;
+    }
+
+    .copyright-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin-top: 30px;
+      padding-top: 23px;
+      border-top: 1px solid #eee9f7;
+    }
+
+    .copyright-links a {
+      color: #7655c5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    .copyright-links a:hover {
+      color: #55349f;
+      text-decoration: underline;
+    }
+
+    .copyright-footer {
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 35px;
+      background: #fff;
+      border-top: 1px solid #eee9f7;
+      color: #777;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .copyright-footer p {
+      margin: 0;
+    }
+
+    .copyright-page a:focus-visible,
+    .language-buttons button:focus-visible {
+      outline: 3px solid #c9b8f1;
+      outline-offset: 3px;
+    }
+
     @media (max-width: 600px) {
-      .legal-page { padding: 20px 16px; margin: 20px auto; }
+      .copyright-page {
+        width: 94%;
+        margin: 20px auto;
+        padding: 22px 17px;
+        border-radius: 17px;
+      }
+
+      .copyright-top {
+        align-items: center;
+      }
+
+      .copyright-hero {
+        padding: 8px 2px 20px;
+      }
+
+      .copyright-hero p {
+        font-size: 15px;
+      }
+
+      .copyright-section {
+        padding: 18px 0;
+      }
+
+      .copyright-section h2 {
+        font-size: 19px;
+      }
+
+      .copyright-section p,
+      .copyright-section li {
+        font-size: 14px;
+      }
+
+      .copyright-links {
+        gap: 12px 16px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main class="legal-page">
-    <div class="legal-top">
-      <a href="index.html" data-i18n data-ar="← العودة إلى الرئيسية" data-en="← Back to Home">← العودة إلى الرئيسية</a>
+
+  <main class="copyright-page">
+
+    <div class="copyright-top">
+
+      <a class="copyright-home"
+         href="index.html"
+         data-ar="← العودة إلى الرئيسية"
+         data-en="← Back to Home">
+        ← العودة إلى الرئيسية
+      </a>
 
       <div class="language-buttons">
         <button type="button" data-lang="ar">العربية</button>
         <button type="button" data-lang="en">English</button>
       </div>
+
     </div>
 
-    <h1 data-i18n data-ar="حقوق الملكية الفكرية" data-en="Copyright and Intellectual Property">حقوق الملكية الفكرية</h1>
+    <header class="copyright-hero">
 
-    <p data-i18n
-       data-ar="تحترم مملكة الإيموش حقوق الملكية الفكرية للآخرين، ونسعى إلى تقديم محتوى أصلي وتجربة استخدام تحترم حقوق أصحاب الأعمال."
-       data-en="Emoji Kingdom respects the intellectual property rights of others and aims to provide original content and an experience that respects creators' rights.">
-      تحترم مملكة الإيموش حقوق الملكية الفكرية للآخرين، ونسعى إلى تقديم محتوى أصلي وتجربة استخدام تحترم حقوق أصحاب الأعمال.
-    </p>
+      <div class="copyright-icon" aria-hidden="true">©️</div>
 
-    <h2 data-i18n data-ar="1. المحتوى الأصلي للموقع" data-en="1. Original Website Content">1. المحتوى الأصلي للموقع</h2>
-    <p data-i18n
-       data-ar="تشمل المواد الأصلية التي يقدمها الموقع تصميماته وملصقاته ورسوماته ونصوصه وعناصر واجهته. وتظل الحقوق المتعلقة بهذه المواد محفوظة لأصحابها، ولا يجوز إعادة بيعها أو نسبتها إلى جهة أخرى أو إعادة نشرها تجاريًا دون الحصول على إذن مناسب."
-       data-en="Original materials provided by the website include its designs, stickers, illustrations, text, and interface elements. The rights to these materials remain with their respective owners. They may not be resold, falsely attributed, or commercially republished without appropriate permission.">
-      تشمل المواد الأصلية التي يقدمها الموقع تصميماته وملصقاته ورسوماته ونصوصه وعناصر واجهته. وتظل الحقوق المتعلقة بهذه المواد محفوظة لأصحابها، ولا يجوز إعادة بيعها أو نسبتها إلى جهة أخرى أو إعادة نشرها تجاريًا دون الحصول على إذن مناسب.
-    </p>
+      <h1
+        data-ar="حقوق الملكية الفكرية"
+        data-en="Copyright and Intellectual Property">
+        حقوق الملكية الفكرية
+      </h1>
 
-    <h2 data-i18n data-ar="2. الإيموشات والرموز" data-en="2. Emojis and Symbols">2. الإيموشات والرموز</h2>
-    <p data-i18n
-       data-ar="قد يعرض الموقع رموز إيموجي قياسية تعتمد على دعم الجهاز أو نظام التشغيل أو الخطوط المستخدمة. وقد تختلف طريقة ظهور هذه الرموز من جهاز إلى آخر. ولا ندعي ملكية الرموز القياسية التي تعود حقوقها إلى أصحابها أو الجهات المطورة لها."
-       data-en="The website may display standard emoji characters whose appearance depends on the device, operating system, or fonts in use. Their appearance may vary across devices. We do not claim ownership of standard emoji characters whose rights belong to their respective owners or developers.">
-      قد يعرض الموقع رموز إيموجي قياسية تعتمد على دعم الجهاز أو نظام التشغيل أو الخطوط المستخدمة. وقد تختلف طريقة ظهور هذه الرموز من جهاز إلى آخر. ولا ندعي ملكية الرموز القياسية التي تعود حقوقها إلى أصحابها أو الجهات المطورة لها.
-    </p>
+      <p
+        data-ar="تحترم مملكة الإيموش حقوق الملكية الفكرية والإبداعية، وتؤمن بأهمية احترام جهود المصممين والكتّاب وأصحاب الأعمال. توضح هذه الصفحة المبادئ العامة المتعلقة بالمحتوى والتصميمات والملصقات والرموز المعروضة على الموقع، وكيفية التعامل مع أي استفسار أو بلاغ يتعلق بالحقوق."
+        data-en="Emojiland respects intellectual property and creative work. We believe in recognizing the efforts of designers, writers, and content creators. This page explains the general principles regarding website content, designs, stickers, and displayed symbols, as well as how to contact us with questions or concerns about intellectual property rights.">
+        تحترم مملكة الإيموش حقوق الملكية الفكرية والإبداعية، وتؤمن بأهمية احترام جهود المصممين والكتّاب وأصحاب الأعمال. توضح هذه الصفحة المبادئ العامة المتعلقة بالمحتوى والتصميمات والملصقات والرموز المعروضة على الموقع، وكيفية التعامل مع أي استفسار أو بلاغ يتعلق بالحقوق.
+      </p>
 
-    <h2 data-i18n data-ar="3. استخدام الملصقات" data-en="3. Using Stickers">3. استخدام الملصقات</h2>
-    <p data-i18n
-       data-ar="قد يتيح الموقع نسخ الملصقات أو تنزيلها لاستخدامها الشخصي أو مشاركتها عبر التطبيقات والمنصات. ويجب مراعاة حقوق الملكية الفكرية وشروط الاستخدام الخاصة بأي منصة يتم نشر المحتوى عليها. ولا يعني إتاحة التنزيل انتقال ملكية التصميم إلى المستخدم."
-       data-en="The website may allow stickers to be copied or downloaded for personal use or sharing through apps and platforms. You must respect intellectual property rights and the terms of any platform where the content is shared. Download availability does not transfer ownership of a design to the user.">
-      قد يتيح الموقع نسخ الملصقات أو تنزيلها لاستخدامها الشخصي أو مشاركتها عبر التطبيقات والمنصات. ويجب مراعاة حقوق الملكية الفكرية وشروط الاستخدام الخاصة بأي منصة يتم نشر المحتوى عليها. ولا يعني إتاحة التنزيل انتقال ملكية التصميم إلى المستخدم.
-    </p>
+    </header>
 
-    <h2 data-i18n data-ar="4. الصور التي يضيفها المستخدم" data-en="4. Images Added by Users">4. الصور التي يضيفها المستخدم</h2>
-    <p data-i18n
-       data-ar="إذا استخدمت أداة إنشاء الملصقات وأضفت صورًا من جهازك، فأنت مسؤول عن امتلاك الحقوق أو الأذونات اللازمة لاستخدام هذه الصور. لا تستخدم صور أشخاص أو أعمالًا محمية بطريقة تنتهك حقوق أصحابها أو خصوصيتهم."
-       data-en="If you use the sticker maker and add images from your device, you are responsible for having the necessary rights or permissions to use them. Do not use people's images or protected works in ways that violate their rights or privacy.">
-      إذا استخدمت أداة إنشاء الملصقات وأضفت صورًا من جهازك، فأنت مسؤول عن امتلاك الحقوق أو الأذونات اللازمة لاستخدام هذه الصور. لا تستخدم صور أشخاص أو أعمالًا محمية بطريقة تنتهك حقوق أصحابها أو خصوصيتهم.
-    </p>
+    <section class="copyright-section">
 
-    <h2 data-i18n data-ar="5. الإبلاغ عن انتهاك الحقوق" data-en="5. Reporting Copyright Concerns">5. الإبلاغ عن انتهاك الحقوق</h2>
-    <p data-i18n
-       data-ar="إذا كنت تعتقد أن محتوى موجودًا على الموقع ينتهك حقوق الملكية الفكرية الخاصة بك، يمكنك التواصل معنا عبر صفحة اتصل بنا، مع توضيح المحتوى المعني وسبب الاعتراض وأي معلومات تساعدنا على مراجعته."
-       data-en="If you believe that content on this website infringes your intellectual property rights, you can contact us through the Contact Us page. Please identify the content, explain your concern, and provide any information that may help us review it.">
-      إذا كنت تعتقد أن محتوى موجودًا على الموقع ينتهك حقوق الملكية الفكرية الخاصة بك، يمكنك التواصل معنا عبر صفحة اتصل بنا، مع توضيح المحتوى المعني وسبب الاعتراض وأي معلومات تساعدنا على مراجعته.
-    </p>
+      <h2
+        data-ar="🎨 1. المحتوى الأصلي للموقع"
+        data-en="🎨 1. Original Website Content">
+        🎨 1. المحتوى الأصلي للموقع
+      </h2>
 
-    <h2 data-i18n data-ar="6. التواصل" data-en="6. Contact">6. التواصل</h2>
-    <p data-i18n
-       data-ar="للاستفسارات المتعلقة بحقوق الملكية الفكرية، يرجى زيارة صفحة اتصل بنا وإرسال تفاصيل رسالتك."
-       data-en="For questions or concerns about intellectual property, please visit our Contact Us page and send us the details of your message.">
-      للاستفسارات المتعلقة بحقوق الملكية الفكرية، يرجى زيارة صفحة اتصل بنا وإرسال تفاصيل رسالتك.
-    </p>
+      <p
+        data-ar="تضم مملكة الإيموش مجموعة من المواد والعناصر التي يتم إعدادها أو تنسيقها لتقديم تجربة استخدام مميزة، وقد تشمل النصوص والمقالات والشروحات والتصميمات والرسومات والملصقات وعناصر واجهة الموقع وطريقة تنظيم بعض المحتويات."
+        data-en="Emojiland includes various materials and elements created or arranged to provide a distinctive user experience. These may include text, articles, explanations, designs, illustrations, stickers, interface elements, and the organization of certain content.">
+        تضم مملكة الإيموش مجموعة من المواد والعناصر التي يتم إعدادها أو تنسيقها لتقديم تجربة استخدام مميزة، وقد تشمل النصوص والمقالات والشروحات والتصميمات والرسومات والملصقات وعناصر واجهة الموقع وطريقة تنظيم بعض المحتويات.
+      </p>
 
-    <nav class="legal-links" aria-label="روابط الموقع">
-      <a href="index.html" data-i18n data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-      <a href="about.html" data-i18n data-ar="من نحن" data-en="About Us">من نحن</a>
-      <a href="contact.html" data-i18n data-ar="اتصل بنا" data-en="Contact Us">اتصل بنا</a>
-      <a href="privacy.html" data-i18n data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
-      <a href="terms.html" data-i18n data-ar="شروط الاستخدام" data-en="Terms of Use">شروط الاستخدام</a>
+      <p
+        data-ar="تظل الحقوق المتعلقة بالمواد الأصلية محفوظة لأصحابها أو الجهات التي تملكها، ولا تعني إتاحتها على الموقع السماح بنسخها أو إعادة بيعها أو نسبتها إلى جهة أخرى أو إعادة نشرها تجاريًا دون الحصول على الإذن اللازم."
+        data-en="Rights to original materials remain with their respective owners or rights holders. Making these materials available on the website does not automatically grant permission to copy, resell, falsely attribute, or commercially republish them without the necessary authorization.">
+        تظل الحقوق المتعلقة بالمواد الأصلية محفوظة لأصحابها أو الجهات التي تملكها، ولا تعني إتاحتها على الموقع السماح بنسخها أو إعادة بيعها أو نسبتها إلى جهة أخرى أو إعادة نشرها تجاريًا دون الحصول على الإذن اللازم.
+      </p>
+
+    </section>
+
+    <section class="copyright-section">
+
+      <h2
+        data-ar="😀 2. الإيموشات والرموز التعبيرية"
+        data-en="😀 2. Emojis and Symbols">
+        😀 2. الإيموشات والرموز التعبيرية
+      </h2>
+
+      <p
+        data-ar="يعرض الموقع رموز إيموجي قياسية يمكن أن يختلف شكلها وأسلوب ظهورها حسب نظام التشغيل والجهاز والمتصفح والخطوط المستخدمة. وقد تظهر الرموز نفسها بتصميمات مختلفة على الهواتف وأجهزة الكمبيوتر."
+        data-en="The website displays standard emoji characters whose appearance may vary depending on the operating system, device, browser, and fonts being used. The same emoji may look different on phones and computers.">
+        يعرض الموقع رموز إيموجي قياسية يمكن أن يختلف شكلها وأسلوب ظهورها حسب نظام التشغيل والجهاز والمتصفح والخطوط المستخدمة. وقد تظهر الرموز نفسها بتصميمات مختلفة على الهواتف وأجهزة الكمبيوتر.
+      </p>
+
+      <p
+        data-ar="لا تدعي مملكة الإيموش ملكية الرموز القياسية أو العلامات أو التصميمات التابعة لأطراف أخرى. وتظل الحقوق والعلامات التجارية المتعلقة بها مملوكة لأصحابها أو الجهات المطورة لها وفقًا للشروط والحقوق الخاصة بكل منها."
+        data-en="Emojiland does not claim ownership of standard emoji characters, trademarks, or designs belonging to third parties. Any associated rights and trademarks remain with their respective owners or developers, subject to their applicable terms and rights.">
+        لا تدعي مملكة الإيموش ملكية الرموز القياسية أو العلامات أو التصميمات التابعة لأطراف أخرى. وتظل الحقوق والعلامات التجارية المتعلقة بها مملوكة لأصحابها أو الجهات المطورة لها وفقًا للشروط والحقوق الخاصة بكل منها.
+      </p>
+
+    </section>
+
+    <section class="copyright-section">
+
+      <h2
+        data-ar="🖼️ 3. الملصقات والتصميمات"
+        data-en="🖼️ 3. Stickers and Designs">
+        🖼️ 3. الملصقات والتصميمات
+      </h2>
+
+      <p
+        data-ar="قد يوفر الموقع ملصقات وتصميمات وأدوات تساعد الزوار على إنشاء محتوى بصري أو نسخه أو تنزيله. وتختلف حقوق الاستخدام بحسب طبيعة المادة ومصدرها وأي شروط أو تراخيص مرتبطة بها."
+        data-en="The website may provide stickers, designs, and tools that help visitors create, copy, or download visual content. Usage rights may differ depending on the nature and source of each material and any applicable terms or licenses.">
+        قد يوفر الموقع ملصقات وتصميمات وأدوات تساعد الزوار على إنشاء محتوى بصري أو نسخه أو تنزيله. وتختلف حقوق الاستخدام بحسب طبيعة المادة ومصدرها وأي شروط أو تراخيص مرتبطة بها.
+      </p>
+
+      <p
+        data-ar="يرجى مراعاة النقاط التالية عند استخدام الملصقات والتصميمات:"
+        data-en="Please keep the following points in mind when using stickers and designs:">
+        يرجى مراعاة النقاط التالية عند استخدام الملصقات والتصميمات:
+      </p>
+
+      <ul>
+        <li
+          data-ar="إتاحة الملصق للنسخ أو التنزيل لا تعني انتقال ملكية حقوقه إلى المستخدم."
+          data-en="Making a sticker available for copying or downloading does not transfer its ownership rights to the user.">
+          إتاحة الملصق للنسخ أو التنزيل لا تعني انتقال ملكية حقوقه إلى المستخدم.
+        </li>
+
+        <li
+          data-ar="تحقق من شروط الاستخدام أو الترخيص قبل إعادة نشر أي تصميم أو استخدامه لأغراض تجارية."
+          data-en="Check the applicable terms or license before republishing any design or using it commercially.">
+          تحقق من شروط الاستخدام أو الترخيص قبل إعادة نشر أي تصميم أو استخدامه لأغراض تجارية.
+        </li>
+
+        <li
+          data-ar="احترم حقوق المصممين وأصحاب المحتوى عند مشاركة المواد عبر التطبيقات والمنصات الأخرى."
+          data-en="Respect the rights of designers and content owners when sharing materials through other apps and platforms.">
+          احترم حقوق المصممين وأصحاب المحتوى عند مشاركة المواد عبر التطبيقات والمنصات الأخرى.
+        </li>
+      </ul>
+
+    </section>
+
+    <section class="copyright-section">
+
+      <h2
+        data-ar="📷 4. الصور والمواد التي يضيفها المستخدم"
+        data-en="📷 4. Images and Materials Added by Users">
+        📷 4. الصور والمواد التي يضيفها المستخدم
+      </h2>
+
+      <p
+        data-ar="قد تتيح بعض أدوات الموقع إضافة صور أو محتويات من جهاز المستخدم لإنشاء ملصقات أو تصميمات شخصية. عند استخدام هذه الإمكانية، تقع على المستخدم مسؤولية التأكد من امتلاكه الحقوق أو الأذونات اللازمة لاستخدام المواد التي يضيفها."
+        data-en="Some website tools may allow users to add images or materials from their devices to create personal stickers or designs. When using this feature, users are responsible for ensuring they have the necessary rights or permissions to use the materials they upload.">
+        قد تتيح بعض أدوات الموقع إضافة صور أو محتويات من جهاز المستخدم لإنشاء ملصقات أو تصميمات شخصية. عند استخدام هذه الإمكانية، تقع على المستخدم مسؤولية التأكد من امتلاكه الحقوق أو الأذونات اللازمة لاستخدام المواد التي يضيفها.
+      </p>
+
+      <p
+        data-ar="لا تستخدم صور الأشخاص أو الأعمال الفنية أو الصور المحمية أو العلامات التجارية بطريقة تنتهك حقوق أصحابها أو خصوصيتهم. كما ينبغي الحصول على الموافقات المناسبة قبل مشاركة محتوى يتضمن أشخاصًا آخرين أو مواد لا تملك حق استخدامها."
+        data-en="Do not use images of people, artwork, protected photographs, or trademarks in ways that violate their owners' rights or privacy. Appropriate permissions should be obtained before sharing content that includes other people or materials you are not authorized to use.">
+        لا تستخدم صور الأشخاص أو الأعمال الفنية أو الصور المحمية أو العلامات التجارية بطريقة تنتهك حقوق أصحابها أو خصوصيتهم. كما ينبغي الحصول على الموافقات المناسبة قبل مشاركة محتوى يتضمن أشخاصًا آخرين أو مواد لا تملك حق استخدامها.
+      </p>
+
+    </section>
+
+    <section class="copyright-section">
+
+      <h2
+        data-ar="📢 5. الإبلاغ عن انتهاك حقوق الملكية الفكرية"
+        data-en="📢 5. Reporting Intellectual Property Infringement">
+        📢 5. الإبلاغ عن انتهاك حقوق الملكية الفكرية
+      </h2>
+
+      <p
+        data-ar="إذا كنت تعتقد أن مادة منشورة على مملكة الإيموش تنتهك حقوق الملكية الفكرية الخاصة بك أو بحق جهة تمثلها، يمكنك التواصل معنا من خلال صفحة اتصل بنا حتى نتمكن من مراجعة البلاغ."
+        data-en="If you believe that material published on Emojiland infringes your intellectual property rights or the rights of an organization you represent, you can contact us through our Contact Us page so we can review your report.">
+        إذا كنت تعتقد أن مادة منشورة على مملكة الإيموش تنتهك حقوق الملكية الفكرية الخاصة بك أو بحق جهة تمثلها، يمكنك التواصل معنا من خلال صفحة اتصل بنا حتى نتمكن من مراجعة البلاغ.
+      </p>
+
+      <p
+        data-ar="لمساعدتنا على فهم البلاغ، يرجى تضمين المعلومات التالية قدر الإمكان:"
+        data-en="To help us understand your report, please include the following information whenever possible:">
+        لمساعدتنا على فهم البلاغ، يرجى تضمين المعلومات التالية قدر الإمكان:
+      </p>
+
+      <ul>
+        <li
+          data-ar="تحديد المادة أو المحتوى الذي تعتقد أنه ينتهك حقوقك."
+          data-en="Identify the material or content you believe infringes your rights.">
+          تحديد المادة أو المحتوى الذي تعتقد أنه ينتهك حقوقك.
+        </li>
+
+        <li
+          data-ar="توضيح طبيعة الحق أو الملكية التي تعتقد أنها تعرضت للانتهاك."
+          data-en="Explain the nature of the right or ownership you believe has been infringed.">
+          توضيح طبيعة الحق أو الملكية التي تعتقد أنها تعرضت للانتهاك.
+        </li>
+
+        <li
+          data-ar="تقديم رابط الصفحة أو وصف واضح للمحتوى محل البلاغ."
+          data-en="Provide the page URL or a clear description of the reported content.">
+          تقديم رابط الصفحة أو وصف واضح للمحتوى محل البلاغ.
+        </li>
+
+        <li
+          data-ar="إضافة وسيلة تواصل مناسبة حتى نتمكن من طلب معلومات إضافية عند الحاجة."
+          data-en="Include suitable contact details so we can request further information if needed.">
+          إضافة وسيلة تواصل مناسبة حتى نتمكن من طلب معلومات إضافية عند الحاجة.
+        </li>
+      </ul>
+
+      <p
+        data-ar="سنراجع المعلومات المقدمة وننظر في البلاغ وفقًا لطبيعته والظروف المتعلقة به. وقد نطلب توضيحات أو معلومات إضافية قبل اتخاذ أي إجراء مناسب."
+        data-en="We will review the information provided and consider the report based on its nature and circumstances. We may request clarification or additional information before taking any appropriate action.">
+        سنراجع المعلومات المقدمة وننظر في البلاغ وفقًا لطبيعته والظروف المتعلقة به. وقد نطلب توضيحات أو معلومات إضافية قبل اتخاذ أي إجراء مناسب.
+      </p>
+
+    </section>
+
+    <section class="copyright-section">
+
+      <h2
+        data-ar="⚖️ 6. احترام حقوق الأطراف الأخرى"
+        data-en="⚖️ 6. Respecting Third-Party Rights">
+        ⚖️ 6. احترام حقوق الأطراف الأخرى
+      </h2>
+
+      <p
+        data-ar="نحرص على احترام حقوق الملكية الفكرية للآخرين، ونتوقع من زوار الموقع ومستخدمي أدواته الالتزام بالمبدأ نفسه. يجب عدم استخدام الموقع أو محتواه بطريقة تنتهك حقوق النشر أو العلامات التجارية أو حقوق المصممين أو أي حقوق أخرى محفوظة للغير."
+        data-en="We aim to respect the intellectual property rights of others and expect visitors and users of our tools to do the same. The website and its content must not be used in ways that infringe copyrights, trademarks, designers' rights, or other rights belonging to third parties.">
+        نحرص على احترام حقوق الملكية الفكرية للآخرين، ونتوقع من زوار الموقع ومستخدمي أدواته الالتزام بالمبدأ نفسه. يجب عدم استخدام الموقع أو محتواه بطريقة تنتهك حقوق النشر أو العلامات التجارية أو حقوق المصممين أو أي حقوق أخرى محفوظة للغير.
+      </p>
+
+    </section>
+
+    <section class="copyright-section">
+
+      <h2
+        data-ar="🔄 7. تحديث سياسة حقوق الملكية"
+        data-en="🔄 7. Updates to This Policy">
+        🔄 7. تحديث سياسة حقوق الملكية
+      </h2>
+
+      <p
+        data-ar="قد نقوم بتحديث هذه الصفحة من وقت لآخر لتوضيح ممارسات الموقع أو إضافة معلومات تتعلق بالمحتوى وحقوق استخدامه. سيتم نشر النسخة المحدثة في هذه الصفحة، ويُنصح بمراجعتها دوريًا للاطلاع على أي تغييرات."
+        data-en="We may update this page from time to time to clarify website practices or add information about content and usage rights. The updated version will be published on this page, and visitors are encouraged to review it periodically for changes.">
+        قد نقوم بتحديث هذه الصفحة من وقت لآخر لتوضيح ممارسات الموقع أو إضافة معلومات تتعلق بالمحتوى وحقوق استخدامه. سيتم نشر النسخة المحدثة في هذه الصفحة، ويُنصح بمراجعتها دوريًا للاطلاع على أي تغييرات.
+      </p>
+
+    </section>
+
+    <section class="copyright-section">
+
+      <h2
+        data-ar="📩 8. التواصل معنا"
+        data-en="📩 8. Contact Us">
+        📩 8. التواصل معنا
+      </h2>
+
+      <p
+        data-ar="إذا كان لديك استفسار حول هذه السياسة أو ترغب في الإبلاغ عن مشكلة تتعلق بحقوق الملكية الفكرية، يمكنك زيارة صفحة اتصل بنا وإرسال رسالة تتضمن التفاصيل اللازمة."
+        data-en="If you have questions about this policy or wish to report an intellectual property concern, please visit our Contact Us page and send us a message with the relevant details.">
+        إذا كان لديك استفسار حول هذه السياسة أو ترغب في الإبلاغ عن مشكلة تتعلق بحقوق الملكية الفكرية، يمكنك زيارة صفحة اتصل بنا وإرسال رسالة تتضمن التفاصيل اللازمة.
+      </p>
+
+      <p>
+        <a href="contact.html"
+           style="color:#7655c5;font-weight:bold;text-decoration:none;"
+           data-ar="انتقل إلى صفحة اتصل بنا ←"
+           data-en="Go to the Contact Us page ←">
+          انتقل إلى صفحة اتصل بنا ←
+        </a>
+      </p>
+
+    </section>
+
+    <div class="copyright-highlight">
+      <strong
+        data-ar="💜 شكرًا لاحترامك حقوق الإبداع"
+        data-en="💜 Thank You for Respecting Creative Work">
+        💜 شكرًا لاحترامك حقوق الإبداع
+      </strong>
+
+      <span
+        data-ar="يساعد احترام حقوق الملكية الفكرية على دعم الإبداع وتشجيع تقديم محتوى مفيد ومميز للجميع. نقدر تعاونك في الحفاظ على بيئة رقمية تحترم جهود أصحاب الأعمال."
+        data-en="Respecting intellectual property helps support creativity and encourages the creation of useful and engaging content for everyone. We appreciate your cooperation in maintaining a digital environment that respects creators' work.">
+        يساعد احترام حقوق الملكية الفكرية على دعم الإبداع وتشجيع تقديم محتوى مفيد ومميز للجميع. نقدر تعاونك في الحفاظ على بيئة رقمية تحترم جهود أصحاب الأعمال.
+      </span>
+    </div>
+
+    <nav class="copyright-links" aria-label="روابط الموقع">
+
+      <a href="index.html"
+         data-ar="🏠 الرئيسية"
+         data-en="🏠 Home">
+        🏠 الرئيسية
+      </a>
+
+      <a href="about.html"
+         data-ar="👑 من نحن"
+         data-en="👑 About Us">
+        👑 من نحن
+      </a>
+
+      <a href="contact.html"
+         data-ar="💌 اتصل بنا"
+         data-en="💌 Contact Us">
+        💌 اتصل بنا
+      </a>
+
+      <a href="privacy.html"
+         data-ar="🔒 سياسة الخصوصية"
+         data-en="🔒 Privacy Policy">
+        🔒 سياسة الخصوصية
+      </a>
+
+      <a href="terms.html"
+         data-ar="📜 شروط الاستخدام"
+         data-en="📜 Terms of Use">
+        📜 شروط الاستخدام
+      </a>
+
     </nav>
+
   </main>
 
+  <footer class="copyright-footer">
+    <p
+      data-ar="© مملكة الإيموش | Emojiland - جميع الحقوق محفوظة"
+      data-en="© Emojiland - All Rights Reserved">
+      © مملكة الإيموش | Emojiland - جميع الحقوق محفوظة
+    </p>
+  </footer>
+
   <script src="app.js"></script>
+
 </body>
 </html>
