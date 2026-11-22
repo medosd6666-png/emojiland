@@ -6,10 +6,10 @@
 
   <title>من نحن | مملكة الإيموش - Emojiland</title>
 
-  <meta name="description" content="اكتشف مملكة الإيموش Emojiland، وجهتك لاستخدام ونسخ الإيموشات والملصقات مجانًا. تعرّف على رؤيتنا ومميزات الموقع وأدواتنا الإبداعية.">
-  <meta name="keywords" content="من نحن, مملكة الإيموش, Emojiland, إيموشات, رموز تعبيرية, ملصقات, نسخ الإيموشات, صانع الملصقات">
-  <meta name="robots" content="index, follow">
+  <meta name="description" content="تعرّف على مملكة الإيموش Emojiland، وجهتك المجانية لاكتشاف ونسخ الإيموشات والملصقات واستخدام أدوات إبداعية سهلة وممتعة.">
+  <meta name="keywords" content="مملكة الإيموش, Emojiland, من نحن, إيموشات, رموز تعبيرية, ملصقات, نسخ الإيموشات, صانع الملصقات">
   <meta name="author" content="Emojiland">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#7655c5">
 
   <link rel="canonical" href="https://emojiland.pages.dev/about.html">
@@ -17,14 +17,15 @@
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="من نحن | مملكة الإيموش - Emojiland">
-  <meta property="og:description" content="تعرّف على مملكة الإيموش، مكتبتك الرقمية للإيموشات والملصقات والأدوات الإبداعية المجانية.">
+  <meta property="og:description" content="اكتشف مملكة الإيموش، مكتبتك الرقمية للإيموشات والملصقات والأدوات الإبداعية المجانية.">
   <meta property="og:url" content="https://emojiland.pages.dev/about.html">
   <meta property="og:site_name" content="Emojiland">
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="من نحن | مملكة الإيموش">
-  <meta name="twitter:description" content="اكتشف عالم مملكة الإيموش وتعرّف على خدماتنا ورؤيتنا.">
+  <meta name="twitter:description" content="تعرّف على رؤيتنا وخدماتنا والعالم الإبداعي الذي نقدمه في مملكة الإيموش.">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -38,18 +39,746 @@
       --about-primary: #7655c5;
       --about-primary-dark: #6040a8;
       --about-light: #f6f2ff;
-      --about-text: #514d62;
+      --about-text: #5f5b70;
       --about-heading: #302747;
       --about-border: #ece6f7;
+      --about-white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       margin: 0;
       background: #faf9fd;
+      color: var(--about-text);
+      font-family: inherit;
     }
 
     .about-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 
+      gap: 15px;
+      flex-wrap: wrap;
+      padding: 17px 5%;
+      background: var(--about-white);
+      box-shadow: 0 3px 15px rgba(0, 0, 0, .05);
+    }
+
+    .about-brand {
+      color: var(--about-primary);
+      font-size: 21px;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .about-actions {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-wrap: wrap;
+    }
+
+    .about-actions a {
+      color: var(--about-heading);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 9px;
+      transition: .2s;
+    }
+
+    .about-actions a:hover {
+      background: var(--about-light);
+      color: var(--about-primary);
+    }
+
+    .about-actions button {
+      border: 1px solid var(--about-border);
+      background: #fff;
+      color: var(--about-heading);
+      padding: 8px 13px;
+      border-radius: 9px;
+      cursor: pointer;
+      font: inherit;
+      transition: .2s;
+    }
+
+    .about-actions button:hover,
+    .about-actions button.active {
+      background: var(--about-primary);
+      border-color: var(--about-primary);
+      color: #fff;
+    }
+
+    .about-hero {
+      width: min(1050px, 92%);
+      margin: 35px auto 0;
+      padding: 48px 30px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #7655c5, #9b7be0);
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(118, 85, 197, .15);
+    }
+
+    .about-hero-icon {
+      font-size: 55px;
+      margin-bottom: 12px;
+    }
+
+    .about-hero h1 {
+      margin: 0 0 15px;
+      font-size: clamp(28px, 5vw, 40px);
+      color: #fff;
+    }
+
+    .about-hero p {
+      max-width: 780px;
+      margin: auto;
+      color: rgba(255, 255, 255, .95);
+      font-size: 17px;
+      line-height: 2;
+    }
+
+    .about-page {
+      width: min(1050px, 92%);
+      margin: 28px auto 45px;
+      padding: 35px;
+      background: var(--about-white);
+      border: 1px solid #f0edf6;
+      border-radius: 22px;
+      box-shadow: 0 8px 35px rgba(30, 25, 60, .055);
+      line-height: 2;
+    }
+
+    .about-section {
+      margin-bottom: 35px;
+    }
+
+    .about-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-section h2 {
+      color: var(--about-heading);
+      font-size: clamp(21px, 3vw, 26px);
+      margin: 0 0 13px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--about-light);
+    }
+
+    .about-section h3 {
+      color: var(--about-primary-dark);
+      font-size: 19px;
+      margin: 20px 0 8px;
+    }
+
+    .about-section p {
+      color: var(--about-text);
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .about-section ul {
+      padding-inline-start: 25px;
+      margin: 12px 0;
+    }
+
+    .about-section li {
+      color: var(--about-text);
+      margin: 8px 0;
+      padding-inline-start: 5px;
+    }
+
+    .about-highlight {
+      background: var(--about-light);
+      border-inline-start: 4px solid var(--about-primary);
+      padding: 18px 20px;
+      border-radius: 12px;
+      margin: 22px 0;
+    }
+
+    .about-highlight p {
+      margin: 0;
+      color: var(--about-heading);
+      font-weight: 600;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 17px;
+      margin: 20px 0;
+    }
+
+    .about-feature {
+      padding: 22px 18px;
+      background: #fbfaff;
+      border: 1px solid var(--about-border);
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .about-feature-icon {
+      font-size: 35px;
+      margin-bottom: 8px;
+    }
+
+    .about-feature h3 {
+      margin: 5px 0 8px;
+      color: var(--about-heading);
+      font-size: 18px;
+    }
+
+    .about-feature p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .about-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .about-links a {
+      display: inline-block;
+      padding: 10px 17px;
+      background: var(--about-light);
+      border: 1px solid var(--about-border);
+      border-radius: 10px;
+      color: var(--about-primary-dark);
+      font-weight: bold;
+      text-decoration: none;
+      transition: .2s;
+    }
+
+    .about-links a:hover {
+      background: var(--about-primary);
+      border-color: var(--about-primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .about-contact-box {
+      padding: 25px;
+      margin-top: 20px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f6f2ff, #fbf9ff);
+      text-align: center;
+    }
+
+    .about-contact-box h3 {
+      margin-top: 0;
+      color: var(--about-heading);
+    }
+
+    .about-contact-box p {
+      margin-bottom: 18px;
+    }
+
+    .about-button {
+      display: inline-block;
+      margin: 5px;
+      padding: 11px 23px;
+      border-radius: 11px;
+      background: var(--about-primary);
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .about-button:hover {
+      background: var(--about-primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .about-button.secondary {
+      background: #fff;
+      color: var(--about-primary);
+      border: 1px solid var(--about-border);
+    }
+
+    .about-button.secondary:hover {
+      background: var(--about-light);
+    }
+
+    .about-footer {
+      text-align: center;
+      padding: 27px 15px;
+      background: #fff;
+      border-top: 1px solid #eeeaf5;
+      color: #777;
+      font-size: 14px;
+      line-height: 2;
+    }
+
+    .about-footer p {
+      margin: 0 0 8px;
+    }
+
+    .about-footer a {
+      display: inline-block;
+      color: var(--about-primary);
+      text-decoration: none;
+      margin: 3px 8px;
+    }
+
+    .about-footer a:hover {
+      text-decoration: underline;
+    }
+
+    [dir="ltr"] .about-section ul {
+      padding-inline-start: 25px;
+    }
+
+    @media (max-width: 600px) {
+      .about-header {
+        justify-content: center;
+        padding: 15px 4%;
+      }
+
+      .about-brand {
+        width: 100%;
+        text-align: center;
+        font-size: 19px;
+      }
+
+      .about-actions {
+        justify-content: center;
+      }
+
+      .about-hero {
+        margin-top: 20px;
+        padding: 32px 19px;
+        border-radius: 18px;
+      }
+
+      .about-hero-icon {
+        font-size: 45px;
+      }
+
+      .about-hero p {
+        font-size: 15px;
+      }
+
+      .about-page {
+        padding: 24px 18px;
+        margin: 20px auto 30px;
+      }
+
+      .about-section {
+        margin-bottom: 28px;
+      }
+
+      .about-section p,
+      .about-section li {
+        font-size: 15px;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+
+      .about-links {
+        flex-direction: column;
+      }
+
+      .about-links a {
+        text-align: center;
+      }
+
+      .about-contact-box {
+        padding: 20px 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="about-header">
+    <a class="about-brand" href="index.html">
+      👑 مملكة الإيموش
+    </a>
+
+    <nav class="about-actions" aria-label="Main navigation">
+      <a href="index.html"
+         data-i18n
+         data-ar="الرئيسية"
+         data-en="Home">الرئيسية</a>
+
+      <button type="button" data-lang="ar">العربية</button>
+      <button type="button" data-lang="en">English</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="about-hero">
+      <div class="about-hero-icon" aria-hidden="true">👑✨</div>
+
+      <h1 data-i18n
+          data-ar="من نحن | مملكة الإيموش"
+          data-en="About Us | Emojiland">
+        من نحن | مملكة الإيموش
+      </h1>
+
+      <p data-i18n
+         data-ar="أهلاً بك في مملكة الإيموش، عالم رقمي يجمع بين المرح والإبداع والتعبير. أنشأنا هذا الموقع ليكون مكانًا بسيطًا وممتعًا يساعدك على اكتشاف الإيموشات والملصقات واستخدامها بسهولة في محادثاتك ومنشوراتك وحياتك الرقمية اليومية."
+         data-en="Welcome to Emojiland, a digital world that brings together fun, creativity, and expression. We created this website as a simple and enjoyable place to discover emojis and stickers and use them easily in your conversations, posts, and everyday digital life.">
+        أهلاً بك في مملكة الإيموش، عالم رقمي يجمع بين المرح والإبداع والتعبير. أنشأنا هذا الموقع ليكون مكانًا بسيطًا وممتعًا يساعدك على اكتشاف الإيموشات والملصقات واستخدامها بسهولة في محادثاتك ومنشوراتك وحياتك الرقمية اليومية.
+      </p>
+    </section>
+
+    <div class="about-page">
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="🌟 ما هي مملكة الإيموش؟"
+            data-en="🌟 What Is Emojiland?">
+          🌟 ما هي مملكة الإيموش؟
+        </h2>
+
+        <p data-i18n
+           data-ar="مملكة الإيموش Emojiland هي مساحة إلكترونية مخصصة لعشاق الرموز التعبيرية والإيموشات والملصقات. نؤمن بأن التواصل لا يعتمد على الكلمات وحدها؛ فقد يضيف رمز تعبيري صغير إحساسًا أو معنى يجعل الرسالة أكثر وضوحًا ودفئًا."
+           data-en="Emojiland is an online space dedicated to people who enjoy emojis, expressive symbols, and stickers. We believe communication is about more than words alone. A small emoji can add emotion, meaning, and warmth that make a message clearer and more engaging.">
+          مملكة الإيموش Emojiland هي مساحة إلكترونية مخصصة لعشاق الرموز التعبيرية والإيموشات والملصقات. نؤمن بأن التواصل لا يعتمد على الكلمات وحدها؛ فقد يضيف رمز تعبيري صغير إحساسًا أو معنى يجعل الرسالة أكثر وضوحًا ودفئًا.
+        </p>
+
+        <p data-i18n
+           data-ar="لهذا نعمل على تنظيم مجموعة متنوعة من الإيموشات في أقسام واضحة، حتى تتمكن من الوصول إلى الرمز الذي تبحث عنه بسرعة، سواء كنت تريد التعبير عن السعادة أو الحب أو الامتنان أو الطعام أو الأنشطة أو غير ذلك من المواقف اليومية."
+           data-en="That is why we organize a variety of emojis into clear categories, helping you quickly find the symbol you need, whether you want to express happiness, love, gratitude, food, activities, or everyday moments.">
+          لهذا نعمل على تنظيم مجموعة متنوعة من الإيموشات في أقسام واضحة، حتى تتمكن من الوصول إلى الرمز الذي تبحث عنه بسرعة، سواء كنت تريد التعبير عن السعادة أو الحب أو الامتنان أو الطعام أو الأنشطة أو غير ذلك من المواقف اليومية.
+        </p>
+
+        <div class="about-highlight">
+          <p data-i18n
+             data-ar="💜 هدفنا أن نجعل التعبير عن نفسك أسهل وأجمل، وأن تجد دائمًا ما يناسب رسالتك وشخصيتك."
+             data-en="💜 Our goal is to make self-expression easier and more enjoyable, so you can always find something that fits your message and personality.">
+            💜 هدفنا أن نجعل التعبير عن نفسك أسهل وأجمل، وأن تجد دائمًا ما يناسب رسالتك وشخصيتك.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="🎨 ماذا نقدم لزوارنا؟"
+            data-en="🎨 What Do We Offer?">
+          🎨 ماذا نقدم لزوارنا؟
+        </h2>
+
+        <p data-i18n
+           data-ar="نقدم مجموعة من الخدمات والمحتويات التي تساعدك على استخدام الإيموشات والملصقات بطريقة سهلة وممتعة. نحرص على أن تكون تجربة الموقع واضحة، وأن تصل إلى ما تحتاج إليه دون خطوات معقدة."
+           data-en="We offer a collection of features and content that help you use emojis and stickers in a simple and enjoyable way. We aim to keep the website experience clear, so you can find what you need without complicated steps.">
+          نقدم مجموعة من الخدمات والمحتويات التي تساعدك على استخدام الإيموشات والملصقات بطريقة سهلة وممتعة. نحرص على أن تكون تجربة الموقع واضحة، وأن تصل إلى ما تحتاج إليه دون خطوات معقدة.
+        </p>
+
+        <div class="about-features">
+
+          <article class="about-feature">
+            <div class="about-feature-icon" aria-hidden="true">😀</div>
+            <h3 data-i18n
+                data-ar="مكتبة الإيموشات"
+                data-en="Emoji Library">
+              مكتبة الإيموشات
+            </h3>
+            <p data-i18n
+               data-ar="مجموعة متنوعة من الرموز التعبيرية المنظمة في أقسام لتسهيل العثور على الرمز المناسب ونسخه."
+               data-en="A variety of emojis organized into categories, making it easy to find and copy the right symbol.">
+              مجموعة متنوعة من الرموز التعبيرية المنظمة في أقسام لتسهيل العثور على الرمز المناسب ونسخه.
+            </p>
+          </article>
+
+          <article class="about-feature">
+            <div class="about-feature-icon" aria-hidden="true">💖</div>
+            <h3 data-i18n
+                data-ar="أقسام متنوعة"
+                data-en="Different Categories">
+              أقسام متنوعة
+            </h3>
+            <p data-i18n
+               data-ar="أقسام تشمل الوجوه والحيوانات والطعام والأيدي والقلوب والأنشطة وغيرها من الرموز."
+               data-en="Categories covering smileys, animals, food, hands, hearts, activities, and many other symbols.">
+              أقسام تشمل الوجوه والحيوانات والطعام والأيدي والقلوب والأنشطة وغيرها من الرموز.
+            </p>
+          </article>
+
+          <article class="about-feature">
+            <div class="about-feature-icon" aria-hidden="true">🎉</div>
+            <h3 data-i18n
+                data-ar="الملصقات"
+                data-en="Stickers">
+              الملصقات
+            </h3>
+            <p data-i18n
+               data-ar="مكتبة من الملصقات التي تضيف لمسة مرحة ومميزة إلى المحادثات والمشاركات."
+               data-en="A sticker collection that adds a fun and personal touch to conversations and posts.">
+              مكتبة من الملصقات التي تضيف لمسة مرحة ومميزة إلى المحادثات والمشاركات.
+            </p>
+          </article>
+
+          <article class="about-feature">
+            <div class="about-feature-icon" aria-hidden="true">🖌️</div>
+            <h3 data-i18n
+                data-ar="صانع الملصقات"
+                data-en="Sticker Maker">
+              صانع الملصقات
+            </h3>
+            <p data-i18n
+               data-ar="أداة تتيح لك إنشاء ملصقك الخاص باستخدام النصوص والإيموشات والألوان ثم تنزيله."
+               data-en="A tool that lets you create your own sticker using text, emojis, and colors, then download it.">
+              أداة تتيح لك إنشاء ملصقك الخاص باستخدام النصوص والإيموشات والألوان ثم تنزيله.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="🧭 رؤيتنا ورسالتنا"
+            data-en="🧭 Our Vision and Mission">
+          🧭 رؤيتنا ورسالتنا
+        </h2>
+
+        <p data-i18n
+           data-ar="نطمح إلى أن تكون مملكة الإيموش وجهة ممتعة ومفيدة لكل من يبحث عن الرموز التعبيرية والملصقات، وأن نوفر تجربة تجمع بين سهولة الاستخدام والتنوع والتنظيم الجيد."
+           data-en="We aspire to make Emojiland an enjoyable and useful destination for everyone looking for emojis and stickers, offering an experience that combines ease of use, variety, and clear organization.">
+          نطمح إلى أن تكون مملكة الإيموش وجهة ممتعة ومفيدة لكل من يبحث عن الرموز التعبيرية والملصقات، وأن نوفر تجربة تجمع بين سهولة الاستخدام والتنوع والتنظيم الجيد.
+        </p>
+
+        <h3 data-i18n
+            data-ar="✨ رؤيتنا"
+            data-en="✨ Our Vision">
+          ✨ رؤيتنا
+        </h3>
+
+        <p data-i18n
+           data-ar="بناء مكتبة رقمية منظمة ومتجددة تساعد المستخدمين من مختلف أنحاء العالم على التعبير عن أفكارهم ومشاعرهم بطرق بسيطة وإبداعية."
+           data-en="To build an organized and evolving digital library that helps people around the world express their ideas and feelings in simple and creative ways.">
+          بناء مكتبة رقمية منظمة ومتجددة تساعد المستخدمين من مختلف أنحاء العالم على التعبير عن أفكارهم ومشاعرهم بطرق بسيطة وإبداعية.
+        </p>
+
+        <h3 data-i18n
+            data-ar="💡 رسالتنا"
+            data-en="💡 Our Mission">
+          💡 رسالتنا
+        </h3>
+
+        <p data-i18n
+           data-ar="توفير محتوى وأدوات سهلة الوصول تساعد الزوار على اكتشاف الرموز المناسبة واستخدامها، مع الاهتمام بجودة التجربة وتطوير الموقع بصورة مستمرة."
+           data-en="To provide accessible content and easy-to-use tools that help visitors discover and use the right symbols, while focusing on quality and continuous improvement.">
+          توفير محتوى وأدوات سهلة الوصول تساعد الزوار على اكتشاف الرموز المناسبة واستخدامها، مع الاهتمام بجودة التجربة وتطوير الموقع بصورة مستمرة.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="📱 تجربة بسيطة على مختلف الأجهزة"
+            data-en="📱 A Simple Experience on Every Device">
+          📱 تجربة بسيطة على مختلف الأجهزة
+        </h2>
+
+        <p data-i18n
+           data-ar="نحرص على أن تكون مملكة الإيموش سهلة الاستخدام سواء كنت تتصفح الموقع من هاتفك أو جهاز الكمبيوتر أو الجهاز اللوحي. نهتم بتنظيم المحتوى ووضوح الأقسام وسهولة الوصول إلى الأدوات."
+           data-en="We work to make Emojiland easy to use whether you visit from a phone, computer, or tablet. We focus on clear content organization, understandable categories, and convenient access to our tools.">
+          نحرص على أن تكون مملكة الإيموش سهلة الاستخدام سواء كنت تتصفح الموقع من هاتفك أو جهاز الكمبيوتر أو الجهاز اللوحي. نهتم بتنظيم المحتوى ووضوح الأقسام وسهولة الوصول إلى الأدوات.
+        </p>
+
+        <p data-i18n
+           data-ar="كما نسعى إلى تحسين سرعة التصفح وطريقة عرض الصفحات، حتى تتمكن من الاستمتاع بالمحتوى والوصول إلى الإيموشات والملصقات دون تعقيد."
+           data-en="We also aim to improve browsing speed and page presentation, so you can enjoy the content and access emojis and stickers without unnecessary complexity.">
+          كما نسعى إلى تحسين سرعة التصفح وطريقة عرض الصفحات، حتى تتمكن من الاستمتاع بالمحتوى والوصول إلى الإيموشات والملصقات دون تعقيد.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="🌍 الإيموشات لغة عالمية"
+            data-en="🌍 Emojis Are a Universal Language">
+          🌍 الإيموشات لغة عالمية
+        </h2>
+
+        <p data-i18n
+           data-ar="أصبحت الإيموشات جزءًا مهمًا من التواصل الرقمي الحديث. نستخدمها في الرسائل والتعليقات والمنشورات ورسائل التهنئة والمناسبات، كما تساعد على إضافة نبرة عاطفية إلى الكلمات المكتوبة."
+           data-en="Emojis have become an important part of modern digital communication. We use them in messages, comments, posts, greetings, and celebrations. They can also add emotional tone to written words.">
+          أصبحت الإيموشات جزءًا مهمًا من التواصل الرقمي الحديث. نستخدمها في الرسائل والتعليقات والمنشورات ورسائل التهنئة والمناسبات، كما تساعد على إضافة نبرة عاطفية إلى الكلمات المكتوبة.
+        </p>
+
+        <p data-i18n
+           data-ar="من خلال مملكة الإيموش، نريد أن نجعل الوصول إلى هذه الرموز أكثر سهولة وتنظيمًا، وأن نساعدك على اختيار ما يناسب الموقف، سواء كان رمزًا بسيطًا أو مجموعة من الرموز التي تحكي فكرة كاملة."
+           data-en="Through Emojiland, we want to make these symbols easier to find and explore, helping you choose what suits each moment, whether it is a single emoji or a combination that expresses a complete idea.">
+          من خلال مملكة الإيموش، نريد أن نجعل الوصول إلى هذه الرموز أكثر سهولة وتنظيمًا، وأن نساعدك على اختيار ما يناسب الموقف، سواء كان رمزًا بسيطًا أو مجموعة من الرموز التي تحكي فكرة كاملة.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="🤝 اهتمامنا بزوارنا"
+            data-en="🤝 Our Visitors Matter">
+          🤝 اهتمامنا بزوارنا
+        </h2>
+
+        <p data-i18n
+           data-ar="نؤمن أن ملاحظات الزوار واقتراحاتهم تساعدنا على تطوير الموقع وتحسين خدماته. لذلك نرحب بالأفكار التي يمكن أن تجعل مملكة الإيموش أكثر فائدة وسهولة ومتعة للجميع."
+           data-en="We believe visitor feedback and suggestions help us improve the website and its features. We welcome ideas that can make Emojiland more useful, accessible, and enjoyable for everyone.">
+          نؤمن أن ملاحظات الزوار واقتراحاتهم تساعدنا على تطوير الموقع وتحسين خدماته. لذلك نرحب بالأفكار التي يمكن أن تجعل مملكة الإيموش أكثر فائدة وسهولة ومتعة للجميع.
+        </p>
+
+        <p data-i18n
+           data-ar="نعمل على مراجعة الموقع وتطوير محتواه وأدواته كلما أمكن، مع الحرص على الحفاظ على تجربة واضحة ومريحة للزائر."
+           data-en="We aim to review and improve the website, its content, and its tools whenever possible, while maintaining a clear and comfortable visitor experience.">
+          نعمل على مراجعة الموقع وتطوير محتواه وأدواته كلما أمكن، مع الحرص على الحفاظ على تجربة واضحة ومريحة للزائر.
+        </p>
+      </section>
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="🔗 اكتشف عالم مملكة الإيموش"
+            data-en="🔗 Explore Emojiland">
+          🔗 اكتشف عالم مملكة الإيموش
+        </h2>
+
+        <p data-i18n
+           data-ar="يمكنك الانتقال مباشرة إلى أقسام الموقع واكتشاف مجموعات مختلفة من الإيموشات والملصقات. اختر القسم الذي يناسبك وابدأ رحلتك!"
+           data-en="You can explore the website sections and discover different collections of emojis and stickers. Choose the category you like and start exploring!">
+          يمكنك الانتقال مباشرة إلى أقسام الموقع واكتشاف مجموعات مختلفة من الإيموشات والملصقات. اختر القسم الذي يناسبك وابدأ رحلتك!
+        </p>
+
+        <div class="about-links">
+          <a href="index.html"
+             data-i18n
+             data-ar="🏠 الصفحة الرئيسية"
+             data-en="🏠 Home Page">🏠 الصفحة الرئيسية</a>
+
+          <a href="emojis-smileys.html"
+             data-i18n
+             data-ar="😀 إيموش الوجوه"
+             data-en="😀 Smileys & Faces">😀 إيموش الوجوه</a>
+
+          <a href="emojis-animals.html"
+             data-i18n
+             data-ar="🐶 إيموش الحيوانات"
+             data-en="🐶 Animal Emojis">🐶 إيموش الحيوانات</a>
+
+          <a href="emojis-food.html"
+             data-i18n
+             data-ar="🍕 إيموش الطعام"
+             data-en="🍕 Food Emojis">🍕 إيموش الطعام</a>
+
+          <a href="emojis-hands.html"
+             data-i18n
+             data-ar="👋 إيموش الأيدي"
+             data-en="👋 Hand Emojis">👋 إيموش الأيدي</a>
+
+          <a href="emojis-love.html"
+             data-i18n
+             data-ar="❤️ إيموش الحب"
+             data-en="❤️ Love Emojis">❤️ إيموش الحب</a>
+
+          <a href="emojis-activities.html"
+             data-i18n
+             data-ar="⚽ إيموش الأنشطة"
+             data-en="⚽ Activities Emojis">⚽ إيموش الأنشطة</a>
+
+          <a href="stickers.html"
+             data-i18n
+             data-ar="🎉 مكتبة الملصقات"
+             data-en="🎉 Sticker Library">🎉 مكتبة الملصقات</a>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2 data-i18n
+            data-ar="💌 تواصل معنا"
+            data-en="💌 Get in Touch">
+          💌 تواصل معنا
+        </h2>
+
+        <p data-i18n
+           data-ar="هل لديك اقتراح أو ملاحظة أو فكرة ترغب في مشاركتها معنا؟ يسعدنا أن نسمع منك. تساعدنا رسائلك على فهم احتياجات الزوار والعمل على تقديم تجربة أفضل."
+           data-en="Do you have a suggestion, comment, or idea you would like to share? We would be happy to hear from you. Your messages help us understand visitors' needs and work toward a better experience.">
+          هل لديك اقتراح أو ملاحظة أو فكرة ترغب في مشاركتها معنا؟ يسعدنا أن نسمع منك. تساعدنا رسائلك على فهم احتياجات الزوار والعمل على تقديم تجربة أفضل.
+        </p>
+
+        <div class="about-contact-box">
+          <h3 data-i18n
+              data-ar="نحن هنا للاستماع إليك 💜"
+              data-en="We Would Love to Hear from You 💜">
+            نحن هنا للاستماع إليك 💜
+          </h3>
+
+          <p data-i18n
+             data-ar="شاركنا رأيك وساعدنا في جعل مملكة الإيموش أفضل."
+             data-en="Share your thoughts and help us make Emojiland even better.">
+            شاركنا رأيك وساعدنا في جعل مملكة الإيموش أفضل.
+          </p>
+
+          <a class="about-button" href="contact.html"
+             data-i18n
+             data-ar="تواصل معنا"
+             data-en="Contact Us">تواصل معنا</a>
+
+          <a class="about-button secondary" href="index.html"
+             data-i18n
+             data-ar="العودة للرئيسية"
+             data-en="Back to Home">العودة للرئيسية</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="about-footer">
+    <p>
+      © <span id="currentYear"></span>
+      <span data-i18n data-ar="مملكة الإيموش - جميع الحقوق محفوظة"
+            data-en="Emojiland - All Rights Reserved">
+        مملكة الإيموش - جميع الحقوق محفوظة
+      </span>
+    </p>
+
+    <nav aria-label="Footer navigation">
+      <a href="index.html"
+         data-i18n
+         data-ar="الرئيسية"
+         data-en="Home">الرئيسية</a>
+
+      <a href="about.html"
+         data-i18n
+         data-ar="من نحن"
+         data-en="About Us">من نحن</a>
+
+      <a href="contact.html"
+         data-i18n
+         data-ar="اتصل بنا"
+         data-en="Contact Us">اتصل بنا</a>
+
+      <a href="privacy.html"
+         data-i18n
+         data-ar="سياسة الخصوصية"
+         data-en="Privacy Policy">سياسة الخصوصية</a>
+    </nav>
+  </footer>
+
+  <script src="app.js"></script>
+
+  <script>
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
