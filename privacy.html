@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="description" content="اقرأ سياسة الخصوصية في مملكة الإيموش لمعرفة كيفية التعامل مع بيانات الزوار وملفات تعريف الارتباط واستخدام Google Analytics والروابط والخدمات الخارجية.">
-  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#7655c5">
-
-  <link rel="canonical" href="https://emojiland.pages.dev/privacy.html">
 
   <title>سياسة الخصوصية | مملكة الإيموش - Emojiland</title>
 
-  <meta property="og:title" content="سياسة الخصوصية | مملكة الإيموش">
-  <meta property="og:description" content="تعرف على كيفية تعامل مملكة الإيموش مع بيانات الزوار وملفات تعريف الارتباط وإحصاءات الزيارات.">
+  <meta name="description" content="تعرف على سياسة الخصوصية في مملكة الإيموش. اكتشف كيف نتعامل مع المعلومات التقنية وملفات تعريف الارتباط وGoogle Analytics والإعلانات والروابط الخارجية وحقوق الزوار.">
+
+  <meta name="keywords" content="سياسة الخصوصية, مملكة الإيموش, Emojiland, حماية البيانات, خصوصية الزوار, ملفات تعريف الارتباط, Google Analytics, بيانات المستخدمين">
+
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Emojiland">
+
+  <link rel="canonical" href="https://emojiland.pages.dev/privacy.html">
+
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:site_name" content="مملكة الإيموش | Emojiland">
+  <meta property="og:title" content="سياسة الخصوصية | مملكة الإيموش">
+  <meta property="og:description" content="تعرف على كيفية تعامل مملكة الإيموش مع معلومات الزوار وملفات تعريف الارتباط وإحصاءات الزيارات والخدمات الخارجية.">
   <meta property="og:url" content="https://emojiland.pages.dev/privacy.html">
-  <meta property="og:site_name" content="مملكة الإيموش">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="سياسة الخصوصية | مملكة الإيموش">
+  <meta name="twitter:description" content="تعرف على ممارسات الخصوصية وحماية المعلومات في موقع مملكة الإيموش.">
 
   <link rel="stylesheet" href="style.css">
 
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-NZ00TSPTWC"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -29,88 +40,237 @@
   </script>
 
   <style>
+    .policy-page {
+      width: min(960px, 94%);
+      margin: 35px auto 50px;
+    }
+
     .policy-header {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      flex-wrap:wrap;
-      gap:14px;
-      padding:18px 5%;
-      background:#fff;
-      box-shadow:0 3px 15px rgba(0,0,0,.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 18px 5%;
+      background: #fff;
+      box-shadow: 0 3px 15px rgba(0,0,0,.05);
     }
+
     .policy-brand {
-      color:#7655c5;
-      font-size:21px;
-      font-weight:bold;
-      text-decoration:none;
+      color: #7655c5;
+      font-size: 21px;
+      font-weight: bold;
+      text-decoration: none;
     }
+
     .policy-actions {
-      display:flex;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
+
     .policy-actions a {
-      color:#7655c5;
-      text-decoration:none;
+      color: #7655c5;
+      text-decoration: none;
+      font-weight: 600;
     }
-    .policy-actions button {
-      border:1px solid #e5def5;
-      background:#fff;
-      padding:8px 13px;
-      border-radius:9px;
-      cursor:pointer;
+
+    .policy-actions a:hover,
+    .policy-footer a:hover {
+      text-decoration: underline;
     }
-    .policy-actions button.active {
-      background:#7655c5;
-      color:#fff;
+
+    .policy-language {
+      border: 1px solid #e5def5;
+      background: #7655c5;
+      color: #fff;
+      padding: 9px 15px;
+      border-radius: 9px;
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+      transition: opacity .2s, transform .2s;
     }
+
+    .policy-language:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+    }
+
     .policy-content {
-      width:min(900px,92%);
-      margin:45px auto;
-      padding:35px;
-      background:#fff;
-      border-radius:22px;
-      box-shadow:0 8px 35px rgba(30,25,60,.07);
-      line-height:2;
+      padding: 38px;
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 8px 35px rgba(30,25,60,.07);
+      line-height: 2;
     }
-    .policy-content h1 {
-      color:#7655c5;
-      font-size:clamp(26px,5vw,36px);
+
+    .policy-hero {
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, #f5f0ff, #fff7fc);
+      border: 1px solid #eee5ff;
     }
-    .policy-content h2 {
-      color:#302747;
-      font-size:21px;
-      margin-top:28px;
+
+    .policy-hero h1 {
+      color: #7655c5;
+      font-size: clamp(27px, 5vw, 37px);
+      line-height: 1.5;
+      margin: 0 0 15px;
     }
-    .policy-content p,
-    .policy-content li {
-      color:#626174;
-      font-size:16px;
+
+    .policy-hero p {
+      margin: 0;
+      color: #625d73;
+      font-size: 16px;
+      line-height: 2;
     }
-    .policy-content li {
-      margin-bottom:8px;
+
+    .policy-updated {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: #fff;
+      color: #7655c5;
+      font-size: 13px;
+      font-weight: 600;
     }
+
+    .policy-section {
+      padding: 23px 0;
+      border-bottom: 1px solid #eeeaf5;
+    }
+
+    .policy-section:last-of-type {
+      border-bottom: none;
+    }
+
+    .policy-section h2 {
+      color: #7655c5;
+      font-size: clamp(19px, 3vw, 23px);
+      line-height: 1.6;
+      margin: 0 0 15px;
+    }
+
+    .policy-section h3 {
+      color: #403454;
+      font-size: 18px;
+      line-height: 1.7;
+      margin: 20px 0 10px;
+    }
+
+    .policy-section p {
+      color: #626174;
+      font-size: 16px;
+      line-height: 2;
+      margin: 12px 0;
+    }
+
+    .policy-section ul {
+      padding-inline-start: 25px;
+      margin: 15px 0;
+    }
+
+    .policy-section li {
+      color: #626174;
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 10px;
+    }
+
+    .policy-highlight {
+      padding: 17px 20px;
+      margin: 18px 0;
+      border-radius: 12px;
+      background: #f8f5ff;
+      border-inline-start: 4px solid #7655c5;
+      color: #51466c;
+      line-height: 1.9;
+    }
+
+    .policy-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .policy-links a {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: #f3efff;
+      color: #7655c5;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background .2s;
+    }
+
+    .policy-links a:hover {
+      background: #e8e0ff;
+    }
+
     .policy-footer {
-      text-align:center;
-      padding:25px 15px;
-      color:#777;
-      font-size:14px;
+      text-align: center;
+      padding: 28px 15px;
+      color: #777;
+      font-size: 14px;
+      line-height: 2;
     }
+
     .policy-footer a {
-      color:#7655c5;
-      text-decoration:none;
-      margin:0 7px;
+      display: inline-block;
+      color: #7655c5;
+      text-decoration: none;
+      margin: 5px 9px;
+      font-weight: 600;
     }
-    @media(max-width:600px) {
-      .policy-content {
-        padding:23px 18px;
-        margin:25px auto;
+
+    .policy-footer p {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .policy-header {
+        padding: 15px 4%;
       }
-      .policy-content p,
-      .policy-content li {
-        font-size:15px;
+
+      .policy-brand {
+        font-size: 18px;
+      }
+
+      .policy-actions {
+        gap: 12px;
+      }
+
+      .policy-content {
+        padding: 21px 17px;
+        border-radius: 16px;
+      }
+
+      .policy-hero {
+        padding: 18px;
+      }
+
+      .policy-section {
+        padding: 19px 0;
+      }
+
+      .policy-section p,
+      .policy-section li,
+      .policy-hero p {
+        font-size: 15px;
+      }
+
+      .policy-links {
+        flex-direction: column;
+      }
+
+      .policy-links a {
+        text-align: center;
       }
     }
   </style>
@@ -118,115 +278,617 @@
 
 <body>
 
+  <!-- رأس الصفحة -->
   <header class="policy-header">
-    <a class="policy-brand" href="index.html">👑 مملكة الإيموش</a>
 
-    <div class="policy-actions">
-      <a href="index.html" data-i18n data-ar="الرئيسية" data-en="Home">الرئيسية</a>
-      <button type="button" data-lang="ar">العربية</button>
-      <button type="button" data-lang="en">English</button>
-    </div>
+    <a class="policy-brand" href="index.html">
+      👑 مملكة الإيموش
+    </a>
+
+    <nav class="policy-actions" aria-label="Main navigation">
+
+      <a href="index.html"
+         data-ar="🏠 الرئيسية"
+         data-en="🏠 Home">
+        🏠 الرئيسية
+      </a>
+
+      <button
+        id="languageButton"
+        class="policy-language"
+        type="button"
+        aria-label="Switch language">
+        English
+      </button>
+
+    </nav>
+
   </header>
 
-  <main class="policy-content">
+  <main class="policy-page">
 
-    <h1 data-i18n data-ar="سياسة الخصوصية في مملكة الإيموش" data-en="Emojiland Privacy Policy">سياسة الخصوصية في مملكة الإيموش</h1>
+    <article class="policy-content">
 
-    <p data-i18n
-       data-ar="نحن في مملكة الإيموش نحترم خصوصية زوارنا، ونحرص على توضيح كيفية التعامل مع المعلومات عند استخدام الموقع. توضح هذه الصفحة ممارسات الخصوصية الخاصة بنا، بما في ذلك المعلومات التقنية وملفات تعريف الارتباط وإحصاءات الزيارات."
-       data-en="At Emojiland, we respect our visitors' privacy and aim to explain how information is handled when using our website. This page describes our privacy practices, including technical information, cookies and website analytics.">
-      نحن في مملكة الإيموش نحترم خصوصية زوارنا، ونحرص على توضيح كيفية التعامل مع المعلومات عند استخدام الموقع. توضح هذه الصفحة ممارسات الخصوصية الخاصة بنا، بما في ذلك المعلومات التقنية وملفات تعريف الارتباط وإحصاءات الزيارات.
-    </p>
+      <!-- مقدمة السياسة -->
+      <section class="policy-hero">
 
-    <h2 data-i18n data-ar="1. المعلومات التي نجمعها" data-en="1. Information We Collect">1. المعلومات التي نجمعها</h2>
+        <h1
+          data-ar="🔒 سياسة الخصوصية في مملكة الإيموش"
+          data-en="🔒 Emojiland Privacy Policy">
+          🔒 سياسة الخصوصية في مملكة الإيموش
+        </h1>
 
-    <p data-i18n
-       data-ar="قد يتم جمع بعض المعلومات التقنية بصورة تلقائية عند زيارة الموقع، مثل نوع المتصفح والجهاز والصفحات التي تمت زيارتها ووقت الزيارة. لا نطلب من الزائر تقديم بيانات شخصية لاستخدام أدوات الإيموش والملصقات الأساسية. وقد تختلف المعلومات التي تتم معالجتها عند استخدام خدمات أخرى مثل نموذج التواصل."
-       data-en="Some technical information may be collected automatically when you visit the website, such as browser type, device type, pages visited and visit time. We do not require personal information to use the basic emoji and sticker tools. Information processed may differ when using other services, such as the contact form.">
-      قد يتم جمع بعض المعلومات التقنية بصورة تلقائية عند زيارة الموقع، مثل نوع المتصفح والجهاز والصفحات التي تمت زيارتها ووقت الزيارة. لا نطلب من الزائر تقديم بيانات شخصية لاستخدام أدوات الإيموش والملصقات الأساسية. وقد تختلف المعلومات التي تتم معالجتها عند استخدام خدمات أخرى مثل نموذج التواصل.
-    </p>
+        <p
+          data-ar="مرحبًا بك في مملكة الإيموش! 💜 نحن نهتم بخصوصية زوارنا ونؤمن بأهمية الشفافية والوضوح عند التعامل مع المعلومات. توضح هذه السياسة طبيعة المعلومات التي قد يتم جمعها أثناء استخدام الموقع، وكيفية الاستفادة منها، ودور الخدمات الخارجية مثل Google Analytics، بالإضافة إلى خياراتك المتعلقة بالخصوصية."
+          data-en="Welcome to Emojiland! 💜 We care about our visitors' privacy and believe in transparency when handling information. This policy explains what information may be collected while using the website, how it may be used, the role of third-party services such as Google Analytics, and the privacy choices available to visitors.">
+          مرحبًا بك في مملكة الإيموش! 💜 نحن نهتم بخصوصية زوارنا ونؤمن بأهمية الشفافية والوضوح عند التعامل مع المعلومات. توضح هذه السياسة طبيعة المعلومات التي قد يتم جمعها أثناء استخدام الموقع، وكيفية الاستفادة منها، ودور الخدمات الخارجية مثل Google Analytics، بالإضافة إلى خياراتك المتعلقة بالخصوصية.
+        </p>
 
-    <h2 data-i18n data-ar="2. ملفات تعريف الارتباط" data-en="2. Cookies">2. ملفات تعريف الارتباط</h2>
+        <span class="policy-updated"
+          data-ar="📅 آخر تحديث: 22 نوفمبر 2026"
+          data-en="📅 Last updated: November 22, 2026">
+          📅 آخر تحديث: 22 نوفمبر 2026
+        </span>
 
-    <p data-i18n
-       data-ar="قد يستخدم الموقع ملفات تعريف الارتباط أو تقنيات مشابهة لتحسين تجربة الاستخدام، وتذكر بعض التفضيلات مثل اللغة المختارة. ويمكنك التحكم في ملفات تعريف الارتباط من إعدادات المتصفح. وقد تستخدم بعض الخدمات الخارجية تقنيات مماثلة وفقاً لسياساتها الخاصة."
-       data-en="The website may use cookies or similar technologies to improve the experience and remember preferences such as the selected language. You can control cookies through your browser settings. Some third-party services may also use similar technologies according to their own policies.">
-      قد يستخدم الموقع ملفات تعريف الارتباط أو تقنيات مشابهة لتحسين تجربة الاستخدام، وتذكر بعض التفضيلات مثل اللغة المختارة. ويمكنك التحكم في ملفات تعريف الارتباط من إعدادات المتصفح. وقد تستخدم بعض الخدمات الخارجية تقنيات مماثلة وفقاً لسياساتها الخاصة.
-    </p>
+      </section>
 
-    <h2 data-i18n data-ar="3. إحصاءات الزيارات" data-en="3. Website Analytics">3. إحصاءات الزيارات</h2>
+      <!-- 1 -->
+      <section class="policy-section">
 
-    <p data-i18n
-       data-ar="نستخدم خدمة Google Analytics لفهم كيفية استخدام الزوار للموقع، مثل عدد الزيارات والصفحات الأكثر مشاهدة وبعض المعلومات التقنية المتعلقة بالمتصفح والجهاز. تساعدنا هذه المعلومات الإحصائية على تقييم أداء الموقع وتحسينه. تتم معالجة البيانات بواسطة Google وفقاً لسياساتها وإعدادات الخدمة."
-       data-en="We use Google Analytics to understand how visitors use the website, including visit counts, popular pages and certain technical information about browsers and devices. These statistics help us evaluate and improve the website. Data is processed by Google according to its policies and service settings.">
-      نستخدم خدمة Google Analytics لفهم كيفية استخدام الزوار للموقع، مثل عدد الزيارات والصفحات الأكثر مشاهدة وبعض المعلومات التقنية المتعلقة بالمتصفح والجهاز. تساعدنا هذه المعلومات الإحصائية على تقييم أداء الموقع وتحسينه. تتم معالجة البيانات بواسطة Google وفقاً لسياساتها وإعدادات الخدمة.
-    </p>
+        <h2
+          data-ar="1. 💜 مقدمة عن سياسة الخصوصية"
+          data-en="1. 💜 Introduction to This Privacy Policy">
+          1. 💜 مقدمة عن سياسة الخصوصية
+        </h2>
 
-    <h2 data-i18n data-ar="4. الإعلانات" data-en="4. Advertising">4. الإعلانات</h2>
+        <p
+          data-ar="مملكة الإيموش (Emojiland) موقع إلكتروني يقدم محتوى وأدوات مرتبطة بالإيموشات والرموز التعبيرية والملصقات، بهدف توفير تجربة سهلة وممتعة للزوار. نحن نحرص على أن يعرف كل زائر كيف تعمل الخدمات الأساسية في الموقع، وما المعلومات التقنية التي قد تتم معالجتها أثناء تصفحه."
+          data-en="Emojiland is a website offering emoji-related content, expressive symbols, and sticker tools designed to provide visitors with a simple and enjoyable experience. We want every visitor to understand how the website's basic features work and what technical information may be processed while browsing.">
+          مملكة الإيموش (Emojiland) موقع إلكتروني يقدم محتوى وأدوات مرتبطة بالإيموشات والرموز التعبيرية والملصقات، بهدف توفير تجربة سهلة وممتعة للزوار. نحن نحرص على أن يعرف كل زائر كيف تعمل الخدمات الأساسية في الموقع، وما المعلومات التقنية التي قد تتم معالجتها أثناء تصفحه.
+        </p>
 
-    <p data-i18n
-       data-ar="قد يعرض الموقع إعلانات من جهات خارجية في المستقبل، مثل Google AdSense. وقد تستخدم الجهات الإعلانية ملفات تعريف الارتباط أو تقنيات مشابهة لعرض الإعلانات وقياس أدائها، وفقاً لإعداداتها وسياساتها. سيتم تحديث هذه السياسة إذا تمت إضافة خدمات إعلانية إلى الموقع."
-       data-en="The website may display third-party advertisements in the future, such as Google AdSense. Advertising providers may use cookies or similar technologies to display ads and measure their performance, according to their settings and policies. This policy will be updated if advertising services are added to the website.">
-      قد يعرض الموقع إعلانات من جهات خارجية في المستقبل، مثل Google AdSense. وقد تستخدم الجهات الإعلانية ملفات تعريف الارتباط أو تقنيات مشابهة لعرض الإعلانات وقياس أدائها، وفقاً لإعداداتها وسياساتها. سيتم تحديث هذه السياسة إذا تمت إضافة خدمات إعلانية إلى الموقع.
-    </p>
+        <p
+          data-ar="باستخدامك للموقع، فإنك تقر بأنك اطلعت على هذه السياسة. إذا لم تكن موافقًا على أي جزء منها، يمكنك التوقف عن استخدام الموقع. وننصحك بمراجعة هذه الصفحة من وقت لآخر لمعرفة أي تحديثات قد تطرأ على ممارسات الخصوصية."
+          data-en="By using this website, you acknowledge that you have had the opportunity to read this policy. If you do not agree with any part of it, you may stop using the website. We recommend reviewing this page from time to time for updates to our privacy practices.">
+          باستخدامك للموقع، فإنك تقر بأنك اطلعت على هذه السياسة. إذا لم تكن موافقًا على أي جزء منها، يمكنك التوقف عن استخدام الموقع. وننصحك بمراجعة هذه الصفحة من وقت لآخر لمعرفة أي تحديثات قد تطرأ على ممارسات الخصوصية.
+        </p>
 
-    <h2 data-i18n data-ar="5. صانع الملصقات والملفات" data-en="5. Sticker Maker and Files">5. صانع الملصقات والملفات</h2>
+      </section>
 
-    <p data-i18n
-       data-ar="تتم معالجة الملصقات التي ينشئها المستخدم داخل المتصفح، وفقاً لوظائف الأداة المتاحة. لا يهدف صانع الملصقات إلى رفع التصاميم إلى خوادمنا. ومع ذلك، ننصح بعدم استخدام معلومات شخصية أو حساسة في التصاميم."
-       data-en="Stickers created by users are processed in the browser according to the tool's available functions. The sticker maker is not designed to upload designs to our servers. However, we recommend avoiding personal or sensitive information in designs.">
-      تتم معالجة الملصقات التي ينشئها المستخدم داخل المتصفح، وفقاً لوظائف الأداة المتاحة. لا يهدف صانع الملصقات إلى رفع التصاميم إلى خوادمنا. ومع ذلك، ننصح بعدم استخدام معلومات شخصية أو حساسة في التصاميم.
-    </p>
+      <!-- 2 -->
+      <section class="policy-section">
 
-    <h2 data-i18n data-ar="6. الروابط الخارجية" data-en="6. External Links">6. الروابط الخارجية</h2>
+        <h2
+          data-ar="2. 📋 المعلومات التي قد يتم جمعها"
+          data-en="2. 📋 Information That May Be Collected">
+          2. 📋 المعلومات التي قد يتم جمعها
+        </h2>
 
-    <p data-i18n
-       data-ar="قد يحتوي الموقع على روابط لمواقع أو خدمات أخرى. نحن لا نتحكم في سياسات الخصوصية أو محتوى تلك المواقع، لذلك ننصح بمراجعة سياساتها عند زيارتها."
-       data-en="The website may contain links to other websites or services. We do not control their privacy policies or content, so we recommend reviewing their policies when visiting them.">
-      قد يحتوي الموقع على روابط لمواقع أو خدمات أخرى. نحن لا نتحكم في سياسات الخصوصية أو محتوى تلك المواقع، لذلك ننصح بمراجعة سياساتها عند زيارتها.
-    </p>
+        <p
+          data-ar="قد تتم معالجة بعض المعلومات عند زيارة الموقع أو استخدام إحدى خدماته. وتختلف طبيعة هذه المعلومات بحسب طريقة الاستخدام والأدوات والخدمات التي يتم تشغيلها."
+          data-en="Certain information may be processed when you visit the website or use one of its services. The type of information depends on how you use the website and which tools or services are active.">
+          قد تتم معالجة بعض المعلومات عند زيارة الموقع أو استخدام إحدى خدماته. وتختلف طبيعة هذه المعلومات بحسب طريقة الاستخدام والأدوات والخدمات التي يتم تشغيلها.
+        </p>
 
-    <h2 data-i18n data-ar="7. حماية المعلومات" data-en="7. Information Security">7. حماية المعلومات</h2>
+        <h3
+          data-ar="🖥️ المعلومات التقنية ومعلومات التصفح"
+          data-en="🖥️ Technical and Browsing Information">
+          🖥️ المعلومات التقنية ومعلومات التصفح
+        </h3>
 
-    <p data-i18n
-       data-ar="نعمل على اتخاذ خطوات معقولة للمحافظة على سلامة الموقع وتقليل المخاطر التقنية، لكن لا يمكن ضمان أمان أي خدمة عبر الإنترنت بصورة مطلقة."
-       data-en="We take reasonable steps to maintain website security and reduce technical risks, but no online service can guarantee absolute security.">
-      نعمل على اتخاذ خطوات معقولة للمحافظة على سلامة الموقع وتقليل المخاطر التقنية، لكن لا يمكن ضمان أمان أي خدمة عبر الإنترنت بصورة مطلقة.
-    </p>
+        <p
+          data-ar="قد تشمل المعلومات التقنية التي تتم معالجتها تلقائيًا بعض التفاصيل المتعلقة بطريقة الوصول إلى الموقع، مثل:"
+          data-en="Technical information that may be processed automatically can include certain details about how the website is accessed, such as:">
+          قد تشمل المعلومات التقنية التي تتم معالجتها تلقائيًا بعض التفاصيل المتعلقة بطريقة الوصول إلى الموقع، مثل:
+        </p>
 
-    <h2 data-i18n data-ar="8. التعديلات على سياسة الخصوصية" data-en="8. Changes to This Policy">8. التعديلات على سياسة الخصوصية</h2>
+        <ul>
+          <li data-ar="نوع المتصفح وإصداره." data-en="Browser type and version.">
+            نوع المتصفح وإصداره.
+          </li>
+          <li data-ar="نوع الجهاز ونظام التشغيل." data-en="Device type and operating system.">
+            نوع الجهاز ونظام التشغيل.
+          </li>
+          <li data-ar="الصفحات التي تمت زيارتها ومدة التصفح التقريبية." data-en="Pages visited and approximate browsing duration.">
+            الصفحات التي تمت زيارتها ومدة التصفح التقريبية.
+          </li>
+          <li data-ar="مصدر الوصول إلى الموقع، عندما تكون هذه المعلومة متاحة." data-en="The source through which you reached the website, when available.">
+            مصدر الوصول إلى الموقع، عندما تكون هذه المعلومة متاحة.
+          </li>
+          <li data-ar="بيانات تقنية ضرورية لتشغيل الموقع وتشخيص المشكلات." data-en="Technical data needed to operate the website and diagnose issues.">
+            بيانات تقنية ضرورية لتشغيل الموقع وتشخيص المشكلات.
+          </li>
+        </ul>
 
-    <p data-i18n
-       data-ar="قد نقوم بتحديث هذه السياسة عند تطوير الموقع أو إضافة خدمات جديدة. سيتم نشر أي تحديث في هذه الصفحة، ويُنصح بمراجعتها من وقت لآخر."
-       data-en="We may update this policy as the website develops or new services are added. Any updates will be published on this page, and visitors are encouraged to review it from time to time.">
-      قد نقوم بتحديث هذه السياسة عند تطوير الموقع أو إضافة خدمات جديدة. سيتم نشر أي تحديث في هذه الصفحة، ويُنصح بمراجعتها من وقت لآخر.
-    </p>
+        <h3
+          data-ar="👤 المعلومات التي يقدمها الزائر بنفسه"
+          data-en="👤 Information You Choose to Provide">
+          👤 المعلومات التي يقدمها الزائر بنفسه
+        </h3>
 
-    <h2 data-i18n data-ar="9. التواصل معنا" data-en="9. Contact Us">9. التواصل معنا</h2>
+        <p
+          data-ar="لا تتطلب الوظائف الأساسية لتصفح الإيموشات واستخدام مكتبة الملصقات تقديم اسمك أو رقم هاتفك أو بيانات شخصية. ومع ذلك، إذا أضفنا أو وفرنا نموذجًا للتواصل أو وسيلة أخرى لإرسال رسالة، فقد تتم معالجة المعلومات التي تختار إرسالها، مثل عنوان البريد الإلكتروني ومحتوى الرسالة، بغرض الرد على استفسارك."
+          data-en="The basic emoji browsing and sticker library features do not require you to provide your name, phone number, or personal details. However, if you use a contact form or another messaging method, information you choose to submit, such as your email address and message content, may be processed so that we can respond to your inquiry.">
+          لا تتطلب الوظائف الأساسية لتصفح الإيموشات واستخدام مكتبة الملصقات تقديم اسمك أو رقم هاتفك أو بيانات شخصية. ومع ذلك، إذا أضفنا أو وفرنا نموذجًا للتواصل أو وسيلة أخرى لإرسال رسالة، فقد تتم معالجة المعلومات التي تختار إرسالها، مثل عنوان البريد الإلكتروني ومحتوى الرسالة، بغرض الرد على استفسارك.
+        </p>
 
-    <p data-i18n
-       data-ar="إذا كان لديك سؤال حول سياسة الخصوصية أو طريقة التعامل مع المعلومات في الموقع، يمكنك التواصل معنا من خلال صفحة اتصل بنا."
-       data-en="If you have questions about this Privacy Policy or how information is handled on the website, you can contact us through our Contact page.">
-      إذا كان لديك سؤال حول سياسة الخصوصية أو طريقة التعامل مع المعلومات في الموقع، يمكنك التواصل معنا من خلال صفحة اتصل بنا.
-    </p>
+        <div class="policy-highlight"
+          data-ar="💡 نحرص على عدم طلب معلومات شخصية لا تحتاج إليها الوظائف الأساسية للموقع. لا ترسل كلمات مرور أو بيانات مالية أو معلومات حساسة عبر أي وسيلة تواصل غير مخصصة لذلك."
+          data-en="💡 We aim not to request personal information that is unnecessary for the website's basic features. Do not send passwords, financial details, or sensitive information through communication channels that are not designed for them.">
+          💡 نحرص على عدم طلب معلومات شخصية لا تحتاج إليها الوظائف الأساسية للموقع. لا ترسل كلمات مرور أو بيانات مالية أو معلومات حساسة عبر أي وسيلة تواصل غير مخصصة لذلك.
+        </div>
 
-    <a href="contact.html" style="color:#7655c5;font-weight:bold"
-       data-i18n data-ar="الانتقال إلى صفحة اتصل بنا" data-en="Visit our Contact Page">
-      الانتقال إلى صفحة اتصل بنا
-    </a>
+      </section>
+
+      <!-- 3 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="3. 🍪 ملفات تعريف الارتباط وتقنيات التخزين"
+          data-en="3. 🍪 Cookies and Storage Technologies">
+          3. 🍪 ملفات تعريف الارتباط وتقنيات التخزين
+        </h2>
+
+        <p
+          data-ar="ملفات تعريف الارتباط (Cookies) هي ملفات صغيرة قد تحفظها المواقع في متصفحك لأغراض مختلفة، مثل تذكر بعض الإعدادات أو قياس استخدام الموقع. وقد تستخدم بعض الخدمات الخارجية تقنيات مشابهة وفقًا لطريقة عملها وسياساتها."
+          data-en="Cookies are small files that websites may store in your browser for various purposes, such as remembering settings or measuring website usage. Some third-party services may use similar technologies according to their functionality and policies.">
+          ملفات تعريف الارتباط (Cookies) هي ملفات صغيرة قد تحفظها المواقع في متصفحك لأغراض مختلفة، مثل تذكر بعض الإعدادات أو قياس استخدام الموقع. وقد تستخدم بعض الخدمات الخارجية تقنيات مشابهة وفقًا لطريقة عملها وسياساتها.
+        </p>
+
+        <h3
+          data-ar="⚙️ تذكر تفضيلات اللغة"
+          data-en="⚙️ Remembering Language Preferences">
+          ⚙️ تذكر تفضيلات اللغة
+        </h3>
+
+        <p
+          data-ar="يستخدم الموقع التخزين المحلي في المتصفح (localStorage) لحفظ اختيار اللغة العربية أو الإنجليزية، حتى لا يحتاج الزائر إلى تغيير اللغة في كل مرة ينتقل فيها بين صفحات الموقع. هذه الآلية تختلف عن ملفات تعريف الارتباط التقليدية، ويمكن إدارة بيانات التخزين المحلي من إعدادات المتصفح."
+          data-en="The website uses browser local storage (localStorage) to remember whether you selected Arabic or English, so you do not need to change the language every time you move between pages. This mechanism is different from traditional cookies, and local storage data can be managed through your browser settings.">
+          يستخدم الموقع التخزين المحلي في المتصفح (localStorage) لحفظ اختيار اللغة العربية أو الإنجليزية، حتى لا يحتاج الزائر إلى تغيير اللغة في كل مرة ينتقل فيها بين صفحات الموقع. هذه الآلية تختلف عن ملفات تعريف الارتباط التقليدية، ويمكن إدارة بيانات التخزين المحلي من إعدادات المتصفح.
+        </p>
+
+        <h3
+          data-ar="🧩 التحكم في ملفات تعريف الارتباط"
+          data-en="🧩 Managing Cookies">
+          🧩 التحكم في ملفات تعريف الارتباط
+        </h3>
+
+        <p
+          data-ar="تتيح معظم المتصفحات إمكانية التحكم في ملفات تعريف الارتباط أو حذفها أو منع بعضها من خلال إعدادات الخصوصية. لكن تعطيل بعض التقنيات قد يؤثر في طريقة عمل بعض الخدمات أو المزايا الخارجية."
+          data-en="Most browsers allow you to manage, delete, or block cookies through their privacy settings. However, disabling certain technologies may affect how some external services or features work.">
+          تتيح معظم المتصفحات إمكانية التحكم في ملفات تعريف الارتباط أو حذفها أو منع بعضها من خلال إعدادات الخصوصية. لكن تعطيل بعض التقنيات قد يؤثر في طريقة عمل بعض الخدمات أو المزايا الخارجية.
+        </p>
+
+      </section>
+
+      <!-- 4 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="4. 📊 Google Analytics وإحصاءات الزيارات"
+          data-en="4. 📊 Google Analytics and Website Analytics">
+          4. 📊 Google Analytics وإحصاءات الزيارات
+        </h2>
+
+        <p
+          data-ar="نستخدم خدمة Google Analytics لمساعدتنا على فهم كيفية تفاعل الزوار مع مملكة الإيموش. تساعدنا الإحصاءات على معرفة الصفحات التي تحظى باهتمام أكبر، ومدى استخدام الموقع، واكتشاف بعض المشكلات التي قد تؤثر في تجربة التصفح."
+          data-en="We use Google Analytics to help us understand how visitors interact with Emojiland. Analytics help us identify popular pages, understand website usage, and discover issues that may affect the browsing experience.">
+          نستخدم خدمة Google Analytics لمساعدتنا على فهم كيفية تفاعل الزوار مع مملكة الإيموش. تساعدنا الإحصاءات على معرفة الصفحات التي تحظى باهتمام أكبر، ومدى استخدام الموقع، واكتشاف بعض المشكلات التي قد تؤثر في تجربة التصفح.
+        </p>
+
+        <h3
+          data-ar="📈 ما نوع المعلومات الإحصائية؟"
+          data-en="📈 What Analytics Information May Be Used?">
+          📈 ما نوع المعلومات الإحصائية؟
+        </h3>
+
+        <p
+          data-ar="بحسب إعدادات الخدمة وطريقة استخدامها، قد تشمل البيانات الإحصائية معلومات مثل:"
+          data-en="Depending on the service settings and implementation, analytics data may include information such as:">
+          بحسب إعدادات الخدمة وطريقة استخدامها، قد تشمل البيانات الإحصائية معلومات مثل:
+        </p>
+
+        <ul>
+          <li data-ar="عدد الزيارات ومشاهدات الصفحات." data-en="Visit counts and page views.">
+            عدد الزيارات ومشاهدات الصفحات.
+          </li>
+          <li data-ar="الصفحات والأقسام الأكثر استخدامًا." data-en="The most frequently visited pages and sections.">
+            الصفحات والأقسام الأكثر استخدامًا.
+          </li>
+          <li data-ar="معلومات عامة عن المتصفح والجهاز." data-en="General browser and device information.">
+            معلومات عامة عن المتصفح والجهاز.
+          </li>
+          <li data-ar="مدة التفاعل مع الموقع وبعض مؤشرات الاستخدام." data-en="Engagement duration and certain usage indicators.">
+            مدة التفاعل مع الموقع وبعض مؤشرات الاستخدام.
+          </li>
+        </ul>
+
+        <p
+          data-ar="تتم معالجة البيانات التي تجمعها Google وفقًا لشروطها وسياسات الخصوصية الخاصة بها وإعدادات الخدمة المستخدمة. نحن نستفيد من التقارير الإحصائية لتحسين المحتوى والأداء، ولا نستخدم هذه التقارير بهدف التعرف المباشر على هوية الزائر."
+          data-en="Data collected by Google is processed according to Google's terms, privacy policies, and the settings of the service in use. We use analytics reports to improve content and performance, not to directly identify individual visitors.">
+          تتم معالجة البيانات التي تجمعها Google وفقًا لشروطها وسياسات الخصوصية الخاصة بها وإعدادات الخدمة المستخدمة. نحن نستفيد من التقارير الإحصائية لتحسين المحتوى والأداء، ولا نستخدم هذه التقارير بهدف التعرف المباشر على هوية الزائر.
+        </p>
+
+        <p>
+          <a href="https://policies.google.com/privacy"
+             target="_blank"
+             rel="noopener noreferrer"
+             style="color:#7655c5;font-weight:bold"
+             data-ar="🔗 الاطلاع على سياسة خصوصية Google"
+             data-en="🔗 Read Google's Privacy Policy">
+            🔗 الاطلاع على سياسة خصوصية Google
+          </a>
+        </p>
+
+      </section>
+
+      <!-- 5 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="5. 📢 الإعلانات والخدمات الإعلانية"
+          data-en="5. 📢 Advertising and Advertising Services">
+          5. 📢 الإعلانات والخدمات الإعلانية
+        </h2>
+
+        <p
+          data-ar="قد نستخدم خدمات إعلانية تابعة لجهات خارجية في الموقع مستقبلًا، بهدف دعم استمراره وتطوير محتواه وأدواته. ومن أمثلة هذه الخدمات Google AdSense، إذا تمت إضافتها وتفعيلها."
+          data-en="We may use third-party advertising services on the website in the future to support its operation and help develop its content and tools. One possible example is Google AdSense, if it is added and activated.">
+          قد نستخدم خدمات إعلانية تابعة لجهات خارجية في الموقع مستقبلًا، بهدف دعم استمراره وتطوير محتواه وأدواته. ومن أمثلة هذه الخدمات Google AdSense، إذا تمت إضافتها وتفعيلها.
+        </p>
+
+        <p
+          data-ar="قد تستخدم الجهات الإعلانية تقنيات مثل ملفات تعريف الارتباط أو معرّفات الإعلانات أو تقنيات مشابهة، وفقًا لإعدادات الخدمة والسياسات المعمول بها، وذلك لأغراض عرض الإعلانات أو قياس أدائها أو تخصيصها حيثما يسمح بذلك."
+          data-en="Advertising providers may use technologies such as cookies, advertising identifiers, or similar technologies according to their service settings and applicable policies. These technologies may be used to display ads, measure their performance, or personalize them where permitted.">
+          قد تستخدم الجهات الإعلانية تقنيات مثل ملفات تعريف الارتباط أو معرّفات الإعلانات أو تقنيات مشابهة، وفقًا لإعدادات الخدمة والسياسات المعمول بها، وذلك لأغراض عرض الإعلانات أو قياس أدائها أو تخصيصها حيثما يسمح بذلك.
+        </p>
+
+        <div class="policy-highlight"
+          data-ar="ℹ️ إذا تمت إضافة خدمات إعلانية إلى الموقع، فسنحرص على تحديث هذه الصفحة لتوضيح أي تغييرات مهمة في طريقة استخدام التقنيات الإعلانية."
+          data-en="ℹ️ If advertising services are added to the website, we will update this page to explain any important changes in how advertising technologies are used.">
+          ℹ️ إذا تمت إضافة خدمات إعلانية إلى الموقع، فسنحرص على تحديث هذه الصفحة لتوضيح أي تغييرات مهمة في طريقة استخدام التقنيات الإعلانية.
+        </div>
+
+      </section>
+
+      <!-- 6 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="6. 🎨 أدوات الإيموش وصانع الملصقات"
+          data-en="6. 🎨 Emoji Tools and Sticker Maker">
+          6. 🎨 أدوات الإيموش وصانع الملصقات
+        </h2>
+
+        <p
+          data-ar="تتيح مملكة الإيموش مجموعة من الأدوات التي تساعدك على تصفح الرموز التعبيرية ونسخها واستخدام الملصقات وإنشاء تصميماتك الخاصة. ونعمل على توفير تجربة بسيطة لا تتطلب إدخال بيانات شخصية لاستخدام الوظائف الأساسية."
+          data-en="Emojiland provides tools that allow you to browse and copy emojis, use stickers, and create your own designs. We aim to provide a simple experience that does not require personal information for the basic features.">
+          تتيح مملكة الإيموش مجموعة من الأدوات التي تساعدك على تصفح الرموز التعبيرية ونسخها واستخدام الملصقات وإنشاء تصميماتك الخاصة. ونعمل على توفير تجربة بسيطة لا تتطلب إدخال بيانات شخصية لاستخدام الوظائف الأساسية.
+        </p>
+
+        <h3
+          data-ar="🖌️ إنشاء الملصقات"
+          data-en="🖌️ Creating Stickers">
+          🖌️ إنشاء الملصقات
+        </h3>
+
+        <p
+          data-ar="يستخدم صانع الملصقات عناصر المتصفح، مثل Canvas، لإنشاء معاينة التصميم وتجهيزه للتنزيل. وتتم عملية إنشاء التصميم داخل المتصفح وفقًا لوظائف الأداة الحالية، ولا يُقصد بها رفع التصميمات التي تنشئها إلى خوادم الموقع."
+          data-en="The sticker maker uses browser features such as Canvas to preview and prepare designs for download. Sticker creation takes place in the browser according to the tool's current functionality and is not intended to upload your designs to the website's servers.">
+          يستخدم صانع الملصقات عناصر المتصفح، مثل Canvas، لإنشاء معاينة التصميم وتجهيزه للتنزيل. وتتم عملية إنشاء التصميم داخل المتصفح وفقًا لوظائف الأداة الحالية، ولا يُقصد بها رفع التصميمات التي تنشئها إلى خوادم الموقع.
+        </p>
+
+        <h3
+          data-ar="📥 الصور والملفات التي يتم تنزيلها"
+          data-en="📥 Downloaded Images and Files">
+          📥 الصور والملفات التي يتم تنزيلها
+        </h3>
+
+        <p
+          data-ar="عند استخدام زر التنزيل، يتم تجهيز الملف وحفظه على جهازك من خلال المتصفح. نحن لا نحتاج إلى معرفة محتوى الملفات التي تحفظها على جهازك لاستخدام هذه الوظيفة."
+          data-en="When you use a download button, the file is prepared and saved to your device through the browser. We do not need to know the contents of files saved on your device to provide this feature.">
+          عند استخدام زر التنزيل، يتم تجهيز الملف وحفظه على جهازك من خلال المتصفح. نحن لا نحتاج إلى معرفة محتوى الملفات التي تحفظها على جهازك لاستخدام هذه الوظيفة.
+        </p>
+
+        <div class="policy-highlight"
+          data-ar="💡 ننصح بعدم إدخال كلمات مرور أو معلومات شخصية أو بيانات حساسة في أي نص أو تصميم تنشئه باستخدام أدوات الموقع."
+          data-en="💡 We recommend that you do not enter passwords, personal information, or sensitive data into any text or design created using the website's tools.">
+          💡 ننصح بعدم إدخال كلمات مرور أو معلومات شخصية أو بيانات حساسة في أي نص أو تصميم تنشئه باستخدام أدوات الموقع.
+        </div>
+
+      </section>
+
+      <!-- 7 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="7. 🔗 الروابط والمواقع الخارجية"
+          data-en="7. 🔗 External Links and Websites">
+          7. 🔗 الروابط والمواقع الخارجية
+        </h2>
+
+        <p
+          data-ar="قد تتضمن بعض صفحات مملكة الإيموش روابط لمواقع أو خدمات خارجية، مثل خدمات Google أو مصادر الصور أو الأدوات المساندة. يتم توفير هذه الروابط لتسهيل الوصول إلى خدمات أو معلومات إضافية."
+          data-en="Some Emojiland pages may contain links to external websites or services, such as Google services, image sources, or supporting tools. These links are provided to make additional services or information easier to access.">
+          قد تتضمن بعض صفحات مملكة الإيموش روابط لمواقع أو خدمات خارجية، مثل خدمات Google أو مصادر الصور أو الأدوات المساندة. يتم توفير هذه الروابط لتسهيل الوصول إلى خدمات أو معلومات إضافية.
+        </p>
+
+        <p
+          data-ar="عند الانتقال إلى موقع خارجي، تصبح خاضعًا لسياسة الخصوصية وشروط الاستخدام الخاصة بذلك الموقع. نحن لا نتحكم في طريقة جمع المعلومات أو استخدامها من قبل الجهات الخارجية، ولذلك ننصح بمراجعة سياساتها قبل مشاركة أي بيانات معها."
+          data-en="When you visit an external website, you become subject to that website's privacy policy and terms of use. We do not control how external providers collect or use information, so we recommend reviewing their policies before sharing any data with them.">
+          عند الانتقال إلى موقع خارجي، تصبح خاضعًا لسياسة الخصوصية وشروط الاستخدام الخاصة بذلك الموقع. نحن لا نتحكم في طريقة جمع المعلومات أو استخدامها من قبل الجهات الخارجية، ولذلك ننصح بمراجعة سياساتها قبل مشاركة أي بيانات معها.
+        </p>
+
+      </section>
+
+      <!-- 8 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="8. 🛡️ حماية المعلومات وأمن الموقع"
+          data-en="8. 🛡️ Information Protection and Website Security">
+          8. 🛡️ حماية المعلومات وأمن الموقع
+        </h2>
+
+        <p
+          data-ar="نهتم بالحفاظ على سلامة الموقع وتوفير تجربة تصفح مستقرة وآمنة قدر الإمكان. ونعمل على استخدام الممارسات التقنية المناسبة لتقليل المشكلات والمخاطر التي قد تؤثر في تشغيل الموقع."
+          data-en="We care about maintaining the website's integrity and providing a stable and secure browsing experience wherever possible. We aim to use appropriate technical practices to reduce issues and risks that may affect website operation.">
+          نهتم بالحفاظ على سلامة الموقع وتوفير تجربة تصفح مستقرة وآمنة قدر الإمكان. ونعمل على استخدام الممارسات التقنية المناسبة لتقليل المشكلات والمخاطر التي قد تؤثر في تشغيل الموقع.
+        </p>
+
+        <p
+          data-ar="ومع ذلك، لا توجد وسيلة لنقل المعلومات عبر الإنترنت أو تخزينها إلكترونيًا يمكن ضمان أمانها بنسبة 100%. لذلك لا يمكننا تقديم ضمان مطلق ضد جميع المخاطر التقنية أو محاولات الوصول غير المصرح به."
+          data-en="However, no method of transmitting information over the internet or storing it electronically can be guaranteed to be 100% secure. Therefore, we cannot provide an absolute guarantee against all technical risks or unauthorized access attempts.">
+          ومع ذلك، لا توجد وسيلة لنقل المعلومات عبر الإنترنت أو تخزينها إلكترونيًا يمكن ضمان أمانها بنسبة 100%. لذلك لا يمكننا تقديم ضمان مطلق ضد جميع المخاطر التقنية أو محاولات الوصول غير المصرح به.
+        </p>
+
+      </section>
+
+      <!-- 9 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="9. 🌍 مشاركة المعلومات ومعالجتها"
+          data-en="9. 🌍 Information Sharing and Processing">
+          9. 🌍 مشاركة المعلومات ومعالجتها
+        </h2>
+
+        <p
+          data-ar="لا نبيع المعلومات الشخصية التي يقدمها الزوار إلى أطراف أخرى. ومع ذلك، قد تتم معالجة بعض المعلومات التقنية بواسطة مزودي الخدمات الذين يعتمد عليهم الموقع في تشغيل خدماته، مثل خدمات التحليلات أو الاستضافة أو الخدمات الخارجية التي يختار الزائر استخدامها."
+          data-en="We do not sell personal information submitted by visitors to other parties. However, certain technical information may be processed by service providers that support the website, such as analytics, hosting, or external services that visitors choose to use.">
+          لا نبيع المعلومات الشخصية التي يقدمها الزوار إلى أطراف أخرى. ومع ذلك، قد تتم معالجة بعض المعلومات التقنية بواسطة مزودي الخدمات الذين يعتمد عليهم الموقع في تشغيل خدماته، مثل خدمات التحليلات أو الاستضافة أو الخدمات الخارجية التي يختار الزائر استخدامها.
+        </p>
+
+        <p
+          data-ar="وقد تتم مشاركة المعلومات أو معالجتها إذا كان ذلك مطلوبًا بموجب القانون أو استجابة لطلب قانوني صحيح، أو عند الحاجة إلى حماية الموقع ومستخدميه من إساءة الاستخدام أو الأنشطة الضارة."
+          data-en="Information may also be shared or processed when required by law or in response to a valid legal request, or when necessary to protect the website and its users from misuse or harmful activities.">
+          وقد تتم مشاركة المعلومات أو معالجتها إذا كان ذلك مطلوبًا بموجب القانون أو استجابة لطلب قانوني صحيح، أو عند الحاجة إلى حماية الموقع ومستخدميه من إساءة الاستخدام أو الأنشطة الضارة.
+        </p>
+
+      </section>
+
+      <!-- 10 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="10. 🧭 خيارات الزائر وحقوق الخصوصية"
+          data-en="10. 🧭 Visitor Choices and Privacy Rights">
+          10. 🧭 خيارات الزائر وحقوق الخصوصية
+        </h2>
+
+        <p
+          data-ar="نؤمن بأهمية تمكين الزائر من التحكم في تجربته الرقمية. ويمكنك الاستفادة من بعض الخيارات المتاحة في المتصفح والخدمات الخارجية لإدارة بيانات التصفح والتفضيلات."
+          data-en="We believe visitors should have meaningful control over their digital experience. You can use certain browser and third-party service options to manage browsing data and preferences.">
+          نؤمن بأهمية تمكين الزائر من التحكم في تجربته الرقمية. ويمكنك الاستفادة من بعض الخيارات المتاحة في المتصفح والخدمات الخارجية لإدارة بيانات التصفح والتفضيلات.
+        </p>
+
+        <ul>
+          <li data-ar="إدارة ملفات تعريف الارتباط من إعدادات المتصفح." data-en="Manage cookies through your browser settings.">
+            إدارة ملفات تعريف الارتباط من إعدادات المتصفح.
+          </li>
+          <li data-ar="حذف بيانات التخزين المحلي التي تحفظ تفضيلات اللغة." data-en="Delete local storage data that saves language preferences.">
+            حذف بيانات التخزين المحلي التي تحفظ تفضيلات اللغة.
+          </li>
+          <li data-ar="استخدام إعدادات الخصوصية المتاحة في خدمات الجهات الخارجية." data-en="Use the privacy settings available in third-party services.">
+            استخدام إعدادات الخصوصية المتاحة في خدمات الجهات الخارجية.
+          </li>
+          <li data-ar="التواصل معنا لطرح استفسار متعلق بالخصوصية." data-en="Contact us with a privacy-related question.">
+            التواصل معنا لطرح استفسار متعلق بالخصوصية.
+          </li>
+        </ul>
+
+        <p
+          data-ar="قد تختلف الحقوق والخيارات القانونية المتاحة من دولة إلى أخرى بحسب القوانين المعمول بها. وسنتعامل مع طلبات الخصوصية وفقًا للمتطلبات القانونية التي تنطبق على الموقع."
+          data-en="The legal rights and choices available may vary from country to country depending on applicable laws. We will handle privacy requests according to the legal requirements that apply to the website.">
+          قد تختلف الحقوق والخيارات القانونية المتاحة من دولة إلى أخرى بحسب القوانين المعمول بها. وسنتعامل مع طلبات الخصوصية وفقًا للمتطلبات القانونية التي تنطبق على الموقع.
+        </p>
+
+      </section>
+
+      <!-- 11 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="11. 👶 خصوصية الأطفال"
+          data-en="11. 👶 Children's Privacy">
+          11. 👶 خصوصية الأطفال
+        </h2>
+
+        <p
+          data-ar="مملكة الإيموش موقع يقدم محتوى ترفيهيًا وأدوات مرتبطة بالرموز التعبيرية. ولا نهدف إلى جمع معلومات شخصية من الأطفال عن قصد. إذا كنت ولي أمر أو وصيًا وتعتقد أن طفلًا قد أرسل إلينا معلومات شخصية دون موافقتك، يرجى التواصل معنا حتى نتمكن من مراجعة الأمر واتخاذ الإجراء المناسب وفقًا لما هو متاح."
+          data-en="Emojiland provides entertainment content and emoji-related tools. We do not intend to knowingly collect personal information from children. If you are a parent or guardian and believe that a child has submitted personal information to us without your consent, please contact us so we can review the matter and take appropriate action where possible.">
+          مملكة الإيموش موقع يقدم محتوى ترفيهيًا وأدوات مرتبطة بالرموز التعبيرية. ولا نهدف إلى جمع معلومات شخصية من الأطفال عن قصد. إذا كنت ولي أمر أو وصيًا وتعتقد أن طفلًا قد أرسل إلينا معلومات شخصية دون موافقتك، يرجى التواصل معنا حتى نتمكن من مراجعة الأمر واتخاذ الإجراء المناسب وفقًا لما هو متاح.
+        </p>
+
+      </section>
+
+      <!-- 12 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="12. 🔄 التغييرات والتحديثات على سياسة الخصوصية"
+          data-en="12. 🔄 Changes and Updates to This Privacy Policy">
+          12. 🔄 التغييرات والتحديثات على سياسة الخصوصية
+        </h2>
+
+        <p
+          data-ar="قد نحتاج إلى تحديث سياسة الخصوصية من وقت لآخر نتيجة تطوير الموقع أو إضافة أدوات وخصائص جديدة أو استخدام خدمات خارجية إضافية أو بسبب تغييرات في المتطلبات القانونية."
+          data-en="We may need to update this Privacy Policy from time to time as the website develops, new tools and features are introduced, additional external services are used, or legal requirements change.">
+          قد نحتاج إلى تحديث سياسة الخصوصية من وقت لآخر نتيجة تطوير الموقع أو إضافة أدوات وخصائص جديدة أو استخدام خدمات خارجية إضافية أو بسبب تغييرات في المتطلبات القانونية.
+        </p>
+
+        <p
+          data-ar="سيتم نشر النسخة المحدثة من السياسة في هذه الصفحة مع تعديل تاريخ آخر تحديث عند إجراء تغييرات جوهرية. استمرارك في استخدام الموقع بعد نشر التحديثات يعني أنك اطلعت على النسخة المنشورة."
+          data-en="The updated version of this policy will be published on this page, and the last-updated date will be changed when material updates are made. Continuing to use the website after updates are published means that you have had the opportunity to review the published version.">
+          سيتم نشر النسخة المحدثة من السياسة في هذه الصفحة مع تعديل تاريخ آخر تحديث عند إجراء تغييرات جوهرية. استمرارك في استخدام الموقع بعد نشر التحديثات يعني أنك اطلعت على النسخة المنشورة.
+        </p>
+
+      </section>
+
+      <!-- 13 -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="13. 📩 التواصل والاستفسارات المتعلقة بالخصوصية"
+          data-en="13. 📩 Privacy Questions and Contact">
+          13. 📩 التواصل والاستفسارات المتعلقة بالخصوصية
+        </h2>
+
+        <p
+          data-ar="إذا كان لديك سؤال أو استفسار حول سياسة الخصوصية أو طريقة التعامل مع المعلومات في مملكة الإيموش، يمكنك زيارة صفحة اتصل بنا وإرسال استفسارك من خلال وسيلة التواصل المتاحة هناك."
+          data-en="If you have a question about this Privacy Policy or how information is handled at Emojiland, you can visit our Contact page and send your inquiry using the available contact method.">
+          إذا كان لديك سؤال أو استفسار حول سياسة الخصوصية أو طريقة التعامل مع المعلومات في مملكة الإيموش، يمكنك زيارة صفحة اتصل بنا وإرسال استفسارك من خلال وسيلة التواصل المتاحة هناك.
+        </p>
+
+        <div class="policy-links">
+          <a href="contact.html"
+             data-ar="📨 الانتقال إلى صفحة اتصل بنا"
+             data-en="📨 Visit the Contact Page">
+            📨 الانتقال إلى صفحة اتصل بنا
+          </a>
+        </div>
+
+      </section>
+
+      <!-- خاتمة -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="💜 خصوصيتك مهمة بالنسبة لنا"
+          data-en="💜 Your Privacy Matters to Us">
+          💜 خصوصيتك مهمة بالنسبة لنا
+        </h2>
+
+        <p
+          data-ar="نشكرك على زيارة مملكة الإيموش واستخدام أدواتنا ومحتوانا. نعمل باستمرار على تطوير الموقع وتحسين تجربة استخدامه، مع الحرص على الوضوح بشأن ممارسات الخصوصية والخدمات التي نعتمد عليها. هدفنا أن تستمتع بتجربة سهلة ومفيدة وآمنة قدر الإمكان."
+          data-en="Thank you for visiting Emojiland and using our tools and content. We continuously work to improve the website and its user experience while remaining clear about our privacy practices and the services we rely on. Our goal is to provide an experience that is simple, useful, and as safe as reasonably possible.">
+          نشكرك على زيارة مملكة الإيموش واستخدام أدواتنا ومحتوانا. نعمل باستمرار على تطوير الموقع وتحسين تجربة استخدامه، مع الحرص على الوضوح بشأن ممارسات الخصوصية والخدمات التي نعتمد عليها. هدفنا أن تستمتع بتجربة سهلة ومفيدة وآمنة قدر الإمكان.
+        </p>
+
+      </section>
+
+      <!-- روابط الصفحات الأساسية -->
+      <section class="policy-section">
+
+        <h2
+          data-ar="🌐 اكتشف المزيد عن مملكة الإيموش"
+          data-en="🌐 Learn More About Emojiland">
+          🌐 اكتشف المزيد عن مملكة الإيموش
+        </h2>
+
+        <p
+          data-ar="يمكنك زيارة الصفحات التالية لمعرفة المزيد عن الموقع وطريقة استخدامه وشروط الاستفادة من خدماته."
+          data-en="You can visit the following pages to learn more about the website, how it works, and the terms for using its services.">
+          يمكنك زيارة الصفحات التالية لمعرفة المزيد عن الموقع وطريقة استخدامه وشروط الاستفادة من خدماته.
+        </p>
+
+        <div class="policy-links">
+
+          <a href="index.html"
+             data-ar="🏠 الرئيسية"
+             data-en="🏠 Home">
+            🏠 الرئيسية
+          </a>
+
+          <a href="about.html"
+             data-ar="👑 من نحن"
+             data-en="👑 About Us">
+            👑 من نحن
+          </a>
+
+          <a href="contact.html"
+             data-ar="📩 اتصل بنا"
+             data-en="📩 Contact Us">
+            📩 اتصل بنا
+          </a>
+
+          <a href="terms.html"
+             data-ar="📜 شروط الاستخدام"
+             data-en="📜 Terms of Use">
+            📜 شروط الاستخدام
+          </a>
+
+        </div>
+
+      </section>
+
+    </article>
 
   </main>
 
+  <!-- تذييل الصفحة -->
   <footer class="policy-footer">
-    <p>© <span id="currentYear"></span> EmojiLand</p>
-    <a href="about.html" data-i18n data-ar="من نحن" data-en="About Us">من نحن</a>
-    <a href="contact.html" data-i18n data-ar="اتصل بنا" data-en="Contact">اتصل بنا</a>
-    <a href="privacy.html" data-i18n data-ar="سياسة الخصوصية" data-en="Privacy Policy">سياسة الخصوصية</a>
+
+    <p>
+      © <span id="currentYear"></span>
+      <span data-ar="مملكة الإيموش | جميع الحقوق محفوظة"
+            data-en="Emojiland | All Rights Reserved">
+        مملكة الإيموش | جميع الحقوق محفوظة
+      </span>
+    </p>
+
+    <nav aria-label="Footer navigation">
+
+      <a href="index.html"
+         data-ar="الرئيسية"
+         data-en="Home">
+        الرئيسية
+      </a>
+
+      <a href="about.html"
+         data-ar="من نحن"
+         data-en="About Us">
+        من نحن
+      </a>
+
+      <a href="contact.html"
+         data-ar="اتصل بنا"
+         data-en="Contact Us">
+        اتصل بنا
+      </a>
+
+      <a href="privacy.html"
+         data-ar="سياسة الخصوصية"
+         data-en="Privacy Policy">
+        سياسة الخصوصية
+      </a>
+
+      <a href="terms.html"
+         data-ar="شروط الاستخدام"
+         data-en="Terms of Use">
+        شروط الاستخدام
+      </a>
+
+    </nav>
+
   </footer>
 
+  <!-- ملفات الموقع المشتركة -->
   <script src="app.js"></script>
+
   <script>
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
