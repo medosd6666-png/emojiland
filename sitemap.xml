@@ -1,18 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url><loc>https://emojiland.pages.dev/</loc></url>
-  <url><loc>https://emojiland.pages.dev/about.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/contact.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/privacy.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/terms.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/copyright.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/stickers.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/emojis-smileys.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/emojis-love.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/emojis-hands.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/emojis-food.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/emojis-animals.html</loc></url>
-  <url><loc>https://emojiland.pages.dev/emojis-activities.html</loc></url>
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/about.html</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/contact.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/privacy.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/terms.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/copyright.html</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/stickers.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/emojis-smileys.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/emojis-love.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/emojis-hands.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/emojis-animals.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/emojis-food.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://medosd6666-png.github.io/emojiland/emojis-activities.html</loc>
+    <priority>0.9</priority>
+  </url>
 
 </urlset>
