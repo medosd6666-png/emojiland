@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://medosd6666-png.github.io/emojiland/sitemap.xml
